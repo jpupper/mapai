@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Herramientas - Arte Generativo y Código con IA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mapadeherramientas.css">
+    <script src="https://cdn.jsdelivr.net/npm/cytoscape@3.25.0/dist/cytoscape.min.js"></script>
+    <script src="js/menu.js"></script>
+</head>
+<body>
+    <header class="compact-header">
+        <div class="container">
+            <div class="header-content">
+                <h1>MODULO CÓDIGO</h1>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="map-container">
+            <div id="cy">
+                <div id="fullscreen-controls" style="display:none;">
+                    <button id="fs-anim-play" class="anim-btn">▶ Play</button>
+                    <button id="fs-anim-stop" class="anim-btn" style="display:none;">⏹ Stop</button>
+                    <button id="fs-exit" class="anim-btn">✕ Salir</button>
+                </div>
+                <div id="anim-info-panel"></div>
+            </div>
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Buscar nodo..." autocomplete="off" />
+                <div id="search-results"></div>
+            </div>
+            <div class="map-controls">
+                <button id="zoom-in">Zoom In</button>
+                <button id="zoom-out">Zoom Out</button>
+                <button id="reset">Reset</button>
+                <button id="fullscreen">Pantalla Completa</button>
+                <button id="anim-play" class="anim-btn">▶ Play</button>
+                <button id="anim-stop" class="anim-btn" style="display:none;">⏹ Stop</button>
+                <button id="download-json" class="anim-btn">⬇ Descargar JSON</button>
+            </div>
+            <div id="anim-category-label"></div>
+            <div class="node-info" id="node-info">
+                <h3 id="node-title">Información</h3>
+                <p id="node-description">Haz clic en un nodo para ver su información y visitar su sitio web.</p>
+            </div>
+        </div>
+        
+        <script src="js/mapa_data.js"></script>
+        <script src="js/mapa.js"></script>
+    </main>
+
+</body>
+</html>

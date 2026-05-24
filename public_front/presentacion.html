@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modo Presentación — MapAI</title>
+  <link rel="stylesheet" href="shared/css/presentacion.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="shader-bg"></div>
+  <div class="scanline"></div>
+  <div class="vignette"></div>
+
+  <header class="pres-header">
+    <a href="./" class="back-btn">← VOLVER</a>
+    <div class="pres-title">MODO PRESENTACIÓN</div>
+  </header>
+  <script src="js/menu.js"></script>
+
+  <div id="presentation-container">
+    <div class="slide-content" id="slide-content">
+      <div class="slide-category-badge" id="slide-category"></div>
+      <h1 class="slide-title" id="slide-title"></h1>
+      <div class="slide-desc" id="slide-desc"></div>
+      <div class="slide-meta" id="slide-meta"></div>
+      <div class="slide-tags" id="slide-tags"></div>
+    </div>
+    <div class="slide-visual" id="slide-visual"></div>
+  </div>
+
+  <div class="controls">
+    <button id="prev-btn" class="nav-btn">←</button>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+    <button id="next-btn" class="nav-btn">→</button>
+  </div>
+
+  <div class="category-sidebar" id="category-filter">
+    <button id="sidebar-toggle" class="sidebar-toggle">✕</button>
+  </div>
+
+  <button id="mobile-menu-btn" class="mobile-menu-btn">MENU</button>
+
+  <div id="loading-overlay">
+    <div class="loader">Loading Data...</div>
+  </div>
+
+  <div id="image-modal" class="image-modal">
+    <span class="modal-close" id="modal-close">&times;</span>
+    <img class="modal-content" id="modal-img">
+    <div id="modal-caption"></div>
+  </div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
+
+  <script type="module" src="shared/js/presentacion.js"></script>
+</body>
+</html>

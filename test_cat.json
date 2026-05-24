@@ -1,0 +1,162 @@
+{
+  "categories": [
+    "engines",
+    "frameworks",
+    "ia",
+    "shaders",
+    "db",
+    "ides",
+    "languages",
+    "llm",
+    "frontend",
+    "os",
+    "soportes",
+    "protocolos",
+    "software-multimedia",
+    "entornos",
+    "glosario",
+    "sensores"
+  ],
+  "categoryChildren": {
+    "engines": [
+      "unity",
+      "unreal",
+      "godot",
+      "touchdesigner",
+      "processing",
+      "openframeworks"
+    ],
+    "frameworks": [
+      "p5",
+      "three",
+      "babylon",
+      "tone",
+      "ml5",
+      "hydra",
+      "xampp"
+    ],
+    "ia": [
+      "comfy",
+      "n8n",
+      "pinokio",
+      "clawbot",
+      "moltbook"
+    ],
+    "shaders": [
+      "shadertoy",
+      "glsl",
+      "hlsl",
+      "bookofshaders",
+      "ejemplos-shaders",
+      "editor-shaders-live"
+    ],
+    "db": [
+      "firebase",
+      "mongodb",
+      "sql"
+    ],
+    "ides": [
+      "cursor",
+      "trae",
+      "v0",
+      "windsurf",
+      "visual-studio",
+      "antigravity"
+    ],
+    "languages": [
+      "cpp",
+      "csharp",
+      "php",
+      "javascript",
+      "python",
+      "typescript",
+      "java",
+      "html",
+      "css",
+      "json",
+      "r",
+      "arduino",
+      "assembler"
+    ],
+    "llm": [
+      "chatgpt",
+      "deepseek",
+      "gemini",
+      "kimi",
+      "claude"
+    ],
+    "frontend": [
+      "react",
+      "vue",
+      "svelte",
+      "angular",
+      "nextjs"
+    ],
+    "os": [
+      "windows",
+      "linux",
+      "mac",
+      "android",
+      "ios"
+    ],
+    "soportes": [
+      "pantalla-touch",
+      "instalaciones-fisicas",
+      "raspberry-pi",
+      "pantalla-led",
+      "proyector",
+      "sitio-web",
+      "compilado-apk",
+      "virtual-production",
+      "vr",
+      "ar",
+      "sonido",
+      "videojuegos",
+      "mapping",
+      "nft"
+    ],
+    "protocolos": [
+      "websockets",
+      "spout",
+      "syphon",
+      "ndi",
+      "webrtc",
+      "osc",
+      "api",
+      "midi"
+    ],
+    "software-multimedia": [
+      "resolume",
+      "blender",
+      "paquete-adobe",
+      "obs",
+      "cinema4d",
+      "ableton",
+      "puredata",
+      "guipper",
+      "gitbash"
+    ],
+    "entornos": [
+      "docker",
+      "venv",
+      "conda",
+      "nodejs",
+      "vps"
+    ],
+    "glosario": [
+      "livecoding",
+      "vibecoding",
+      "programacion",
+      "prompting",
+      "consola",
+      "script",
+      "compilado-interpretado",
+      "drivers",
+      "mcp",
+      "repositorio",
+      "github",
+      "git"
+    ],
+    "sensores": []
+  }
+}

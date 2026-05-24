@@ -1,0 +1,86 @@
+[
+  {
+    "id": "unity",
+    "label": "Unity",
+    "type": "tool",
+    "url": "https://unity.com/",
+    "info": "Unity Motor de juegos multiplataforma con potentes capacidades gráficas y físicas. Se usa para: Desarrollo de videojuegos, visualizaciones 3D, realidad virtual y aumentada. Disponibilidad: Software propietario, de pago con versión gratuita limitada.",
+    "connections": {
+      "parent": [
+        {
+          "id": "engines",
+          "type": "primary"
+        }
+      ],
+      "children": [],
+      "secondary": [
+        "csharp",
+        "hlsl",
+        "compilado-apk",
+        "vr",
+        "videojuegos",
+        "ar",
+        "windows",
+        "mac",
+        "linux",
+        "android",
+        "ios"
+      ]
+    },
+    "infoHTML": "<h3>Unity</h3>\n              <p>Motor de juegos multiplataforma con potentes capacidades gráficas y físicas.</p>\n              <p><strong>Se usa para:</strong> Desarrollo de videojuegos, visualizaciones 3D, realidad virtual y aumentada.</p>\n              <p><strong>Disponibilidad:</strong> Software propietario, de pago con versión gratuita limitada.</p>"
+  },
+  {
+    "id": "unreal",
+    "label": "Unreal Engine",
+    "type": "tool",
+    "url": "https://www.unrealengine.com/",
+    "info": "Unreal Engine Motor de juegos de alta fidelidad visual, ideal para proyectos AAA y experiencias inmersivas. Se usa para: Videojuegos de alta calidad, cine virtual, arquitectura y visualización. Disponibilidad: Parcialmente open source (código fuente disponible, pero con licencia comercial).",
+    "connections": {
+      "parent": [
+        {
+          "id": "engines",
+          "type": "primary"
+        }
+      ],
+      "children": [],
+      "secondary": [
+        "cpp",
+        "hlsl",
+        "vr",
+        "virtual-production",
+        "videojuegos",
+        "windows",
+        "mac",
+        "android",
+        "ios"
+      ]
+    },
+    "infoHTML": "<h3>Unreal Engine</h3>\n               <p>Motor de juegos de alta fidelidad visual, ideal para proyectos AAA y experiencias inmersivas.</p>\n               <p><strong>Se usa para:</strong> Videojuegos de alta calidad, cine virtual, arquitectura y visualización.</p>\n               <p><strong>Disponibilidad:</strong> Parcialmente open source (código fuente disponible, pero con licencia comercial).</p>"
+  },
+  {
+    "id": "godot",
+    "label": "Godot",
+    "type": "tool",
+    "url": "https://godotengine.org/",
+    "info": "Godot Motor de juegos con soporte para 2D y 3D, ideal para desarrolladores independientes. Se usa para: Videojuegos independientes, prototipado rápido, proyectos educativos. Disponibilidad: Open source (MIT).",
+    "connections": {
+      "parent": [
+        {
+          "id": "engines",
+          "type": "primary"
+        }
+      ],
+      "children": [],
+      "secondary": [
+        "glsl",
+        "videojuegos",
+        "windows",
+        "mac",
+        "linux",
+        "android",
+        "ios"
+      ]
+    },
+    "infoHTML": "<h3>Godot</h3>\n              <p>Motor de juegos con soporte para 2D y 3D, ideal para desarrolladores independientes.</p>\n              <p><strong>Se usa para:</strong> Videojuegos independientes, prototipado rápido, proyectos educativos.</p>\n              <p><strong>Disponibilidad:</strong> Open source (MIT).</p>"
+  }
+]

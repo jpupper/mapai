@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoriales - Arte Generativo y Código con IA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tutorial.css">
+    <script src="js/menu.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>MODULO Código</h1>
+            <p>Tutoriales Prácticos</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>📚 Tutoriales</h2>
+            <p>En esta sección encontrarás mini tutoriales prácticos para las herramientas más utilizadas en el curso. Cada tutorial incluye los comandos esenciales y explicaciones claras para que puedas empezar rápidamente.</p>
+        </section>
+
+        <!-- Tutorial 1: GitHub -->
+        <section class="card tutorial-section">
+            <h2>🚀 Tutorial 1: Creación de Repositorio de GitHub</h2>
+            
+            <div class="info-box">
+                <strong>📌 Objetivo:</strong> Aprender a crear un repositorio en GitHub y realizar tu primer commit con los comandos esenciales de Git.
+            </div>
+
+            <h3><span class="step-number">1</span>Crear el Repositorio en GitHub</h3>
+            <p>Primero, ve a <a href="https://github.com" target="_blank">GitHub.com</a> y crea un nuevo repositorio:</p>
+            <ul>
+                <li>Haz clic en el botón <strong>"New"</strong> o <strong>"+"</strong> en la esquina superior derecha</li>
+                <li>Asigna un nombre a tu repositorio</li>
+                <li>Elige si será público o privado</li>
+                <li>Puedes agregar un README (opcional)</li>
+                <li>Haz clic en <strong>"Create repository"</strong></li>
+            </ul>
+
+            <h3><span class="step-number">2</span>Clonar el Repositorio</h3>
+            <p>Una vez creado el repositorio, copia la URL y clónalo en tu computadora:</p>
+            
+            <div class="command-emphasis">
+                <h4>🔑 Comando Clave: git clone</h4>
+                <code>git clone https://github.com/tu-usuario/tu-repositorio.git</code>
+                <p style="margin-top: 1rem;"><strong>¿Qué hace?</strong> Descarga una copia completa del repositorio remoto a tu computadora local, incluyendo todo el historial de cambios.</p>
+            </div>
+
+            <div class="command-block">
+                <code>cd tu-repositorio</code>
+            </div>
+            <p>Navega a la carpeta del repositorio que acabas de clonar.</p>
+
+            <h3><span class="step-number">3</span>Realizar Cambios en tu Proyecto</h3>
+            <p>Ahora puedes crear o modificar archivos en tu proyecto. Por ejemplo:</p>
+            <ul>
+                <li>Crea un archivo <code>index.html</code></li>
+                <li>Agrega tu código</li>
+                <li>Crea carpetas para organizar tu proyecto</li>
+            </ul>
+
+            <h3><span class="step-number">4</span>Agregar Archivos al Staging Area</h3>
+            
+            <div class="command-emphasis">
+                <h4>🔑 Comando Clave: git add</h4>
+                <code>git add .</code>
+                <p style="margin-top: 1rem;"><strong>¿Qué hace?</strong> Agrega todos los archivos modificados y nuevos al "staging area" (área de preparación). El punto (.) significa "todos los archivos". También puedes agregar archivos específicos con <code>git add nombre-archivo.txt</code></p>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ Nota:</strong> El comando <code>git add .</code> agrega TODOS los archivos. Asegúrate de tener un archivo <code>.gitignore</code> para excluir archivos que no quieres subir (como node_modules, archivos de configuración local, etc.)
+            </div>
+
+            <h3><span class="step-number">5</span>Hacer el Commit</h3>
+            
+            <div class="command-emphasis">
+                <h4>🔑 Comando Clave: git commit</h4>
+                <code>git commit -m "Primer subida"</code>
+                <p style="margin-top: 1rem;"><strong>¿Qué hace?</strong> Crea un "commit" (punto de guardado) con todos los cambios que agregaste al staging area. El mensaje entre comillas describe qué cambios realizaste. Es importante escribir mensajes descriptivos.</p>
+            </div>
+
+            <div class="info-box">
+                <strong>💡 Buenas prácticas para mensajes de commit:</strong>
+                <ul style="margin-top: 0.5rem;">
+                    <li>Usa verbos en presente: "Agrega", "Corrige", "Actualiza"</li>
+                    <li>Sé descriptivo pero conciso</li>
+                    <li>Ejemplos: "Agrega página de inicio", "Corrige error en el menú", "Actualiza estilos del header"</li>
+                </ul>
+            </div>
+
+            <h3><span class="step-number">6</span>Subir los Cambios a GitHub</h3>
+            
+            <div class="command-emphasis">
+                <h4>🔑 Comando Clave: git push</h4>
+                <code>git push origin main</code>
+                <p style="margin-top: 1rem;"><strong>¿Qué hace?</strong> Sube tus commits locales al repositorio remoto en GitHub. "origin" es el nombre del repositorio remoto y "main" es la rama principal (antes se llamaba "master").</p>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ Nota:</strong> Si tu rama principal se llama "master" en lugar de "main", usa <code>git push origin master</code>
+            </div>
+
+            <h3><span class="step-number">7</span>Flujo de Trabajo Básico</h3>
+            <p>Una vez que hayas hecho tu primera subida, este será tu flujo de trabajo habitual:</p>
+            
+            <div class="command-block">
+                <code># 1. Hacer cambios en tus archivos</code>
+                <code># 2. Agregar los cambios</code>
+                <code>git add .</code>
+                <code># 3. Hacer commit</code>
+                <code>git commit -m "Descripción de los cambios"</code>
+                <code># 4. Subir a GitHub</code>
+                <code>git push origin main</code>
+            </div>
+
+            <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--border-color);">
+
+            <h2>🔧 Comandos Adicionales Importantes</h2>
+
+            <h3>Git Pull - Descargar Cambios del Repositorio Remoto</h3>
+            
+            <div class="command-emphasis">
+                <h4>🔑 Comando: git pull</h4>
+                <code>git pull origin main</code>
+                <p style="margin-top: 1rem;"><strong>¿Qué hace?</strong> Descarga y fusiona los cambios del repositorio remoto a tu repositorio local. Es esencial usarlo cuando:</p>
+                <ul style="margin-top: 0.5rem;">
+                    <li>Trabajas en equipo y otros han subido cambios</li>
+                    <li>Has hecho cambios desde otra computadora</li>
+                    <li>Antes de empezar a trabajar, para asegurarte de tener la última versión</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <strong>💡 Buena práctica:</strong> Siempre ejecuta <code>git pull</code> antes de empezar a trabajar para evitar conflictos.
+            </div>
+
+            <h3>Git Reset Hard - Descartar Cambios Locales</h3>
+            
+            <div class="command-emphasis">
+                <h4>🔑 Comando: git reset --hard</h4>
+                <code>git reset --hard origin/main</code>
+                <p style="margin-top: 1rem;"><strong>¿Qué hace?</strong> Descarta TODOS los cambios locales y resetea tu repositorio al estado exacto del repositorio remoto. Es útil cuando:</p>
+                <ul style="margin-top: 0.5rem;">
+                    <li>Has hecho cambios que quieres descartar completamente</li>
+                    <li>Tu repositorio local está en un estado inconsistente</li>
+                    <li>Quieres empezar de cero desde la última versión remota</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ ¡CUIDADO!</strong> Este comando es DESTRUCTIVO. Elimina permanentemente todos tus cambios locales que no hayas commiteado. Úsalo solo cuando estés seguro de que quieres descartar todo tu trabajo local.
+            </div>
+
+            <div class="command-block">
+                <code># Ejemplo de uso completo:</code>
+                <code>git fetch origin</code>
+                <code>git reset --hard origin/main</code>
+            </div>
+
+            <p><code>git fetch origin</code> descarga la información del repositorio remoto sin fusionarla, y luego <code>git reset --hard origin/main</code> resetea tu rama local a ese estado.</p>
+
+            <h3>Resumen de Comandos Esenciales</h3>
+            
+            <div class="command-block">
+                <code># Clonar un repositorio</code>
+                <code>git clone [URL]</code>
+                <code></code>
+                <code># Agregar cambios al staging</code>
+                <code>git add .</code>
+                <code></code>
+                <code># Hacer commit</code>
+                <code>git commit -m "Mensaje descriptivo"</code>
+                <code></code>
+                <code># Subir cambios</code>
+                <code>git push origin main</code>
+                <code></code>
+                <code># Descargar cambios</code>
+                <code>git pull origin main</code>
+                <code></code>
+                <code># Resetear a la versión remota (¡CUIDADO!)</code>
+                <code>git reset --hard origin/main</code>
+            </div>
+
+            <div class="info-box">
+                <strong>📖 Recursos adicionales:</strong>
+                <ul style="margin-top: 0.5rem;">
+                    <li><a href="https://git-scm.com/doc" target="_blank">Documentación oficial de Git</a></li>
+                    <li><a href="https://docs.github.com/es" target="_blank">Documentación de GitHub en español</a></li>
+                    <li><a href="https://learngitbranching.js.org/?locale=es_ES" target="_blank">Learn Git Branching (interactivo)</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Tutorial 2: GitHub Pages -->
+        <section class="card tutorial-section">
+            <h2>🌐 Tutorial 2: Activar GitHub Pages</h2>
+            
+            <div class="info-box">
+                <strong>📌 Objetivo:</strong> Aprender a publicar tu proyecto web en GitHub Pages para que esté disponible en internet de forma gratuita.
+            </div>
+
+            <h3>¿Qué es GitHub Pages?</h3>
+            <p>GitHub Pages es un servicio gratuito de hosting que te permite publicar sitios web estáticos directamente desde tu repositorio de GitHub. Es perfecto para:</p>
+            <ul>
+                <li>Proyectos de arte generativo con p5.js, Three.js, etc.</li>
+                <li>Portfolios personales</li>
+                <li>Documentación de proyectos</li>
+                <li>Páginas de presentación</li>
+            </ul>
+
+            <h3><span class="step-number">1</span>Preparar tu Proyecto</h3>
+            <p>Antes de activar GitHub Pages, asegúrate de que tu proyecto tenga:</p>
+            <ul>
+                <li>Un archivo <code>index.html</code> en la raíz del repositorio (o en una carpeta específica)</li>
+                <li>Todos los archivos necesarios (CSS, JavaScript, imágenes, etc.) subidos al repositorio</li>
+                <li>Rutas relativas correctas en tu código (no uses rutas absolutas como <code>C:\Users\...</code>)</li>
+            </ul>
+
+            <div class="warning-box">
+                <strong>⚠️ Importante:</strong> GitHub Pages solo funciona con sitios web estáticos (HTML, CSS, JavaScript). No puede ejecutar código del lado del servidor como PHP, Python, etc.
+            </div>
+
+            <h3><span class="step-number">2</span>Acceder a la Configuración del Repositorio</h3>
+            <p>Sigue estos pasos en GitHub:</p>
+            <ol style="list-style: decimal; padding-left: 2rem;">
+                <li style="margin: 1rem 0;">Ve a tu repositorio en <a href="https://github.com" target="_blank">GitHub.com</a></li>
+                <li style="margin: 1rem 0;">Haz clic en la pestaña <strong>"Settings"</strong> (Configuración) en la parte superior</li>
+                <li style="margin: 1rem 0;">En el menú lateral izquierdo, busca y haz clic en <strong>"Pages"</strong></li>
+            </ol>
+
+            <h3><span class="step-number">3</span>Configurar GitHub Pages</h3>
+            <p>En la sección de GitHub Pages, encontrarás las siguientes opciones:</p>
+
+            <div class="command-emphasis">
+                <h4>🔧 Configuración de la Fuente (Source)</h4>
+                <p style="margin-top: 1rem;"><strong>Branch (Rama):</strong> Selecciona la rama desde donde se publicará tu sitio</p>
+                <ul style="margin-top: 0.5rem;">
+                    <li><strong>main</strong> - La rama principal (recomendado para la mayoría de los casos)</li>
+                    <li><strong>gh-pages</strong> - Una rama específica para GitHub Pages (opcional)</li>
+                </ul>
+                <p style="margin-top: 1rem;"><strong>Folder (Carpeta):</strong> Selecciona la carpeta raíz</p>
+                <ul style="margin-top: 0.5rem;">
+                    <li><strong>/ (root)</strong> - Si tu <code>index.html</code> está en la raíz del repositorio</li>
+                    <li><strong>/docs</strong> - Si tienes tus archivos en una carpeta llamada "docs"</li>
+                </ul>
+            </div>
+
+            <h3><span class="step-number">4</span>Activar GitHub Pages</h3>
+            <ol style="list-style: decimal; padding-left: 2rem;">
+                <li style="margin: 1rem 0;">En <strong>"Source"</strong>, selecciona la rama <strong>"main"</strong></li>
+                <li style="margin: 1rem 0;">Selecciona la carpeta <strong>"/ (root)"</strong></li>
+                <li style="margin: 1rem 0;">Haz clic en el botón <strong>"Save"</strong> (Guardar)</li>
+            </ol>
+
+            <div class="info-box">
+                <strong>⏱️ Tiempo de espera:</strong> GitHub Pages puede tardar entre 1 y 5 minutos en publicar tu sitio por primera vez. ¡Ten paciencia!
+            </div>
+
+            <h3><span class="step-number">5</span>Acceder a tu Sitio Publicado</h3>
+            <p>Una vez activado, GitHub Pages te mostrará la URL de tu sitio:</p>
+            
+            <div class="command-block">
+                <code>https://tu-usuario.github.io/nombre-repositorio/</code>
+            </div>
+
+            <p>Por ejemplo, si tu usuario es <code>juanperez</code> y tu repositorio se llama <code>mi-proyecto</code>, la URL será:</p>
+            
+            <div class="command-block">
+                <code>https://juanperez.github.io/mi-proyecto/</code>
+            </div>
+
+            <h3><span class="step-number">6</span>Actualizar tu Sitio</h3>
+            <p>Cada vez que hagas cambios y los subas a GitHub, tu sitio se actualizará automáticamente:</p>
+            
+            <div class="command-block">
+                <code># 1. Hacer cambios en tus archivos</code>
+                <code># 2. Agregar los cambios</code>
+                <code>git add .</code>
+                <code># 3. Hacer commit</code>
+                <code>git commit -m "Actualización del sitio"</code>
+                <code># 4. Subir a GitHub</code>
+                <code>git push origin main</code>
+                <code># 5. Esperar 1-2 minutos y tu sitio estará actualizado</code>
+            </div>
+
+            <h3>Solución de Problemas Comunes</h3>
+
+            <div class="warning-box">
+                <strong>❌ Problema:</strong> La página muestra un error 404
+                <br><br>
+                <strong>✅ Solución:</strong>
+                <ul style="margin-top: 0.5rem;">
+                    <li>Verifica que tengas un archivo <code>index.html</code> en la carpeta raíz (o en la carpeta que configuraste)</li>
+                    <li>Asegúrate de que el nombre del archivo sea exactamente <code>index.html</code> (en minúsculas)</li>
+                    <li>Espera unos minutos más, a veces tarda en publicarse</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <strong>❌ Problema:</strong> Los estilos o imágenes no se cargan
+                <br><br>
+                <strong>✅ Solución:</strong>
+                <ul style="margin-top: 0.5rem;">
+                    <li>Usa rutas relativas en tu código: <code>./css/style.css</code> en lugar de <code>/css/style.css</code></li>
+                    <li>Verifica que todos los archivos estén subidos al repositorio</li>
+                    <li>Revisa la consola del navegador (F12) para ver errores específicos</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <strong>❌ Problema:</strong> Los cambios no se reflejan en el sitio
+                <br><br>
+                <strong>✅ Solución:</strong>
+                <ul style="margin-top: 0.5rem;">
+                    <li>Limpia la caché del navegador (Ctrl + Shift + R o Cmd + Shift + R)</li>
+                    <li>Verifica que los cambios estén en GitHub (ve al repositorio y revisa los archivos)</li>
+                    <li>Espera unos minutos, GitHub Pages puede tardar en actualizar</li>
+                </ul>
+            </div>
+
+            <h3>Configuración Avanzada (Opcional)</h3>
+
+            <h4>Usar un Dominio Personalizado</h4>
+            <p>Si tienes un dominio propio, puedes configurarlo en la sección de GitHub Pages:</p>
+            <ol style="list-style: decimal; padding-left: 2rem;">
+                <li style="margin: 1rem 0;">En la sección "Custom domain", ingresa tu dominio</li>
+                <li style="margin: 1rem 0;">Configura los DNS de tu dominio según las instrucciones de GitHub</li>
+                <li style="margin: 1rem 0;">Marca la opción "Enforce HTTPS" para mayor seguridad</li>
+            </ol>
+
+            <h4>Usar una Rama gh-pages</h4>
+            <p>Si quieres mantener tu código fuente separado del sitio publicado:</p>
+            
+            <div class="command-block">
+                <code># Crear una rama gh-pages</code>
+                <code>git checkout -b gh-pages</code>
+                <code># Subir la rama a GitHub</code>
+                <code>git push origin gh-pages</code>
+                <code># Luego en Settings > Pages, selecciona la rama gh-pages</code>
+            </div>
+
+            <div class="info-box">
+                <strong>📖 Recursos adicionales:</strong>
+                <ul style="margin-top: 0.5rem;">
+                    <li><a href="https://pages.github.com/" target="_blank">GitHub Pages - Sitio oficial</a></li>
+                    <li><a href="https://docs.github.com/es/pages" target="_blank">Documentación de GitHub Pages en español</a></li>
+                    <li><a href="https://docs.github.com/es/pages/getting-started-with-github-pages/creating-a-github-pages-site" target="_blank">Guía paso a paso oficial</a></li>
+                </ul>
+            </div>
+
+            <div class="command-emphasis">
+                <h4>🎉 ¡Listo!</h4>
+                <p style="margin-top: 1rem;">Ahora tu proyecto está publicado en internet y puedes compartir el enlace con cualquier persona. Cada vez que hagas un <code>git push</code>, tu sitio se actualizará automáticamente.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

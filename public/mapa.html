@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    html, body { height: 100%; }
+    body { margin: 0; }
+    .wrap { height: 100%; display: flex; flex-direction: column; }
+    .topbar { display:flex; align-items:center; justify-content:space-between; padding: 10px 14px; background: rgba(0,0,0,0.08); border-bottom: 1px solid rgba(0,0,0,0.08); }
+    .topbar h1 { margin: 0; font-size: 16px; letter-spacing: 0.5px; }
+    .topbar .actions { display:flex; gap: 10px; align-items:center; }
+    .btn { padding: 8px 12px; border: 1px solid rgba(0,0,0,0.2); border-radius: 10px; background: white; cursor: pointer; font-size: 14px; }
+    .frame { flex: 1; width: 100%; border: 0; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <h1>MAPA</h1>
+      <div class="actions">
+        <button id="btn-back" class="btn" type="button">Volver</button>
+      </div>
+    </div>
+    <iframe id="map-frame" class="frame" title="Mapa"></iframe>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const project = urlParams.get('project') || 'diplomatura';
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    const app = parts[0];
+    const base = (app === 'mapai' || app === 'diploia') ? `/${app}` : '';
+    const src = `${base}/mapa.html?project=${encodeURIComponent(project)}`;
+    document.getElementById('map-frame').src = src;
+    document.getElementById('btn-back').addEventListener('click', () => {
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = 'index.html';
+      }
+    });
+  </script>
+</body>
+</html>

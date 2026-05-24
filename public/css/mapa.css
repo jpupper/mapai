@@ -1,0 +1,192 @@
+/* Estilos para el mapa de herramientas */
+
+/* Variables CSS para configuración dinámica */
+:root {
+    /* Tamaños de nodos */
+    --root-node-size: 200px;
+    --primary-node-size: 100px;
+    --secondary-node-size: 90px;
+    
+    /* Tamaños de fuente */
+    --node-font-size: 14px;
+    --category-font-size: 18px;
+    --root-font-size: 20px;
+    
+    /* Colores */
+    --node-bg-color: #1a1a1a;
+    --node-border-color: #ff69b4;
+    --category-bg-color: #8a2be2;
+    --root-bg-color: #9400d3;
+    --root-border-color: #ff1493;
+    --edge-color: rgba(255, 105, 180, 0.6);
+    --secondary-edge-color: rgba(138, 43, 226, 0.6);
+    --hover-border-color: #00ffff;
+    --hover-bg-color: #3a3a3a;
+    --hover-edge-color: #00ffff;
+    --connected-node-color: #00ccff;
+}
+
+/* Estilos básicos del contenedor */
+body, html {
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    height: calc(100vh - 60px);
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    margin-top: 60px;
+}
+
+.container {
+    max-width: 100%;
+    padding: 0 20px;
+}
+
+.map-container {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#cy {
+    width: 100%;
+    height: calc(100vh - 60px);
+    background-color: rgba(18, 18, 18, 0.6);
+    border-radius: 0;
+    margin: 0;
+}
+
+/* Controles del mapa */
+.map-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 10px 0;
+    background-color: rgba(18, 18, 18, 0.8);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.map-controls button {
+    background: var(--menu-button-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.map-controls button:hover {
+    background: var(--menu-button-hover);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Pantalla completa */
+#cy.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    border-radius: 0;
+}
+
+/* Información del nodo */
+.node-info {
+    position: fixed;
+    bottom: 60px;
+    left: 20px;
+    padding: 1rem;
+    background: rgba(0,0,0,0.8);
+    border-radius: 8px;
+    display: none;
+    z-index: 200;
+    max-width: 400px;
+}
+
+/* Estilos para el infoBox (tooltip) */
+#node-hover-info {
+    position: absolute;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+/* Estilos para nodos y conexiones en Cytoscape */
+/* Estos estilos se aplican mediante JavaScript, pero los documentamos aquí para referencia */
+
+/* 
+Estilos de nodos:
+- Nodo normal: fondo #1a1a1a, borde #ff69b4
+- Nodo categoría: fondo #8a2be2, borde #ff69b4
+- Nodo raíz: fondo #9400d3, borde #ff1493
+- Nodo seleccionado: fondo #ff1493, borde #ffffff
+
+Estilos de conexiones:
+- Conexión normal: línea #ff69b4
+- Conexión secundaria: línea punteada #8a2be2
+- Conexión seleccionada: línea #ff1493
+*/
+
+/* Estilos para nodos resaltados y atenuados */
+.highlighted {
+    z-index: 999 !important;
+}
+
+.faded {
+    opacity: 0.3;
+}
+
+/* Nota: Las clases para nodos y bordes se aplican mediante JavaScript directamente en Cytoscape */
+/* Estas clases son solo para referencia y documentación */
+
+/* 
+.node-hover - Aplicada a nodos cuando el mouse está sobre ellos
+.edge-hover - Aplicada a bordes conectados al nodo hover
+.connected-node - Aplicada a nodos conectados al nodo hover
+*/
+
+/* Estilos para el infoBox */
+#node-hover-info {
+    position: absolute;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+#node-hover-info.visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}

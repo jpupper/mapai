@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiploIA - Admin Panel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+    <style>
+        /* Admin Login Overlay Styles */
+        #admin-login-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(12px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        #admin-login-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        #admin-login-overlay.active .login-card {
+            transform: translateY(0);
+        }
+
+        .login-logo {
+            font-size: 48px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .login-card h2 {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .login-card p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .login-input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .login-input {
+            width: 100%;
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #fff;
+            font-size: 16px;
+            text-align: center;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            outline: none;
+        }
+
+        .login-input.username {
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .login-input:focus {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: #5a57f2;
+            box-shadow: 0 0 0 4px rgba(90, 87, 242, 0.2);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #5a57f2 0%, #7c79ff 100%);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 15px -3px rgba(90, 87, 242, 0.4);
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 20px -3px rgba(90, 87, 242, 0.5);
+        }
+
+        .login-btn:active {
+            transform: translateY(0);
+        }
+
+        .login-error {
+            color: #ff4d4d;
+            font-size: 12px;
+            margin-top: 15px;
+            min-height: 18px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .login-error.visible {
+            opacity: 1;
+        }
+
+        .login-switch {
+            display: flex;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 6px;
+            border-radius: 14px;
+            margin-bottom: 18px;
+        }
+
+        .login-switch-btn {
+            flex: 1;
+            padding: 10px 12px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.2s ease;
+        }
+
+        .login-switch-btn.active {
+            background: rgba(90, 87, 242, 0.28);
+            color: #fff;
+        }
+
+        .login-meta {
+            margin-top: 12px;
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .login-link {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            padding: 0;
+            text-decoration: underline;
+            font-size: 12px;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-10px); }
+            40%, 80% { transform: translateX(10px); }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-wrapper">
+        <!-- Mobile Sidebar Overlay -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">◆</span>
+                    <span class="logo-text">DiploIA</span>
+                </div>
+                <span class="logo-sub">Admin Panel</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-section="dashboard" id="nav-dashboard">
+                    <span class="nav-icon">📊</span> Dashboard
+                </a>
+                <a href="#" class="nav-item" data-section="projects" id="nav-projects">
+                    <span class="nav-icon">📁</span> Proyectos
+                </a>
+                <a href="#" class="nav-item" data-section="users" id="nav-users">
+                    <span class="nav-icon">👤</span> Usuarios
+                </a>
+                <a href="#" class="nav-item" data-section="categories" id="nav-categories">
+                    <span class="nav-icon">📁</span> Categorías
+                </a>
+                <a href="#" class="nav-item" data-section="nodes" id="nav-nodes">
+                    <span class="nav-icon">🔵</span> Nodos
+                </a>
+                <a href="#" class="nav-item" data-section="connections" id="nav-connections">
+                    <span class="nav-icon">🔗</span> Conexiones
+                </a>
+                <a href="#" class="nav-item" data-section="ranking" id="nav-ranking">
+                    <span class="nav-icon">🏆</span> Ranking
+                </a>
+                <a href="#" class="nav-item" data-section="config" id="nav-config">
+                    <span class="nav-icon">🗺️</span> Config Mapa
+                </a>
+                <a href="#" class="nav-item" data-section="space-config" id="nav-space-config">
+                    <span class="nav-icon">🚀</span> Config Espacio
+                </a>
+                <a href="#" class="nav-item" data-section="presentation-config" id="nav-presentation-config">
+                    <span class="nav-icon">📺</span> Config Presentación
+                </a>
+                <a href="#" class="nav-item" data-section="import-export" id="nav-import-export">
+                    <span class="nav-icon">📦</span> Importar / Exportar
+                </a>
+                <a href="#" class="nav-item" data-section="generate-ia" id="nav-generate-ia">
+                    <span class="nav-icon">✨</span> Generate with IA
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon">🌐</span> Ver Sitio
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="topbar">
+                <button class="menu-toggle" id="menu-toggle">☰</button>
+                <h2 class="topbar-title" id="topbar-title">Dashboard</h2>
+                <div class="topbar-actions">
+                    <div class="project-selector-wrapper" style="display: flex; align-items: center; gap: 8px;">
+                        <label for="global-project-selector" style="font-size: 11px; color: var(--text-muted);">Proyecto:</label>
+                        <select id="global-project-selector" class="select-input" style="height: 32px; padding: 0 8px; font-size: 13px; min-width: 150px;"></select>
+                        <button class="btn btn-primary" id="btn-quick-add-project" style="height: 32px; width: 32px; display: flex; align-items: center; justify-content: center; padding: 0; font-size: 18px;" title="Añadir Nuevo Proyecto">+</button>
+                    </div>
+                    <button class="btn btn-primary btn-save-header" id="btn-save-current-section"
+                        style="display: none;">💾 Guardar</button>
+                    <span class="status-badge" id="status-badge">● Conectado</span>
+                    <span class="status-badge" id="user-badge" style="display:none;">●</span>
+                    <button class="btn btn-ghost" id="btn-logout" style="display:none;">Salir</button>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- ═══════ DASHBOARD ═══════ -->
+                <section class="section active" id="section-dashboard">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">🔵</div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="stat-total-nodes">0</span>
+                                <span class="stat-label">Nodos Totales</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">📁</div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="stat-categories">0</span>
+                                <span class="stat-label">Categorías</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🔗</div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="stat-connections">0</span>
+                                <span class="stat-label">Conexiones</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🏆</div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="stat-rankings">0</span>
+                                <span class="stat-label">Rankings</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="margin-top: 20px;">
+                        <h3>🔗 Enlaces Dinámicos - Proyecto Actual</h3>
+                        <div class="links-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-top: 15px;">
+                            <div class="link-card" style="background: var(--bg-card); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
+                                <h4 style="margin-bottom: 8px;">🗺️ Mapa de Herramientas</h4>
+                                <div style="display: flex; gap: 8px;">
+                                    <input type="text" id="link-mapa" readonly class="search-input" style="flex: 1; font-size: 12px;">
+                                    <button class="btn btn-sm btn-ghost" onclick="copyLink('link-mapa')">📋</button>
+                                    <a href="#" id="view-mapa" target="_blank" class="btn btn-sm btn-primary">Ir</a>
+                                </div>
+                            </div>
+                            <div class="link-card" style="background: var(--bg-card); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
+                                <h4 style="margin-bottom: 8px;">📺 Presentación</h4>
+                                <div style="display: flex; gap: 8px;">
+                                    <input type="text" id="link-presentacion" readonly class="search-input" style="flex: 1; font-size: 12px;">
+                                    <button class="btn btn-sm btn-ghost" onclick="copyLink('link-presentacion')">📋</button>
+                                    <a href="#" id="view-presentacion" target="_blank" class="btn btn-sm btn-primary">Ir</a>
+                                </div>
+                            </div>
+                            <div class="link-card" style="background: var(--bg-card); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
+                                <h4 style="margin-bottom: 8px;">☁️ Nube de Universos</h4>
+                                <div style="display: flex; gap: 8px;">
+                                    <input type="text" id="link-nube" readonly class="search-input" style="flex: 1; font-size: 12px;">
+                                    <button class="btn btn-sm btn-ghost" onclick="copyLink('link-nube')">📋</button>
+                                    <a href="#" id="view-nube" target="_blank" class="btn btn-sm btn-primary">Ir</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="margin-top: 20px;">
+                        <h3>Últimos Nodos</h3>
+                        <div id="recent-nodes-list" class="items-list"></div>
+                    </div>
+                </section>
+
+                <!-- ═══════ PROJECTS ═══════ -->
+                <section class="section" id="section-projects">
+                    <div class="section-header">
+                        <h3>Gestión de Proyectos</h3>
+                        <button class="btn btn-primary" id="btn-add-project">+ Nuevo Proyecto</button>
+                    </div>
+                    <div id="projects-list" class="items-grid"></div>
+
+                </section>
+
+                <section class="section" id="section-users">
+                    <div class="section-header">
+                        <h3>Usuarios</h3>
+                    </div>
+                    <div class="card">
+                        <div id="users-list" class="items-list"></div>
+                    </div>
+                </section>
+
+                <!-- ═══════ CATEGORIES ═══════ -->
+                <section class="section" id="section-categories">
+                    <div class="section-header">
+                        <h3>Categorías</h3>
+                        <button class="btn btn-primary" id="btn-add-category">+ Nueva Categoría</button>
+                    </div>
+                    <div id="categories-list" class="items-grid"></div>
+
+                </section>
+
+                <!-- ═══════ NODES ═══════ -->
+                <section class="section" id="section-nodes">
+                    <div class="section-header">
+                        <h3>Nodos</h3>
+                        <div class="section-actions">
+                            <select id="filter-category" class="select-input">
+                                <option value="">Todas las categorías</option>
+                            </select>
+                            <input type="text" id="search-nodes" class="search-input" placeholder="Buscar nodo...">
+                            <button class="btn btn-primary" id="btn-add-node">+ Nuevo Nodo</button>
+                        </div>
+                    </div>
+                    <div id="nodes-list" class="items-list"></div>
+
+                </section>
+
+                <!-- ═══════ CONNECTIONS ═══════ -->
+                <section class="section" id="section-connections">
+                    <div class="section-header">
+                        <h3>Conexiones</h3>
+                        <button class="btn btn-primary" id="btn-add-connection">+ Nueva Conexión</button>
+                    </div>
+                    <div class="card">
+                        <p class="hint-text">Aquí se muestran todas las conexiones secundarias entre nodos. Las
+                            conexiones primarias (categoría → hijo) se gestionan automáticamente.</p>
+                    </div>
+                    <div id="connections-list" class="items-list"></div>
+
+                </section>
+
+                <!-- ═══════ RANKING ═══════ -->
+                <section class="section" id="section-ranking">
+                    <div class="section-header">
+                        <h3>Ranking de Jugadores</h3>
+                    </div>
+                    <div id="ranking-list" class="items-list"></div>
+                </section>
+
+                <!-- ═══════ CONFIGURATION ═══════ -->
+                <section class="section" id="section-config">
+                    <div class="section-header">
+                        <h3>Configuración del Mapa</h3>
+                        <button class="btn btn-primary" id="btn-save-config">💾 Guardar Configuración</button>
+                    </div>
+
+                    <div class="cards-row">
+                        <div class="card">
+                            <h4>📏 Tamaños de Nodos</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Nodo Central (Raíz)</label>
+                                    <input type="number" id="cfg-rootNodeSize">
+                                </div>
+                                <div class="form-group">
+                                    <label>Categorías</label>
+                                    <input type="number" id="cfg-primaryNodeSize">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Herramientas (Nodos)</label>
+                                    <input type="number" id="cfg-secondaryNodeSize">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h4>🔤 Tamaños de Fuente</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>ID Raíz</label>
+                                    <input type="number" id="cfg-rootFontSize">
+                                </div>
+                                <div class="form-group">
+                                    <label>Categorías</label>
+                                    <input type="number" id="cfg-categoryFontSize">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Nodos</label>
+                                    <input type="number" id="cfg-nodeFontSize">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="margin-top: 20px;">
+                        <h4>📍 Distancias Globales</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Distancia Raíz ↔ Categorías</label>
+                                <input type="number" id="cfg-primaryDistance">
+                            </div>
+                            <div class="form-group">
+                                <label>Distancia Entre Nodos Secundarios</label>
+                                <input type="number" id="cfg-secondaryNodeDist">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="margin-top: 20px;">
+                        <h4>🎭 Animaciones y Popups</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Delay Categoría (ms)</label>
+                                <input type="number" id="cfg-animCategoryDelay">
+                            </div>
+                            <div class="form-group">
+                                <label>Delay Nodo (ms)</label>
+                                <input type="number" id="cfg-animNodeDelay">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Velocidad Transición (ms)</label>
+                                <input type="number" id="cfg-animTransitionSpeed">
+                            </div>
+                            <div class="form-group">
+                                <label>Velocidad Expansión (ms)</label>
+                                <input type="number" id="cfg-animNodeExpansionSpeed">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Fuente Título Popup</label>
+                                <input type="number" id="cfg-popupTitleFontSize">
+                            </div>
+                            <div class="form-group">
+                                <label>Fuente Texto Popup</label>
+                                <input type="number" id="cfg-popupTextFontSize">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="margin-top: 20px;">
+                        <h4>📁 Distancias por Categoría</h4>
+                        <p class="hint-text" style="margin-bottom: 15px;">Configura las distancias específicas para cada
+                            categoría existente en el universo.</p>
+                        <div id="category-distances-list" class="items-list">
+                            <!-- Se cargará dinámicamente -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ═══════ SPACE CONFIGURATION ═══════ -->
+                <section class="section" id="section-space-config">
+                    <div class="section-header">
+                        <h3>Configuraci&oacute;n del Espacio 3D</h3>
+                        <button class="btn btn-primary" id="btn-save-space-config">&#x1F4BE; Guardar Config
+                            Espacio</button>
+                    </div>
+
+                    <!-- Category Setup (dynamic) -->
+                    <div class="card" style="margin-top:12px;">
+                        <h4>&#x1F4C1; Categor&iacute;as</h4>
+                        <p class="hint-text" style="margin-bottom:15px;">Distancia al centro, distancia entre planetas y
+                            color de cada categor&iacute;a.</p>
+                        <div id="sc-category-list" class="items-list"></div>
+                    </div>
+
+                    <!-- Game Scoring -->
+                    <div class="cards-row" style="margin-top:12px;">
+                        <div class="card">
+                            <h4>&#x1F3AE; Carrera Estelar</h4>
+                            <div class="form-row">
+                                <div class="form-group"><label>Tiempo de juego (seg)</label><input type="number"
+                                        step="any" id="sc-game-gameTime"></div>
+                                <div class="form-group"><label>Tiempo eval/pregunta (seg)</label><input type="number"
+                                        step="any" id="sc-game-evalTimePerQuestion"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Pts Ruta Correcta</label><input type="number" step="any"
+                                        id="sc-game-pointsRouteCorrect"></div>
+                                <div class="form-group"><label>Pts Random Correcta</label><input type="number"
+                                        step="any" id="sc-game-pointsRandomCorrect"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Pts Incorrecta</label><input type="number" step="any"
+                                        id="sc-game-pointsWrong"></div>
+                                <div class="form-group"><label>Collect Time (seg)</label><input type="number" step="any"
+                                        id="sc-game-collectTime"></div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h4>&#x1F30D; Planet Visitor</h4>
+                            <div class="form-row">
+                                <div class="form-group"><label>Total Planetas</label><input type="number" step="any"
+                                        id="sc-game-pvTotalPlanets"></div>
+                                <div class="form-group"><label>Pts por Visita</label><input type="number" step="any"
+                                        id="sc-game-pvPointsPerVisit"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Pts Correcta</label><input type="number" step="any"
+                                        id="sc-game-pvPointsCorrect"></div>
+                                <div class="form-group"><label>Pts Incorrecta</label><input type="number" step="any"
+                                        id="sc-game-pvPointsWrong"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Dist. Cámara Orbital (unidades)</label><input
+                                        type="number" step="any" id="sc-game-pvStopDistance"></div>
+                                <div class="form-group"><label>Auto-avance (seg)</label><input type="number" step="any"
+                                        id="sc-game-pvAutoAdvanceTime"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Tamaño fuente panel info (px)</label><input type="number"
+                                        step="1" id="sc-game-pvInfoFontSize"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Tamaño fuente título panel (rem)</label><input
+                                        type="number" step="0.1" id="sc-game-pvPanelTitleFontSize"></div>
+                                <div class="form-group"><label>Tamaño fuente descripción panel (rem)</label><input
+                                        type="number" step="0.1" id="sc-game-pvPanelDescFontSize"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Tamaño fuente título mobile (rem)</label><input
+                                        type="number" step="0.1" id="sc-game-pvMobileTitleFontSize"></div>
+                                <div class="form-group"><label>Tamaño fuente descripción mobile (rem)</label><input
+                                        type="number" step="0.1" id="sc-game-pvMobileDescFontSize"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Tamaño fuente opciones mobile (rem)</label><input
+                                        type="number" step="0.1" id="sc-game-pvMobileOptionFontSize"></div>
+                                <div class="form-group"><label>Tamaño fuente preguntas mobile (rem)</label><input
+                                        type="number" step="0.1" id="sc-game-pvMobileQuestionFontSize"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Tamaño fuente respuestas mobile (rem)</label><input
+                                        type="number" step="0.1" id="sc-game-pvMobileAnswerFontSize"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ship -->
+                    <div class="card" style="margin-top:12px;">
+                        <h4>&#x1F680; Nave Espacial</h4>
+                        <div class="form-row">
+                            <div class="form-group"><label>Max Speed</label><input type="number" step="any"
+                                    id="sc-ship-maxSpeed"></div>
+                            <div class="form-group"><label>Acceleration</label><input type="number" step="any"
+                                    id="sc-ship-acceleration"></div>
+                            <div class="form-group"><label>Drag</label><input type="number" step="any"
+                                    id="sc-ship-drag"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group"><label>Turn Speed</label><input type="number" step="any"
+                                    id="sc-ship-turnSpeed"></div>
+                            <div class="form-group"><label>Boost Multiplier</label><input type="number" step="any"
+                                    id="sc-ship-boostMultiplier"></div>
+                            <div class="form-group"><label>Mouse Sensitivity</label><input type="number" step="any"
+                                    id="sc-ship-mouseSensitivity"></div>
+                        </div>
+                    </div>
+
+                    <!-- Scene & Stars -->
+                    <div class="cards-row" style="margin-top:12px;">
+                        <div class="card">
+                            <h4>&#x1F3AC; Escena</h4>
+                            <div class="form-row">
+                                <div class="form-group"><label>Fog Color (hex)</label><input type="text"
+                                        id="sc-scene-fogColor" placeholder="0x06060e"></div>
+                                <div class="form-group"><label>Fog Density</label><input type="number" step="any"
+                                        id="sc-scene-fogDensity"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Ambient Color (hex)</label><input type="text"
+                                        id="sc-scene-ambientColor" placeholder="0x111122"></div>
+                                <div class="form-group"><label>Ambient Intensity</label><input type="number" step="any"
+                                        id="sc-scene-ambientIntensity"></div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h4>&#x2B50; Estrellas</h4>
+                            <div class="form-row">
+                                <div class="form-group"><label>Cantidad</label><input type="number" step="any"
+                                        id="sc-stars-count"></div>
+                                <div class="form-group"><label>Dist. M&iacute;n</label><input type="number" step="any"
+                                        id="sc-stars-minDistance"></div>
+                                <div class="form-group"><label>Tamaño Base</label><input type="number" step="any"
+                                        id="sc-stars-baseSize"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Dist. M&aacute;x</label><input type="number" step="any"
+                                        id="sc-stars-maxDistance"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Connections -->
+                    <div class="card" style="margin-top:12px;">
+                        <h4> Conexiones</h4>
+                        <div class="form-row">
+                            <div class="form-group"><label>Trace Duration (seg)</label><input type="number" step="any"
+                                    id="sc-connections-traceDuration"></div>
+                            <div class="form-group"><label>Trace Sphere Radius</label><input type="number" step="any"
+                                    id="sc-connections-traceSphereRadius"></div>
+                            <div class="form-group"><label>Trace Sphere Glow Mult</label><input type="number" step="any"
+                                    id="sc-connections-traceSphereGlowMult"></div>
+                        </div>
+                    </div>
+
+                    <!-- Planet Texture -->
+                    <div class="card" style="margin-top:12px;">
+                        <h4> Textura de Planetas</h4>
+                        <p class="hint-text" style="margin-bottom:12px;">Controla el ruido procedural de la textura de
+                            cada planeta. Los cambios se aplican al recargar la página.</p>
+                        <div class="form-row">
+                            <div class="form-group"><label>Resolución (px)</label><input type="number" step="1"
+                                    id="sc-planetTexture-size"></div>
+                            <div class="form-group"><label>Escala de Ruido</label><input type="number" step="0.1"
+                                    id="sc-planetTexture-noiseScale"></div>
+                            <div class="form-group"><label>Octavas FBM</label><input type="number" step="1" min="1"
+                                    max="12" id="sc-planetTexture-octaves"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group"><label>Base Oscura (0–1)</label><input type="number" step="0.01"
+                                    id="sc-planetTexture-darkBase"></div>
+                            <div class="form-group"><label>Rango Brillo</label><input type="number" step="0.05"
+                                    id="sc-planetTexture-brightRange"></div>
+                            <div class="form-group"><label>Contraste</label><input type="number" step="0.05"
+                                    id="sc-planetTexture-contrast"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ═══════ PRESENTATION CONFIGURATION ═══════ -->
+                <section class="section" id="section-presentation-config">
+                    <div class="section-header">
+                        <h3>Configuración de Presentación</h3>
+                        <button class="btn btn-primary" id="btn-save-presentation-config">💾 Guardar Config
+                            Presentación</button>
+                    </div>
+
+                    <div class="card" style="margin-top:12px;">
+                        <h4> Fondo (Background Shader)</h4>
+                        <p class="hint-text" style="margin-bottom:15px;">Ajusta los parámetros del shader de fondo para
+                            el modo presentación.</p>
+
+                        <div class="form-row">
+                            <div class="form-group" style="flex: 1;">
+                                <label style="display:flex; align-items:center;">
+                                    <input type="checkbox" id="pres-autoRandomShader" style="margin-right:8px;">
+                                    Auto-variación por slide (aleatorio)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Color Primario</label>
+                                <input type="color" id="pres-shaderColor1">
+                            </div>
+                            <div class="form-group">
+                                <label>Color Secundario</label>
+                                <input type="color" id="pres-shaderColor2">
+                            </div>
+                            <div class="form-group">
+                                <label>Brillo (0 - 1)</label>
+                                <input type="number" step="0.05" min="0" max="1" id="pres-shaderBrightness">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Velocidad (uSpeed)</label>
+                                <input type="number" step="0.01" id="pres-shaderSpeed">
+                            </div>
+                            <div class="form-group">
+                                <label>Escala (uScale)</label>
+                                <input type="number" step="0.1" id="pres-shaderScale">
+                            </div>
+                            <div class="form-group">
+                                <label>Distorsión (uDistortion)</label>
+                                <input type="number" step="0.1" id="pres-shaderDistortion">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ═══════ IMPORT / EXPORT ═══════ -->
+                <section class="section" id="section-import-export">
+                    <div class="section-header">
+                        <h3>Importar / Exportar Datos</h3>
+                    </div>
+                    <div class="cards-row">
+                        <div class="card">
+                            <h4>✨ Crear proyecto desde JSON (pegado)</h4>
+                            <p>Pegá el JSON (por ejemplo generado con IA) y se crea un proyecto nuevo con esos datos.</p>
+                            <textarea id="import-json-text" class="code-textarea" rows="12" wrap="off" spellcheck="false"></textarea>
+                            <button class="btn btn-primary" id="btn-import-json-create" style="margin-top:12px; width:100%;">Crear proyecto</button>
+                            <div id="import-json-status" class="status-message"></div>
+                        </div>
+                        <div class="card">
+                            <h4>📥 Importar desde JSON existente</h4>
+                            <p>Carga el archivo <code>mapa_herramientas_data.json</code> que ya tiene todos los nodos.
+                            </p>
+                            <input type="file" id="import-file" accept=".json" class="file-input">
+                            <button class="btn btn-primary" id="btn-import" style="margin-top:12px;">Importar
+                                Archivo</button>
+                            <div id="import-status" class="status-message"></div>
+                        </div>
+                        <div class="card">
+                            <h4>📥 Importar desde mapa_data.js (legacy)</h4>
+                            <p>Importa automáticamente los datos del archivo JS existente que ya está en el servidor.
+                            </p>
+                            <button class="btn btn-accent" id="btn-import-legacy">Importar datos legacy</button>
+                            <div id="import-legacy-status" class="status-message"></div>
+                        </div>
+                        <div class="card">
+                            <h4>📤 Exportar Datos</h4>
+                            <p>Descarga toda la base de datos de nodos como archivo JSON.</p>
+                            <button class="btn btn-primary" id="btn-export">Descargar JSON</button>
+                        </div>
+                        <div class="card" id="card-sync-vps" style="border: 2px solid #5a57f2;">
+                            <h4>☁️ Sincronización Nube (VPS)</h4>
+                            <p style="margin-bottom: 12px; font-size: 12px;">Transfiere los datos entre tu entorno local y el servidor en vivo directamente.</p>
+                            <button class="btn btn-accent" id="btn-sync-to-vps" style="width:100%; margin-bottom:8px;">
+                                ⬆️ Subir Local al VPS (Sobreescribir)
+                            </button>
+                            <button class="btn btn-primary" id="btn-sync-from-vps" style="width:100%;">
+                                ⬇️ Bajar del VPS a Local
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ═══════ GENERATE WITH IA ═══════ -->
+                <section class="section" id="section-generate-ia">
+                    <div class="section-header">
+                        <h3>Generate with IA</h3>
+                    </div>
+                    <div class="cards-row">
+                        <div class="card">
+                            <div class="card-head">
+                                <h4>📋 SKILL + JSON base</h4>
+                                <button class="btn-icon" id="btn-copy-ia-all" title="Copiar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                        <path d="M8 5H7a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                                        <path d="M9 4h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.8"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <p>Copiá esto y pegalo en el modelo. Abajo incluye el JSON base de ejemplo.</p>
+                            <textarea id="ia-skill-and-json" class="code-textarea" rows="18" wrap="off" spellcheck="false"></textarea>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Modals -->
+    <!-- Add Project Modal -->
+    <div class="modal-overlay" id="modal-add-project">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Nuevo Proyecto</h3>
+                <button class="modal-close" data-close="modal-add-project">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>ID del Proyecto (slug, sin espacios)</label>
+                    <input type="text" id="project-id" placeholder="ej: mi-proyecto-nuevo">
+                    <small style="color:var(--text-muted); font-size:11px;">Este ID se usará en los enlaces dinámicos.</small>
+                </div>
+                <div class="form-group">
+                    <label>Nombre del Proyecto</label>
+                    <input type="text" id="project-name" placeholder="ej: Mi Nuevo Proyecto">
+                </div>
+                <div class="form-group">
+                    <label>Descripción</label>
+                    <textarea id="project-description" rows="3" placeholder="Descripción del proyecto..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-ghost" data-close="modal-add-project">Cancelar</button>
+                <button class="btn btn-primary" id="btn-save-project">Crear Proyecto</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Category Modal -->
+    <div class="modal-overlay" id="modal-add-category">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Nueva Categoría</h3>
+                <button class="modal-close" data-close="modal-add-category">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>ID (slug, sin espacios)</label>
+                    <input type="text" id="cat-id" placeholder="ej: mi-categoria">
+                </div>
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" id="cat-label" placeholder="ej: Mi Categoría">
+                </div>
+                <div class="form-group">
+                    <label>Descripción</label>
+                    <textarea id="cat-info" rows="3" placeholder="Descripción de la categoría..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-ghost" data-close="modal-add-category">Cancelar</button>
+                <button class="btn btn-primary" id="btn-save-category">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Node Modal -->
+    <div class="modal-overlay" id="modal-node">
+        <div class="modal modal-large">
+            <div class="modal-header">
+                <h3 id="modal-node-title">Nuevo Nodo</h3>
+                <button class="modal-close" data-close="modal-node">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>ID (slug)</label>
+                        <input type="text" id="node-id" placeholder="ej: mi-herramienta">
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" id="node-label" placeholder="ej: Mi Herramienta">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Tipo</label>
+                        <select id="node-type" class="select-input">
+                            <option value="tool">Herramienta (nodo normal)</option>
+                            <option value="category">Categoría</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Categoría Padre</label>
+                        <select id="node-parent" class="select-input">
+                            <option value="">Sin categoría padre</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>URL</label>
+                        <input type="text" id="node-url" placeholder="https://ejemplo.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Imagen Personalizada (opcional)</label>
+                        <input type="text" id="node-image" placeholder="ej: img/nodes/mi-imagen.png">
+                        <small style="color:var(--text-muted); font-size:11px;">Por defecto usa:
+                            img/nodes/{ID}.png</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Descripción (texto plano)</label>
+                    <textarea id="node-info" rows="8" placeholder="Descripción breve..."></textarea>
+                </div>
+                <div class="form-group">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                        <label style="margin-bottom: 0;">Info HTML (para mostrar en popups)</label>
+                        <button class="btn btn-sm btn-accent" id="btn-sync-html" type="button"
+                            title="Generar HTML desde la descripción">⚡ Sync HTML</button>
+                    </div>
+                    <textarea id="node-infohtml" rows="18" placeholder="<h3>Título</h3><p>Descripción...</p>"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Conexiones Secundarias</label>
+                    <div class="secondary-conn-picker" id="secondary-conn-picker">
+                        <div class="conn-tags" id="conn-tags"></div>
+                        <div class="conn-search-wrap">
+                            <input type="text" id="conn-search-input" class="search-input"
+                                placeholder="Buscar nodo por nombre o ID..." autocomplete="off">
+                            <div class="conn-search-results" id="conn-search-results"></div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="node-secondary">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-ghost" data-close="modal-node">Cancelar</button>
+                <button class="btn btn-primary" id="btn-save-node">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Connection Modal -->
+    <div class="modal-overlay" id="modal-connection">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Nueva Conexión</h3>
+                <button class="modal-close" data-close="modal-connection">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Nodo Origen</label>
+                    <input type="text" id="conn-source-search" class="search-input" placeholder="Filtrar nodos..."
+                        autocomplete="off" style="margin-bottom:6px;">
+                    <select id="conn-source" class="select-input" size="6"></select>
+                </div>
+                <div class="form-group">
+                    <label>Nodo Destino</label>
+                    <input type="text" id="conn-target-search" class="search-input" placeholder="Filtrar nodos..."
+                        autocomplete="off" style="margin-bottom:6px;">
+                    <select id="conn-target" class="select-input" size="6"></select>
+                </div>
+                <div class="form-group">
+                    <label>Tipo</label>
+                    <select id="conn-type" class="select-input">
+                        <option value="secondary">Secundaria</option>
+                        <option value="primary">Primaria</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-ghost" data-close="modal-connection">Cancelar</button>
+                <button class="btn btn-primary" id="btn-save-connection">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Login Overlay -->
+    <div id="admin-login-overlay">
+        <div class="login-card">
+            <span class="login-logo">🔒</span>
+            <h2>Acceso</h2>
+            <p>Entrá con tu cuenta o creá una nueva</p>
+            <div class="login-switch">
+                <button id="btn-mode-login" class="login-switch-btn active" type="button">Entrar</button>
+                <button id="btn-mode-register" class="login-switch-btn" type="button">Crear cuenta</button>
+            </div>
+            <div class="login-input-group">
+                <input type="text" id="admin-username" class="login-input username" placeholder="ADMIN" autocomplete="username" autocapitalize="characters">
+            </div>
+            <div class="login-input-group">
+                <input type="password" id="admin-password" class="login-input" placeholder="••••••••" autocomplete="current-password">
+            </div>
+            <div class="login-input-group" id="register-confirm-group" style="display:none;">
+                <input type="password" id="admin-password-confirm" class="login-input" placeholder="Confirmar contraseña" autocomplete="new-password">
+            </div>
+            <button id="btn-auth-submit" class="login-btn">Entrar</button>
+            <div class="login-meta">
+                <span id="login-hint"></span>
+                <button class="login-link" id="btn-clear-session" type="button">Limpiar</button>
+            </div>
+            <div id="login-error" class="login-error">Usuario o contraseña incorrectos. Inténtalo de nuevo.</div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>

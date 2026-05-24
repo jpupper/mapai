@@ -1,0 +1,20 @@
+﻿    }
+
+    _selectPlanet(node) {
+        this._clearAutoAdvanceTimer();
+        if (this.dom.pvScreen) this.dom.pvScreen.classList.remove('visible');
+        if (this.dom.pvPlanetInfo) this.dom.pvPlanetInfo.classList.remove('visible');
+
+        const planet = this.universe.getPlanetById(node.id);
+        if (!planet) return;
+
+        this.universe.setActivePlanet(planet);
+        const targetPos = planet.getWorldPosition();
+        const G = CONFIG.game || {};
+        const stopDist = G.pvStopDistance || 120;
+        const arrivalDelay = (G.pvArrivalDelay !== undefined ? G.pvArrivalDelay : 1000);
+        console.log("PV Game: Warping to next planet:", node.id);
+        this.universe.cam.startWarp(targetPos, stopDist, () => {
+            console.log("PV Game: Warp to next planet finished");
+            this.universe.cam.initFollowFrom(planet.getWorldPosition());
+            this._registerVisit(planet);

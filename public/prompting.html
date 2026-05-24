@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompting - Arte Generativo y Código con IA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/prompting.css">
+    <script src="js/menu.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>MODULO Código</h1>
+            <p>Guía de Prompting para Vibe Coding</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>🎯 Prompting: El Arte de Comunicarte con la IA</h2>
+            <p>El <strong>Vibe Coding</strong> es una nueva forma de programar donde la IA se convierte en tu copiloto de desarrollo. La clave del éxito está en saber comunicar tus ideas de manera efectiva. Aquí aprenderás las mejores prácticas para hacer prompts que generen código de calidad.</p>
+            
+            <div class="prompting-hero">
+                <img src="img/plsfix.png" alt="Prompting con IA">
+            </div>
+        </section>
+
+        <!-- Consejo 1 -->
+        <section class="card tip-card">
+            <span class="tip-number">1</span>
+            <div class="tip-content">
+                <h3 class="tip-title">Sé Específico y Contextual</h3>
+                <p>La IA necesita contexto para entender qué quieres lograr. No asumas que sabe todo sobre tu proyecto. Proporciona información clara sobre:</p>
+                <ul>
+                    <li>El lenguaje o framework que estás usando</li>
+                    <li>El objetivo específico que quieres lograr</li>
+                    <li>Las restricciones o requisitos técnicos</li>
+                    <li>El estado actual de tu código</li>
+                </ul>
+
+                <div class="example-box bad-example">
+                    <h4>❌ Prompt Vago:</h4>
+                    <div class="prompt-example">
+                        "Hazme una animación"
+                    </div>
+                    <p><strong>Problema:</strong> Demasiado genérico. La IA no sabe qué tipo de animación, en qué tecnología, ni para qué propósito.</p>
+                </div>
+
+                <div class="example-box good-example">
+                    <h4>✅ Prompt Específico:</h4>
+                    <div class="prompt-example">
+                        "Crea una animación en p5.js de partículas que se muevan siguiendo el mouse. Las partículas deben tener colores aleatorios en tonos de rosa y morado, y dejar un rastro que se desvanezca gradualmente. El canvas debe ser de 800x600 píxeles."
+                    </div>
+                    <p><strong>Por qué funciona:</strong> Especifica la tecnología (p5.js), el comportamiento deseado, los colores, y las dimensiones.</p>
+                </div>
+
+                <div class="key-points">
+                    <strong>📌 Puntos Clave:</strong>
+                    <ul>
+                        <li>Menciona siempre la tecnología o librería que usas</li>
+                        <li>Describe el comportamiento esperado paso a paso</li>
+                        <li>Incluye detalles visuales o técnicos importantes</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consejo 2 -->
+        <section class="card tip-card">
+            <span class="tip-number">2</span>
+            <div class="tip-content">
+                <h3 class="tip-title">Dos Enfoques: Incremental vs. Estructurado Completo</h3>
+                <p>Existen dos estrategias principales para trabajar con IA en programación. La clave es saber cuándo usar cada una.</p>
+
+                <h4 style="color: var(--secondary-color); margin-top: 2rem;">🔹 Enfoque A: Incremental (Divide y Conquista)</h4>
+                <p><strong>Cuándo usarlo:</strong> Proyectos exploratorios, cuando no tienes clara la arquitectura final, o cuando estás aprendiendo.</p>
+
+                <div class="example-box good-example">
+                    <h4>✅ Enfoque Incremental:</h4>
+                    <div class="prompt-example">
+                        <strong>Paso 1:</strong> "Crea una escena básica en Three.js con un sistema de partículas 3D"<br><br>
+                        <strong>Paso 2:</strong> "Agrega controles de cámara OrbitControls a la escena"<br><br>
+                        <strong>Paso 3:</strong> "Crea una interfaz con un slider para controlar la velocidad de las partículas"<br><br>
+                        <strong>Paso 4:</strong> "Agrega sliders adicionales para tamaño y color"<br><br>
+                        <strong>Paso 5:</strong> "Implementa guardado de configuración en localStorage"
+                    </div>
+                    <p><strong>Ventajas:</strong> Cada paso es verificable y debuggeable. Fácil de corregir errores.</p>
+                    <p><strong>Desventajas:</strong> La IA va modificando código existente, lo que puede generar código menos optimizado y con "parches" que no se integran bien.</p>
+                </div>
+
+                <h4 style="color: var(--secondary-color); margin-top: 2rem;">🔹 Enfoque B: Prompt Estructurado Completo</h4>
+                <p><strong>Cuándo usarlo:</strong> Cuando tienes clara la arquitectura completa, conoces bien los requisitos, y quieres código fresco y optimizado desde el inicio.</p>
+
+                <div class="example-box good-example">
+                    <h4>✅ Prompt Estructurado Completo:</h4>
+                    <div class="prompt-example">
+                        "Crea una aplicación web completa con Three.js siguiendo esta estructura:<br><br>
+                        
+                        <strong>ARQUITECTURA:</strong><br>
+                        - Sistema de partículas 3D con física básica<br>
+                        - Controles de cámara OrbitControls<br>
+                        - Panel de control con sliders (velocidad, tamaño, color)<br>
+                        - Sistema de guardado en localStorage<br>
+                        - Diseño responsive<br><br>
+                        
+                        <strong>REQUISITOS TÉCNICOS:</strong><br>
+                        - Usar clases ES6 para organizar el código<br>
+                        - Separar lógica de renderizado y UI<br>
+                        - Implementar patrón Observer para los controles<br>
+                        - Optimizar para 60fps<br><br>
+                        
+                        <strong>ESTRUCTURA DE ARCHIVOS:</strong><br>
+                        - index.html (estructura básica)<br>
+                        - main.js (inicialización)<br>
+                        - ParticleSystem.js (clase para partículas)<br>
+                        - UIController.js (clase para interfaz)<br>
+                        - style.css (estilos)"
+                    </div>
+                    <p><strong>Ventajas:</strong> Código fresco, bien estructurado y optimizado desde el inicio. La IA genera todo considerando la arquitectura completa.</p>
+                    <p><strong>Desventajas:</strong> Requiere que sepas exactamente qué quieres. Si algo falla, puede ser más difícil de debuggear.</p>
+                </div>
+
+                <div class="warning-box" style="margin-top: 2rem;">
+                    <strong>⚠️ Importante:</strong> El enfoque incremental puede generar código de menor calidad porque la IA va "parcheando" sobre código existente. Cuando modifica código previo, a menudo quedan optimizaciones sin hacer y la estructura se vuelve menos coherente. Si conoces bien lo que necesitas, el prompt estructurado completo suele dar mejores resultados.
+                </div>
+
+                <div class="key-points">
+                    <strong>📌 Puntos Clave:</strong>
+                    <ul>
+                        <li><strong>Enfoque Incremental:</strong> Mejor para exploración y aprendizaje</li>
+                        <li><strong>Enfoque Estructurado:</strong> Mejor para proyectos con arquitectura clara</li>
+                        <li>Puedes combinar ambos: empieza con un prompt estructurado y luego itera</li>
+                        <li>El código generado "fresh" suele ser de mayor calidad que el modificado iterativamente</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consejo 3 -->
+        <section class="card tip-card">
+            <span class="tip-number">3</span>
+            <div class="tip-content">
+                <h3 class="tip-title">Proporciona Ejemplos y Referencias</h3>
+                <p>La IA aprende mejor cuando le muestras ejemplos de lo que quieres. Si tienes código existente, fragmentos de referencia, o incluso descripciones visuales, inclúyelos en tu prompt.</p>
+
+                <div class="example-box bad-example">
+                    <h4>❌ Sin Referencia:</h4>
+                    <div class="prompt-example">
+                        "Haz que el código se vea mejor"
+                    </div>
+                    <p><strong>Problema:</strong> "Mejor" es subjetivo. La IA no sabe qué aspecto específico mejorar.</p>
+                </div>
+
+                <div class="example-box good-example">
+                    <h4>✅ Con Referencia:</h4>
+                    <div class="prompt-example">
+                        "Refactoriza este código para que use el patrón de diseño similar al ejemplo de la documentación oficial de p5.js. Aquí está mi código actual:<br><br>
+                        [tu código]<br><br>
+                        Quiero que las funciones estén mejor organizadas, con nombres descriptivos, y que uses constantes para los valores mágicos como colores y tamaños."
+                    </div>
+                    <p><strong>Por qué funciona:</strong> Proporciona el código actual, menciona un estándar de referencia, y especifica qué aspectos mejorar.</p>
+                </div>
+
+                <div class="key-points">
+                    <strong>📌 Puntos Clave:</strong>
+                    <ul>
+                        <li>Comparte código existente cuando pidas modificaciones</li>
+                        <li>Menciona ejemplos de la documentación oficial</li>
+                        <li>Describe visualmente lo que quieres ("como un efecto de agua", "estilo minimalista")</li>
+                        <li>Incluye enlaces a referencias visuales si es posible</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consejo 4 -->
+        <section class="card tip-card">
+            <span class="tip-number">4</span>
+            <div class="tip-content">
+                <h3 class="tip-title">Especifica el Formato de Salida</h3>
+                <p>Dile a la IA exactamente cómo quieres que estructure la respuesta. ¿Quieres solo código? ¿Con explicaciones? ¿En archivos separados? Ser claro sobre esto ahorra tiempo.</p>
+
+                <div class="example-box bad-example">
+                    <h4>❌ Sin Especificar Formato:</h4>
+                    <div class="prompt-example">
+                        "Crea un shader en GLSL para un efecto de ondas"
+                    </div>
+                    <p><strong>Problema:</strong> No especifica si quiere el shader completo, solo el fragment shader, con o sin explicaciones, etc.</p>
+                </div>
+
+                <div class="example-box good-example">
+                    <h4>✅ Formato Especificado:</h4>
+                    <div class="prompt-example">
+                        "Crea un shader en GLSL para un efecto de ondas. Necesito:<br>
+                        1. El código del vertex shader<br>
+                        2. El código del fragment shader<br>
+                        3. Comentarios explicando las partes clave<br>
+                        4. Los uniforms necesarios y sus tipos<br>
+                        5. Un ejemplo de cómo integrarlo en Three.js"
+                    </div>
+                    <p><strong>Por qué funciona:</strong> Lista exactamente qué componentes necesita y en qué orden.</p>
+                </div>
+
+                <div class="key-points">
+                    <strong>📌 Puntos Clave:</strong>
+                    <ul>
+                        <li>Especifica si quieres código completo o solo fragmentos</li>
+                        <li>Indica si necesitas comentarios o explicaciones</li>
+                        <li>Menciona si quieres archivos separados (HTML, CSS, JS)</li>
+                        <li>Pide ejemplos de uso si es código de librería</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consejo 5 -->
+        <section class="card tip-card">
+            <span class="tip-number">5</span>
+            <div class="tip-content">
+                <h3 class="tip-title">Itera y Refina: El Diálogo es Clave</h3>
+                <p>El vibe coding no es un proceso de un solo paso. Es una conversación. Si el resultado no es exactamente lo que querías, no empieces de cero: refina el prompt basándote en lo que ya tienes.</p>
+
+                <div class="example-box bad-example">
+                    <h4>❌ Empezar de Cero:</h4>
+                    <div class="prompt-example">
+                        [La IA genera código con un error]<br><br>
+                        Usuario: "Olvida todo, hazlo de nuevo pero diferente"
+                    </div>
+                    <p><strong>Problema:</strong> Pierdes el progreso y la IA no aprende qué estuvo mal.</p>
+                </div>
+
+                <div class="example-box good-example">
+                    <h4>✅ Refinamiento Iterativo:</h4>
+                    <div class="prompt-example">
+                        [La IA genera código con un error]<br><br>
+                        Usuario: "El código funciona bien, pero las partículas se mueven demasiado rápido. Reduce la velocidad a la mitad y agrega una opción para controlarla con un slider"<br><br>
+                        [Después de implementar]<br><br>
+                        Usuario: "Perfecto. Ahora agrega un efecto de fade-out cuando las partículas llegan al borde del canvas"
+                    </div>
+                    <p><strong>Por qué funciona:</strong> Construye sobre lo que funciona, hace ajustes específicos, y mantiene el contexto.</p>
+                </div>
+
+                <div class="key-points">
+                    <strong>📌 Puntos Clave:</strong>
+                    <ul>
+                        <li>Identifica qué funciona y qué no en el código generado</li>
+                        <li>Haz ajustes específicos en lugar de pedir todo de nuevo</li>
+                        <li>Usa frases como "modifica esto", "ajusta aquello", "agrega esto"</li>
+                        <li>Mantén el contexto de la conversación</li>
+                        <li>Celebra los pequeños logros y construye sobre ellos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Recuperación -->
+        <section class="card" style="background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 193, 7, 0.1)); border: 2px solid #ff6b6b;">
+            <h2>🚨 Plan de Emergencia: Cuando la IA Destruye Tu Código</h2>
+            
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">A veces, la IA puede generar código que rompe completamente tu proyecto. <strong>¡No entres en pánico!</strong> Si usas Git correctamente, siempre puedes volver atrás.</p>
+
+            <div style="background-color: rgba(0, 0, 0, 0.6); padding: 2rem; border-radius: 12px; border-left: 4px solid #ff6b6b;">
+                <h3 style="color: #ff6b6b; margin-top: 0;">💣 Situación: La IA Falló y Destruyó Todo</h3>
+                <p>Si la IA generó código que:</p>
+                <ul>
+                    <li>Rompió completamente tu aplicación</li>
+                    <li>Eliminó funcionalidades importantes</li>
+                    <li>Generó errores que no puedes resolver</li>
+                    <li>Hizo cambios que no entiendes</li>
+                </ul>
+
+                <h3 style="color: #00ff88; margin-top: 2rem;">✅ Solución: Resetea el Repositorio</h3>
+                <p style="margin-bottom: 1rem;">Usa este comando para volver al último estado funcional que subiste a GitHub:</p>
+                
+                <div class="prompt-example" style="font-size: 1.2rem; padding: 1.5rem; margin: 1rem 0;">
+                    git reset --hard origin/main
+                </div>
+
+                <div style="background-color: rgba(255, 193, 7, 0.2); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ffc107; margin: 1.5rem 0;">
+                    <strong style="color: #ffc107;">⚠️ IMPORTANTE:</strong>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>Este comando <strong>elimina TODOS los cambios locales</strong> que no hayas commiteado</li>
+                        <li>Tu código volverá exactamente al estado del último <code>git push</code></li>
+                        <li>No hay forma de recuperar los cambios después de ejecutarlo</li>
+                        <li>Úsalo solo cuando estés seguro de que quieres descartar todo</li>
+                    </ul>
+                </div>
+
+                <h3 style="color: var(--primary-color); margin-top: 2rem;">📋 Flujo de Trabajo Recomendado</h3>
+                <div class="prompt-example">
+                    <code># 1. Antes de pedirle a la IA cambios grandes, haz commit</code><br>
+                    <code>git add .</code><br>
+                    <code>git commit -m "Versión funcional antes de cambios"</code><br>
+                    <code>git push origin main</code><br><br>
+                    
+                    <code># 2. Ahora pídele a la IA los cambios</code><br>
+                    <code># [La IA hace cambios...]</code><br><br>
+                    
+                    <code># 3a. Si funciona bien, haz commit de nuevo</code><br>
+                    <code>git add .</code><br>
+                    <code>git commit -m "Nuevas funcionalidades agregadas"</code><br>
+                    <code>git push origin main</code><br><br>
+                    
+                    <code># 3b. Si la IA rompió todo, resetea</code><br>
+                    <code>git reset --hard origin/main</code><br>
+                    <code># Ahora intenta con instrucciones diferentes</code>
+                </div>
+
+                <div style="background-color: rgba(33, 150, 243, 0.2); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #2196f3; margin: 1.5rem 0;">
+                    <strong style="color: #2196f3;">💡 Consejo Pro:</strong>
+                    <p style="margin-top: 0.5rem;">Haz commits frecuentes con mensajes descriptivos. Así siempre tendrás puntos de retorno seguros. Piensa en cada commit como un "punto de guardado" en un videojuego.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">🔄 Alternativa: Ver Cambios Antes de Resetear</h3>
+            <p>Si quieres revisar qué cambió antes de resetear todo:</p>
+            
+            <div class="prompt-example">
+                <code># Ver qué archivos cambiaron</code><br>
+                <code>git status</code><br><br>
+                
+                <code># Ver los cambios específicos</code><br>
+                <code>git diff</code><br><br>
+                
+                <code># Si decides resetear</code><br>
+                <code>git reset --hard origin/main</code>
+            </div>
+        </section>
+
+        <!-- Resumen Final -->
+        <section class="card">
+            <h2>🎓 Resumen: Las 5 Reglas de Oro del Vibe Coding</h2>
+            
+            <div style="background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(255, 105, 180, 0.2)); padding: 2rem; border-radius: 12px; margin: 2rem 0;">
+                <ol style="list-style: decimal; padding-left: 2rem;">
+                    <li style="margin: 1.5rem 0; font-size: 1.1rem;">
+                        <strong style="color: var(--primary-color);">Sé Específico y Contextual</strong><br>
+                        <span style="font-size: 0.95rem;">Proporciona toda la información necesaria: tecnología, objetivo, restricciones.</span>
+                    </li>
+                    <li style="margin: 1.5rem 0; font-size: 1.1rem;">
+                        <strong style="color: var(--primary-color);">Elige el Enfoque Correcto</strong><br>
+                        <span style="font-size: 0.95rem;">Incremental para explorar, Estructurado Completo para arquitectura clara.</span>
+                    </li>
+                    <li style="margin: 1.5rem 0; font-size: 1.1rem;">
+                        <strong style="color: var(--primary-color);">Proporciona Ejemplos</strong><br>
+                        <span style="font-size: 0.95rem;">Comparte código existente, referencias, y descripciones visuales.</span>
+                    </li>
+                    <li style="margin: 1.5rem 0; font-size: 1.1rem;">
+                        <strong style="color: var(--primary-color);">Especifica el Formato</strong><br>
+                        <span style="font-size: 0.95rem;">Define cómo quieres recibir el código: completo, comentado, separado.</span>
+                    </li>
+                    <li style="margin: 1.5rem 0; font-size: 1.1rem;">
+                        <strong style="color: var(--primary-color);">Itera y Refina</strong><br>
+                        <span style="font-size: 0.95rem;">Mantén la conversación, ajusta sobre lo que funciona, no empieces de cero.</span>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="info-box" style="background-color: rgba(33, 150, 243, 0.1); border-left: 4px solid #2196f3; padding: 1.5rem; margin: 2rem 0; border-radius: 8px;">
+                <strong>💡 Consejo Final:</strong> El vibe coding es una habilidad que se desarrolla con la práctica. No te frustres si los primeros prompts no dan resultados perfectos. Experimenta, aprende de los errores, y descubre tu propio estilo de comunicación con la IA. ¡La magia está en el proceso!
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>📚 Recursos Adicionales</h2>
+            <ul>
+                <li><a href="https://platform.openai.com/docs/guides/prompt-engineering" target="_blank">OpenAI - Guía de Prompt Engineering</a></li>
+                <li><a href="https://www.promptingguide.ai/" target="_blank">Prompting Guide - Guía completa</a></li>
+                <li><a href="https://learnprompting.org/" target="_blank">Learn Prompting - Curso interactivo</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

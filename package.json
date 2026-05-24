@@ -1,0 +1,32 @@
+{
+  "name": "diploia",
+  "version": "1.0.0",
+  "description": "Pagina de diplomatura de IA",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "migrate": "node scripts/migrate_to_mongo.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpupper/diploia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jpupper/diploia/issues"
+  },
+  "homepage": "https://github.com/jpupper/diploia#readme",
+  "dependencies": {
+    "basic-ftp": "^5.2.0",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.6",
+    "dotenv": "^16.4.5",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.2.0"
+  }
+}

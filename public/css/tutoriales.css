@@ -1,0 +1,63 @@
+.tutorial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.tutorial-card {
+    background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(255, 105, 180, 0.1));
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.tutorial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgba(255, 105, 180, 0.4);
+    border-color: var(--secondary-color);
+}
+
+.tutorial-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.tutorial-title {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.tutorial-description {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.coming-soon {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.coming-soon:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #000;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}

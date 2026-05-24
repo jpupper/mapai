@@ -1,0 +1,124 @@
+Programa Módulo 5: Arte generativo y código con IA
+
+Docente a cargo: Julian Puppo
+Carga horaria: 12 hs de clases sincrónicas - 10 hs de contenido asincrónico. 
+Frecuencia: 4 clases de 3hs - 1 vez por semana.
+
+Contenidos mínimos : 
+	
+Programación asistida por la IA, Vibe Coding, análisis de ventajas y desventajas.
+Relación entre modelos de lenguaje e ingeniería del software: posibilidades y límites del código generado por IA.
+Evaluación crítica del potencial de reemplazo y asistencia en tareas de programación.
+Enfoque artístico: uso del código como medio expresivo poético y generativo.
+Herramientas y entornos con IA integrada: v0.dev, Trae, Cursor, windsurf, Manus
+Ingeniería de prompts para programación: definición precisa del objetivo, estructuración de tareas, minimización de errores y alucinaciones.
+Del prompt al código y del código a la obra: creación de piezas interactivas y generativas con p5.js, Processing, shaders.
+Algoritmos para trackeo con IA , trackeo de manos, cuerpo, cara, clasificación de imágenes y estimación de poses.
+Introducción a la realización de proyectos de softwares que utilicen IA como módulo central
+Modelos de lenguaje aplicados a programación: DeepSeek, Qwen2.0, Chat GPT, Claude, Gemini, Code LLAMA, entre otros.
+
+Contenidos opcionales : 
+Frameworks avanzados como n8n para la creación de multiagentes
+Api de comfyUI para generar una interfaz personalizada para nuestro workflow.  
+Demo en vivo de utilización de inteligencia artificial para Unity, Unreal o Godot.
+Programación de protocolos de intercambio de datos como bases de datos en MongoDB,firebase,osc,php y websockets
+
+Entrega final: Desarrollo de un software interactivo (página web o ejecutable) que proponga un input del usuario, y una representación visual y generativa que se creará a partir de 3 entregas. La entrega del trabajo práctico final consta de la realización de 3 entregas previas , la primera entrega explora específicamente la creación generativa de imágenes mediante código, la segunda entrega explora la creación de interfaces (sliders,input de mouse, y demás inputs). La tercera entrega consta de la inclusión de librerías avanzadas vistas en la clase nro 3. 
+
+
+
+Clase 1: Fundamentos de programación con IA y enfoque artístico
+Duración: 3 horas
+Objetivo: Introducir el uso de IA en programación creativa y evaluar críticamente sus límites.
+Introducción teórica (2h)
+Presentación del módulo y enfoque artístico-generativo.
+Ventajas/desventajas de la programación asistida por IA (ejemplos de código generado vs. código humano).
+Introducción a la programación, conceptos básicos :
+Mapa de lenguajes y Engines Gráficos : ¿Qué es que? Javascript,p5js,three.js, Claude (demostración en vivo de prompts simples).
+Taller práctico (0.5h)
+Vibe Coding: Ejercicio guiado para generar sketches básicos en p5.js con IA (Trae windsurf o Cursor).
+Análisis grupal de errores comunes (alucinaciones, código redundante).
+Reflexión y cierre (0.5h)
+Discusión: De la IA al código, y del código a la imagen.
+Tarea asincrónica: probar generar un sketch básico de p5js(o de la tecnología que quieran) con ia.
+
+Clase 2: Ingeniería de prompts e introducción a librerías gráficas y sonoras.
+Duración: 3 horas
+Objetivo: Aprender los distintos enfoques y estrategias para el prompting más efectivo en función y mostrar la aplicación con distintas librerías graficas como three.js,babylon.js, shaders, tone.js
+Teoría + Demo (1.5h)
+Ingeniería de prompts: estructuración de tareas, ejemplos para minimizar errores
+(uso de few-shot prompting).
+Pasar página de API  de librería
+Especificar paso por paso la secuencia de acciones logicas.
+Utilización de IDES especializados para la escritura de código en varios archivos en simultáneo : windsurf, cursor, trae. 
+Shaders generativos: conceptos básicos, tutoriales y referencias artísticas
+Utilización de frameworks graficos especificos como three.js, tone.js, babylon.js 
+Introducción a github para subir proyectos, 
+Revisión de la primer entrega (1.5h)
+Crear un sketch que responda a un input específico del usuario (camara, sliders, mouse , etc) 
+Uso de Trae o Windsurf para la generación de un proyecto con varios archivos. código generado por IA.
+Subir el proyecto a github. 
+
+Clase 3:  Frameworks, bases de datos, apis, trackeo y librerías avanzadas : API de Comfy, N8N
+Duración: 3 horas
+Objetivo: Implementación de librerías avanzadas que hacen uso de la IA, de apis y de conexión con bases de datos
+Teoría + Demo (2h)
+N8N : Introducción a sistemas multiagentes. 
+Introducción mínima a bases de datos, que opciones hay y cómo implementarlas mediante prompting.
+Introducción a API de comfy
+Algoritmos de trackeo: ML5.js (manos, cuerpo).
+Algoritmos de clasificación de imágenes.
+Revisión de trabajo práctico nro 2(1h) y repaso de clases anteriores.
+
+Clase 4: Motores Gráficos y Revisión Final
+Duración: 3 horas
+Objetivo: Explorar motores gráficos y realizar revisión final de proyectos.
+Demostración del uso de la IA en motores gráficos avanzados (1hs)
+(Unity,Unreal godot)
+Revisión final y repaso de clases anteriores(2h)
+Revisión final del proyecto en la entrega final.
+Feedback grupal y pruebas de usabilidad.
+Cierre: Reflexión sobre IA como "co-autora" en arte digital.
+
+Notas:
+Las 10 hs asincrónicas se destinan a la realización del trabajo práctico que estará dado en diferentes entregas. 
+
+
+Bibliografía : 
+Begginers guide to machine learning https://www.youtube.com/watch?v=26uABexmOX4&list=PLRqwX-V7Uu6YPSwT06y_AEYTqIwbeam3y
+
+Shaders : 
+Shadertoy : https://www.shadertoy.com/
+Iñigo Quilez Articles : https://iquilezles.org/articles/
+The nature of code : https://www.youtube.com/watch?v=70MQ-FugwbI&list=PLRqwX-V7Uu6ZV4yEcW3uDwOgGXKUUsPOM
+The book of shaders : https://thebookofshaders.com/?lan=es
+Tutoriales de programación de shaders : https://jeyder.com.ar/ejemplosshaders/
+
+Canales de youtube : 
+n8n : https://www.youtube.com/@nateherk/featured
+p5js y programación en javascript : https://www.youtube.com/@TheCodingTrain
+VFX de unreal : https://www.youtube.com/@CGHOW
+
+
+Editores de codigo con IA : 
+Cursor : https://cursor.com/
+Trae : https://www.trae.ai
+Windsurf : https://windsurf-com.translate.goog/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc&_x_tr_hist=true
+V0.dev : https://v0.dev
+
+Frameworks graficos : 
+Three.js : https://threejs.org/
+Babylon.js : https://www.babylonjs.com/
+Shaders : https://www.shadertoy.com/    
+
+Frameworks de sonido : 
+Tone.js : https://tonejs.org/   
+
+Motores Graficos avanzados : 
+Unity : https://unity.com/
+Unreal : https://www.unrealengine.com/
+Godot : https://godotengine.org/
+
+Bases de datos : 
+Firebase : https://firebase.google.com/
+MongoDB : https://www.mongodb.com/

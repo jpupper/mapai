@@ -1,0 +1,3733 @@
+{
+  "exportDate": "2026-02-11T20:51:43.327Z",
+  "totalNodes": 125,
+  "categories": [
+    "engines",
+    "frameworks",
+    "ia",
+    "shaders",
+    "db",
+    "ides",
+    "languages",
+    "llm",
+    "frontend",
+    "os",
+    "soportes",
+    "protocolos",
+    "software-multimedia",
+    "entornos",
+    "glosario",
+    "protocolo-revision"
+  ],
+  "categoryChildren": {
+    "engines": [
+      "unity",
+      "unreal",
+      "godot",
+      "touchdesigner",
+      "processing",
+      "openframeworks"
+    ],
+    "frameworks": [
+      "p5",
+      "three",
+      "babylon",
+      "tone",
+      "ml5",
+      "hydra",
+      "xampp"
+    ],
+    "ia": [
+      "comfy",
+      "n8n",
+      "pinokio",
+      "clawbot",
+      "moltbook"
+    ],
+    "shaders": [
+      "shadertoy",
+      "glsl",
+      "hlsl",
+      "bookofshaders",
+      "ejemplos-shaders",
+      "editor-shaders-live"
+    ],
+    "db": [
+      "firebase",
+      "mongodb",
+      "sql"
+    ],
+    "ides": [
+      "cursor",
+      "trae",
+      "v0",
+      "windsurf",
+      "visual-studio",
+      "antigravity"
+    ],
+    "languages": [
+      "cpp",
+      "csharp",
+      "php",
+      "javascript",
+      "python",
+      "typescript",
+      "java",
+      "html",
+      "css",
+      "json",
+      "r",
+      "arduino",
+      "assembler"
+    ],
+    "llm": [
+      "chatgpt",
+      "deepseek",
+      "gemini",
+      "kimi",
+      "claude"
+    ],
+    "frontend": [
+      "react",
+      "vue",
+      "svelte",
+      "angular",
+      "nextjs"
+    ],
+    "os": [
+      "windows",
+      "linux",
+      "mac",
+      "android",
+      "ios"
+    ],
+    "soportes": [
+      "pantalla-touch",
+      "instalaciones-fisicas",
+      "raspberry-pi",
+      "pantalla-led",
+      "proyector",
+      "sitio-web",
+      "compilado-apk",
+      "virtual-production",
+      "vr",
+      "ar",
+      "sonido",
+      "videojuegos",
+      "mapping",
+      "nft"
+    ],
+    "protocolos": [
+      "websockets",
+      "spout",
+      "syphon",
+      "ndi",
+      "webrtc",
+      "osc",
+      "api",
+      "midi"
+    ],
+    "software-multimedia": [
+      "resolume",
+      "blender",
+      "paquete-adobe",
+      "obs",
+      "cinema4d",
+      "ableton",
+      "puredata",
+      "guipper",
+      "gitbash"
+    ],
+    "entornos": [
+      "docker",
+      "venv",
+      "conda",
+      "nodejs",
+      "vps"
+    ],
+    "glosario": [
+      "livecoding",
+      "vibecoding",
+      "programacion",
+      "prompting",
+      "consola",
+      "script",
+      "compilado-interpretado",
+      "drivers",
+      "mcp",
+      "repositorio",
+      "github",
+      "git"
+    ],
+    "protocolo-revision": [
+      "ent-github",
+      "ent-pres",
+      "ent-deploy",
+      "ent-1",
+      "ent-2",
+      "ent-3",
+      "crit-tec",
+      "crit-cre",
+      "crit-doc"
+    ]
+  },
+  "config": {
+    "rootNodeSize": 200,
+    "primaryNodeSize": 100,
+    "secondaryNodeSize": 90,
+    "nodeFontSize": 14,
+    "categoryFontSize": 18,
+    "rootFontSize": 20,
+    "popupTitleFontSize": 35,
+    "popupSubtitleFontSize": 30,
+    "popupTextFontSize": 28,
+    "secondaryNodeDist": 120,
+    "primaryDistance": 250,
+    "categoryDistancesMain": {
+      "engines": 1300,
+      "frameworks": 1500,
+      "ia": 700,
+      "shaders": 1200,
+      "db": 800,
+      "ides": 2000,
+      "languages": 1600,
+      "llm": 1200,
+      "frontend": 700,
+      "os": 1100,
+      "soportes": 1800,
+      "protocolos": 1400,
+      "software-multimedia": 1000,
+      "entornos": 1500,
+      "glosario": 1700,
+      "protocolo-revision": 1400
+    },
+    "categoryDistances": {
+      "engines": 250,
+      "frameworks": 250,
+      "ia": 180,
+      "shaders": 220,
+      "db": 220,
+      "ides": 220,
+      "languages": 350,
+      "llm": 220,
+      "frontend": 220,
+      "os": 220,
+      "soportes": 280,
+      "protocolos": 220,
+      "software-multimedia": 220,
+      "entornos": 220,
+      "glosario": 380,
+      "protocolo-revision": 220
+    },
+    "animCategoryDelay": 3000,
+    "animNodeDelay": 2500,
+    "animTransitionSpeed": 800,
+    "animNodeExpansionSpeed": 400
+  },
+  "nodes": {
+    "root": {
+      "id": "root",
+      "label": "Arte Generativo y Código con IA",
+      "type": "category",
+      "url": null,
+      "info": "Arte Generativo y Código con IA Mapa interactivo de herramientas, tecnologías y conceptos para la creación de arte generativo y desarrollo con inteligencia artificial. Categorías: Motores Gráficos, Frameworks, IA, Shaders, Bases de Datos, IDEs, Lenguajes, LLMs, Frontend, Sistemas Operativos, Soportes, Protocolos, Software Multimedia, Entornos y Glosario.",
+      "connections": {
+        "parent": [],
+        "children": [
+          {
+            "id": "engines",
+            "type": "primary"
+          },
+          {
+            "id": "frameworks",
+            "type": "primary"
+          },
+          {
+            "id": "ia",
+            "type": "primary"
+          },
+          {
+            "id": "shaders",
+            "type": "primary"
+          },
+          {
+            "id": "db",
+            "type": "primary"
+          },
+          {
+            "id": "ides",
+            "type": "primary"
+          },
+          {
+            "id": "languages",
+            "type": "primary"
+          },
+          {
+            "id": "llm",
+            "type": "primary"
+          },
+          {
+            "id": "frontend",
+            "type": "primary"
+          },
+          {
+            "id": "os",
+            "type": "primary"
+          },
+          {
+            "id": "soportes",
+            "type": "primary"
+          },
+          {
+            "id": "protocolos",
+            "type": "primary"
+          },
+          {
+            "id": "software-multimedia",
+            "type": "primary"
+          },
+          {
+            "id": "entornos",
+            "type": "primary"
+          },
+          {
+            "id": "glosario",
+            "type": "primary"
+          }
+        ],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Arte Generativo y Código con IA</h3>\n             <p>Mapa interactivo de herramientas, tecnologías y conceptos para la creación de arte generativo y desarrollo con inteligencia artificial.</p>\n             <p><strong>Categorías:</strong> Motores Gráficos, Frameworks, IA, Shaders, Bases de Datos, IDEs, Lenguajes, LLMs, Frontend, Sistemas Operativos, Soportes, Protocolos, Software Multimedia, Entornos y Glosario.</p>"
+    },
+    "engines": {
+      "id": "engines",
+      "label": "Motores Gráficos",
+      "type": "category",
+      "url": null,
+      "info": "Motores Gráficos Motores gráficos y entornos de desarrollo para crear aplicaciones interactivas, videojuegos y experiencias visuales. Se usa para: Desarrollo de videojuegos, aplicaciones interactivas, simulaciones y experiencias visuales. Disponibilidad: Variada, desde soluciones open source hasta plataformas comerciales de pago.",
+      "connections": {
+        "parent": [
+          {
+            "id": "root",
+            "type": "primary"
+          }
+        ],
+        "children": [
+          {
+            "id": "unity",
+            "type": "primary"
+          },
+          {
+            "id": "unreal",
+            "type": "primary"
+          },
+          {
+            "id": "godot",
+            "type": "primary"
+          },
+          {
+            "id": "touchdesigner",
+            "type": "primary"
+          },
+          {
+            "id": "processing",
+            "type": "primary"
+          },
+          {
+            "id": "openframeworks",
+            "type": "primary"
+          }
+        ],
+        "secondary": [
+          "three",
+          "babylon",
+          "blender"
+        ]
+      },
+      "infoHTML": "<h3>Motores Gráficos</h3>\n                <p>Motores gráficos y entornos de desarrollo para crear aplicaciones interactivas, videojuegos y experiencias visuales.</p>\n                <p><strong>Se usa para:</strong> Desarrollo de videojuegos, aplicaciones interactivas, simulaciones y experiencias visuales.</p>\n                <p><strong>Disponibilidad:</strong> Variada, desde soluciones open source hasta plataformas comerciales de pago.</p>"
+    },
+    "frameworks": {
+      "id": "frameworks",
+      "label": "Frameworks Web",
+      "type": "category",
+      "url": null,
+      "info": "Frameworks Web Bibliotecas y frameworks que facilitan el desarrollo web y multimedia. Se usa para: Crear aplicaciones web, interfaces interactivas y contenido multimedia en la web. Disponibilidad: Mayormente open source bajo licencias permisivas como MIT.",
+      "connections": {
+        "parent": [
+          {
+            "id": "root",
+            "type": "primary"
+          }
+        ],
+        "children": [
+          {
+            "id": "p5",
+            "type": "primary"
+          },
+          {
+            "id": "three",
+            "type": "primary"
+          },
+          {
+            "id": "babylon",
+            "type": "primary"
+          },
+          {
+            "id": "tone",
+            "type": "primary"
+          },
+          {
+            "id": "websockets",
+            "type": "primary"
+          },
+          {
+            "id": "ml5",
+            "type": "primary"
+          },
+          {
+            "id": "hydra",
+            "type": "primary"
+          },
+          {
+            "id": "xampp",
+            "type": "primary"
+          }
+        ],
+        "secondary": [
+          "websockets",
+          "nodejs",
+          "react",
+          "vue",
+          "angular"
+        ]
+      },
+      "infoHTML": "<h3>Frameworks Web</h3>\n                   <p>Bibliotecas y frameworks que facilitan el desarrollo web y multimedia.</p>\n                   <p><strong>Se usa para:</strong> Crear aplicaciones web, interfaces interactivas y contenido multimedia en la web.</p>\n                   <p><strong>Disponibilidad:</strong> Mayormente open source bajo licencias permisivas como MIT.</p>"
+    },
+    "ia": {
+      "id": "ia",
+      "label": "Herramientas IA",
+      "type": "category",
+      "url": null,
+      "info": "Herramientas de IA Herramientas de Inteligencia Artificial para la generación de contenido, automatización de tareas y asistencia en el proceso creativo. Se usa para: Generación de imágenes, texto, audio y automatización de tareas creativas. Disponibilidad: Mezcla de soluciones open source y servicios comerciales.",
+      "connections": {
+        "parent": [
+          {
+            "id": "root",
+            "type": "primary"
+          }
+        ],
+        "children": [
+          {
+            "id": "comfy",
+            "type": "primary"
+          },
+          {
+            "id": "n8n",
+            "type": "primary"
+          },
+          {
+            "id": "pinokio",
+            "type": "primary"
+          },
+          {
+            "id": "clawbot",
+            "type": "primary"
+          },
+          {
+            "id": "moltbook",
+            "type": "primary"
+          }
+        ],
+        "secondary": [
+          "python",
+          "prompting"
+        ]
+      },
+      "infoHTML": "<h3>Herramientas de IA</h3>\n           <p>Herramientas de Inteligencia Artificial para la generación de contenido, automatización de tareas y asistencia en el proceso creativo.</p>\n           <p><strong>Se usa para:</strong> Generación de imágenes, texto, audio y automatización de tareas creativas.</p>\n           <p><strong>Disponibilidad:</strong> Mezcla de soluciones open source y servicios comerciales.</p>"
+    },
+    "shaders": {
+      "id": "shaders",
+      "label": "Shaders",
+      "type": "category",
+      "url": null,
+      "info": "Shaders Programas que se ejecutan en la GPU para crear efectos visuales y gráficos avanzados. Se usa para: Efectos visuales, gráficos en tiempo real, procesamiento de imágenes y visuales generativos. Disponibilidad: Tecnología abierta con implementaciones específicas según plataforma.",
+      "connections": {
+        "parent": [
+          {
+            "id": "root",
+            "type": "primary"
+          }
+        ],
+        "children": [
+          {
+            "id": "shadertoy",
+            "type": "primary"
+          },
+          {
+            "id": "glsl",
+            "type": "primary"
+          },
+          {
+            "id": "hlsl",
+            "type": "primary"
+          },
+          {
+            "id": "bookofshaders",
+            "type": "primary"
+          },
+          {
+            "id": "ejemplos-shaders",
+            "type": "primary"
+          },
+          {
+            "id": "editor-shaders-live",
+            "type": "primary"
+          }
+        ],
+        "secondary": [
+          "guipper"
+        ]
+      },
+      "infoHTML": "<h3>Shaders</h3>\n                <p>Programas que se ejecutan en la GPU para crear efectos visuales y gráficos avanzados.</p>\n                <p><strong>Se usa para:</strong> Efectos visuales, gráficos en tiempo real, procesamiento de imágenes y visuales generativos.</p>\n                <p><strong>Disponibilidad:</strong> Tecnología abierta con implementaciones específicas según plataforma.</p>"
+    },
+    "db": {
+      "id": "db",
+      "label": "Bases de Datos",
+      "type": "category",
+      "url": null,
+      "info": "Bases de Datos Sistemas para almacenar, organizar y recuperar información. Se usa para: Almacenamiento persistente, gestión de datos de aplicaciones y servicios web. Disponibilidad: Opciones open source y servicios comerciales en la nube.",
+      "connections": {
+        "parent": [
+          {
+            "id": "root",
+            "type": "primary"
+          }
+        ],
+        "children": [
+          {
+            "id": "firebase",
+            "type": "primary"
+          },
+          {
+            "id": "mongodb",
+            "type": "primary"
+          },
+          {
+            "id": "sql",
+            "type": "primary"
+          }
+        ],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Bases de Datos</h3>\n           <p>Sistemas para almacenar, organizar y recuperar información.</p>\n           <p><strong>Se usa para:</strong> Almacenamiento persistente, gestión de datos de aplicaciones y servicios web.</p>\n           <p><strong>Disponibilidad:</strong> Opciones open source y servicios comerciales en la nube.</p>"
+    },
+    "ides": {
+      "id": "ides",
+      "label": "IDEs",
+      "type": "category",
+      "url": null,
+      "info": "Entornos de Desarrollo (IDEs) Entornos que facilitan la escritura, prueba y depuración de código. Se usa para: Desarrollo de software, programación y gestión de proyectos de código. Disponibilidad: Desde opciones gratuitas y open source hasta soluciones comerciales premium.",
+      "connections": {
+        "parent": [
+          {
+            "id": "root",
+            "type": "primary"
+          }
+        ],
+        "children": [
+          {
+            "id": "cursor",
+            "type": "primary"
+          },
+          {
+            "id": "trae",
+            "type": "primary"
+          },
+          {
+            "id": "v0",
+            "type": "primary"
+          },
+          {
+            "id": "windsurf",
+            "type": "primary"
+          },
+          {
+            "id": "visual-studio",
+            "type": "primary"
+          },
+          {
+            "id": "antigravity",
+            "type": "primary"
+          }
+        ],
+        "secondary": [
+          "vibecoding"
+        ]
+      },
+      "infoHTML": "<h3>Entornos de Desarrollo (IDEs)</h3>\n             <p>Entornos que facilitan la escritura, prueba y depuración de código.</p>\n             <p><strong>Se usa para:</strong> Desarrollo de software, programación y gestión de proyectos de código.</p>\n             <p><strong>Disponibilidad:</strong> Desde opciones gratuitas y open source hasta soluciones comerciales premium.</p>"
+    },
+    "languages": {
+      "id": "languages",
+      "label": "Lenguajes de Programación",
+      "type": "category",
+      "url": null,
+      "info": "Lenguajes de Programación Lenguajes utilizados para desarrollar aplicaciones, sitios web y experiencias interactivas. Se usa para: Implementar lógica, algoritmos y funcionalidades en software. Disponibilidad: Generalmente de uso libre, con implementaciones open source y comerciales.",
+      "connections": {
+        "parent": [
+          {
+            "id": "root",
+            "type": "primary"
+          }
+        ],
+        "children": [
+          {
+            "id": "cpp",
+            "type": "primary"
+          },
+          {
+            "id": "csharp",
+            "type": "primary"
+          },
+          {
+            "id": "php",
+            "type": "primary"
+          },
+          {
+            "id": "javascript",
+            "type": "primary"
+          },
+          {
+            "id": "python",
+            "type": "primary"
+          },
+          {
+            "id": "typescript",
+            "type": "primary"
+          },
+          {
+            "id": "java",
+            "type": "primary"
+          },
+          {
+            "id": "html",
+            "type": "primary"
+          },
+          {
+            "id": "css",
+            "type": "primary"
+          },
+          {
+            "id": "json",
+            "type": "primary"
+          },
+          {
+            "id": "r",
+            "type": "primary"
+          },
+          {
+            "id": "arduino",
+            "type": "primary"
+          },
+          {
+            "id": "assembler",
+            "type": "primary"
+          }
+        ],
+        "secondary": [
+          "processing"
+        ]
+      },
+      "infoHTML": "<h3>Lenguajes de Programación</h3>\n                  <p>Lenguajes utilizados para desarrollar aplicaciones, sitios web y experiencias interactivas.</p>\n                  <p><strong>Se usa para:</strong> Implementar lógica, algoritmos y funcionalidades en software.</p>\n                  <p><strong>Disponibilidad:</strong> Generalmente de uso libre, con implementaciones open source y comerciales.</p>"
+    },
+    "llm": {
+      "id": "llm",
+      "label": "LLM Models",
+      "type": "category",
+      "url": null,
+      "info": "Modelos de Lenguaje (LLM) Modelos de Lenguaje de Gran Escala que utilizan aprendizaje profundo para generar y comprender texto. Se usa para: Asistencia en programación, generación de contenido, chatbots y procesamiento de lenguaje natural. Disponibilidad: Principalmente servicios comerciales con algunas opciones open source emergentes.",
+      "connections": {
+        "parent": [
+          {
+            "id": "root",
+            "type": "primary"
+          }
+        ],
+        "children": [
+          {
+            "id": "chatgpt",
+            "type": "primary"
+          },
+          {
+            "id": "deepseek",
+            "type": "primary"
+          },
+          {
+            "id": "gemini",
+            "type": "primary"
+          },
+          {
+            "id": "kimi",
+            "type": "primary"
+          },
+          {
+            "id": "claude",
+            "type": "primary"
+          }
+        ],
+        "secondary": [
+          "prompting"
+        ]
+      },
+      "infoHTML": "<h3>Modelos de Lenguaje (LLM)</h3>\n            <p>Modelos de Lenguaje de Gran Escala que utilizan aprendizaje profundo para generar y comprender texto.</p>\n            <p><strong>Se usa para:</strong> Asistencia en programación, generación de contenido, chatbots y procesamiento de lenguaje natural.</p>\n            <p><strong>Disponibilidad:</strong> Principalmente servicios comerciales con algunas opciones open source emergentes.</p>"
+    },
+    "frontend": {
+      "id": "frontend",
+      "label": "Frontend Frameworks",
+      "type": "category",
+      "url": null,
+      "info": "Frameworks Frontend Frameworks para desarrollo de interfaces de usuario web. Se usa para: Crear aplicaciones web interactivas, SPAs y interfaces de usuario reactivas. Disponibilidad: Mayormente open source bajo licencias como MIT.",
+      "connections": {
+        "parent": [
+          {
+            "id": "root",
+            "type": "primary"
+          }
+        ],
+        "children": [
+          {
+            "id": "react",
+            "type": "primary"
+          },
+          {
+            "id": "vue",
+            "type": "primary"
+          },
+          {
+            "id": "svelte",
+            "type": "primary"
+          },
+          {
+            "id": "angular",
+            "type": "primary"
+          },
+          {
+            "id": "nextjs",
+            "type": "primary"
+          }
+        ],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Frameworks Frontend</h3>\n                 <p>Frameworks para desarrollo de interfaces de usuario web.</p>\n                 <p><strong>Se usa para:</strong> Crear aplicaciones web interactivas, SPAs y interfaces de usuario reactivas.</p>\n                 <p><strong>Disponibilidad:</strong> Mayormente open source bajo licencias como MIT.</p>"
+    },
+    "os": {
+      "id": "os",
+      "label": "Sistemas Operativos",
+      "type": "category",
+      "url": null,
+      "info": "Sistemas Operativos Plataformas base para ejecutar aplicaciones y software. Se usa para: Proporcionar un entorno de ejecución para aplicaciones y gestionar recursos de hardware. Disponibilidad: Opciones comerciales (Windows, macOS) y open source (Linux).",
+      "connections": {
+        "parent": [
+          {
+            "id": "root",
+            "type": "primary"
+          }
+        ],
+        "children": [
+          {
+            "id": "windows",
+            "type": "primary"
+          },
+          {
+            "id": "linux",
+            "type": "primary"
+          },
+          {
+            "id": "mac",
+            "type": "primary"
+          },
+          {
+            "id": "android",
+            "type": "primary"
+          },
+          {
+            "id": "ios",
+            "type": "primary"
+          }
+        ],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Sistemas Operativos</h3>\n           <p>Plataformas base para ejecutar aplicaciones y software.</p>\n           <p><strong>Se usa para:</strong> Proporcionar un entorno de ejecución para aplicaciones y gestionar recursos de hardware.</p>\n           <p><strong>Disponibilidad:</strong> Opciones comerciales (Windows, macOS) y open source (Linux).</p>"
+    },
+    "soportes": {
+      "id": "soportes",
+      "label": "Soportes",
+      "type": "category",
+      "url": null,
+      "info": "Soportes Medios físicos y digitales donde se pueden implementar y mostrar proyectos interactivos. Se usa para: Desplegar y exhibir proyectos interactivos y experiencias multimedia. Disponibilidad: Variada, desde hardware especializado hasta plataformas web.",
+      "connections": {
+        "parent": [
+          {
+            "id": "root",
+            "type": "primary"
+          }
+        ],
+        "children": [
+          {
+            "id": "pantalla-touch",
+            "type": "primary"
+          },
+          {
+            "id": "instalaciones-fisicas",
+            "type": "primary"
+          },
+          {
+            "id": "raspberry-pi",
+            "type": "primary"
+          },
+          {
+            "id": "pantalla-led",
+            "type": "primary"
+          },
+          {
+            "id": "proyector",
+            "type": "primary"
+          },
+          {
+            "id": "sitio-web",
+            "type": "primary"
+          },
+          {
+            "id": "compilado-apk",
+            "type": "primary"
+          },
+          {
+            "id": "virtual-production",
+            "type": "primary"
+          },
+          {
+            "id": "vr",
+            "type": "primary"
+          },
+          {
+            "id": "ar",
+            "type": "primary"
+          },
+          {
+            "id": "sonido",
+            "type": "primary"
+          },
+          {
+            "id": "videojuegos",
+            "type": "primary"
+          },
+          {
+            "id": "mapping",
+            "type": "primary"
+          },
+          {
+            "id": "nft",
+            "type": "primary"
+          }
+        ],
+        "secondary": [
+          "arduino",
+          "obs"
+        ]
+      },
+      "infoHTML": "<h3>Soportes</h3>\n                 <p>Medios físicos y digitales donde se pueden implementar y mostrar proyectos interactivos.</p>\n                 <p><strong>Se usa para:</strong> Desplegar y exhibir proyectos interactivos y experiencias multimedia.</p>\n                 <p><strong>Disponibilidad:</strong> Variada, desde hardware especializado hasta plataformas web.</p>"
+    },
+    "protocolos": {
+      "id": "protocolos",
+      "label": "Protocolos de Comunicación",
+      "type": "category",
+      "url": null,
+      "info": "Protocolos de Comunicación Estándares que permiten la interacción entre diferentes sistemas, dispositivos y aplicaciones. Se usa para: Intercambio de datos, comunicación en tiempo real y conectividad entre sistemas. Disponibilidad: Generalmente estándares abiertos de libre implementación.",
+      "connections": {
+        "parent": [
+          {
+            "id": "root",
+            "type": "primary"
+          }
+        ],
+        "children": [
+          {
+            "id": "websockets",
+            "type": "primary"
+          },
+          {
+            "id": "spout",
+            "type": "primary"
+          },
+          {
+            "id": "syphon",
+            "type": "primary"
+          },
+          {
+            "id": "ndi",
+            "type": "primary"
+          },
+          {
+            "id": "webrtc",
+            "type": "primary"
+          },
+          {
+            "id": "osc",
+            "type": "primary"
+          },
+          {
+            "id": "api",
+            "type": "primary"
+          },
+          {
+            "id": "midi",
+            "type": "primary"
+          }
+        ],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Protocolos de Comunicación</h3>\n                   <p>Estándares que permiten la interacción entre diferentes sistemas, dispositivos y aplicaciones.</p>\n                   <p><strong>Se usa para:</strong> Intercambio de datos, comunicación en tiempo real y conectividad entre sistemas.</p>\n                   <p><strong>Disponibilidad:</strong> Generalmente estándares abiertos de libre implementación.</p>"
+    },
+    "software-multimedia": {
+      "id": "software-multimedia",
+      "label": "Software Multimediales",
+      "type": "category",
+      "url": null,
+      "info": "Software Multimedia Aplicaciones especializadas para la creación, edición y procesamiento de contenido multimedia. Se usa para: Edición de video/audio, composición visual, efectos especiales y producción multimedia. Disponibilidad: Mezcla de soluciones comerciales y alternativas open source.",
+      "connections": {
+        "parent": [
+          {
+            "id": "root",
+            "type": "primary"
+          }
+        ],
+        "children": [
+          {
+            "id": "resolume",
+            "type": "primary"
+          },
+          {
+            "id": "blender",
+            "type": "primary"
+          },
+          {
+            "id": "paquete-adobe",
+            "type": "primary"
+          },
+          {
+            "id": "obs",
+            "type": "primary"
+          },
+          {
+            "id": "cinema4d",
+            "type": "primary"
+          },
+          {
+            "id": "ableton",
+            "type": "primary"
+          },
+          {
+            "id": "puredata",
+            "type": "primary"
+          },
+          {
+            "id": "guipper",
+            "type": "primary"
+          },
+          {
+            "id": "gitbash",
+            "type": "primary"
+          }
+        ],
+        "secondary": [
+          "p5",
+          "touchdesigner",
+          "livecoding"
+        ]
+      },
+      "infoHTML": "<h3>Software Multimedia</h3>\n                            <p>Aplicaciones especializadas para la creación, edición y procesamiento de contenido multimedia.</p>\n                            <p><strong>Se usa para:</strong> Edición de video/audio, composición visual, efectos especiales y producción multimedia.</p>\n                            <p><strong>Disponibilidad:</strong> Mezcla de soluciones comerciales y alternativas open source.</p>"
+    },
+    "entornos": {
+      "id": "entornos",
+      "label": "Entornos de Desarrollo",
+      "type": "category",
+      "url": null,
+      "info": "Entornos de Desarrollo Herramientas que permiten crear y gestionar ambientes aislados para el desarrollo de software. Se usa para: Aislar dependencias, garantizar la reproducibilidad, facilitar la colaboración y el despliegue de aplicaciones. Disponibilidad: Diversas herramientas open source y comerciales.",
+      "connections": {
+        "parent": [
+          {
+            "id": "root",
+            "type": "primary"
+          }
+        ],
+        "children": [
+          {
+            "id": "docker",
+            "type": "primary"
+          },
+          {
+            "id": "venv",
+            "type": "primary"
+          },
+          {
+            "id": "conda",
+            "type": "primary"
+          },
+          {
+            "id": "nodejs",
+            "type": "primary"
+          },
+          {
+            "id": "vps",
+            "type": "primary"
+          }
+        ],
+        "secondary": [
+          "raspberry-pi",
+          "xampp",
+          "git",
+          "github",
+          "python",
+          "javascript"
+        ]
+      },
+      "infoHTML": "<h3>Entornos de Desarrollo</h3>\n                <p>Herramientas que permiten crear y gestionar ambientes aislados para el desarrollo de software.</p>\n                <p><strong>Se usa para:</strong> Aislar dependencias, garantizar la reproducibilidad, facilitar la colaboración y el despliegue de aplicaciones.</p>\n                <p><strong>Disponibilidad:</strong> Diversas herramientas open source y comerciales.</p>"
+    },
+    "glosario": {
+      "id": "glosario",
+      "label": "Glosario",
+      "type": "category",
+      "url": null,
+      "info": "Glosario Términos y conceptos fundamentales relacionados con la programación, el desarrollo de software y las tecnologías creativas. Se usa para: Referencia técnica, aprendizaje y comprensión de terminología especializada. Disponibilidad: Conocimiento libre y abierto.",
+      "connections": {
+        "parent": [
+          {
+            "id": "root",
+            "type": "primary"
+          }
+        ],
+        "children": [
+          {
+            "id": "livecoding",
+            "type": "primary"
+          },
+          {
+            "id": "vibecoding",
+            "type": "primary"
+          },
+          {
+            "id": "programacion",
+            "type": "primary"
+          },
+          {
+            "id": "prompting",
+            "type": "primary"
+          },
+          {
+            "id": "consola",
+            "type": "primary"
+          },
+          {
+            "id": "script",
+            "type": "primary"
+          },
+          {
+            "id": "compilado-interpretado",
+            "type": "primary"
+          },
+          {
+            "id": "drivers",
+            "type": "primary"
+          },
+          {
+            "id": "mcp",
+            "type": "primary"
+          },
+          {
+            "id": "repositorio",
+            "type": "primary"
+          },
+          {
+            "id": "github",
+            "type": "primary"
+          },
+          {
+            "id": "git",
+            "type": "primary"
+          }
+        ],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Glosario</h3>\n                 <p>Términos y conceptos fundamentales relacionados con la programación, el desarrollo de software y las tecnologías creativas.</p>\n                 <p><strong>Se usa para:</strong> Referencia técnica, aprendizaje y comprensión de terminología especializada.</p>\n                 <p><strong>Disponibilidad:</strong> Conocimiento libre y abierto.</p>"
+    },
+    "unity": {
+      "id": "unity",
+      "label": "Unity",
+      "type": "tool",
+      "url": "https://unity.com/",
+      "info": "Unity Motor de juegos multiplataforma con potentes capacidades gráficas y físicas. Se usa para: Desarrollo de videojuegos, visualizaciones 3D, realidad virtual y aumentada. Disponibilidad: Software propietario, de pago con versión gratuita limitada.",
+      "connections": {
+        "parent": [
+          {
+            "id": "engines",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "csharp",
+          "hlsl",
+          "compilado-apk",
+          "vr",
+          "videojuegos",
+          "ar",
+          "windows",
+          "mac",
+          "linux",
+          "android",
+          "ios"
+        ]
+      },
+      "infoHTML": "<h3>Unity</h3>\n              <p>Motor de juegos multiplataforma con potentes capacidades gráficas y físicas.</p>\n              <p><strong>Se usa para:</strong> Desarrollo de videojuegos, visualizaciones 3D, realidad virtual y aumentada.</p>\n              <p><strong>Disponibilidad:</strong> Software propietario, de pago con versión gratuita limitada.</p>"
+    },
+    "unreal": {
+      "id": "unreal",
+      "label": "Unreal Engine",
+      "type": "tool",
+      "url": "https://www.unrealengine.com/",
+      "info": "Unreal Engine Motor de juegos de alta fidelidad visual, ideal para proyectos AAA y experiencias inmersivas. Se usa para: Videojuegos de alta calidad, cine virtual, arquitectura y visualización. Disponibilidad: Parcialmente open source (código fuente disponible, pero con licencia comercial).",
+      "connections": {
+        "parent": [
+          {
+            "id": "engines",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "cpp",
+          "hlsl",
+          "vr",
+          "virtual-production",
+          "videojuegos",
+          "windows",
+          "mac",
+          "android",
+          "ios"
+        ]
+      },
+      "infoHTML": "<h3>Unreal Engine</h3>\n               <p>Motor de juegos de alta fidelidad visual, ideal para proyectos AAA y experiencias inmersivas.</p>\n               <p><strong>Se usa para:</strong> Videojuegos de alta calidad, cine virtual, arquitectura y visualización.</p>\n               <p><strong>Disponibilidad:</strong> Parcialmente open source (código fuente disponible, pero con licencia comercial).</p>"
+    },
+    "godot": {
+      "id": "godot",
+      "label": "Godot",
+      "type": "tool",
+      "url": "https://godotengine.org/",
+      "info": "Godot Motor de juegos con soporte para 2D y 3D, ideal para desarrolladores independientes. Se usa para: Videojuegos independientes, prototipado rápido, proyectos educativos. Disponibilidad: Open source (MIT).",
+      "connections": {
+        "parent": [
+          {
+            "id": "engines",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "glsl",
+          "videojuegos",
+          "windows",
+          "mac",
+          "linux",
+          "android",
+          "ios"
+        ]
+      },
+      "infoHTML": "<h3>Godot</h3>\n              <p>Motor de juegos con soporte para 2D y 3D, ideal para desarrolladores independientes.</p>\n              <p><strong>Se usa para:</strong> Videojuegos independientes, prototipado rápido, proyectos educativos.</p>\n              <p><strong>Disponibilidad:</strong> Open source (MIT).</p>"
+    },
+    "touchdesigner": {
+      "id": "touchdesigner",
+      "label": "TouchDesigner",
+      "type": "tool",
+      "url": "https://derivative.ca/",
+      "info": "TouchDesigner Plataforma de desarrollo visual para contenido interactivo en tiempo real. Se usa para: Arte digital, instalaciones interactivas, visuales en vivo, mapping. Disponibilidad: Software propietario, de pago con versión no comercial gratuita.",
+      "connections": {
+        "parent": [
+          {
+            "id": "engines",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "glsl",
+          "python",
+          "software-multimedia",
+          "windows",
+          "mac"
+        ]
+      },
+      "infoHTML": "<h3>TouchDesigner</h3>\n                      <p>Plataforma de desarrollo visual para contenido interactivo en tiempo real.</p>\n                      <p><strong>Se usa para:</strong> Arte digital, instalaciones interactivas, visuales en vivo, mapping.</p>\n                      <p><strong>Disponibilidad:</strong> Software propietario, de pago con versión no comercial gratuita.</p>"
+    },
+    "processing": {
+      "id": "processing",
+      "label": "Processing",
+      "type": "tool",
+      "url": "https://processing.org/",
+      "info": "Processing Entorno de desarrollo y lenguaje de programación enfocado en artes visuales. Se usa para: Arte generativo, visualización de datos, prototipado, educación. Disponibilidad: Open source (LGPL/GPL).",
+      "connections": {
+        "parent": [
+          {
+            "id": "engines",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "glsl",
+          "java",
+          "languages",
+          "windows",
+          "mac",
+          "linux",
+          "android"
+        ]
+      },
+      "infoHTML": "<h3>Processing</h3>\n                   <p>Entorno de desarrollo y lenguaje de programación enfocado en artes visuales.</p>\n                   <p><strong>Se usa para:</strong> Arte generativo, visualización de datos, prototipado, educación.</p>\n                   <p><strong>Disponibilidad:</strong> Open source (LGPL/GPL).</p>"
+    },
+    "p5": {
+      "id": "p5",
+      "label": "P5.js",
+      "type": "tool",
+      "url": "https://p5js.org/es/",
+      "info": "P5.js Biblioteca JavaScript para programación creativa con enfoque en artes visuales. Se usa para: Arte generativo, visualizaciones interactivas, educación en programación. Disponibilidad: Open source (LGPL).",
+      "connections": {
+        "parent": [
+          {
+            "id": "frameworks",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "javascript",
+          "glsl",
+          "nft",
+          "livecoding",
+          "software-multimedia",
+          "windows",
+          "mac",
+          "linux",
+          "android",
+          "ios"
+        ]
+      },
+      "infoHTML": "<h3>P5.js</h3>\n           <p>Biblioteca JavaScript para programación creativa con enfoque en artes visuales.</p>\n           <p><strong>Se usa para:</strong> Arte generativo, visualizaciones interactivas, educación en programación.</p>\n           <p><strong>Disponibilidad:</strong> Open source (LGPL).</p>"
+    },
+    "three": {
+      "id": "three",
+      "label": "Three.js",
+      "type": "tool",
+      "url": "https://threejs.org/docs/",
+      "info": "Three.js Biblioteca JavaScript para crear y mostrar gráficos 3D en navegadores. Se usa para: Visualizaciones 3D web, juegos en navegador, experiencias interactivas. Disponibilidad: Open source (MIT).",
+      "connections": {
+        "parent": [
+          {
+            "id": "frameworks",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "glsl",
+          "videojuegos",
+          "nft",
+          "engines",
+          "windows",
+          "mac",
+          "linux",
+          "android",
+          "ios"
+        ]
+      },
+      "infoHTML": "<h3>Three.js</h3>\n              <p>Biblioteca JavaScript para crear y mostrar gráficos 3D en navegadores.</p>\n              <p><strong>Se usa para:</strong> Visualizaciones 3D web, juegos en navegador, experiencias interactivas.</p>\n              <p><strong>Disponibilidad:</strong> Open source (MIT).</p>"
+    },
+    "babylon": {
+      "id": "babylon",
+      "label": "Babylon.js",
+      "type": "tool",
+      "url": "https://www.babylonjs.com/",
+      "info": "Babylon.js Framework de JavaScript para crear juegos y experiencias 3D web. Se usa para: Juegos web, visualizaciones 3D, realidad virtual en navegador. Disponibilidad: Open source (Apache 2.0).",
+      "connections": {
+        "parent": [
+          {
+            "id": "frameworks",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "glsl",
+          "nft",
+          "engines",
+          "windows",
+          "mac",
+          "linux",
+          "android",
+          "ios"
+        ]
+      },
+      "infoHTML": "<h3>Babylon.js</h3>\n                <p>Framework de JavaScript para crear juegos y experiencias 3D web.</p>\n                <p><strong>Se usa para:</strong> Juegos web, visualizaciones 3D, realidad virtual en navegador.</p>\n                <p><strong>Disponibilidad:</strong> Open source (Apache 2.0).</p>"
+    },
+    "tone": {
+      "id": "tone",
+      "label": "Tone.js",
+      "type": "tool",
+      "url": "https://tonejs.github.io/",
+      "info": "Tone.js Framework de audio web para crear experiencias musicales interactivas. Se usa para: Música web, sintetizadores, instrumentos virtuales, arte sonoro. Disponibilidad: Open source (MIT).",
+      "connections": {
+        "parent": [
+          {
+            "id": "frameworks",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "windows",
+          "mac",
+          "linux",
+          "android",
+          "ios"
+        ]
+      },
+      "infoHTML": "<h3>Tone.js</h3>\n             <p>Framework de audio web para crear experiencias musicales interactivas.</p>\n             <p><strong>Se usa para:</strong> Música web, sintetizadores, instrumentos virtuales, arte sonoro.</p>\n             <p><strong>Disponibilidad:</strong> Open source (MIT).</p>"
+    },
+    "nodejs": {
+      "id": "nodejs",
+      "label": "Node.js",
+      "type": "tool",
+      "url": "https://nodejs.org/",
+      "info": "Node.js Entorno de ejecución de JavaScript del lado del servidor. Se usa para: Servidores web, APIs, aplicaciones en tiempo real, microservicios. Disponibilidad: Open source (MIT).",
+      "connections": {
+        "parent": [
+          {
+            "id": "entornos",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "javascript",
+          "typescript",
+          "sitio-web",
+          "gitbash",
+          "docker",
+          "mongodb",
+          "vps",
+          "editor-shaders-live",
+          "frameworks"
+        ]
+      },
+      "infoHTML": "<h3>Node.js</h3>\n               <p>Entorno de ejecución de JavaScript del lado del servidor.</p>\n               <p><strong>Se usa para:</strong> Servidores web, APIs, aplicaciones en tiempo real, microservicios.</p>\n               <p><strong>Disponibilidad:</strong> Open source (MIT).</p>"
+    },
+    "openframeworks": {
+      "id": "openframeworks",
+      "label": "OpenFrameworks",
+      "type": "tool",
+      "url": "https://openframeworks.cc/",
+      "info": "OpenFrameworks Framework C++ para programación creativa y arte interactivo. Se usa para: Instalaciones interactivas, arte digital, visuales en tiempo real. Disponibilidad: Open source (MIT).",
+      "connections": {
+        "parent": [
+          {
+            "id": "engines",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "cpp",
+          "windows",
+          "mac",
+          "linux",
+          "ios"
+        ]
+      },
+      "infoHTML": "<h3>OpenFrameworks</h3>\n                       <p>Framework C++ para programación creativa y arte interactivo.</p>\n                       <p><strong>Se usa para:</strong> Instalaciones interactivas, arte digital, visuales en tiempo real.</p>\n                       <p><strong>Disponibilidad:</strong> Open source (MIT).</p>"
+    },
+    "ml5": {
+      "id": "ml5",
+      "label": "ML5.js",
+      "type": "tool",
+      "url": "https://ml5js.org/",
+      "info": "ML5.js Biblioteca de aprendizaje automático para web basada en TensorFlow.js. Se usa para: Proyectos de IA accesibles, arte generativo, experimentos de aprendizaje automático en navegador. Disponibilidad: Open source (MIT).",
+      "connections": {
+        "parent": [
+          {
+            "id": "frameworks",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "javascript"
+        ]
+      },
+      "infoHTML": "<h3>ML5.js</h3>\n            <p>Biblioteca de aprendizaje automático para web basada en TensorFlow.js.</p>\n            <p><strong>Se usa para:</strong> Proyectos de IA accesibles, arte generativo, experimentos de aprendizaje automático en navegador.</p>\n            <p><strong>Disponibilidad:</strong> Open source (MIT).</p>"
+    },
+    "hydra": {
+      "id": "hydra",
+      "label": "Hydra",
+      "type": "tool",
+      "url": "https://hydra.ojack.xyz/",
+      "info": "Hydra Plataforma de livecoding para síntesis visual en tiempo real. Se usa para: Performances audiovisuales, livecoding, arte generativo, visuales en vivo. Disponibilidad: Open source (GPL).",
+      "connections": {
+        "parent": [
+          {
+            "id": "frameworks",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "javascript",
+          "livecoding",
+          "windows",
+          "mac",
+          "linux"
+        ]
+      },
+      "infoHTML": "<h3>Hydra</h3>\n              <p>Plataforma de livecoding para síntesis visual en tiempo real.</p>\n              <p><strong>Se usa para:</strong> Performances audiovisuales, livecoding, arte generativo, visuales en vivo.</p>\n              <p><strong>Disponibilidad:</strong> Open source (GPL).</p>"
+    },
+    "xampp": {
+      "id": "xampp",
+      "label": "XAMPP",
+      "type": "tool",
+      "url": "https://www.apachefriends.org/",
+      "info": "XAMPP Paquete de software libre que incluye el servidor web Apache, la base de datos MySQL/MariaDB y los intérpretes para scripts PHP y Perl. Se usa para: Desarrollo web local, pruebas de aplicaciones, entornos de desarrollo. Disponibilidad: Software libre y gratuito.",
+      "connections": {
+        "parent": [
+          {
+            "id": "frameworks",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "javascript",
+          "php",
+          "sql",
+          "entornos",
+          "windows",
+          "mac",
+          "linux"
+        ]
+      },
+      "infoHTML": "<h3>XAMPP</h3>\n              <p>Paquete de software libre que incluye el servidor web Apache, la base de datos MySQL/MariaDB y los intérpretes para scripts PHP y Perl.</p>\n              <p><strong>Se usa para:</strong> Desarrollo web local, pruebas de aplicaciones, entornos de desarrollo.</p>\n              <p><strong>Disponibilidad:</strong> Software libre y gratuito.</p>"
+    },
+    "comfy": {
+      "id": "comfy",
+      "label": "ComfyUI",
+      "type": "tool",
+      "url": "https://github.com/comfyanonymous/ComfyUI",
+      "info": "ComfyUI Interfaz gráfica para flujos de trabajo de IA generativa. Se usa para: Generación de imágenes, edición con IA, flujos de trabajo visuales. Disponibilidad: Open source (GPL), pero algunos modelos requieren pago.",
+      "connections": {
+        "parent": [
+          {
+            "id": "ia",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "python",
+          "prompting"
+        ]
+      },
+      "infoHTML": "<h3>ComfyUI</h3>\n              <p>Interfaz gráfica para flujos de trabajo de IA generativa.</p>\n              <p><strong>Se usa para:</strong> Generación de imágenes, edición con IA, flujos de trabajo visuales.</p>\n              <p><strong>Disponibilidad:</strong> Open source (GPL), pero algunos modelos requieren pago.</p>"
+    },
+    "n8n": {
+      "id": "n8n",
+      "label": "n8n",
+      "type": "tool",
+      "url": "https://n8n.io/",
+      "info": "n8n Plataforma de automatización de flujos de trabajo con integración de IA. Se usa para: Automatización de procesos, integración de servicios, workflows. Disponibilidad: Open source (Apache 2.0), con versión cloud de pago.",
+      "connections": {
+        "parent": [
+          {
+            "id": "ia",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "python",
+          "prompting"
+        ]
+      },
+      "infoHTML": "<h3>n8n</h3>\n            <p>Plataforma de automatización de flujos de trabajo con integración de IA.</p>\n            <p><strong>Se usa para:</strong> Automatización de procesos, integración de servicios, workflows.</p>\n            <p><strong>Disponibilidad:</strong> Open source (Apache 2.0), con versión cloud de pago.</p>"
+    },
+    "pinokio": {
+      "id": "pinokio",
+      "label": "Pinokio",
+      "type": "tool",
+      "url": "https://pinokio.computer/",
+      "info": "Pinokio Asistente de IA enfocado en automatización y ejecución de tareas. Se usa para: Automatización de flujos de trabajo, ejecución de scripts, integración de sistemas. Disponibilidad: Open source.",
+      "connections": {
+        "parent": [
+          {
+            "id": "ia",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "python",
+          "prompting"
+        ]
+      },
+      "infoHTML": "<h3>Pinokio</h3>\n                <p>Asistente de IA enfocado en automatización y ejecución de tareas.</p>\n                <p><strong>Se usa para:</strong> Automatización de flujos de trabajo, ejecución de scripts, integración de sistemas.</p>\n                <p><strong>Disponibilidad:</strong> Open source.</p>"
+    },
+    "clawbot": {
+      "id": "clawbot",
+      "label": "Clawbot",
+      "type": "tool",
+      "url": "https://openclaw.ai/",
+      "info": "Clawbot (OpenClaw) Plataforma de IA abierta para la creación y despliegue de agentes inteligentes. Se usa para: Creación de agentes de IA, automatización inteligente, asistentes personalizados. Disponibilidad: Open source.",
+      "connections": {
+        "parent": [
+          {
+            "id": "ia",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "prompting"
+        ]
+      },
+      "infoHTML": "<h3>Clawbot (OpenClaw)</h3>\n                <p>Plataforma de IA abierta para la creación y despliegue de agentes inteligentes.</p>\n                <p><strong>Se usa para:</strong> Creación de agentes de IA, automatización inteligente, asistentes personalizados.</p>\n                <p><strong>Disponibilidad:</strong> Open source.</p>"
+    },
+    "moltbook": {
+      "id": "moltbook",
+      "label": "Moltbook",
+      "type": "tool",
+      "url": "https://www.moltbook.com/",
+      "info": "Moltbook Plataforma de IA para la creación y gestión de contenido inteligente. Se usa para: Gestión de conocimiento con IA, creación de contenido, organización inteligente. Disponibilidad: Servicio con versión gratuita.",
+      "connections": {
+        "parent": [
+          {
+            "id": "ia",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "prompting"
+        ]
+      },
+      "infoHTML": "<h3>Moltbook</h3>\n                 <p>Plataforma de IA para la creación y gestión de contenido inteligente.</p>\n                 <p><strong>Se usa para:</strong> Gestión de conocimiento con IA, creación de contenido, organización inteligente.</p>\n                 <p><strong>Disponibilidad:</strong> Servicio con versión gratuita.</p>"
+    },
+    "cursor": {
+      "id": "cursor",
+      "label": "Cursor",
+      "type": "tool",
+      "url": "https://cursor.sh/",
+      "info": "Cursor Editor de código con asistencia de IA integrada. Se usa para: Desarrollo de software, programación asistida por IA. Disponibilidad: Servicio de pago con versión gratuita.",
+      "connections": {
+        "parent": [
+          {
+            "id": "ides",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "prompting"
+        ]
+      },
+      "infoHTML": "<h3>Cursor</h3>\n               <p>Editor de código con asistencia de IA integrada.</p>\n               <p><strong>Se usa para:</strong> Desarrollo de software, programación asistida por IA.</p>\n               <p><strong>Disponibilidad:</strong> Servicio de pago con versión gratuita.</p>"
+    },
+    "trae": {
+      "id": "trae",
+      "label": "Trae AI",
+      "type": "tool",
+      "url": "https://www.trae.ai/",
+      "info": "Trae AI Asistente de programación basado en IA para desarrollo. Se usa para: Desarrollo de software, programación asistida por IA. Disponibilidad: Servicio de pago.",
+      "connections": {
+        "parent": [
+          {
+            "id": "ides",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "prompting"
+        ]
+      },
+      "infoHTML": "<h3>Trae AI</h3>\n             <p>Asistente de programación basado en IA para desarrollo.</p>\n             <p><strong>Se usa para:</strong> Desarrollo de software, programación asistida por IA.</p>\n             <p><strong>Disponibilidad:</strong> Servicio de pago.</p>"
+    },
+    "v0": {
+      "id": "v0",
+      "label": "v0.dev",
+      "type": "tool",
+      "url": "https://v0.dev/",
+      "info": "v0.dev Herramienta de generación de interfaces con IA. Se usa para: Diseño de interfaces, prototipado, generación de código frontend. Disponibilidad: Servicio de pago con versión gratuita limitada.",
+      "connections": {
+        "parent": [
+          {
+            "id": "ides",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "prompting"
+        ]
+      },
+      "infoHTML": "<h3>v0.dev</h3>\n           <p>Herramienta de generación de interfaces con IA.</p>\n           <p><strong>Se usa para:</strong> Diseño de interfaces, prototipado, generación de código frontend.</p>\n           <p><strong>Disponibilidad:</strong> Servicio de pago con versión gratuita limitada.</p>"
+    },
+    "windsurf": {
+      "id": "windsurf",
+      "label": "Windsurf",
+      "type": "tool",
+      "url": "https://www.windsurf.io/",
+      "info": "Windsurf Plataforma de desarrollo con asistencia de IA. Se usa para: Desarrollo de software, programación asistida por IA. Disponibilidad: Servicio de pago con versión gratuita limitada.",
+      "connections": {
+        "parent": [
+          {
+            "id": "ides",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "prompting"
+        ]
+      },
+      "infoHTML": "<h3>Windsurf</h3>\n                 <p>Plataforma de desarrollo con asistencia de IA.</p>\n                 <p><strong>Se usa para:</strong> Desarrollo de software, programación asistida por IA.</p>\n                 <p><strong>Disponibilidad:</strong> Servicio de pago con versión gratuita limitada.</p>"
+    },
+    "visual-studio": {
+      "id": "visual-studio",
+      "label": "Visual Studio",
+      "type": "tool",
+      "url": "https://visualstudio.microsoft.com/",
+      "info": "Visual Studio Entorno de desarrollo integrado completo. Se usa para: Desarrollo de aplicaciones en múltiples lenguajes, especialmente .NET. Disponibilidad: Producto de Microsoft con versión Community gratuita.",
+      "connections": {
+        "parent": [
+          {
+            "id": "ides",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Visual Studio</h3>\n                      <p>Entorno de desarrollo integrado completo.</p>\n                      <p><strong>Se usa para:</strong> Desarrollo de aplicaciones en múltiples lenguajes, especialmente .NET.</p>\n                      <p><strong>Disponibilidad:</strong> Producto de Microsoft con versión Community gratuita.</p>"
+    },
+    "antigravity": {
+      "id": "antigravity",
+      "label": "Antigravity",
+      "type": "tool",
+      "url": "https://antigravity.dev/",
+      "info": "Antigravity IDE con asistencia de inteligencia artificial para desarrollo de software. Se usa para: Desarrollo de software, programación asistida por IA, generación de código. Disponibilidad: Servicio con versión gratuita.",
+      "connections": {
+        "parent": [
+          {
+            "id": "ides",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "prompting"
+        ]
+      },
+      "infoHTML": "<h3>Antigravity</h3>\n                    <p>IDE con asistencia de inteligencia artificial para desarrollo de software.</p>\n                    <p><strong>Se usa para:</strong> Desarrollo de software, programación asistida por IA, generación de código.</p>\n                    <p><strong>Disponibilidad:</strong> Servicio con versión gratuita.</p>"
+    },
+    "shadertoy": {
+      "id": "shadertoy",
+      "label": "ShaderToy",
+      "type": "tool",
+      "url": "https://www.shadertoy.com/",
+      "info": "ShaderToy Plataforma web para crear y compartir shaders en tiempo real. Se usa para: Programación de shaders, efectos visuales, demostraciones gráficas. Disponibilidad: Plataforma propietaria, pero los shaders son públicos.",
+      "connections": {
+        "parent": [
+          {
+            "id": "shaders",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>ShaderToy</h3>\n                  <p>Plataforma web para crear y compartir shaders en tiempo real.</p>\n                  <p><strong>Se usa para:</strong> Programación de shaders, efectos visuales, demostraciones gráficas.</p>\n                  <p><strong>Disponibilidad:</strong> Plataforma propietaria, pero los shaders son públicos.</p>"
+    },
+    "glsl": {
+      "id": "glsl",
+      "label": "GLSL",
+      "type": "tool",
+      "url": "https://www.khronos.org/opengl/wiki/Core_Language_(GLSL)",
+      "info": "GLSL Lenguaje de sombreado para gráficos OpenGL. Se usa para: Programación de shaders, efectos visuales, gráficos 3D. Disponibilidad: Estándar abierto.",
+      "connections": {
+        "parent": [
+          {
+            "id": "shaders",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "three",
+          "godot",
+          "blender",
+          "processing",
+          "touchdesigner",
+          "p5",
+          "babylon",
+          "livecoding"
+        ]
+      },
+      "infoHTML": "<h3>GLSL</h3>\n             <p>Lenguaje de sombreado para gráficos OpenGL.</p>\n             <p><strong>Se usa para:</strong> Programación de shaders, efectos visuales, gráficos 3D.</p>\n             <p><strong>Disponibilidad:</strong> Estándar abierto.</p>"
+    },
+    "hlsl": {
+      "id": "hlsl",
+      "label": "HLSL",
+      "type": "tool",
+      "url": "https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl",
+      "info": "HLSL Lenguaje de sombreado de alto nivel para DirectX. Se usa para: Desarrollo de videojuegos, efectos visuales, gráficos 3D. Disponibilidad: Propiedad de Microsoft.",
+      "connections": {
+        "parent": [
+          {
+            "id": "shaders",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "unity",
+          "unreal"
+        ]
+      },
+      "infoHTML": "<h3>HLSL</h3>\n             <p>Lenguaje de sombreado de alto nivel para DirectX.</p>\n             <p><strong>Se usa para:</strong> Desarrollo de videojuegos, efectos visuales, gráficos 3D.</p>\n             <p><strong>Disponibilidad:</strong> Propiedad de Microsoft.</p>"
+    },
+    "bookofshaders": {
+      "id": "bookofshaders",
+      "label": "Book of Shaders",
+      "type": "tool",
+      "url": "https://thebookofshaders.com/",
+      "info": "Book of Shaders Guía paso a paso para aprender programación de shaders. Se usa para: Educación, aprendizaje de shaders, programación gráfica. Disponibilidad: Contenido abierto (CC).",
+      "connections": {
+        "parent": [
+          {
+            "id": "shaders",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Book of Shaders</h3>\n                      <p>Guía paso a paso para aprender programación de shaders.</p>\n                      <p><strong>Se usa para:</strong> Educación, aprendizaje de shaders, programación gráfica.</p>\n                      <p><strong>Disponibilidad:</strong> Contenido abierto (CC).</p>"
+    },
+    "ejemplos-shaders": {
+      "id": "ejemplos-shaders",
+      "label": "Ejemplos Shaders",
+      "type": "tool",
+      "url": "https://jeyder.com.ar/ejemplosshaders",
+      "info": "Ejemplos de Shaders Colección de ejemplos prácticos de shaders GLSL que muestran diferentes efectos visuales. Se usa para: Aprender y experimentar con shaders desde nivel básico hasta avanzado. Disponibilidad: Recursos educativos disponibles en línea.",
+      "connections": {
+        "parent": [
+          {
+            "id": "shaders",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Ejemplos de Shaders</h3>\n                         <p>Colección de ejemplos prácticos de shaders GLSL que muestran diferentes efectos visuales.</p>\n                         <p><strong>Se usa para:</strong> Aprender y experimentar con shaders desde nivel básico hasta avanzado.</p>\n                         <p><strong>Disponibilidad:</strong> Recursos educativos disponibles en línea.</p>"
+    },
+    "editor-shaders-live": {
+      "id": "editor-shaders-live",
+      "label": "Editor de Shaders Live",
+      "type": "tool",
+      "url": "https://jeyder.com.ar/jpshadereditor",
+      "info": "Editor de Shaders Live Herramienta online para escribir, editar y visualizar shaders GLSL en tiempo real. Se usa para: Experimentar con código de shaders y ver resultados inmediatamente. Disponibilidad: Herramientas web accesibles desde navegadores.",
+      "connections": {
+        "parent": [
+          {
+            "id": "shaders",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "javascript",
+          "html",
+          "css",
+          "websockets",
+          "nodejs"
+        ]
+      },
+      "infoHTML": "<h3>Editor de Shaders Live</h3>\n                            <p>Herramienta online para escribir, editar y visualizar shaders GLSL en tiempo real.</p>\n                            <p><strong>Se usa para:</strong> Experimentar con código de shaders y ver resultados inmediatamente.</p>\n                            <p><strong>Disponibilidad:</strong> Herramientas web accesibles desde navegadores.</p>"
+    },
+    "firebase": {
+      "id": "firebase",
+      "label": "Firebase",
+      "type": "tool",
+      "url": "https://firebase.google.com/",
+      "info": "Firebase Plataforma de desarrollo con base de datos en tiempo real. Se usa para: Aplicaciones web y móviles, autenticación, almacenamiento en la nube. Disponibilidad: Servicio de pago con nivel gratuito.",
+      "connections": {
+        "parent": [
+          {
+            "id": "db",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Firebase</h3>\n                 <p>Plataforma de desarrollo con base de datos en tiempo real.</p>\n                 <p><strong>Se usa para:</strong> Aplicaciones web y móviles, autenticación, almacenamiento en la nube.</p>\n                 <p><strong>Disponibilidad:</strong> Servicio de pago con nivel gratuito.</p>"
+    },
+    "mongodb": {
+      "id": "mongodb",
+      "label": "MongoDB",
+      "type": "tool",
+      "url": "https://www.mongodb.com/",
+      "info": "MongoDB Base de datos NoSQL orientada a documentos. Se usa para: Aplicaciones web, almacenamiento de datos no estructurados, APIs. Disponibilidad: Licencia dual (SSPL/comercial).",
+      "connections": {
+        "parent": [
+          {
+            "id": "db",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "nodejs"
+        ]
+      },
+      "infoHTML": "<h3>MongoDB</h3>\n                <p>Base de datos NoSQL orientada a documentos.</p>\n                <p><strong>Se usa para:</strong> Aplicaciones web, almacenamiento de datos no estructurados, APIs.</p>\n                <p><strong>Disponibilidad:</strong> Licencia dual (SSPL/comercial).</p>"
+    },
+    "sql": {
+      "id": "sql",
+      "label": "SQL",
+      "type": "tool",
+      "url": "https://www.w3schools.com/sql/",
+      "info": "SQL Lenguaje estándar para gestionar bases de datos relacionales. Se usa para: Sistemas de gestión de datos, aplicaciones empresariales, análisis. Disponibilidad: Estándar abierto.",
+      "connections": {
+        "parent": [
+          {
+            "id": "db",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "xampp",
+          "php"
+        ]
+      },
+      "infoHTML": "<h3>SQL</h3>\n            <p>Lenguaje estándar para gestionar bases de datos relacionales.</p>\n            <p><strong>Se usa para:</strong> Sistemas de gestión de datos, aplicaciones empresariales, análisis.</p>\n            <p><strong>Disponibilidad:</strong> Estándar abierto.</p>"
+    },
+    "cpp": {
+      "id": "cpp",
+      "label": "C++",
+      "type": "tool",
+      "url": "https://isocpp.org/",
+      "info": "C++ Lenguaje de programación de propósito general con control de bajo nivel. Se usa para: Desarrollo de sistemas, videojuegos, aplicaciones de alto rendimiento. Disponibilidad: Estándar abierto.",
+      "connections": {
+        "parent": [
+          {
+            "id": "languages",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "unreal",
+          "openframeworks",
+          "arduino"
+        ]
+      },
+      "infoHTML": "<h3>C++</h3>\n            <p>Lenguaje de programación de propósito general con control de bajo nivel.</p>\n            <p><strong>Se usa para:</strong> Desarrollo de sistemas, videojuegos, aplicaciones de alto rendimiento.</p>\n            <p><strong>Disponibilidad:</strong> Estándar abierto.</p>"
+    },
+    "csharp": {
+      "id": "csharp",
+      "label": "C#",
+      "type": "tool",
+      "url": "https://docs.microsoft.com/en-us/dotnet/csharp/",
+      "info": "C# Lenguaje de programación orientado a objetos desarrollado por Microsoft. Se usa para: Desarrollo de aplicaciones Windows, Unity, servicios web. Disponibilidad: Open source (.NET es MIT).",
+      "connections": {
+        "parent": [
+          {
+            "id": "languages",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "unity"
+        ]
+      },
+      "infoHTML": "<h3>C#</h3>\n               <p>Lenguaje de programación orientado a objetos desarrollado por Microsoft.</p>\n               <p><strong>Se usa para:</strong> Desarrollo de aplicaciones Windows, Unity, servicios web.</p>\n               <p><strong>Disponibilidad:</strong> Open source (.NET es MIT).</p>"
+    },
+    "php": {
+      "id": "php",
+      "label": "PHP",
+      "type": "tool",
+      "url": "https://www.php.net/",
+      "info": "PHP Lenguaje de programación para desarrollo web del lado del servidor. Se usa para: Desarrollo web, CMS, aplicaciones de servidor. Disponibilidad: Open source (PHP License).",
+      "connections": {
+        "parent": [
+          {
+            "id": "languages",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "xampp",
+          "sql"
+        ]
+      },
+      "infoHTML": "<h3>PHP</h3>\n            <p>Lenguaje de programación para desarrollo web del lado del servidor.</p>\n            <p><strong>Se usa para:</strong> Desarrollo web, CMS, aplicaciones de servidor.</p>\n            <p><strong>Disponibilidad:</strong> Open source (PHP License).</p>"
+    },
+    "javascript": {
+      "id": "javascript",
+      "label": "JavaScript",
+      "type": "tool",
+      "url": "https://developer.mozilla.org/es/docs/Web/JavaScript",
+      "info": "JavaScript Lenguaje de programación interpretado para desarrollo web. Se usa para: Desarrollo web frontend, aplicaciones interactivas, servidores Node.js. Disponibilidad: Estándar abierto (ECMA).",
+      "connections": {
+        "parent": [
+          {
+            "id": "languages",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "typescript",
+          "p5",
+          "nodejs",
+          "ml5",
+          "hydra",
+          "sitio-web",
+          "xampp",
+          "paquete-adobe",
+          "videojuegos",
+          "nft",
+          "livecoding",
+          "editor-shaders-live",
+          "entornos"
+        ]
+      },
+      "infoHTML": "<h3>JavaScript</h3>\n                   <p>Lenguaje de programación interpretado para desarrollo web.</p>\n                   <p><strong>Se usa para:</strong> Desarrollo web frontend, aplicaciones interactivas, servidores Node.js.</p>\n                   <p><strong>Disponibilidad:</strong> Estándar abierto (ECMA).</p>"
+    },
+    "python": {
+      "id": "python",
+      "label": "Python",
+      "type": "tool",
+      "url": "https://www.python.org/",
+      "info": "Python Lenguaje de programación de alto nivel con sintaxis clara. Se usa para: Ciencia de datos, IA, automatización, desarrollo web. Disponibilidad: Open source (PSF License).",
+      "connections": {
+        "parent": [
+          {
+            "id": "languages",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "touchdesigner",
+          "comfy",
+          "n8n",
+          "pinokio",
+          "blender",
+          "gitbash",
+          "docker",
+          "venv",
+          "conda",
+          "raspberry-pi",
+          "ia",
+          "vps",
+          "entornos"
+        ]
+      },
+      "infoHTML": "<h3>Python</h3>\n               <p>Lenguaje de programación de alto nivel con sintaxis clara.</p>\n               <p><strong>Se usa para:</strong> Ciencia de datos, IA, automatización, desarrollo web.</p>\n               <p><strong>Disponibilidad:</strong> Open source (PSF License).</p>"
+    },
+    "typescript": {
+      "id": "typescript",
+      "label": "TypeScript",
+      "type": "tool",
+      "url": "https://www.typescriptlang.org/",
+      "info": "TypeScript Superconjunto de JavaScript con tipado estático opcional. Se usa para: Desarrollo web frontend, aplicaciones empresariales, proyectos grandes. Disponibilidad: Open source (Apache 2.0).",
+      "connections": {
+        "parent": [
+          {
+            "id": "languages",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "javascript",
+          "nodejs",
+          "sitio-web",
+          "angular"
+        ]
+      },
+      "infoHTML": "<h3>TypeScript</h3>\n                   <p>Superconjunto de JavaScript con tipado estático opcional.</p>\n                   <p><strong>Se usa para:</strong> Desarrollo web frontend, aplicaciones empresariales, proyectos grandes.</p>\n                   <p><strong>Disponibilidad:</strong> Open source (Apache 2.0).</p>"
+    },
+    "java": {
+      "id": "java",
+      "label": "Java",
+      "type": "tool",
+      "url": "https://www.java.com/",
+      "info": "Java Lenguaje de programación orientado a objetos y portable. Se usa para: Aplicaciones empresariales, Android, sistemas distribuidos. Disponibilidad: Parcialmente open source (OpenJDK).",
+      "connections": {
+        "parent": [
+          {
+            "id": "languages",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "processing"
+        ]
+      },
+      "infoHTML": "<h3>Java</h3>\n             <p>Lenguaje de programación orientado a objetos y portable.</p>\n             <p><strong>Se usa para:</strong> Aplicaciones empresariales, Android, sistemas distribuidos.</p>\n             <p><strong>Disponibilidad:</strong> Parcialmente open source (OpenJDK).</p>"
+    },
+    "html": {
+      "id": "html",
+      "label": "HTML",
+      "type": "tool",
+      "url": "https://developer.mozilla.org/es/docs/Web/HTML",
+      "info": "HTML Lenguaje de marcado para estructurar contenido web. Se usa para: Desarrollo web, estructura de páginas, documentos web. Disponibilidad: Estándar abierto (W3C).",
+      "connections": {
+        "parent": [
+          {
+            "id": "languages",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "sitio-web",
+          "editor-shaders-live"
+        ]
+      },
+      "infoHTML": "<h3>HTML</h3>\n             <p>Lenguaje de marcado para estructurar contenido web.</p>\n             <p><strong>Se usa para:</strong> Desarrollo web, estructura de páginas, documentos web.</p>\n             <p><strong>Disponibilidad:</strong> Estándar abierto (W3C).</p>"
+    },
+    "css": {
+      "id": "css",
+      "label": "CSS",
+      "type": "tool",
+      "url": "https://developer.mozilla.org/es/docs/Web/CSS",
+      "info": "CSS Lenguaje de hojas de estilo para diseño web. Se usa para: Diseño web, interfaces de usuario, animaciones. Disponibilidad: Estándar abierto (W3C).",
+      "connections": {
+        "parent": [
+          {
+            "id": "languages",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "sitio-web",
+          "editor-shaders-live"
+        ]
+      },
+      "infoHTML": "<h3>CSS</h3>\n            <p>Lenguaje de hojas de estilo para diseño web.</p>\n            <p><strong>Se usa para:</strong> Diseño web, interfaces de usuario, animaciones.</p>\n            <p><strong>Disponibilidad:</strong> Estándar abierto (W3C).</p>"
+    },
+    "json": {
+      "id": "json",
+      "label": "JSON",
+      "type": "tool",
+      "url": "https://www.json.org/",
+      "info": "JSON Formato ligero de intercambio de datos. Se usa para: APIs, configuraciones, almacenamiento de datos estructurados. Disponibilidad: Estándar abierto.",
+      "connections": {
+        "parent": [
+          {
+            "id": "languages",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>JSON</h3>\n             <p>Formato ligero de intercambio de datos.</p>\n             <p><strong>Se usa para:</strong> APIs, configuraciones, almacenamiento de datos estructurados.</p>\n             <p><strong>Disponibilidad:</strong> Estándar abierto.</p>"
+    },
+    "r": {
+      "id": "r",
+      "label": "R",
+      "type": "tool",
+      "url": "https://www.r-project.org/",
+      "info": "R Lenguaje de programación especializado en estadística y visualización de datos. Se usa para: Análisis estadístico, ciencia de datos, visualización, investigación. Disponibilidad: Open source (GPL).",
+      "connections": {
+        "parent": [
+          {
+            "id": "languages",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "conda"
+        ]
+      },
+      "infoHTML": "<h3>R</h3>\n          <p>Lenguaje de programación especializado en estadística y visualización de datos.</p>\n          <p><strong>Se usa para:</strong> Análisis estadístico, ciencia de datos, visualización, investigación.</p>\n          <p><strong>Disponibilidad:</strong> Open source (GPL).</p>"
+    },
+    "arduino": {
+      "id": "arduino",
+      "label": "Arduino",
+      "type": "tool",
+      "url": "https://www.arduino.cc/",
+      "info": "Arduino Plataforma de hardware y software para prototipado electrónico. Se usa para: Proyectos DIY, robótica, arte interactivo, Internet de las Cosas. Disponibilidad: Open source.",
+      "connections": {
+        "parent": [
+          {
+            "id": "languages",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "cpp",
+          "instalaciones-fisicas",
+          "soportes"
+        ]
+      },
+      "infoHTML": "<h3>Arduino</h3>\n                <p>Plataforma de hardware y software para prototipado electrónico.</p>\n                <p><strong>Se usa para:</strong> Proyectos DIY, robótica, arte interactivo, Internet de las Cosas.</p>\n                <p><strong>Disponibilidad:</strong> Open source.</p>"
+    },
+    "assembler": {
+      "id": "assembler",
+      "label": "Assembler",
+      "type": "tool",
+      "url": "https://en.wikipedia.org/wiki/Assembly_language",
+      "info": "Assembler (Lenguaje Ensamblador) Lenguaje de programación de bajo nivel que representa directamente las instrucciones del procesador con una sintaxis legible por humanos. Se usa para: Programación de sistemas embebidos, optimización de rendimiento, desarrollo de drivers, seguridad informática y reverse engineering. Disponibilidad: Varía según la arquitectura del procesador (x86, ARM, RISC-V, etc.).",
+      "connections": {
+        "parent": [
+          {
+            "id": "languages",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Assembler (Lenguaje Ensamblador)</h3>\n                <p>Lenguaje de programación de bajo nivel que representa directamente las instrucciones del procesador con una sintaxis legible por humanos.</p>\n                <p><strong>Se usa para:</strong> Programación de sistemas embebidos, optimización de rendimiento, desarrollo de drivers, seguridad informática y reverse engineering.</p>\n                <p><strong>Disponibilidad:</strong> Varía según la arquitectura del procesador (x86, ARM, RISC-V, etc.).</p>"
+    },
+    "react": {
+      "id": "react",
+      "label": "React",
+      "type": "tool",
+      "url": "https://reactjs.org/",
+      "info": "React Biblioteca de JavaScript para construir interfaces de usuario interactivas. Se usa para: Aplicaciones web, interfaces de usuario, SPAs. Disponibilidad: Open source (MIT).",
+      "connections": {
+        "parent": [
+          {
+            "id": "frontend",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "nextjs",
+          "frameworks"
+        ]
+      },
+      "infoHTML": "<h3>React</h3>\n              <p>Biblioteca de JavaScript para construir interfaces de usuario interactivas.</p>\n              <p><strong>Se usa para:</strong> Aplicaciones web, interfaces de usuario, SPAs.</p>\n              <p><strong>Disponibilidad:</strong> Open source (MIT).</p>"
+    },
+    "vue": {
+      "id": "vue",
+      "label": "Vue.js",
+      "type": "tool",
+      "url": "https://vuejs.org/",
+      "info": "Vue.js Framework progresivo para construir interfaces de usuario. Se usa para: Aplicaciones web, interfaces de usuario, integración progresiva. Disponibilidad: Open source (MIT).",
+      "connections": {
+        "parent": [
+          {
+            "id": "frontend",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "frameworks"
+        ]
+      },
+      "infoHTML": "<h3>Vue.js</h3>\n            <p>Framework progresivo para construir interfaces de usuario.</p>\n            <p><strong>Se usa para:</strong> Aplicaciones web, interfaces de usuario, integración progresiva.</p>\n            <p><strong>Disponibilidad:</strong> Open source (MIT).</p>"
+    },
+    "svelte": {
+      "id": "svelte",
+      "label": "Svelte",
+      "type": "tool",
+      "url": "https://svelte.dev/",
+      "info": "Svelte Framework que compila código en JavaScript optimizado en tiempo de compilación. Se usa para: Aplicaciones web ligeras, componentes interactivos, visualizaciones. Disponibilidad: Open source (MIT).",
+      "connections": {
+        "parent": [
+          {
+            "id": "frontend",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Svelte</h3>\n               <p>Framework que compila código en JavaScript optimizado en tiempo de compilación.</p>\n               <p><strong>Se usa para:</strong> Aplicaciones web ligeras, componentes interactivos, visualizaciones.</p>\n               <p><strong>Disponibilidad:</strong> Open source (MIT).</p>"
+    },
+    "angular": {
+      "id": "angular",
+      "label": "Angular",
+      "type": "tool",
+      "url": "https://angular.io/",
+      "info": "Angular Framework de JavaScript para desarrollo de aplicaciones web. Se usa para: Aplicaciones web empresariales, SPAs, aplicaciones móviles híbridas. Disponibilidad: Open source (MIT).",
+      "connections": {
+        "parent": [
+          {
+            "id": "frontend",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "typescript",
+          "frameworks"
+        ]
+      },
+      "infoHTML": "<h3>Angular</h3>\n                <p>Framework de JavaScript para desarrollo de aplicaciones web.</p>\n                <p><strong>Se usa para:</strong> Aplicaciones web empresariales, SPAs, aplicaciones móviles híbridas.</p>\n                <p><strong>Disponibilidad:</strong> Open source (MIT).</p>"
+    },
+    "nextjs": {
+      "id": "nextjs",
+      "label": "Next.js",
+      "type": "tool",
+      "url": "https://nextjs.org/",
+      "info": "Next.js Framework de React para aplicaciones web con renderizado del lado del servidor. Se usa para: Sitios web con alto rendimiento SEO, aplicaciones web, e-commerce. Disponibilidad: Open source (MIT).",
+      "connections": {
+        "parent": [
+          {
+            "id": "frontend",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "react"
+        ]
+      },
+      "infoHTML": "<h3>Next.js</h3>\n               <p>Framework de React para aplicaciones web con renderizado del lado del servidor.</p>\n               <p><strong>Se usa para:</strong> Sitios web con alto rendimiento SEO, aplicaciones web, e-commerce.</p>\n               <p><strong>Disponibilidad:</strong> Open source (MIT).</p>"
+    },
+    "chatgpt": {
+      "id": "chatgpt",
+      "label": "ChatGPT",
+      "type": "tool",
+      "url": "https://openai.com/chatgpt",
+      "info": "ChatGPT Modelo de lenguaje de OpenAI para conversaciones y generación de texto. Se usa para: Asistentes virtuales, generación de contenido, respuesta a preguntas. Disponibilidad: Servicio de pago con API.",
+      "connections": {
+        "parent": [
+          {
+            "id": "llm",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "prompting"
+        ]
+      },
+      "infoHTML": "<h3>ChatGPT</h3>\n                <p>Modelo de lenguaje de OpenAI para conversaciones y generación de texto.</p>\n                <p><strong>Se usa para:</strong> Asistentes virtuales, generación de contenido, respuesta a preguntas.</p>\n                <p><strong>Disponibilidad:</strong> Servicio de pago con API.</p>"
+    },
+    "deepseek": {
+      "id": "deepseek",
+      "label": "Deepseek",
+      "type": "tool",
+      "url": "https://deepseek.ai/",
+      "info": "DeepSeek Modelo de lenguaje con capacidades avanzadas de razonamiento. Se usa para: Generación de código, asistencia en programación, razonamiento lógico. Disponibilidad: Open source.",
+      "connections": {
+        "parent": [
+          {
+            "id": "llm",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "prompting"
+        ]
+      },
+      "infoHTML": "<h3>DeepSeek</h3>\n                 <p>Modelo de lenguaje con capacidades avanzadas de razonamiento.</p>\n                 <p><strong>Se usa para:</strong> Generación de código, asistencia en programación, razonamiento lógico.</p>\n                 <p><strong>Disponibilidad:</strong> Open source.</p>"
+    },
+    "gemini": {
+      "id": "gemini",
+      "label": "Gemini",
+      "type": "tool",
+      "url": "https://deepmind.google/technologies/gemini/",
+      "info": "Gemini Modelo multimodal de Google que procesa texto, imágenes y otros formatos. Se usa para: Asistentes virtuales, análisis multimodal, generación de contenido. Disponibilidad: Servicio de pago con versión gratuita.",
+      "connections": {
+        "parent": [
+          {
+            "id": "llm",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "prompting"
+        ]
+      },
+      "infoHTML": "<h3>Gemini</h3>\n               <p>Modelo multimodal de Google que procesa texto, imágenes y otros formatos.</p>\n               <p><strong>Se usa para:</strong> Asistentes virtuales, análisis multimodal, generación de contenido.</p>\n               <p><strong>Disponibilidad:</strong> Servicio de pago con versión gratuita.</p>"
+    },
+    "kimi": {
+      "id": "kimi",
+      "label": "Kimi",
+      "type": "tool",
+      "url": "https://kimi.moonshot.cn/",
+      "info": "Kimi Asistente de IA con capacidades de razonamiento y generación creativa. Se usa para: Asistencia creativa, generación de contenido, respuesta a consultas. Disponibilidad: Servicio de pago.",
+      "connections": {
+        "parent": [
+          {
+            "id": "llm",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "prompting"
+        ]
+      },
+      "infoHTML": "<h3>Kimi</h3>\n             <p>Asistente de IA con capacidades de razonamiento y generación creativa.</p>\n             <p><strong>Se usa para:</strong> Asistencia creativa, generación de contenido, respuesta a consultas.</p>\n             <p><strong>Disponibilidad:</strong> Servicio de pago.</p>"
+    },
+    "claude": {
+      "id": "claude",
+      "label": "Claude",
+      "type": "tool",
+      "url": "https://www.anthropic.com/claude",
+      "info": "Claude Modelo de lenguaje de Anthropic diseñado para ser útil e inofensivo. Se usa para: Asistencia virtual, generación de texto, análisis de documentos. Disponibilidad: Servicio de pago con versión gratuita.",
+      "connections": {
+        "parent": [
+          {
+            "id": "llm",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "prompting"
+        ]
+      },
+      "infoHTML": "<h3>Claude</h3>\n               <p>Modelo de lenguaje de Anthropic diseñado para ser útil e inofensivo.</p>\n               <p><strong>Se usa para:</strong> Asistencia virtual, generación de texto, análisis de documentos.</p>\n               <p><strong>Disponibilidad:</strong> Servicio de pago con versión gratuita.</p>"
+    },
+    "windows": {
+      "id": "windows",
+      "label": "Windows",
+      "type": "tool",
+      "url": "https://www.microsoft.com/windows",
+      "info": "Windows Sistema operativo de Microsoft para computadoras personales. Se usa para: Entornos de escritorio, juegos, desarrollo de software. Disponibilidad: Producto comercial.",
+      "connections": {
+        "parent": [
+          {
+            "id": "os",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "spout",
+          "unity",
+          "unreal",
+          "godot",
+          "touchdesigner",
+          "processing",
+          "openframeworks",
+          "p5",
+          "three",
+          "babylon",
+          "tone",
+          "hydra",
+          "xampp",
+          "resolume",
+          "blender",
+          "paquete-adobe",
+          "obs",
+          "cinema4d",
+          "ableton",
+          "puredata",
+          "guipper",
+          "gitbash"
+        ]
+      },
+      "infoHTML": "<h3>Windows</h3>\n                <p>Sistema operativo de Microsoft para computadoras personales.</p>\n                <p><strong>Se usa para:</strong> Entornos de escritorio, juegos, desarrollo de software.</p>\n                <p><strong>Disponibilidad:</strong> Producto comercial.</p>"
+    },
+    "linux": {
+      "id": "linux",
+      "label": "Linux",
+      "type": "tool",
+      "url": "https://www.linux.org/",
+      "info": "Linux Sistema operativo de código abierto basado en Unix. Se usa para: Servidores, desarrollo, sistemas embebidos, supercomputación. Disponibilidad: Open source (GPL y otras).",
+      "connections": {
+        "parent": [
+          {
+            "id": "os",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "raspberry-pi",
+          "docker",
+          "vps",
+          "unity",
+          "godot",
+          "processing",
+          "openframeworks",
+          "p5",
+          "three",
+          "babylon",
+          "tone",
+          "hydra",
+          "xampp",
+          "blender",
+          "obs",
+          "puredata"
+        ]
+      },
+      "infoHTML": "<h3>Linux</h3>\n              <p>Sistema operativo de código abierto basado en Unix.</p>\n              <p><strong>Se usa para:</strong> Servidores, desarrollo, sistemas embebidos, supercomputación.</p>\n              <p><strong>Disponibilidad:</strong> Open source (GPL y otras).</p>"
+    },
+    "mac": {
+      "id": "mac",
+      "label": "macOS",
+      "type": "tool",
+      "url": "https://www.apple.com/macos",
+      "info": "macOS Sistema operativo de Apple para computadoras Mac. Se usa para: Diseño gráfico, desarrollo, producción multimedia. Disponibilidad: Producto comercial.",
+      "connections": {
+        "parent": [
+          {
+            "id": "os",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "syphon",
+          "unity",
+          "unreal",
+          "godot",
+          "touchdesigner",
+          "processing",
+          "openframeworks",
+          "p5",
+          "three",
+          "babylon",
+          "tone",
+          "hydra",
+          "xampp",
+          "resolume",
+          "blender",
+          "paquete-adobe",
+          "obs",
+          "cinema4d",
+          "ableton",
+          "puredata"
+        ]
+      },
+      "infoHTML": "<h3>macOS</h3>\n            <p>Sistema operativo de Apple para computadoras Mac.</p>\n            <p><strong>Se usa para:</strong> Diseño gráfico, desarrollo, producción multimedia.</p>\n            <p><strong>Disponibilidad:</strong> Producto comercial.</p>"
+    },
+    "android": {
+      "id": "android",
+      "label": "Android",
+      "type": "tool",
+      "url": "https://www.android.com/",
+      "info": "Android Sistema operativo móvil basado en Linux desarrollado por Google. Se usa para: Dispositivos móviles, pantallas y otros dispositivos electrónicos. Disponibilidad: Parcialmente open source (Apache 2.0). Admite .apk no oficiales habilitando permisos, pero para distribución oficial requiere Google Play.",
+      "connections": {
+        "parent": [
+          {
+            "id": "os",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "pantalla-touch",
+          "ar",
+          "unity",
+          "unreal",
+          "godot",
+          "processing",
+          "p5",
+          "three",
+          "babylon",
+          "tone"
+        ]
+      },
+      "infoHTML": "<h3>Android</h3>\n                <p>Sistema operativo móvil basado en Linux desarrollado por Google.</p>\n                <p><strong>Se usa para:</strong> Dispositivos móviles, pantallas y otros dispositivos electrónicos.</p>\n                <p><strong>Disponibilidad:</strong> Parcialmente open source (Apache 2.0). Admite .apk no oficiales habilitando permisos, pero para distribución oficial requiere Google Play.</p>"
+    },
+    "ios": {
+      "id": "ios",
+      "label": "iOS",
+      "type": "tool",
+      "url": "https://www.apple.com/ios",
+      "info": "iOS Sistema operativo móvil de Apple para iPhone y iPad. Se usa para: Dispositivos móviles de Apple. Disponibilidad: Producto comercial. Requiere cuenta de desarrollador de pago y pasar por proceso de aprobación para publicar aplicaciones.",
+      "connections": {
+        "parent": [
+          {
+            "id": "os",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "unity",
+          "unreal",
+          "godot",
+          "openframeworks",
+          "p5",
+          "three",
+          "babylon",
+          "tone"
+        ]
+      },
+      "infoHTML": "<h3>iOS</h3>\n            <p>Sistema operativo móvil de Apple para iPhone y iPad.</p>\n            <p><strong>Se usa para:</strong> Dispositivos móviles de Apple.</p>\n            <p><strong>Disponibilidad:</strong> Producto comercial. Requiere cuenta de desarrollador de pago y pasar por proceso de aprobación para publicar aplicaciones.</p>"
+    },
+    "pantalla-touch": {
+      "id": "pantalla-touch",
+      "label": "Pantalla Touch",
+      "type": "tool",
+      "url": "#",
+      "info": "Pantalla Touch Interfaz de entrada basada en contacto directo con la pantalla. Se usa para: Dispositivos móviles, quioscos interactivos, instalaciones artísticas. Disponibilidad: Existen marcos touch con salida HDMI o dispositivos KIOSK con Android incluido que admiten .apk o acceso por red local.",
+      "connections": {
+        "parent": [
+          {
+            "id": "soportes",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "android",
+          "compilado-apk"
+        ]
+      },
+      "infoHTML": "<h3>Pantalla Touch</h3>\n                       <p>Interfaz de entrada basada en contacto directo con la pantalla.</p>\n                       <p><strong>Se usa para:</strong> Dispositivos móviles, quioscos interactivos, instalaciones artísticas.</p>\n                       <p><strong>Disponibilidad:</strong> Existen marcos touch con salida HDMI o dispositivos KIOSK con Android incluido que admiten .apk o acceso por red local.</p>"
+    },
+    "instalaciones-fisicas": {
+      "id": "instalaciones-fisicas",
+      "label": "Instalaciones Físicas",
+      "type": "tool",
+      "url": "#",
+      "info": "Instalaciones Físicas Espacios físicos con componentes electrónicos interactivos. Se usa para: Arte interactivo, museos, exposiciones, eventos. Disponibilidad: Depende del proyecto y sus componentes.",
+      "connections": {
+        "parent": [
+          {
+            "id": "soportes",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "arduino"
+        ]
+      },
+      "infoHTML": "<h3>Instalaciones Físicas</h3>\n                              <p>Espacios físicos con componentes electrónicos interactivos.</p>\n                              <p><strong>Se usa para:</strong> Arte interactivo, museos, exposiciones, eventos.</p>\n                              <p><strong>Disponibilidad:</strong> Depende del proyecto y sus componentes.</p>"
+    },
+    "raspberry-pi": {
+      "id": "raspberry-pi",
+      "label": "Raspberry Pi",
+      "type": "tool",
+      "url": "https://www.raspberrypi.org/",
+      "info": "Raspberry Pi Computadora de placa única de bajo costo y tamaño reducido. Se usa para: Proyectos DIY, instalaciones interactivas, Internet de las Cosas, educación. Disponibilidad: Hardware open source.",
+      "connections": {
+        "parent": [
+          {
+            "id": "soportes",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "linux",
+          "python",
+          "entornos"
+        ]
+      },
+      "infoHTML": "<h3>Raspberry Pi</h3>\n                     <p>Computadora de placa única de bajo costo y tamaño reducido.</p>\n                     <p><strong>Se usa para:</strong> Proyectos DIY, instalaciones interactivas, Internet de las Cosas, educación.</p>\n                     <p><strong>Disponibilidad:</strong> Hardware open source.</p>"
+    },
+    "pantalla-led": {
+      "id": "pantalla-led",
+      "label": "Pantalla LED",
+      "type": "tool",
+      "url": "#",
+      "info": "Pantalla LED Dispositivo de visualización basado en diodos emisores de luz. Se usa para: Instalaciones artísticas, señalización digital, escenografías, mapping. Disponibilidad: Hardware comercial en diversos formatos.",
+      "connections": {
+        "parent": [
+          {
+            "id": "soportes",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Pantalla LED</h3>\n                     <p>Dispositivo de visualización basado en diodos emisores de luz.</p>\n                     <p><strong>Se usa para:</strong> Instalaciones artísticas, señalización digital, escenografías, mapping.</p>\n                     <p><strong>Disponibilidad:</strong> Hardware comercial en diversos formatos.</p>"
+    },
+    "proyector": {
+      "id": "proyector",
+      "label": "Proyector",
+      "type": "tool",
+      "url": "#",
+      "info": "Proyector Dispositivo óptico que proyecta imágenes en una superficie. Se usa para: Videomapping, instalaciones inmersivas, proyecciones arquitectónicas, arte digital. Disponibilidad: Hardware comercial en diversos formatos y potencias.",
+      "connections": {
+        "parent": [
+          {
+            "id": "soportes",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Proyector</h3>\n                  <p>Dispositivo óptico que proyecta imágenes en una superficie.</p>\n                  <p><strong>Se usa para:</strong> Videomapping, instalaciones inmersivas, proyecciones arquitectónicas, arte digital.</p>\n                  <p><strong>Disponibilidad:</strong> Hardware comercial en diversos formatos y potencias.</p>"
+    },
+    "sitio-web": {
+      "id": "sitio-web",
+      "label": "Sitio Web",
+      "type": "tool",
+      "url": "#",
+      "info": "Sitio Web Conjunto de páginas web interconectadas accesibles a través de internet. Se usa para: Portfolios digitales, documentación de proyectos, galerías virtuales, arte web. Disponibilidad: Accesible a través de navegadores web.",
+      "connections": {
+        "parent": [
+          {
+            "id": "soportes",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "javascript",
+          "css",
+          "html",
+          "nodejs",
+          "typescript",
+          "compilado-apk"
+        ]
+      },
+      "infoHTML": "<h3>Sitio Web</h3>\n                  <p>Conjunto de páginas web interconectadas accesibles a través de internet.</p>\n                  <p><strong>Se usa para:</strong> Portfolios digitales, documentación de proyectos, galerías virtuales, arte web.</p>\n                  <p><strong>Disponibilidad:</strong> Accesible a través de navegadores web.</p>"
+    },
+    "compilado-apk": {
+      "id": "compilado-apk",
+      "label": "Compilado .apk",
+      "type": "tool",
+      "url": "#",
+      "info": "Compilado APK Archivo de aplicación empaquetado para el sistema operativo Android. Se usa para: Distribuir aplicaciones móviles, instalaciones interactivas en dispositivos KIOSK, experiencias inmersivas. Disponibilidad: Formato estándar para aplicaciones Android.",
+      "connections": {
+        "parent": [
+          {
+            "id": "soportes",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "unity",
+          "sitio-web",
+          "pantalla-touch"
+        ]
+      },
+      "infoHTML": "<h3>Compilado APK</h3>\n                      <p>Archivo de aplicación empaquetado para el sistema operativo Android.</p>\n                      <p><strong>Se usa para:</strong> Distribuir aplicaciones móviles, instalaciones interactivas en dispositivos KIOSK, experiencias inmersivas.</p>\n                      <p><strong>Disponibilidad:</strong> Formato estándar para aplicaciones Android.</p>"
+    },
+    "virtual-production": {
+      "id": "virtual-production",
+      "label": "Virtual Production",
+      "type": "tool",
+      "url": "#",
+      "info": "Virtual Production Técnica que combina filmación en vivo con entornos virtuales en tiempo real. Se usa para: Producción cinematográfica, televisión, eventos en vivo, instalaciones artísticas. Disponibilidad: Tecnología principalmente basada en Unreal Engine.",
+      "connections": {
+        "parent": [
+          {
+            "id": "soportes",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "unreal"
+        ]
+      },
+      "infoHTML": "<h3>Virtual Production</h3>\n                           <p>Técnica que combina filmación en vivo con entornos virtuales en tiempo real.</p>\n                           <p><strong>Se usa para:</strong> Producción cinematográfica, televisión, eventos en vivo, instalaciones artísticas.</p>\n                           <p><strong>Disponibilidad:</strong> Tecnología principalmente basada en Unreal Engine.</p>"
+    },
+    "vr": {
+      "id": "vr",
+      "label": "VR",
+      "type": "tool",
+      "url": "#",
+      "info": "Realidad Virtual (VR) Tecnología que permite la inmersión en entornos virtuales mediante dispositivos especializados. Se usa para: Videojuegos inmersivos, entrenamiento, educación, arte interactivo. Disponibilidad: Requiere hardware específico como Oculus Quest, HTC Vive, Valve Index.",
+      "connections": {
+        "parent": [
+          {
+            "id": "soportes",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "unity",
+          "unreal",
+          "blender"
+        ]
+      },
+      "infoHTML": "<h3>Realidad Virtual (VR)</h3>\n           <p>Tecnología que permite la inmersión en entornos virtuales mediante dispositivos especializados.</p>\n           <p><strong>Se usa para:</strong> Videojuegos inmersivos, entrenamiento, educación, arte interactivo.</p>\n           <p><strong>Disponibilidad:</strong> Requiere hardware específico como Oculus Quest, HTC Vive, Valve Index.</p>"
+    },
+    "ar": {
+      "id": "ar",
+      "label": "AR",
+      "type": "tool",
+      "url": "#",
+      "info": "Realidad Aumentada (AR) Tecnología que superpone elementos virtuales en el mundo real. Se usa para: Aplicaciones interactivas, educación, marketing, navegación, experiencias artísticas. Disponibilidad: Principalmente en dispositivos móviles Android e iOS.",
+      "connections": {
+        "parent": [
+          {
+            "id": "soportes",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "android",
+          "unity"
+        ]
+      },
+      "infoHTML": "<h3>Realidad Aumentada (AR)</h3>\n           <p>Tecnología que superpone elementos virtuales en el mundo real.</p>\n           <p><strong>Se usa para:</strong> Aplicaciones interactivas, educación, marketing, navegación, experiencias artísticas.</p>\n           <p><strong>Disponibilidad:</strong> Principalmente en dispositivos móviles Android e iOS.</p>"
+    },
+    "sonido": {
+      "id": "sonido",
+      "label": "Sonido",
+      "type": "tool",
+      "url": "#",
+      "info": "Sonido Medio de expresión artística y comunicación basado en ondas acústicas. Se usa para: Instalaciones sonoras, música generativa, arte interactivo, diseño de experiencias inmersivas. Disponibilidad: Medio universal accesible a través de diversas tecnologías.",
+      "connections": {
+        "parent": [
+          {
+            "id": "soportes",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "ableton",
+          "puredata"
+        ]
+      },
+      "infoHTML": "<h3>Sonido</h3>\n               <p>Medio de expresión artística y comunicación basado en ondas acústicas.</p>\n               <p><strong>Se usa para:</strong> Instalaciones sonoras, música generativa, arte interactivo, diseño de experiencias inmersivas.</p>\n               <p><strong>Disponibilidad:</strong> Medio universal accesible a través de diversas tecnologías.</p>"
+    },
+    "videojuegos": {
+      "id": "videojuegos",
+      "label": "Videojuegos",
+      "type": "tool",
+      "url": "#",
+      "info": "Videojuegos Medio interactivo que combina narrativa, arte visual y programación. Se usa para: Entretenimiento, educación, arte interactivo, simulaciones, experiencias inmersivas. Disponibilidad: Desde plataformas comerciales hasta desarrollo independiente.",
+      "connections": {
+        "parent": [
+          {
+            "id": "soportes",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "unity",
+          "godot",
+          "unreal",
+          "javascript",
+          "three"
+        ]
+      },
+      "infoHTML": "<h3>Videojuegos</h3>\n                    <p>Medio interactivo que combina narrativa, arte visual y programación.</p>\n                    <p><strong>Se usa para:</strong> Entretenimiento, educación, arte interactivo, simulaciones, experiencias inmersivas.</p>\n                    <p><strong>Disponibilidad:</strong> Desde plataformas comerciales hasta desarrollo independiente.</p>"
+    },
+    "mapping": {
+      "id": "mapping",
+      "label": "Mapping",
+      "type": "tool",
+      "url": "#",
+      "info": "Mapping Técnica que consiste en proyectar imágenes sobre superficies reales para conseguir efectos de movimiento o 3D. Se usa para: Instalaciones artísticas, eventos, espectáculos, publicidad, arquitectura. Disponibilidad: Técnica accesible mediante software especializado.",
+      "connections": {
+        "parent": [
+          {
+            "id": "soportes",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Mapping</h3>\n                <p>Técnica que consiste en proyectar imágenes sobre superficies reales para conseguir efectos de movimiento o 3D.</p>\n                <p><strong>Se usa para:</strong> Instalaciones artísticas, eventos, espectáculos, publicidad, arquitectura.</p>\n                <p><strong>Disponibilidad:</strong> Técnica accesible mediante software especializado.</p>"
+    },
+    "nft": {
+      "id": "nft",
+      "label": "NFT",
+      "type": "tool",
+      "url": "https://ethereum.org/en/nft/",
+      "info": "NFT Token No Fungible, un activo digital único que representa la propiedad de un elemento digital específico. Se usa para: Arte digital, coleccionables, certificados de autenticidad, propiedad digital en blockchain. Disponibilidad: Implementado en diversas blockchains como Ethereum, Solana, Tezos, entre otras.",
+      "connections": {
+        "parent": [
+          {
+            "id": "soportes",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "p5",
+          "three",
+          "javascript",
+          "babylon"
+        ]
+      },
+      "infoHTML": "<h3>NFT</h3>\n             <p>Token No Fungible, un activo digital único que representa la propiedad de un elemento digital específico.</p>\n             <p><strong>Se usa para:</strong> Arte digital, coleccionables, certificados de autenticidad, propiedad digital en blockchain.</p>\n             <p><strong>Disponibilidad:</strong> Implementado en diversas blockchains como Ethereum, Solana, Tezos, entre otras.</p>"
+    },
+    "websockets": {
+      "id": "websockets",
+      "label": "WebSockets",
+      "type": "tool",
+      "url": "https://developer.mozilla.org/es/docs/Web/API/WebSockets_API",
+      "info": "WebSockets Protocolo de comunicación bidireccional en tiempo real sobre TCP. Se usa para: Chats, juegos multijugador, actualizaciones en tiempo real, dashboards. Disponibilidad: Estándar abierto de libre implementación.",
+      "connections": {
+        "parent": [
+          {
+            "id": "frameworks",
+            "type": "primary"
+          },
+          {
+            "id": "protocolos",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "frameworks",
+          "editor-shaders-live"
+        ]
+      },
+      "infoHTML": "<h3>WebSockets</h3>\n                   <p>Protocolo de comunicación bidireccional en tiempo real sobre TCP.</p>\n                   <p><strong>Se usa para:</strong> Chats, juegos multijugador, actualizaciones en tiempo real, dashboards.</p>\n                   <p><strong>Disponibilidad:</strong> Estándar abierto de libre implementación.</p>"
+    },
+    "spout": {
+      "id": "spout",
+      "label": "Spout",
+      "type": "tool",
+      "url": "https://spout.zeal.co/",
+      "info": "Spout Protocolo de intercambio de texturas en tiempo real para Windows. Se usa para: Compartir texturas entre aplicaciones en tiempo real, VJ, instalaciones interactivas. Disponibilidad: Open source (BSD).",
+      "connections": {
+        "parent": [
+          {
+            "id": "protocolos",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "windows",
+          "obs",
+          "resolume",
+          "guipper"
+        ]
+      },
+      "infoHTML": "<h3>Spout</h3>\n              <p>Protocolo de intercambio de texturas en tiempo real para Windows.</p>\n              <p><strong>Se usa para:</strong> Compartir texturas entre aplicaciones en tiempo real, VJ, instalaciones interactivas.</p>\n              <p><strong>Disponibilidad:</strong> Open source (BSD).</p>"
+    },
+    "syphon": {
+      "id": "syphon",
+      "label": "Syphon",
+      "type": "tool",
+      "url": "http://syphon.v002.info/",
+      "info": "Syphon Protocolo de intercambio de texturas en tiempo real para macOS. Se usa para: Compartir texturas entre aplicaciones en tiempo real, VJ, instalaciones interactivas. Disponibilidad: Open source (MIT).",
+      "connections": {
+        "parent": [
+          {
+            "id": "protocolos",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "mac"
+        ]
+      },
+      "infoHTML": "<h3>Syphon</h3>\n               <p>Protocolo de intercambio de texturas en tiempo real para macOS.</p>\n               <p><strong>Se usa para:</strong> Compartir texturas entre aplicaciones en tiempo real, VJ, instalaciones interactivas.</p>\n               <p><strong>Disponibilidad:</strong> Open source (MIT).</p>"
+    },
+    "ndi": {
+      "id": "ndi",
+      "label": "NDI",
+      "type": "tool",
+      "url": "https://www.ndi.tv/",
+      "info": "NDI Protocolo de vídeo en red de NewTek. Se usa para: Transmisión de vídeo de alta calidad por red, producción en vivo, instalaciones interactivas. Disponibilidad: Parcialmente open source.",
+      "connections": {
+        "parent": [
+          {
+            "id": "protocolos",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "obs",
+          "resolume",
+          "guipper"
+        ]
+      },
+      "infoHTML": "<h3>NDI</h3>\n            <p>Protocolo de vídeo en red de NewTek.</p>\n            <p><strong>Se usa para:</strong> Transmisión de vídeo de alta calidad por red, producción en vivo, instalaciones interactivas.</p>\n            <p><strong>Disponibilidad:</strong> Parcialmente open source.</p>"
+    },
+    "webrtc": {
+      "id": "webrtc",
+      "label": "WebRTC",
+      "type": "tool",
+      "url": "https://webrtc.org/",
+      "info": "WebRTC Tecnología web para comunicación en tiempo real. Se usa para: Videollamadas, transmisión de datos peer-to-peer, aplicaciones colaborativas. Disponibilidad: Open source.",
+      "connections": {
+        "parent": [
+          {
+            "id": "protocolos",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>WebRTC</h3>\n               <p>Tecnología web para comunicación en tiempo real.</p>\n               <p><strong>Se usa para:</strong> Videollamadas, transmisión de datos peer-to-peer, aplicaciones colaborativas.</p>\n               <p><strong>Disponibilidad:</strong> Open source.</p>"
+    },
+    "osc": {
+      "id": "osc",
+      "label": "OSC",
+      "type": "tool",
+      "url": "https://opensoundcontrol.stanford.edu/",
+      "info": "OSC Protocolo de comunicación para instrumentos musicales y multimedia. Se usa para: Control de software multimedia, mapeo de datos, instalaciones interactivas. Disponibilidad: Open source.",
+      "connections": {
+        "parent": [
+          {
+            "id": "protocolos",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "ableton",
+          "puredata",
+          "resolume",
+          "guipper"
+        ]
+      },
+      "infoHTML": "<h3>OSC</h3>\n            <p>Protocolo de comunicación para instrumentos musicales y multimedia.</p>\n            <p><strong>Se usa para:</strong> Control de software multimedia, mapeo de datos, instalaciones interactivas.</p>\n            <p><strong>Disponibilidad:</strong> Open source.</p>"
+    },
+    "api": {
+      "id": "api",
+      "label": "API",
+      "type": "tool",
+      "url": "https://developer.mozilla.org/es/docs/Glossary/API",
+      "info": "API Interfaz de Programación de Aplicaciones. Conjunto de reglas y protocolos para la comunicación entre aplicaciones. Se usa para: Integración de servicios, acceso a datos externos, automatización de procesos. Disponibilidad: Varía según el proveedor, desde abiertas hasta comerciales.",
+      "connections": {
+        "parent": [
+          {
+            "id": "protocolos",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>API</h3>\n            <p>Interfaz de Programación de Aplicaciones. Conjunto de reglas y protocolos para la comunicación entre aplicaciones.</p>\n            <p><strong>Se usa para:</strong> Integración de servicios, acceso a datos externos, automatización de procesos.</p>\n            <p><strong>Disponibilidad:</strong> Varía según el proveedor, desde abiertas hasta comerciales.</p>"
+    },
+    "midi": {
+      "id": "midi",
+      "label": "MIDI",
+      "type": "tool",
+      "url": "https://www.midi.org/",
+      "info": "MIDI Protocolo estándar para la comunicación entre instrumentos musicales electrónicos y computadoras. Se usa para: Composición musical, control de sintetizadores, automatización de audio, instalaciones interactivas. Disponibilidad: Estándar abierto.",
+      "connections": {
+        "parent": [
+          {
+            "id": "protocolos",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "ableton",
+          "puredata",
+          "resolume"
+        ]
+      },
+      "infoHTML": "<h3>MIDI</h3>\n             <p>Protocolo estándar para la comunicación entre instrumentos musicales electrónicos y computadoras.</p>\n             <p><strong>Se usa para:</strong> Composición musical, control de sintetizadores, automatización de audio, instalaciones interactivas.</p>\n             <p><strong>Disponibilidad:</strong> Estándar abierto.</p>"
+    },
+    "resolume": {
+      "id": "resolume",
+      "label": "Resolume",
+      "type": "tool",
+      "url": "https://resolume.com/",
+      "info": "Resolume Software para mezcla de vídeo en tiempo real y mapping. Se usa para: VJ, mapping arquitectónico, instalaciones audiovisuales, eventos en vivo. Disponibilidad: Software comercial.",
+      "connections": {
+        "parent": [
+          {
+            "id": "software-multimedia",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "osc",
+          "midi",
+          "ndi",
+          "spout",
+          "windows",
+          "mac"
+        ]
+      },
+      "infoHTML": "<h3>Resolume</h3>\n                 <p>Software para mezcla de vídeo en tiempo real y mapping.</p>\n                 <p><strong>Se usa para:</strong> VJ, mapping arquitectónico, instalaciones audiovisuales, eventos en vivo.</p>\n                 <p><strong>Disponibilidad:</strong> Software comercial.</p>"
+    },
+    "blender": {
+      "id": "blender",
+      "label": "Blender",
+      "type": "tool",
+      "url": "https://www.blender.org/",
+      "info": "Blender Software de modelado 3D, animación, composición y renderizado. Se usa para: Modelado 3D, animación, efectos visuales, videojuegos. Disponibilidad: Open source (GPL).",
+      "connections": {
+        "parent": [
+          {
+            "id": "software-multimedia",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "glsl",
+          "python",
+          "vr",
+          "engines",
+          "windows",
+          "mac",
+          "linux"
+        ]
+      },
+      "infoHTML": "<h3>Blender</h3>\n                <p>Software de modelado 3D, animación, composición y renderizado.</p>\n                <p><strong>Se usa para:</strong> Modelado 3D, animación, efectos visuales, videojuegos.</p>\n                <p><strong>Disponibilidad:</strong> Open source (GPL).</p>"
+    },
+    "paquete-adobe": {
+      "id": "paquete-adobe",
+      "label": "Paquete Adobe",
+      "type": "tool",
+      "url": "https://www.adobe.com/",
+      "info": "Paquete Adobe Conjunto de aplicaciones para diseño gráfico, edición de video y desarrollo web. Se usa para: Diseño gráfico, edición de video, animación, desarrollo web. Disponibilidad: Software comercial. Incluye After Effects, Premiere, Photoshop, Illustrator, XD, entre otros.",
+      "connections": {
+        "parent": [
+          {
+            "id": "software-multimedia",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "javascript",
+          "windows",
+          "mac"
+        ]
+      },
+      "infoHTML": "<h3>Paquete Adobe</h3>\n                       <p>Conjunto de aplicaciones para diseño gráfico, edición de video y desarrollo web.</p>\n                       <p><strong>Se usa para:</strong> Diseño gráfico, edición de video, animación, desarrollo web.</p>\n                       <p><strong>Disponibilidad:</strong> Software comercial. Incluye After Effects, Premiere, Photoshop, Illustrator, XD, entre otros.</p>"
+    },
+    "obs": {
+      "id": "obs",
+      "label": "OBS",
+      "type": "tool",
+      "url": "https://obsproject.com/",
+      "info": "OBS Studio Software para grabación y transmisión de video en vivo. Se usa para: Streaming, grabación de pantalla, producción de video en vivo. Disponibilidad: Open source (GPL).",
+      "connections": {
+        "parent": [
+          {
+            "id": "software-multimedia",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "spout",
+          "ndi",
+          "soportes",
+          "windows",
+          "mac",
+          "linux"
+        ]
+      },
+      "infoHTML": "<h3>OBS Studio</h3>\n            <p>Software para grabación y transmisión de video en vivo.</p>\n            <p><strong>Se usa para:</strong> Streaming, grabación de pantalla, producción de video en vivo.</p>\n            <p><strong>Disponibilidad:</strong> Open source (GPL).</p>"
+    },
+    "cinema4d": {
+      "id": "cinema4d",
+      "label": "Cinema 4D",
+      "type": "tool",
+      "url": "https://www.maxon.net/cinema-4d",
+      "info": "Cinema 4D Software de modelado 3D, animación y renderizado. Se usa para: Modelado 3D, animación, efectos visuales, diseño gráfico. Disponibilidad: Software comercial.",
+      "connections": {
+        "parent": [
+          {
+            "id": "software-multimedia",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "windows",
+          "mac"
+        ]
+      },
+      "infoHTML": "<h3>Cinema 4D</h3>\n                 <p>Software de modelado 3D, animación y renderizado.</p>\n                 <p><strong>Se usa para:</strong> Modelado 3D, animación, efectos visuales, diseño gráfico.</p>\n                 <p><strong>Disponibilidad:</strong> Software comercial.</p>"
+    },
+    "ableton": {
+      "id": "ableton",
+      "label": "Ableton Live",
+      "type": "tool",
+      "url": "https://www.ableton.com/",
+      "info": "Ableton Live Software de producción musical y actuación en vivo. Se usa para: Producción musical, actuaciones en vivo, instalaciones sonoras, arte interactivo. Disponibilidad: Software comercial.",
+      "connections": {
+        "parent": [
+          {
+            "id": "software-multimedia",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "sonido",
+          "osc",
+          "midi",
+          "windows",
+          "mac"
+        ]
+      },
+      "infoHTML": "<h3>Ableton Live</h3>\n                <p>Software de producción musical y actuación en vivo.</p>\n                <p><strong>Se usa para:</strong> Producción musical, actuaciones en vivo, instalaciones sonoras, arte interactivo.</p>\n                <p><strong>Disponibilidad:</strong> Software comercial.</p>"
+    },
+    "puredata": {
+      "id": "puredata",
+      "label": "Pure Data",
+      "type": "tool",
+      "url": "https://puredata.info/",
+      "info": "Pure Data Entorno de programación visual para audio, video y procesamiento gráfico. Se usa para: Arte sonoro, instalaciones interactivas, procesamiento de señales en tiempo real, música generativa. Disponibilidad: Open source (BSD).",
+      "connections": {
+        "parent": [
+          {
+            "id": "software-multimedia",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "sonido",
+          "osc",
+          "midi",
+          "windows",
+          "mac",
+          "linux"
+        ]
+      },
+      "infoHTML": "<h3>Pure Data</h3>\n                 <p>Entorno de programación visual para audio, video y procesamiento gráfico.</p>\n                 <p><strong>Se usa para:</strong> Arte sonoro, instalaciones interactivas, procesamiento de señales en tiempo real, música generativa.</p>\n                 <p><strong>Disponibilidad:</strong> Open source (BSD).</p>"
+    },
+    "guipper": {
+      "id": "guipper",
+      "label": "Guipper",
+      "type": "tool",
+      "url": "https://jeyder.com.ar/guipper/",
+      "info": "Guipper Software de programación visual para la creación de gráficos generativos en tiempo real. Se usa para: Visuales en vivo, VJ, instalaciones interactivas, arte generativo. Disponibilidad: Open source.",
+      "connections": {
+        "parent": [
+          {
+            "id": "software-multimedia",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "osc",
+          "spout",
+          "ndi",
+          "shaders",
+          "windows"
+        ]
+      },
+      "infoHTML": "<h3>Guipper</h3>\n                <p>Software de programación visual para la creación de gráficos generativos en tiempo real.</p>\n                <p><strong>Se usa para:</strong> Visuales en vivo, VJ, instalaciones interactivas, arte generativo.</p>\n                <p><strong>Disponibilidad:</strong> Open source.</p>"
+    },
+    "gitbash": {
+      "id": "gitbash",
+      "label": "Git Bash",
+      "type": "tool",
+      "url": "https://gitforwindows.org/",
+      "info": "Git Bash Emulador de terminal que integra Git con una shell de tipo Bash para Windows. Se usa para: Control de versiones, gestión de repositorios, automatización de tareas mediante scripts. Disponibilidad: Software libre incluido con Git para Windows.",
+      "connections": {
+        "parent": [
+          {
+            "id": "software-multimedia",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "git",
+          "nodejs",
+          "python",
+          "windows"
+        ]
+      },
+      "infoHTML": "<h3>Git Bash</h3>\n                <p>Emulador de terminal que integra Git con una shell de tipo Bash para Windows.</p>\n                <p><strong>Se usa para:</strong> Control de versiones, gestión de repositorios, automatización de tareas mediante scripts.</p>\n                <p><strong>Disponibilidad:</strong> Software libre incluido con Git para Windows.</p>"
+    },
+    "livecoding": {
+      "id": "livecoding",
+      "label": "Livecoding",
+      "type": "tool",
+      "url": "#",
+      "info": "Livecoding Práctica de programación en vivo donde el código se escribe y modifica en tiempo real como parte de una actuación artística o musical. Se usa para: Performances, instalaciones interactivas, eventos artísticos. Disponibilidad: Práctica abierta con diversas herramientas disponibles.",
+      "connections": {
+        "parent": [
+          {
+            "id": "glosario",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "hydra",
+          "javascript",
+          "p5",
+          "glsl",
+          "software-multimedia"
+        ]
+      },
+      "infoHTML": "<h3>Livecoding</h3>\n                   <p>Práctica de programación en vivo donde el código se escribe y modifica en tiempo real como parte de una actuación artística o musical.</p>\n                   <p><strong>Se usa para:</strong> Performances, instalaciones interactivas, eventos artísticos.</p>\n                   <p><strong>Disponibilidad:</strong> Práctica abierta con diversas herramientas disponibles.</p>"
+    },
+    "vibecoding": {
+      "id": "vibecoding",
+      "label": "Vibecoding",
+      "type": "tool",
+      "url": "#",
+      "info": "Vibecoding Práctica de programación utilizando exclusivamente modelos de lenguaje y editores de texto. Se usa para: Desarrollo de código de manera fluida y conversacional. Disponibilidad: Requiere acceso a modelos de lenguaje avanzados (LLMs).",
+      "connections": {
+        "parent": [
+          {
+            "id": "glosario",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "ides"
+        ]
+      },
+      "infoHTML": "<h3>Vibecoding</h3>\n                   <p>Práctica de programación utilizando exclusivamente modelos de lenguaje y editores de texto.</p>\n                   <p><strong>Se usa para:</strong> Desarrollo de código de manera fluida y conversacional.</p>\n                   <p><strong>Disponibilidad:</strong> Requiere acceso a modelos de lenguaje avanzados (LLMs).</p>"
+    },
+    "programacion": {
+      "id": "programacion",
+      "label": "Programación",
+      "type": "tool",
+      "url": "#",
+      "info": "Programación Arte de crear instrucciones para que una computadora realice tareas específicas. Se usa para: Desarrollo de software, automatización, resolución de problemas. Estructuras básicas: Variables: Contenedores para almacenar datos IFs: Estructuras condicionales para toma de decisiones Ciclos repetitivos: for, map, while, do-while, etc. Funciones: Bloques de código reutilizables Clases: Plantillas para crear objetos Objetos: Instancias con propiedades y métodos Disponibilidad: Conocimiento libre accesible a través de diversos recursos educativos.",
+      "connections": {
+        "parent": [
+          {
+            "id": "glosario",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Programación</h3>\n                     <p>Arte de crear instrucciones para que una computadora realice tareas específicas.</p>\n                     <p><strong>Se usa para:</strong> Desarrollo de software, automatización, resolución de problemas.</p>\n                     <p><strong>Estructuras básicas:</strong></p>\n                     <ul style=\"margin: 5px 0; padding-left: 20px;\">\n                         <li><strong>Variables:</strong> Contenedores para almacenar datos</li>\n                         <li><strong>IFs:</strong> Estructuras condicionales para toma de decisiones</li>\n                         <li><strong>Ciclos repetitivos:</strong> for, map, while, do-while, etc.</li>\n                         <li><strong>Funciones:</strong> Bloques de código reutilizables</li>\n                         <li><strong>Clases:</strong> Plantillas para crear objetos</li>\n                         <li><strong>Objetos:</strong> Instancias con propiedades y métodos</li>\n                     </ul>\n                     <p><strong>Disponibilidad:</strong> Conocimiento libre accesible a través de diversos recursos educativos.</p>"
+    },
+    "prompting": {
+      "id": "prompting",
+      "label": "Prompting",
+      "type": "tool",
+      "url": "#",
+      "info": "Prompting Técnica para comunicarse eficazmente con modelos de IA mediante instrucciones precisas. Se usa para: Obtener resultados óptimos de modelos de IA, generación de contenido, asistencia en programación. Disponibilidad: Técnica accesible para cualquier usuario de modelos de IA.",
+      "connections": {
+        "parent": [
+          {
+            "id": "glosario",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "ia",
+          "comfy",
+          "n8n",
+          "pinokio",
+          "clawbot",
+          "moltbook",
+          "chatgpt",
+          "deepseek",
+          "gemini",
+          "kimi",
+          "claude",
+          "llm",
+          "cursor",
+          "windsurf",
+          "trae",
+          "v0",
+          "antigravity"
+        ]
+      },
+      "infoHTML": "<h3>Prompting</h3>\n                  <p>Técnica para comunicarse eficazmente con modelos de IA mediante instrucciones precisas.</p>\n                  <p><strong>Se usa para:</strong> Obtener resultados óptimos de modelos de IA, generación de contenido, asistencia en programación.</p>\n                  <p><strong>Disponibilidad:</strong> Técnica accesible para cualquier usuario de modelos de IA.</p>"
+    },
+    "consola": {
+      "id": "consola",
+      "label": "Consola",
+      "type": "tool",
+      "url": "#",
+      "info": "Consola Interfaz de línea de comandos que permite interactuar con el sistema operativo o con un programa mediante texto. Se usa para: Ejecutar comandos, depurar aplicaciones, monitorear procesos y realizar tareas administrativas. Disponibilidad: Presente en todos los sistemas operativos modernos.",
+      "connections": {
+        "parent": [
+          {
+            "id": "glosario",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Consola</h3>\n                <p>Interfaz de línea de comandos que permite interactuar con el sistema operativo o con un programa mediante texto.</p>\n                <p><strong>Se usa para:</strong> Ejecutar comandos, depurar aplicaciones, monitorear procesos y realizar tareas administrativas.</p>\n                <p><strong>Disponibilidad:</strong> Presente en todos los sistemas operativos modernos.</p>"
+    },
+    "script": {
+      "id": "script",
+      "label": "Script",
+      "type": "tool",
+      "url": "#",
+      "info": "Script Archivo de texto que contiene una serie de instrucciones que son ejecutadas secuencialmente por un intérprete. Se usa para: Automatizar tareas, configurar sistemas, procesar datos y crear funcionalidades. Disponibilidad: Puede crearse en cualquier editor de texto.",
+      "connections": {
+        "parent": [
+          {
+            "id": "glosario",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Script</h3>\n               <p>Archivo de texto que contiene una serie de instrucciones que son ejecutadas secuencialmente por un intérprete.</p>\n               <p><strong>Se usa para:</strong> Automatizar tareas, configurar sistemas, procesar datos y crear funcionalidades.</p>\n               <p><strong>Disponibilidad:</strong> Puede crearse en cualquier editor de texto.</p>"
+    },
+    "compilado-interpretado": {
+      "id": "compilado-interpretado",
+      "label": "Lenguaje de compilado vs interpretado",
+      "type": "tool",
+      "url": "#",
+      "info": "Lenguajes Compilados vs Interpretados Dos enfoques diferentes para la ejecución de código. Se usa para: Desarrollo de software con diferentes requisitos de rendimiento y flexibilidad. Disponibilidad: Los lenguajes compilados (C++, Rust) traducen todo el código a lenguaje máquina antes de la ejecución, mientras que los interpretados (Python, JavaScript) lo hacen línea por línea durante la ejecución.",
+      "connections": {
+        "parent": [
+          {
+            "id": "glosario",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Lenguajes Compilados vs Interpretados</h3>\n                              <p>Dos enfoques diferentes para la ejecución de código.</p>\n                              <p><strong>Se usa para:</strong> Desarrollo de software con diferentes requisitos de rendimiento y flexibilidad.</p>\n                              <p><strong>Disponibilidad:</strong> Los lenguajes compilados (C++, Rust) traducen todo el código a lenguaje máquina antes de la ejecución, mientras que los interpretados (Python, JavaScript) lo hacen línea por línea durante la ejecución.</p>"
+    },
+    "drivers": {
+      "id": "drivers",
+      "label": "Drivers",
+      "type": "tool",
+      "url": "#",
+      "info": "Drivers Software especializado que permite la comunicación entre el sistema operativo y el hardware. Se usa para: Habilitar el funcionamiento de componentes como tarjetas gráficas, impresoras o controladores. Disponibilidad: Proporcionados por fabricantes de hardware o incluidos en sistemas operativos.",
+      "connections": {
+        "parent": [
+          {
+            "id": "glosario",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Drivers</h3>\n                <p>Software especializado que permite la comunicación entre el sistema operativo y el hardware.</p>\n                <p><strong>Se usa para:</strong> Habilitar el funcionamiento de componentes como tarjetas gráficas, impresoras o controladores.</p>\n                <p><strong>Disponibilidad:</strong> Proporcionados por fabricantes de hardware o incluidos en sistemas operativos.</p>"
+    },
+    "mcp": {
+      "id": "mcp",
+      "label": "MCP",
+      "type": "tool",
+      "url": "#",
+      "info": "MCP (Model-Controller-Presenter) Patrón arquitectónico de software que extiende el MVC para separar mejor las responsabilidades. Se usa para: Estructurar aplicaciones complejas, mejorar la testabilidad y mantener un código más limpio. Disponibilidad: Concepto de diseño aplicable en cualquier proyecto de software.",
+      "connections": {
+        "parent": [
+          {
+            "id": "glosario",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>MCP (Model-Controller-Presenter)</h3>\n            <p>Patrón arquitectónico de software que extiende el MVC para separar mejor las responsabilidades.</p>\n            <p><strong>Se usa para:</strong> Estructurar aplicaciones complejas, mejorar la testabilidad y mantener un código más limpio.</p>\n            <p><strong>Disponibilidad:</strong> Concepto de diseño aplicable en cualquier proyecto de software.</p>"
+    },
+    "repositorio": {
+      "id": "repositorio",
+      "label": "Repositorio (o Repo)",
+      "type": "tool",
+      "url": "https://github.com/",
+      "info": "Repositorio (o Repo) Espacio centralizado donde se almacena, organiza, mantiene y difunde información digital, habitualmente bases de datos o archivos informáticos. Se usa para: Almacenar código fuente, controlar versiones, colaborar en proyectos de desarrollo y compartir recursos. Disponibilidad: Servicios como GitHub, GitLab, Bitbucket o implementaciones propias.",
+      "connections": {
+        "parent": [
+          {
+            "id": "glosario",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "github",
+          "git"
+        ]
+      },
+      "infoHTML": "<h3>Repositorio (o Repo)</h3>\n            <p>Espacio centralizado donde se almacena, organiza, mantiene y difunde información digital, habitualmente bases de datos o archivos informáticos.</p>\n            <p><strong>Se usa para:</strong> Almacenar código fuente, controlar versiones, colaborar en proyectos de desarrollo y compartir recursos.</p>\n            <p><strong>Disponibilidad:</strong> Servicios como GitHub, GitLab, Bitbucket o implementaciones propias.</p>"
+    },
+    "github": {
+      "id": "github",
+      "label": "GitHub",
+      "type": "tool",
+      "url": "https://github.com/",
+      "info": "GitHub Plataforma de desarrollo colaborativo basada en Git que permite alojar y revisar código, gestionar proyectos y construir software junto con otros desarrolladores. Se usa para: Almacenar repositorios, colaborar en proyectos, gestionar versiones de código y publicar páginas web mediante GitHub Pages. Disponibilidad: Servicio gratuito con opciones de pago para funcionalidades avanzadas. Nota: Es la plataforma que utilizaremos para mostrar nuestras páginas web durante el curso.",
+      "connections": {
+        "parent": [
+          {
+            "id": "glosario",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "git",
+          "repositorio",
+          "docker",
+          "entornos"
+        ]
+      },
+      "infoHTML": "<h3>GitHub</h3>\n            <p>Plataforma de desarrollo colaborativo basada en Git que permite alojar y revisar código, gestionar proyectos y construir software junto con otros desarrolladores.</p>\n            <p><strong>Se usa para:</strong> Almacenar repositorios, colaborar en proyectos, gestionar versiones de código y publicar páginas web mediante GitHub Pages.</p>\n            <p><strong>Disponibilidad:</strong> Servicio gratuito con opciones de pago para funcionalidades avanzadas.</p>\n            <p><strong>Nota:</strong> Es la plataforma que utilizaremos para mostrar nuestras páginas web durante el curso.</p>"
+    },
+    "git": {
+      "id": "git",
+      "label": "Git",
+      "type": "tool",
+      "url": "https://git-scm.com/",
+      "info": "Git Sistema de control de versiones distribuido diseñado para manejar proyectos desde pequeños a muy grandes con velocidad y eficiencia. Se usa para: Control de versiones, trabajo colaborativo, seguimiento de cambios en archivos y gestión de ramas de desarrollo. Disponibilidad: Software libre y de código abierto.",
+      "connections": {
+        "parent": [
+          {
+            "id": "glosario",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "github",
+          "repositorio",
+          "gitbash",
+          "entornos"
+        ]
+      },
+      "infoHTML": "<h3>Git</h3>\n            <p>Sistema de control de versiones distribuido diseñado para manejar proyectos desde pequeños a muy grandes con velocidad y eficiencia.</p>\n            <p><strong>Se usa para:</strong> Control de versiones, trabajo colaborativo, seguimiento de cambios en archivos y gestión de ramas de desarrollo.</p>\n            <p><strong>Disponibilidad:</strong> Software libre y de código abierto.</p>"
+    },
+    "docker": {
+      "id": "docker",
+      "label": "Docker",
+      "type": "tool",
+      "url": "https://www.docker.com/",
+      "info": "Docker Plataforma de virtualización a nivel de sistema operativo para desarrollar, enviar y ejecutar aplicaciones en contenedores. Se usa para: Crear entornos aislados y reproducibles, facilitar el despliegue de aplicaciones y microservicios. Disponibilidad: Open source con versiones Community y Enterprise.",
+      "connections": {
+        "parent": [
+          {
+            "id": "entornos",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "python",
+          "nodejs",
+          "github",
+          "linux"
+        ]
+      },
+      "infoHTML": "<h3>Docker</h3>\n              <p>Plataforma de virtualización a nivel de sistema operativo para desarrollar, enviar y ejecutar aplicaciones en contenedores.</p>\n              <p><strong>Se usa para:</strong> Crear entornos aislados y reproducibles, facilitar el despliegue de aplicaciones y microservicios.</p>\n              <p><strong>Disponibilidad:</strong> Open source con versiones Community y Enterprise.</p>"
+    },
+    "venv": {
+      "id": "venv",
+      "label": "venv",
+      "type": "tool",
+      "url": "https://docs.python.org/3/library/venv.html",
+      "info": "venv (Python) Módulo integrado en Python para crear entornos virtuales ligeros con su propia instalación de Python. Se usa para: Aislar dependencias de proyectos Python, evitar conflictos entre paquetes. Disponibilidad: Incluido en la biblioteca estándar de Python desde la versión 3.3.",
+      "connections": {
+        "parent": [
+          {
+            "id": "entornos",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "python"
+        ]
+      },
+      "infoHTML": "<h3>venv (Python)</h3>\n            <p>Módulo integrado en Python para crear entornos virtuales ligeros con su propia instalación de Python.</p>\n            <p><strong>Se usa para:</strong> Aislar dependencias de proyectos Python, evitar conflictos entre paquetes.</p>\n            <p><strong>Disponibilidad:</strong> Incluido en la biblioteca estándar de Python desde la versión 3.3.</p>"
+    },
+    "conda": {
+      "id": "conda",
+      "label": "Conda",
+      "type": "tool",
+      "url": "https://docs.conda.io/",
+      "info": "Conda Sistema de gestión de paquetes y entornos multiplataforma, especialmente popular en ciencia de datos. Se usa para: Crear entornos virtuales para Python, R y otros lenguajes, gestionar dependencias complejas. Disponibilidad: Open source, disponible a través de Anaconda o Miniconda.",
+      "connections": {
+        "parent": [
+          {
+            "id": "entornos",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "python",
+          "r"
+        ]
+      },
+      "infoHTML": "<h3>Conda</h3>\n             <p>Sistema de gestión de paquetes y entornos multiplataforma, especialmente popular en ciencia de datos.</p>\n             <p><strong>Se usa para:</strong> Crear entornos virtuales para Python, R y otros lenguajes, gestionar dependencias complejas.</p>\n             <p><strong>Disponibilidad:</strong> Open source, disponible a través de Anaconda o Miniconda.</p>"
+    },
+    "vps": {
+      "id": "vps",
+      "label": "VPS",
+      "type": "tool",
+      "url": "https://en.wikipedia.org/wiki/Virtual_private_server",
+      "info": "VPS (Virtual Private Server) Servidor virtual privado que funciona como un servidor dedicado dentro de un entorno compartido. Se usa para: Hosting de aplicaciones web, servidores de bases de datos, entornos de desarrollo y pruebas, despliegue de APIs. Disponibilidad: Servicios de pago con diferentes proveedores como DigitalOcean, AWS, Google Cloud, Azure, etc.",
+      "connections": {
+        "parent": [
+          {
+            "id": "entornos",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "nodejs",
+          "python",
+          "linux"
+        ]
+      },
+      "infoHTML": "<h3>VPS (Virtual Private Server)</h3>\n            <p>Servidor virtual privado que funciona como un servidor dedicado dentro de un entorno compartido.</p>\n            <p><strong>Se usa para:</strong> Hosting de aplicaciones web, servidores de bases de datos, entornos de desarrollo y pruebas, despliegue de APIs.</p>\n            <p><strong>Disponibilidad:</strong> Servicios de pago con diferentes proveedores como DigitalOcean, AWS, Google Cloud, Azure, etc.</p>"
+    },
+    "protocolo-revision": {
+      "id": "protocolo-revision",
+      "label": "Protocolo de Revisión",
+      "type": "category",
+      "url": null,
+      "info": "Protocolo de entrega y criterios de evaluación para el Trabajo Práctico Final.",
+      "connections": {
+        "parent": [
+          {
+            "id": "root",
+            "type": "primary"
+          }
+        ],
+        "children": [
+          {
+            "id": "ent-github",
+            "type": "primary"
+          },
+          {
+            "id": "ent-pres",
+            "type": "primary"
+          },
+          {
+            "id": "ent-deploy",
+            "type": "primary"
+          },
+          {
+            "id": "ent-1",
+            "type": "primary"
+          },
+          {
+            "id": "ent-2",
+            "type": "primary"
+          },
+          {
+            "id": "ent-3",
+            "type": "primary"
+          },
+          {
+            "id": "crit-tec",
+            "type": "primary"
+          },
+          {
+            "id": "crit-cre",
+            "type": "primary"
+          },
+          {
+            "id": "crit-doc",
+            "type": "primary"
+          }
+        ],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Protocolo de Revisión</h3><p>Guía completa para la entrega y evaluación del Trabajo Práctico Final.</p>"
+    },
+    "ent-github": {
+      "id": "ent-github",
+      "category": "protocolo-revision",
+      "label": "Repositorio GitHub",
+      "type": "tool",
+      "info": "Código fuente completo, README.md detallado, requisitos, instrucciones y créditos.",
+      "description": "Entrega obligatoria del repositorio con todo el código fuente. El README.md es fundamental.",
+      "connections": {
+        "parent": [
+          {
+            "id": "protocolo-revision",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      }
+    },
+    "ent-pres": {
+      "id": "ent-pres",
+      "category": "protocolo-revision",
+      "label": "Documento Presentación",
+      "type": "tool",
+      "info": "PDF o PowerPoint con memoria conceptual, objetivos, proceso y decisiones técnicas.",
+      "description": "Documento formal explicando el 'qué', 'por qué' y 'cómo' del proyecto.",
+      "connections": {
+        "parent": [
+          {
+            "id": "protocolo-revision",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      }
+    },
+    "ent-deploy": {
+      "id": "ent-deploy",
+      "category": "protocolo-revision",
+      "label": "Versión Deployada",
+      "type": "tool",
+      "info": "Link al proyecto online (Vercel, GitHub Pages) o ejecutable funcional.",
+      "description": "El proyecto debe poder ser probado inmediatamente sin configuración compleja.",
+      "connections": {
+        "parent": [
+          {
+            "id": "protocolo-revision",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      }
+    },
+    "ent-1": {
+      "id": "ent-1",
+      "category": "protocolo-revision",
+      "label": "Entrega 1: Generativo",
+      "type": "tool",
+      "info": "Arte generativo básico con p5.js/three.js. Mínimo 2 técnicas y parámetros.",
+      "description": "Foco en la generación visual algorítmica y parametrización.",
+      "connections": {
+        "parent": [
+          {
+            "id": "protocolo-revision",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      }
+    },
+    "ent-2": {
+      "id": "ent-2",
+      "category": "protocolo-revision",
+      "label": "Entrega 2: Interfaz",
+      "type": "tool",
+      "info": "Interactividad y UI. Sliders, mouse/teclado y diseño responsive.",
+      "description": "El usuario debe poder controlar la obra. UX/UI básico.",
+      "connections": {
+        "parent": [
+          {
+            "id": "protocolo-revision",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      }
+    },
+    "ent-3": {
+      "id": "ent-3",
+      "category": "protocolo-revision",
+      "label": "Entrega 3: Avanzada",
+      "type": "tool",
+      "info": "Integración compleja: BD, WebSockets, ComfyUI, N8N o LLMs.",
+      "description": "Implementación de una tecnología avanzada del módulo 3.",
+      "connections": {
+        "parent": [
+          {
+            "id": "protocolo-revision",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      }
+    },
+    "crit-tec": {
+      "id": "crit-tec",
+      "category": "protocolo-revision",
+      "label": "Criterio Técnico (40%)",
+      "type": "tool",
+      "info": "Calidad de código, optimización, estructura y funcionalidad correcta.",
+      "description": "Evaluación de la solidez técnica y buenas prácticas.",
+      "connections": {
+        "parent": [
+          {
+            "id": "protocolo-revision",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      }
+    },
+    "crit-cre": {
+      "id": "crit-cre",
+      "category": "protocolo-revision",
+      "label": "Criterio Creativo (30%)",
+      "type": "tool",
+      "info": "Originalidad, estética, experiencia de usuario y propuesta artística.",
+      "description": "Evaluación del impacto visual y conceptual de la obra.",
+      "connections": {
+        "parent": [
+          {
+            "id": "protocolo-revision",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      }
+    },
+    "crit-doc": {
+      "id": "crit-doc",
+      "category": "protocolo-revision",
+      "label": "Documentación (30%)",
+      "type": "tool",
+      "info": "Claridad, referencias a IA, completitud y presentación.",
+      "description": "La capacidad de comunicar el proceso es tan importante como el resultado.",
+      "connections": {
+        "parent": [
+          {
+            "id": "protocolo-revision",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      }
+    }
+  }
+}

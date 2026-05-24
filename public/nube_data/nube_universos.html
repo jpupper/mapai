@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nube de Universos — Arte Generativo y Código con IA</title>
+    <link rel="stylesheet" href="nube_universos.css" />
+</head>
+
+<body>
+
+    <header class="nube-header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Nube de Universos</h1>
+            </div>
+        </div>
+    </header>
+    <script src="../js/menu.js"></script>
+
+    <div id="loading">
+        <div class="loading-stars" id="loading-stars"></div>
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="loading-logo-ring loading-logo-ring-1"></div>
+                <div class="loading-logo-ring loading-logo-ring-2"></div>
+                <div class="loading-logo-ring loading-logo-ring-3"></div>
+                <div class="loading-logo-core"></div>
+            </div>
+            <div class="loading-title">NUBE DE UNIVERSOS</div>
+            <div class="loading-subtitle">DIPLOMA EN ARTE GENERATIVO Y CÓDIGO CON IA</div>
+            <div class="loading-phrase-wrap">
+                <div class="loading-phrase" id="loading-phrase">Iniciando motores cuánticos…</div>
+            </div>
+            <div class="loading-bar-wrap">
+                <div class="loading-bar-track">
+                    <div class="loading-bar-fill" id="loading-bar-fill"></div>
+                    <div class="loading-bar-glow" id="loading-bar-glow"></div>
+                </div>
+                <div class="loading-bar-pct" id="loading-bar-pct">0%</div>
+            </div>
+            <div class="loading-scanline"></div>
+        </div>
+    </div>
+
+    <!-- ── Splash / Intro Screen ── -->
+    <div id="splash-screen">
+        <div class="splash-content">
+            <div class="splash-subtitle">DIPLOMA EN ARTE GENERATIVO Y CÓDIGO CON IA</div>
+            <h1 class="splash-title">NUBE DE<br>UNIVERSOS</h1>
+            <p class="splash-desc">Un mapa interactivo 3D con más de 120 tecnologías de software multimedia organizadas
+                en 15 universos. Navegá, explorá conexiones y descubrí herramientas.</p>
+            <div class="splash-modes">
+                <div class="splash-mode">
+                    <span class="splash-mode-icon">🌐</span>
+                    <span><strong>Global</strong> — Vista cenital de todos los universos</span>
+                </div>
+                <div class="splash-mode">
+                    <span class="splash-mode-icon">🔭</span>
+                    <span><strong>Orbital</strong> — Hacé click en un planeta para orbitarlo</span>
+                </div>
+                <div class="splash-mode">
+                    <span class="splash-mode-icon">🚀</span>
+                    <span><strong>Nave</strong> — Tercera persona, volá viendo tu nave</span>
+                </div>
+                <div class="splash-mode">
+                    <span class="splash-mode-icon">🎯</span>
+                    <span><strong>Cabina</strong> — Primera persona desde la cabina</span>
+                </div>
+            </div>
+            <div class="splash-buttons">
+                <button id="splash-start" class="splash-btn">EXPLORAR</button>
+
+                <button id="splash-pv" class="splash-btn splash-btn-pv">PLANET VISITOR</button>
+                <button id="splash-ranking" class="splash-btn splash-btn-ranking">RANKING</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <!-- ── Orbit HUD ── -->
+    <div id="hud">
+        <div id="title-bar">
+            <h1>Nube de Universos · Arte Generativo &amp; IA</h1>
+        </div>
+
+        <div id="universe-indicator">
+            <div class="cat-label" id="cat-label-text">—</div>
+            <div class="cat-count" id="cat-count-text"></div>
+        </div>
+
+        <div id="nav-arrows">
+            <button class="nav-btn" id="btn-prev" title="Universo anterior (←)">◀</button>
+            <button class="nav-btn" id="btn-zout" title="Alejar (↓)">−</button>
+            <button class="nav-btn" id="btn-zin" title="Acercar (↑)">+</button>
+            <button class="nav-btn" id="btn-next" title="Universo siguiente (→)">▶</button>
+        </div>
+
+        <div id="cat-dots"></div>
+
+        <div id="key-hint">
+            <kbd>←</kbd> <kbd>→</kbd> Navegar universos<br />
+            <kbd>↑</kbd> <kbd>↓</kbd> Zoom<br />
+            <kbd>Click</kbd> Seleccionar · <kbd>DblClick</kbd> Seguir<br />
+            <kbd>Arrastrar</kbd> Rotar<br />
+            <kbd>N</kbd> Nombres · <kbd>V</kbd> Cámara · <kbd>F</kbd> Nave
+        </div>
+    </div>
+
+    <!-- ── Selection indicator (outside hud so it's visible in ALL modes including ship) ── -->
+    <div id="selection-indicator">
+        <div class="sel-category" id="sel-category-text"></div>
+        <div class="sel-divider"></div>
+        <div class="sel-planet" id="sel-planet-text"></div>
+    </div>
+
+    <!-- ── Info panel (outside hud so it's visible in all modes) ── -->
+    <div id="info-panel">
+        <div class="panel-scanline"></div>
+        <div class="panel-inner">
+            <button class="close-btn" id="info-close">✕</button>
+            <div id="info-content"></div>
+        </div>
+    </div>
+    <div id="hover-tooltip"></div>
+
+    <!-- ── View mode toggle ── -->
+    <div id="view-mode-toggle">
+        <button class="neon-btn neon-home" id="btn-view-home" title="Volver al inicio">⌂ Inicio</button>
+        <button class="neon-btn active" id="btn-view-global">Global</button>
+        <button class="neon-btn" id="btn-view-camera">Orbital</button>
+        <button class="neon-btn neon-orange" id="btn-view-ship">Nave</button>
+        <button class="neon-btn neon-orange" id="btn-view-ship-cabin">Cabina</button>
+    </div>
+
+    <!-- ── Connections toggle (left side) ── -->
+    <div id="connections-toggle">
+        <button class="neon-btn" id="btn-show-connections">Conexiones OFF</button>
+    </div>
+
+    <!-- ── Camera follow hint ── -->
+    <div id="camera-hint">
+        <kbd>Click</kbd> Ir a planeta · <kbd>Scroll</kbd> <kbd>+</kbd> <kbd>−</kbd> Distancia<br />
+        <kbd>Mouse</kbd> Rotar vista · <kbd>A</kbd> <kbd>D</kbd> Yaw · <kbd>W</kbd> <kbd>S</kbd> Pitch<br />
+        <kbd>V</kbd> o <kbd>Esc</kbd> Volver a Global
+    </div>
+
+    <!-- ── Ship HUD ── -->
+    <div id="ship-hud">
+        <!-- Neon cockpit frame -->
+        <div id="cockpit-frame">
+            <div class="cockpit-edge cockpit-top"></div>
+            <div class="cockpit-edge cockpit-bottom"></div>
+            <div class="cockpit-edge cockpit-left"></div>
+            <div class="cockpit-edge cockpit-right"></div>
+            <div class="cockpit-corner cockpit-tl"></div>
+            <div class="cockpit-corner cockpit-tr"></div>
+            <div class="cockpit-corner cockpit-bl"></div>
+            <div class="cockpit-corner cockpit-br"></div>
+        </div>
+        <div id="ship-crosshair"></div>
+        <div id="ship-mode-label">NAVE</div>
+        <div id="ship-speed">
+            <div class="speed-value" id="ship-speed-value">0</div>
+            <div class="speed-label">velocidad</div>
+        </div>
+        <div id="ship-throttle-bar">
+            <div id="ship-throttle-fill"></div>
+        </div>
+        <div id="ship-controls-hint">
+            <kbd>W</kbd> Acelerar · <kbd>S</kbd> Frenar<br />
+            <kbd>A</kbd> <kbd>D</kbd> Girar · <kbd>Shift</kbd> Turbo<br />
+            <kbd>Q</kbd> Subir · <kbd>E</kbd> Bajar<br />
+            <kbd>Mouse</kbd> Mirar · <kbd>Doble-Click</kbd> Warp al planeta<br />
+            <kbd>N</kbd> Nave/Cabina · <kbd>V</kbd> Global · <kbd>Esc</kbd> Soltar cursor
+        </div>
+        <div id="engine-fire"></div>
+    </div>
+
+    <!-- ── Game HUD (visible during game exploration phase) ── -->
+    <div id="game-hud">
+        <div id="game-timer">2:00</div>
+        <div id="game-score-display">0 PTS</div>
+        <div id="game-visited">Planetas: 0</div>
+        <div id="game-combo"></div>
+        <div id="game-waypoint-hint"></div>
+        <button id="game-cam-toggle" class="neon-btn neon-orange">Cabina</button>
+    </div>
+    <div id="game-waypoint-arrow"></div>
+    <div id="game-points-popup"></div>
+    <div id="game-discovery-flash"></div>
+
+    <!-- ── Objective Panel (right side, game mode) ── -->
+    <div id="game-objective-panel">
+        <div class="game-objective-label">OBJETIVO</div>
+        <div class="game-objective-name" id="game-objective-name">—</div>
+        <div class="game-objective-category" id="game-objective-category"></div>
+        <div class="game-objective-distance" id="game-objective-distance"></div>
+    </div>
+
+    <!-- ── Briefing Screen (shown before game starts) ── -->
+    <div id="game-briefing">
+        <div class="briefing-content">
+            <div class="briefing-title">MISIÓN DE EXPLORACIÓN</div>
+            <div class="briefing-instructions">
+                <div class="briefing-step"><span class="briefing-icon">🎯</span> <strong>Objetivo:</strong> Navegá hacia
+                    el planeta indicado</div>
+                <div class="briefing-step"><span class="briefing-icon">🔭</span> <strong>Recolectar:</strong> Apuntá con
+                    la mira y mantené para capturar info</div>
+                <div class="briefing-step"><span class="briefing-icon">⚡</span> <strong>Warp:</strong> Doble-click sobre
+                    un planeta para teletransportarte</div>
+                <div class="briefing-step"><span class="briefing-icon">🧭</span> <strong>Seguí la línea verde</strong>
+                    que te guía al objetivo</div>
+            </div>
+            <div class="briefing-countdown" id="briefing-countdown">3</div>
+        </div>
+    </div>
+
+    <!-- ── Target Marker (2D overlay on distant objective planet) ── -->
+    <div id="game-target-marker">
+        <div class="target-marker-diamond"></div>
+        <div class="target-marker-label" id="target-marker-label"></div>
+        <div class="target-marker-distance" id="target-marker-distance"></div>
+    </div>
+
+    <!-- ── Wrong Planet Feedback ── -->
+    <div id="game-wrong-planet">Este no es tu objetivo. Buscá: <span id="wrong-planet-name"></span></div>
+
+    <!-- ── Game Info Panel (left side, planet info during game) ── -->
+    <div id="game-info-panel">
+        <div class="panel-scanline"></div>
+        <div class="panel-inner">
+            <button class="close-btn" id="game-info-close">✕</button>
+            <div id="game-info-content"></div>
+        </div>
+    </div>
+
+    <!-- ── Planet Discovery Modal (full-screen info overlay) ── -->
+    <div id="planet-discovery-modal">
+        <div class="discovery-modal-backdrop"></div>
+        <div class="discovery-modal-content">
+            <div class="discovery-modal-scanline-top"></div>
+            <div class="discovery-modal-icon">🔭</div>
+            <div class="discovery-modal-label">INFORMACIÓN RECOLECTADA</div>
+            <h2 class="discovery-modal-title" id="discovery-modal-title"></h2>
+            <div class="discovery-modal-divider"></div>
+            <div class="discovery-modal-body" id="discovery-modal-body"></div>
+            <a class="discovery-modal-link" id="discovery-modal-link" href="#" target="_blank"
+                style="display:none;"></a>
+            <div class="discovery-modal-divider"></div>
+            <button class="discovery-modal-btn" id="discovery-modal-close">ENTENDIDO ✓</button>
+            <div class="discovery-modal-hint">Leé la información del planeta antes de continuar</div>
+            <div class="discovery-modal-scanline-bottom"></div>
+        </div>
+    </div>
+
+    <!-- ── Collection Bar (hold crosshair on objective) ── -->
+    <div id="game-collect-bar">
+        <div id="game-collect-label">RECOLECTANDO INFORMACI&Oacute;N...</div>
+        <div class="game-collect-track">
+            <div id="game-collect-fill"></div>
+        </div>
+    </div>
+
+    <!-- ── Evaluation Screen ── -->
+    <div id="eval-screen">
+        <div class="eval-content">
+            <div class="eval-top-bar">
+                <div id="eval-running-score" class="eval-running-score">0 PTS</div>
+            </div>
+            <div class="eval-header">EVALUACI&Oacute;N</div>
+            <div id="eval-progress">Pregunta 1 de 5</div>
+            <div id="eval-type-badge" class="eval-type-badge"></div>
+            <div id="eval-points-info" class="eval-points-info"></div>
+            <div id="eval-timer">30</div>
+            <div class="eval-question-label">&iquest;A qu&eacute; herramienta corresponde esta descripci&oacute;n?</div>
+            <div id="eval-description"></div>
+            <div id="eval-options"></div>
+            <div id="eval-feedback" class="eval-feedback"></div>
+        </div>
+    </div>
+
+    <!-- ── Time Up Overlay ── -->
+    <div id="time-up-overlay">
+        <div class="time-up-content">
+            <div class="time-up-icon">&#x23F0;</div>
+            <div class="time-up-title">TIEMPO AGOTADO</div>
+            <div class="time-up-subtitle">REPORTE DE INFORMACI&Oacute;N RECOLECTADA</div>
+        </div>
+    </div>
+
+    <!-- ── Congratulations Overlay (before evaluation) ── -->
+    <div id="congrats-overlay">
+        <div class="congrats-content">
+            <div class="congrats-stars">&#x2728;</div>
+            <div class="congrats-title">MISI&Oacute;N COMPLETADA</div>
+            <div class="congrats-message">Felicitaciones por recorrer la galaxia, viajero espacial.</div>
+            <div class="congrats-sub">Vamos a constatar la informaci&oacute;n que recolectaste en tu viaje.</div>
+            <div class="congrats-planets-count">
+                <span class="congrats-count-number" id="congrats-planet-count">0</span>
+                <span class="congrats-count-label">planetas explorados</span>
+            </div>
+            <div class="congrats-hint">Preparando evaluaci&oacute;n...</div>
+        </div>
+    </div>
+
+    <!-- ── Results Screen ── -->
+    <div id="results-screen">
+        <div class="results-content">
+            <div class="results-title">REPORTE DE MISI&Oacute;N</div>
+            <div class="results-stats">
+                <div class="results-stat">
+                    <div class="results-stat-value" id="results-visited">0</div>
+                    <div class="results-stat-label">Planetas visitados</div>
+                </div>
+                <div class="results-stat">
+                    <div class="results-stat-value route" id="results-route-count">0</div>
+                    <div class="results-stat-label">Ruta oficial</div>
+                </div>
+                <div class="results-stat">
+                    <div class="results-stat-value random" id="results-random-count">0</div>
+                    <div class="results-stat-label">Descubrimientos</div>
+                </div>
+            </div>
+            <div class="results-stats" style="margin-top:8px;">
+                <div class="results-stat">
+                    <div class="results-stat-value correct" id="results-correct">0</div>
+                    <div class="results-stat-label">Correctas</div>
+                </div>
+                <div class="results-stat">
+                    <div class="results-stat-value wrong" id="results-wrong">0</div>
+                    <div class="results-stat-label">Incorrectas</div>
+                </div>
+            </div>
+            <div class="results-score-container">
+                <div class="results-score-label">PUNTAJE FINAL</div>
+                <div class="results-score-value" id="results-score">0</div>
+            </div>
+            <div class="results-ranking-inline">
+                <div class="results-ranking-title">RANKING ESTELAR</div>
+                <div class="ranking-input-row">
+                    <input type="text" id="results-ranking-name" class="ranking-input" placeholder="Tu nombre..."
+                        maxlength="20" />
+                    <button id="results-ranking-submit"
+                        class="splash-btn splash-btn-game ranking-submit-btn">GUARDAR</button>
+                </div>
+                <div id="results-ranking-list" class="ranking-list"></div>
+            </div>
+            <div class="results-buttons">
+                <button id="results-replay" class="splash-btn splash-btn-game">JUGAR DE NUEVO</button>
+                <button id="results-explore" class="splash-btn">EXPLORAR</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Planet Visitor: Briefing Screen ── -->
+    <div id="pv-briefing">
+        <div class="briefing-content">
+            <div class="briefing-title">PLANET VISITOR</div>
+            <div class="briefing-instructions">
+                <div class="briefing-step"><span class="briefing-icon">&#x1F30D;</span> <strong>Viaj&aacute;</strong> autom&aacute;ticamente entre planetas</div>
+                <div class="briefing-step"><span class="briefing-icon">&#x1F4CB;</span> <strong>Eleg&iacute;</strong> tu pr&oacute;ximo destino entre 5 opciones</div>
+                <div class="briefing-step"><span class="briefing-icon">&#x1F4D6;</span> <strong>Le&eacute;</strong> la informaci&oacute;n de cada planeta</div>
+                <div class="briefing-step"><span class="briefing-icon">&#x2753;</span> <strong>Respond&eacute;</strong> preguntas al final para sumar puntos</div>
+            </div>
+            <div class="briefing-countdown" id="pv-briefing-countdown">3</div>
+        </div>
+    </div>
+
+    <!-- ── Planet Visitor: Selection Screen ── -->
+    <div id="pv-screen">
+        <div class="pv-screen-content">
+            <div class="pv-header">
+                <div class="pv-header-title">PLANET VISITOR</div>
+                <div class="pv-header-stats">
+                    <span id="pv-progress">Planeta 1 de 10</span>
+                    <span id="pv-score">0 PTS</span>
+                </div>
+            </div>
+            <div class="pv-current">
+                <div class="pv-current-label">PLANETA ACTUAL</div>
+                <div class="pv-current-name" id="pv-current-planet">&mdash;</div>
+            </div>
+            <div class="pv-auto-advance-bar">
+                <div class="pv-auto-advance-label">AUTO-AVANCE EN <span id="pv-auto-countdown">15</span>s</div>
+                <div class="pv-auto-advance-track"><div id="pv-auto-advance-fill" class="pv-auto-advance-fill"></div></div>
+            </div>
+            <div class="pv-choose-label">&iquest;Qu&eacute; planeta quer&eacute;s visitar?</div>
+            <div id="pv-options" class="pv-options"></div>
+        </div>
+    </div>
+
+    <!-- ── Planet Visitor: Planet Info Panel ── -->
+    <div id="pv-planet-info">
+        <div class="panel-scanline"></div>
+        <div class="panel-inner">
+            <div id="pv-planet-info-content"></div>
+        </div>
+    </div>
+
+    <!-- ── Planet Visitor: Evaluation Screen ── -->
+    <div id="pv-eval-screen">
+        <div class="eval-content">
+            <div class="eval-top-bar">
+                <div id="pv-eval-running-score" class="eval-running-score">0 PTS</div>
+            </div>
+            <div class="eval-header">EVALUACI&Oacute;N</div>
+            <div id="pv-eval-progress">Pregunta 1 de 5</div>
+            <div id="pv-eval-timer">30</div>
+            <div class="eval-question-label">&iquest;A qu&eacute; herramienta corresponde esta descripci&oacute;n?</div>
+            <div id="pv-eval-description"></div>
+            <div id="pv-eval-options"></div>
+            <div id="pv-eval-feedback" class="eval-feedback"></div>
+        </div>
+    </div>
+
+    <!-- ── Planet Visitor: Results Screen ── -->
+    <div id="pv-results-screen">
+        <div class="results-content">
+            <div class="results-title">REPORTE — PLANET VISITOR</div>
+            <div class="results-stats">
+                <div class="results-stat">
+                    <div class="results-stat-value" id="pv-results-visited">0</div>
+                    <div class="results-stat-label">Planetas visitados</div>
+                </div>
+                <div class="results-stat">
+                    <div class="results-stat-value correct" id="pv-results-correct">0</div>
+                    <div class="results-stat-label">Correctas</div>
+                </div>
+                <div class="results-stat">
+                    <div class="results-stat-value wrong" id="pv-results-wrong">0</div>
+                    <div class="results-stat-label">Incorrectas</div>
+                </div>
+            </div>
+            <div class="results-score-container">
+                <div class="results-score-label">PUNTAJE FINAL</div>
+                <div class="results-score-value" id="pv-results-score">0</div>
+            </div>
+            <div class="results-ranking-inline">
+                <div class="results-ranking-title">RANKING PLANET VISITOR</div>
+                <div class="ranking-input-row">
+                    <input type="text" id="pv-results-ranking-name" class="ranking-input" placeholder="Tu nombre..."
+                        maxlength="20" />
+                    <button id="pv-results-ranking-submit"
+                        class="splash-btn splash-btn-pv ranking-submit-btn">GUARDAR</button>
+                </div>
+                <div id="pv-results-ranking-list" class="ranking-list"></div>
+            </div>
+            <div class="results-buttons">
+                <button id="pv-results-replay" class="splash-btn splash-btn-pv">JUGAR DE NUEVO</button>
+                <button id="pv-results-explore" class="splash-btn">EXPLORAR</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Ranking Screen (dual columns) ── -->
+    <div id="ranking-screen">
+        <div class="ranking-content ranking-content-dual">
+            <div class="ranking-title">RANKING ESTELAR</div>
+            <div id="ranking-input-row" class="ranking-input-row">
+                <input type="text" id="ranking-name-input" class="ranking-input" placeholder="Tu nombre..."
+                    maxlength="20" />
+                <button id="ranking-submit" class="splash-btn splash-btn-game ranking-submit-btn">GUARDAR</button>
+            </div>
+            <div class="ranking-dual-columns">
+                <div class="ranking-column">
+                    <div class="ranking-column-title ranking-column-pv">PLANET VISITOR</div>
+                    <div id="ranking-list-pv" class="ranking-list"></div>
+                </div>
+                <div class="ranking-column">
+                    <div class="ranking-column-title ranking-column-ship">CARRERA ESTELAR</div>
+                    <div id="ranking-list" class="ranking-list"></div>
+                </div>
+            </div>
+            <div class="ranking-buttons">
+                <button id="ranking-close" class="splash-btn">VOLVER</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="loadingScreen.js"></script>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+    </script>
+
+    <script type="module" src="nube_universos.js"></script>
+</body>
+
+</html>

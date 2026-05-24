@@ -1,0 +1,95 @@
+
+El silencio digital, un lienzo en espera,
+donde el código danza y el byte se congela.
+Quince estrofas tejo, con fibra y quimera,
+un poema de prueba, que a tu sistema revela.
+
+I. El Umbral del Dato:
+Se abre la matriz, el *prompt* comienza a vibrar,
+un flujo binario que el tiempo no detiene.
+Aquí el dato habita, dispuesto a navegar,
+en rutas de *query* que el sistema sostiene.
+
+II. Los Parámetros Invisibles:
+En el *scope* oculto, donde la lógica mora,
+se tejen variables que el ojo no percibe.
+Un *state* flotante, que al algoritmo atora,
+el motor de la app, que el usuario describe.
+
+III. Eco de la Conexión:
+La señal viaja, cual rayo de pureza,
+entre el *backend* frío y el *frontend* vital.
+HTTP, el puente, la dulce grandeza,
+donde el *payload* llega, siempre puntual.
+
+IV. La Estructura Nómada:
+En las *tags* de HTML, el esqueleto se alza,
+con clases y estilos, una armadura sutil.
+Un DOM que responde, cual magia que enlaza,
+cada interacción, precisa y febril.
+
+V. Javascript y el Ritmo:
+El lenguaje vivo, que el cambio impera,
+maneja el evento, la promesa cumplida.
+Asíncrono es su pulso, su razón sincera,
+el ciclo de vida, jamás detenido, nunca rendido.
+
+VI. El Despliegue y la Nube:
+De la máquina local al vasto *cloud* galáctico,
+pasando por *scripts* que al comando obedecen.
+El *deploy* final, un ritual purificador,
+donde los contenedores su destino merecen.
+
+VII. El Concepto de Sesión:
+Un tiempo limitado, un vínculo fugaz,
+donde el usuario reside, sin pedir permiso.
+Gestión de *tokens*, la clave capaz,
+de mantener el rastro en el más profundo hechizo.
+
+VIII. La API como Contracto:
+Una promesa escrita, rigurosa y precisa,
+que define la forma de la información pura.
+Un *endpoint* abierto, sin ninguna artimaña,
+la base de datos que alimenta la hondura.
+
+IX. El Manejo de Errores:
+El *try...catch* actúa, manto de salvación,
+deteniendo la caída, el colapso fatal.
+Un *bug* detectado, en la oscura función,
+el *rollback* necesario, esencial y vital.
+
+X. Archivo `.env` Misterioso:
+Donde guardamos claves, secretos sin llamar,
+variables de entorno, ocultas al mirar.
+La seguridad de fondo, un guardar bajo llave,
+el motor que gira, sin temor de fallar.
+
+XI. El Estado de los Paquetes:
+`package.json` es el mapa, el inventario exacto,
+de cada dependencia, de cada algoritmo útil.
+Nombres y versiones, un catálogo compacto,
+manteniendo el orden, siempre hábil y febril.
+
+XII. La Optimización del Rendimiento:
+Minificar, comprimir, reducir el exceso,
+para que la carga vuele sin apenas rumor.
+El *bundling* perfecto, el código en progreso,
+la velocidad óptima, el mejor resplandor.
+
+XIII. La Interfaz de Usuario (UI/UX):
+No es solo la belleza, ni solo el color y trazo,
+es guiar la mano del ojo sin titubear.
+La usabilidad ciega, el ritmo y el compás,
+hacer que la acción sea sencilla de lograr.
+
+XIV. La Prueba Unitaria (*Unit Test*):
+Verificar la lógica, el mínimo funcionó.
+La capa de abstracción, el módulo aislado.
+Confirmar que la fórmula, correcta, desbordó,
+sin fallas ni errores, perfectamente calculado.
+
+XV. El Fin del Ciclo (Pruebas Completas):
+Y así concluyen los quince versos ligeros,
+un test de resistencia para tu arquitectura.
+El ciclo ha girado, sin más rodeos ni agujeros,
+el sistema está listo, con su máxima estructura.

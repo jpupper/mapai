@@ -1,0 +1,312 @@
+/* Sistema de animaciones generales */
+
+/* Animaciones de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 105, 180, 0.8), 0 0 30px rgba(138, 43, 226, 0.6);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Clases de animación */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-list-item {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.animate-list-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.animate-heading {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.animate-heading.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efecto ripple */
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 105, 180, 0.4) 0%, transparent 70%);
+    transform: scale(0);
+    animation: ripple-animation 0.6s ease-out;
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Efecto glow en hover */
+.glow-active {
+    animation: glow 1.5s ease-in-out infinite;
+}
+
+/* Transiciones suaves para todos los elementos interactivos */
+a, button, .nav-link, .card, .tutorial-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efecto shimmer para elementos destacados */
+.shimmer {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 105, 180, 0.1) 0%,
+        rgba(255, 105, 180, 0.3) 50%,
+        rgba(255, 105, 180, 0.1) 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 3s infinite;
+}
+
+/* Animación de entrada para el header */
+header {
+    animation: slideDown 0.8s ease-out;
+}
+
+/* Animación para el menú */
+.main-nav {
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+/* Efecto hover mejorado para cards */
+.card:hover,
+.tutorial-card:hover,
+.tip-card:hover,
+.protocol-step:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(255, 105, 180, 0.4), 0 0 30px rgba(138, 43, 226, 0.3);
+}
+
+/* Animación para botones */
+button, .nav-link, .back-button {
+    position: relative;
+    overflow: hidden;
+}
+
+button::before,
+.nav-link::before,
+.back-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+button:hover::before,
+.nav-link:hover::before,
+.back-button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Animación de entrada para imágenes */
+img {
+    animation: scaleIn 0.8s ease-out;
+}
+
+/* Efecto de brillo en bordes */
+.card::after,
+.tutorial-card::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        var(--primary-color), 
+        var(--secondary-color), 
+        var(--button-bg), 
+        var(--primary-color)
+    );
+    border-radius: inherit;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s;
+    background-size: 400%;
+    animation: shimmer 3s linear infinite;
+}
+
+.card:hover::after,
+.tutorial-card:hover::after {
+    opacity: 0.3;
+}
+
+/* Animación de loading para elementos que cargan */
+@keyframes skeleton-loading {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+/* Transición suave para cambios de color */
+* {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Animación para listas */
+ul li {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+ul li:hover {
+    transform: translateX(5px);
+    color: var(--primary-color);
+}
+
+/* Efecto de profundidad en scroll */
+.card {
+    will-change: transform;
+}
+
+/* Animación de entrada escalonada para recursos */
+.resource-category {
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+.resource-category:nth-child(1) { animation-delay: 0.1s; }
+.resource-category:nth-child(2) { animation-delay: 0.2s; }
+.resource-category:nth-child(3) { animation-delay: 0.3s; }
+.resource-category:nth-child(4) { animation-delay: 0.4s; }
+.resource-category:nth-child(5) { animation-delay: 0.5s; }
+.resource-category:nth-child(6) { animation-delay: 0.6s; }
+
+/* Mejora de performance */
+.animate-on-scroll,
+.card,
+.tutorial-card {
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Responsive: reducir animaciones en dispositivos móviles */
+@media (max-width: 768px) {
+    .animate-on-scroll,
+    .animate-list-item,
+    .animate-heading {
+        animation-duration: 0.4s;
+    }
+    
+    .card:hover,
+    .tutorial-card:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+}
+
+/* Preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

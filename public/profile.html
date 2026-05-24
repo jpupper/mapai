@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi perfil — DiploIA</title>
+  <link rel="stylesheet" href="css/profile.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="row">
+        <div class="brand">
+          <h1>Mi perfil</h1>
+          <div class="sub">Mis mapas y accesos rápidos</div>
+        </div>
+        <nav class="nav">
+          <a id="link-home" class="btn" href="#">Inicio</a>
+          <a id="link-admin" class="btn" href="#">Admin</a>
+          <a id="link-community" class="btn" href="#">Comunidad</a>
+          <button id="btn-logout" class="btn danger" type="button" style="display:none;">Salir</button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="grid">
+      <section class="card">
+        <div id="auth-status" class="muted"></div>
+        <div id="login-cta" style="display:none; margin-top:12px;">
+          <a id="link-login" class="btn primary" href="#">Iniciar sesión</a>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 style="font-size:18px; margin-bottom:6px;">Mis mapas</h2>
+        <div id="projects" class="list"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/profile.js"></script>
+</body>
+</html>

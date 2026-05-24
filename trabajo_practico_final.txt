@@ -1,0 +1,123 @@
+Trabajo Práctico Final: Arte Generativo e Interactivo con IA
+Duración total: 10 horas (distribuidas en 3 entregas)
+
+DESCRIPCIÓN GENERAL
+El trabajo práctico consiste en el desarrollo incremental de una pieza de arte digital interactiva, implementada a través de tres entregas que exploran diferentes aspectos: generación, interactividad y funcionalidades avanzadas.
+
+FORMATO DE ENTREGA FINAL
+1. Repositorio en GitHub
+   - Código fuente completo y documentado
+   - README.md detallado con:
+     * Título del proyecto
+     * Descripción breve
+     * Requisitos de instalación
+     * Instrucciones de uso
+     * Tecnologías utilizadas
+     * Créditos y referencias
+
+2. Documento de Presentación (PowerPoint o PDF)
+   - Título del proyecto
+   - Descripción breve
+   - Objetivos
+   - Memoria conceptual
+   - Motivaciones
+   - Desarrollo del proyecto (documentar proceso de las 3 etapas)
+   - Notas técnicas y decisiones de implementación
+   - Bibliografía
+   - Anexos (bocetos, pruebas, experimentos)
+
+3. Versión Final Deployada
+   - Link al proyecto funcionando online, o
+   - Ejecutable con instalador
+   - Documentación clara de requerimientos y proceso de instalación
+
+ENTREGAS PARCIALES
+
+1. Primera Entrega: Desarrollo Generativo (3 horas)
+   Fecha: Al finalizar la clase 1
+   Objetivo: Implementar una pieza de arte generativo básica
+   
+   Requerimientos:
+   - Implementación de al menos dos técnicas generativas
+   - Uso de p5.js, three.js o tecnología similar
+   - Variables parametrizables que afecten la generación
+   
+   Entregables:
+   - Código fuente en GitHub
+   - Documento breve explicando:
+     * Concepto de la obra
+     * Técnicas implementadas
+     * Decisiones de diseño
+   - 3 capturas de diferentes estados del sistema
+
+2. Segunda Entrega: Desarrollo de Interfaz (3 horas)
+   Fecha: Al finalizar la clase 2
+   Objetivo: Añadir interactividad y diseño de interfaz
+   
+   Requerimientos:
+   - Interfaz gráfica con al menos:
+     * 3 sliders que modifiquen parámetros
+     * Interacción con mouse/teclado
+     * Diseño responsive básico
+   - Documentación de la interactividad
+   
+   Entregables:
+   - Actualización del repositorio
+   - Documento de avance incluyendo:
+     * Diagrama de interacción
+     * Explicación de controles
+     * Cambios respecto a la primera entrega
+
+3. Tercera Entrega: Funcionalidades Avanzadas (4 horas)
+   Fecha: Al finalizar la clase 3
+   Objetivo: Integrar una funcionalidad avanzada
+   
+   Elegir e implementar UNA de las siguientes:
+   a) Base de Datos
+      - Almacenamiento de configuraciones
+      - Sistema de guardado/carga
+   
+   b) WebSockets
+      - Interacción multi-usuario
+      - Sincronización en tiempo real
+   
+   c) Comfy API
+      - Generación de imágenes/texturas
+      - Integración con workflows
+   
+   d) N8N Integration
+      - Automatización de procesos
+      - Conexión con servicios externos
+   
+   e) LLM Integration
+      - Control por lenguaje natural
+      - Generación de parámetros vía prompts
+
+   Entregables:
+   - Código completo y documentado
+   - Documentación técnica de la implementación
+   - Manual de usuario de las nuevas funciones
+
+CRITERIOS DE EVALUACIÓN
+
+1. Aspecto Técnico (40%)
+   - Calidad del código
+   - Implementación correcta de funcionalidades
+   - Performance y optimización
+
+2. Aspecto Creativo (30%)
+   - Originalidad del concepto
+   - Calidad estética
+   - Experiencia de usuario
+
+3. Documentación (30%)
+   - Claridad en la presentación
+   - Calidad de la documentación técnica
+   - Completitud del material entregado
+
+NOTAS IMPORTANTES
+- Cada entrega parcial debe ser funcional por sí misma
+- Se valorará el uso efectivo de IA en el proceso de desarrollo
+- La documentación debe incluir referencias a las herramientas de IA utilizadas
+- El código debe estar correctamente comentado y estructurado
+- Se recomienda mantener un diario de desarrollo para la memoria conceptual
