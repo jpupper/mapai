@@ -18,9 +18,8 @@ const Project = require('./models/Project');
 const User = require('./models/User');
 
 const app = express();
-const port = process.env.PORT || 3060;
+const port = process.env.PORT || 4560;
 const APP_PATH = process.env.BASE_PATH ? process.env.BASE_PATH.replace(/\//g, '') : 'mapai';
-const LEGACY_APP_PATH = 'diploia';
 const DIPLOIA_PUBLIC_DIR = path.join(__dirname, 'public');
 const FRONT_PUBLIC_DIR = path.join(__dirname, 'public_front');
 
@@ -52,7 +51,7 @@ app.use(express.json({ limit: '100mb' }));
 app.use(express.urlencoded({ extended: true, limit: '100mb' }));
 
 app.get('/favicon.ico', (req, res) => res.status(204).end());
-for (const basePath of Array.from(new Set([APP_PATH, LEGACY_APP_PATH, 'mapai']))) {
+for (const basePath of Array.from(new Set([APP_PATH, 'mapai']))) {
     app.get(`/${basePath}/favicon.ico`, (req, res) => res.status(204).end());
 }
 app.get('/@vite/client', (req, res) => res.status(204).end());
@@ -71,33 +70,110 @@ app.use((req, res, next) => {
 const ADMIN_USERNAME = 'ADMIN';
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || process.env.ADMIN_PASS || 'rty456fgh';
 const JWT_SECRET = process.env.JWT_SECRET || 'dev-secret-change-me';
+const FSCAUTH_VERIFY_URL = process.env.FSCAUTH_VERIFY_URL || process.env.FSCAUTH_VERIFY || 'http://localhost:3027/fscauth/api/auth/verify';
 
 function signToken(payload) {
     return jwt.sign(payload, JWT_SECRET, { expiresIn: '30d' });
 }
 
-function getAuthUser(req) {
+function getBearerToken(req) {
     const header = req.get('Authorization') || '';
     const [type, token] = header.split(' ');
     if (type !== 'Bearer' || !token) return null;
+    return token;
+}
+
+function getCookieToken(req, cookieName) {
+    const cookieHeader = req.get('cookie') || '';
+    const parts = cookieHeader.split(';');
+    for (const part of parts) {
+        const [rawName, ...rest] = part.trim().split('=');
+        if (!rawName) continue;
+        if (rawName === cookieName) return decodeURIComponent(rest.join('=') || '');
+    }
+    return null;
+}
+
+function normalizeAppRole(role) {
+    const r = String(role || '').trim().toUpperCase();
+    if (r === 'ADMIN' || r === 'SYSTEM') return 'admin';
+    if (r === 'USER') return 'user';
+    return String(role || '').trim().toLowerCase() || 'user';
+}
+
+function httpGetJson(url, headers = {}) {
+    return new Promise((resolve, reject) => {
+        try {
+            const target = new URL(url);
+            const lib = target.protocol === 'https:' ? require('https') : require('http');
+            const req = lib.request({
+                protocol: target.protocol,
+                hostname: target.hostname,
+                port: target.port,
+                path: `${target.pathname}${target.search}`,
+                method: 'GET',
+                headers
+            }, (res) => {
+                let body = '';
+                res.on('data', (chunk) => (body += chunk));
+                res.on('end', () => {
+                    try {
+                        resolve(JSON.parse(body || 'null'));
+                    } catch (e) {
+                        reject(e);
+                    }
+                });
+            });
+            req.on('error', reject);
+            req.end();
+        } catch (e) {
+            reject(e);
+        }
+    });
+}
+
+async function resolveAuthUser(req) {
+    if (req._authUserResolved) return req._authUser || null;
+    req._authUserResolved = true;
+
+    const bearer = getBearerToken(req);
+    const cookieToken = getCookieToken(req, 'fsc_token');
+    const token = bearer || cookieToken;
+    if (!token) return null;
+
     try {
         const decoded = jwt.verify(token, JWT_SECRET);
-        if (!decoded?.username || !decoded?.role) return null;
-        return { username: String(decoded.username).trim().toUpperCase(), role: decoded.role };
+        if (decoded?.username && decoded?.role) {
+            const role = String(decoded.role || '').trim().toLowerCase();
+            req._authUser = { username: String(decoded.username).trim().toUpperCase(), role: role === 'admin' ? 'admin' : 'user' };
+            return req._authUser;
+        }
+    } catch (e) { }
+
+    try {
+        const data = await httpGetJson(FSCAUTH_VERIFY_URL, { Authorization: `Bearer ${token}` });
+        if (!data?.loggedIn || !data?.user) return null;
+        req._authUser = {
+            id: data.user.id,
+            email: data.user.email,
+            username: String(data.user.username || data.user.email || '').trim().toUpperCase(),
+            role: normalizeAppRole(data.user.role)
+        };
+        return req._authUser;
     } catch (e) {
         return null;
     }
 }
 
-function requireAuth(req, res, next) {
-    const user = getAuthUser(req);
+async function requireAuth(req, res, next) {
+    const user = await resolveAuthUser(req);
     if (!user) return res.status(401).json({ error: 'Unauthorized' });
     req.user = user;
     next();
 }
 
-function requireAdmin(req, res, next) {
-    const user = getAuthUser(req);
+async function requireAdmin(req, res, next) {
+    const user = await resolveAuthUser(req);
     if (!user) return res.status(401).json({ error: 'Unauthorized' });
     if (user.role !== 'admin') return res.status(403).json({ error: 'Forbidden' });
     req.user = user;
@@ -147,7 +223,7 @@ async function generateUniqueProjectId(base) {
 }
 
 async function requireProjectWriteAccess(req, res, next) {
-    const user = getAuthUser(req);
+    const user = await resolveAuthUser(req);
     if (!user) return res.status(401).json({ error: 'Unauthorized' });
     req.user = user;
 
@@ -170,7 +246,7 @@ async function requireProjectWriteAccess(req, res, next) {
 }
 
 async function requireProjectReadAccess(req, res, next) {
-    const user = getAuthUser(req);
+    const user = await resolveAuthUser(req);
     if (user) req.user = user;
 
     const projectId = getProjectIdFromReq(req);
@@ -310,7 +386,7 @@ async function getFullNodesData(projectId = 'diplomatura') {
 const diploiaStatic = express.static(DIPLOIA_PUBLIC_DIR);
 const frontStatic = fs.existsSync(FRONT_PUBLIC_DIR) ? express.static(FRONT_PUBLIC_DIR) : (req, res, next) => next();
 
-const mapaiMounts = Array.from(new Set([APP_PATH, 'mapai', LEGACY_APP_PATH]));
+const mapaiMounts = Array.from(new Set([APP_PATH, 'mapai']));
 
 app.use('/shared/js', express.static(path.join(DIPLOIA_PUBLIC_DIR, 'js')));
 app.use('/shared/css', express.static(path.join(DIPLOIA_PUBLIC_DIR, 'css')));
@@ -1263,10 +1339,8 @@ const server = http.createServer(app);
 server.listen(port, () => {
     const baseUrl = `http://localhost:${port}/${APP_PATH}`;
     console.log('===================================================');
-    console.log(`  DiploIA MongoDB Server is UP on port ${port}`);
+    console.log(`  MapAI MongoDB Server is UP on port ${port}`);
     console.log(`  MAPAI: ${baseUrl}/`);
-    console.log(`  DIPLOIA: ${baseUrl}/${LEGACY_APP_PATH}/`);
-    console.log(`  DIPLOIA ADMIN: ${baseUrl}/${LEGACY_APP_PATH}/admin`);
     console.log(`  Database: ${MONGODB_URI}`);
     console.log('===================================================');
 });

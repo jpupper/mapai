@@ -21,7 +21,7 @@ function resolveApiOrigin() {
     const configured = window.__DIPLOIA_API_ORIGIN__;
     if (configured) return String(configured).replace(/\/+$/, '');
     const host = String(window.location.hostname || '').toLowerCase();
-    if (host === 'fullscreencode.com' || host.endsWith('.fullscreencode.com')) {
+    if (host === 'fullscreencode.com' || host.endsWith('.fullscreencode.com') || host === 'fullscreen.com' || host.endsWith('.fullscreen.com')) {
         return 'https://vps-4455523-x.dattaweb.com';
     }
     return window.location.origin;
@@ -29,13 +29,13 @@ function resolveApiOrigin() {
 
 function resolveApiBasePath() {
     const host = String(window.location.hostname || '').toLowerCase();
-    if (host === 'fullscreencode.com' || host.endsWith('.fullscreencode.com')) {
+    if (host === 'fullscreencode.com' || host.endsWith('.fullscreencode.com') || host === 'fullscreen.com' || host.endsWith('.fullscreen.com')) {
         const parts = window.location.pathname.split('/').filter(Boolean);
         const reserved = new Set(['api', 'nube_data', 'js', 'css', 'img', 'favicon.ico']);
         const app = parts[0];
         if (app === 'mapai') {
             const tenant = parts[1] && !reserved.has(parts[1]) && !parts[1].includes('.') ? parts[1] : null;
-            const base = '/diploia';
+            const base = '/mapai';
             return tenant ? `${base}/${tenant}` : base;
         }
         if (app === 'diploia') return '/diploia/diploia';
@@ -57,6 +57,40 @@ let authUser = (() => {
 })();
 let isAuthenticated = false;
 let authMode = 'login';
+
+function cleanUrl() {
+    const url = new URL(window.location.href);
+    for (const key of ['token', 'username', 'userId', 'ssoset', 'nosession']) url.searchParams.delete(key);
+    return url.toString();
+}
+
+function persistSsoParams() {
+    const url = new URL(window.location.href);
+    const token = url.searchParams.get('token');
+    if (!token) return false;
+    const username = url.searchParams.get('username') || '';
+    const userId = url.searchParams.get('userId') || '';
+    localStorage.setItem(AUTH_TOKEN_KEY, token);
+    localStorage.setItem('community_auth_token', token);
+    localStorage.setItem('community_auth_user', JSON.stringify({ username: String(username || userId || 'USER').trim().toUpperCase(), role: 'user', id: userId || undefined }));
+    if (username || userId) {
+        localStorage.setItem(AUTH_USER_KEY, JSON.stringify({ username: String(username || userId || 'USER').trim().toUpperCase(), role: 'user', id: userId || undefined }));
+    }
+    authToken = token;
+    window.history.replaceState({}, '', cleanUrl());
+    return true;
+}
+
+persistSsoParams();
+if (!authToken) {
+    const apiOrigin = resolveApiOrigin();
+    const url = new URL(window.location.href);
+    if (url.searchParams.get('nosession') === 'true') {
+        window.location.href = `${apiOrigin}/fscauth/login.html?redirect=${encodeURIComponent(cleanUrl())}`;
+    } else {
+        window.location.href = `${apiOrigin}/fscauth/api/auth/sso-check?redirect=${encodeURIComponent(cleanUrl())}`;
+    }
+}
 
 // ===============================================================
 //  STATE

@@ -16,7 +16,7 @@ function resolveApiOrigin() {
   const configured = window.__DIPLOIA_API_ORIGIN__;
   if (configured) return String(configured).replace(/\/+$/, '');
   const host = String(window.location.hostname || '').toLowerCase();
-  if (host === 'fullscreencode.com' || host.endsWith('.fullscreencode.com')) {
+  if (host === 'fullscreencode.com' || host.endsWith('.fullscreencode.com') || host === 'fullscreen.com' || host.endsWith('.fullscreen.com')) {
     return 'https://vps-4455523-x.dattaweb.com';
   }
   return window.location.origin;
@@ -24,13 +24,13 @@ function resolveApiOrigin() {
 
 function resolveApiBasePath() {
   const host = String(window.location.hostname || '').toLowerCase();
-  if (host === 'fullscreencode.com' || host.endsWith('.fullscreencode.com')) {
+  if (host === 'fullscreencode.com' || host.endsWith('.fullscreencode.com') || host === 'fullscreen.com' || host.endsWith('.fullscreen.com')) {
     const parts = window.location.pathname.split('/').filter(Boolean);
     const reserved = new Set(['api', 'nube_data', 'js', 'css', 'img', 'favicon.ico', 'shared']);
     const app = parts[0];
     if (app === 'mapai') {
       const tenant = parts[1] && !reserved.has(parts[1]) && !parts[1].includes('.') ? parts[1] : null;
-      const base = '/diploia';
+      const base = '/mapai';
       return tenant ? `${base}/${tenant}` : base;
     }
     if (app === 'diploia') return '/diploia';
@@ -40,6 +40,7 @@ function resolveApiBasePath() {
 
 const API_ORIGIN = resolveApiOrigin();
 const API_BASE_PATH = resolveApiBasePath();
+const AUTH_ORIGIN = API_ORIGIN;
 
 let authToken = localStorage.getItem(AUTH_TOKEN_KEY) || localStorage.getItem(DIPLOIA_AUTH_TOKEN_KEY) || null;
 let authUser = (() => {
@@ -55,6 +56,46 @@ function apiUrl(path) {
   return `${API_ORIGIN}${API_BASE_PATH}${path}`;
 }
 
+function getCleanUrl() {
+  const url = new URL(window.location.href);
+  for (const key of ['token', 'username', 'userId', 'ssoset', 'nosession']) {
+    url.searchParams.delete(key);
+  }
+  return url.toString();
+}
+
+function persistTokenFromUrl() {
+  const url = new URL(window.location.href);
+  if (url.searchParams.get('nosession') === 'true') {
+    startLoginFlow();
+    return false;
+  }
+  const token = url.searchParams.get('token');
+  if (!token) return false;
+  const username = url.searchParams.get('username') || '';
+  const userId = url.searchParams.get('userId') || '';
+  setAuthState({
+    token,
+    user: {
+      username: String(username || userId || 'USER').trim().toUpperCase(),
+      role: 'user',
+      id: userId || undefined
+    }
+  });
+  window.history.replaceState({}, '', getCleanUrl());
+  return true;
+}
+
+function startLoginFlow() {
+  const redirect = encodeURIComponent(getCleanUrl());
+  window.location.href = `${AUTH_ORIGIN}/fscauth/login.html?redirect=${redirect}`;
+}
+
+function startSsoCheck() {
+  const redirect = encodeURIComponent(getCleanUrl());
+  window.location.href = `${AUTH_ORIGIN}/fscauth/api/auth/sso-check?redirect=${redirect}`;
+}
+
 async function apiFetch(path, options = {}) {
   const headers = new Headers(options.headers || {});
   headers.set('Content-Type', 'application/json');
@@ -62,6 +103,10 @@ async function apiFetch(path, options = {}) {
   const res = await fetch(apiUrl(path), { ...options, headers });
   const data = await res.json().catch(() => null);
   if (!res.ok) {
+    if (res.status === 401) {
+      startSsoCheck();
+      throw new Error('Unauthorized');
+    }
     const msg = data?.error || `HTTP ${res.status}`;
     throw new Error(msg);
   }
@@ -239,13 +284,7 @@ function initTabs() {
 }
 
 function openAuthModal() {
-  const modal = $('auth-modal');
-  if (!modal) return;
-  modal.style.display = '';
-  setError('login-error', '');
-  setError('register-error', '');
-  const usernameEl = $('login-username');
-  if (usernameEl) usernameEl.focus();
+  startLoginFlow();
 }
 
 function closeAuthModal() {
@@ -266,59 +305,13 @@ function initModal() {
 function initAuthForms() {
   $('form-login')?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    setError('login-error', '');
-    const username = $('login-username')?.value || '';
-    const password = $('login-password')?.value || '';
-    try {
-      const data = await apiFetch('/api/auth/login', {
-        method: 'POST',
-        body: JSON.stringify({ username, password })
-      });
-      setAuthState(data);
-      applyAuthUI();
-      if (pendingRedirect) {
-        const to = pendingRedirect;
-        pendingRedirect = null;
-        window.location.href = to;
-        return;
-      }
-      closeAuthModal();
-    } catch (err) {
-      setError('login-error', err.message);
-    }
+    startLoginFlow();
   });
 
   $('form-register')?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    setError('register-error', '');
-    const username = $('register-username')?.value || '';
-    const password = $('register-password')?.value || '';
-    const password2 = $('register-password2')?.value || '';
-    if (!password || password.length < 4) {
-      setError('register-error', 'La contraseña debe tener al menos 4 caracteres.');
-      return;
-    }
-    if (password !== password2) {
-      setError('register-error', 'Las contraseñas no coinciden.');
-      return;
-    }
-    try {
-      const data = await apiFetch('/api/auth/register', {
-        method: 'POST',
-        body: JSON.stringify({ username, password })
-      });
-      setAuthState(data);
-      applyAuthUI();
-      if (pendingRedirect) {
-        const to = pendingRedirect;
-        pendingRedirect = null;
-        window.location.href = to;
-        return;
-      }
-      closeAuthModal();
-    } catch (err) {
-      setError('register-error', err.message);
-    }
+    const redirect = encodeURIComponent(getCleanUrl());
+    window.location.href = `${AUTH_ORIGIN}/fscauth/register.html?redirect=${redirect}`;
   });
 }
 
@@ -326,7 +319,8 @@ function initLogout() {
   $('btn-logout')?.addEventListener('click', async () => {
     clearAuthState();
     applyAuthUI();
-    closeAuthModal();
+    const redirect = encodeURIComponent(getCleanUrl());
+    window.location.href = `${AUTH_ORIGIN}/fscauth/api/auth/logout?redirect=${redirect}`;
   });
 }
 
@@ -355,9 +349,9 @@ function applyPublicFilter() {
 }
 
 function initHero() {
-  $('link-diploia')?.setAttribute('href', `${BASE_PATH}/diploia/`);
-  $('link-profile')?.setAttribute('href', `${BASE_PATH}/diploia/profile.html`);
-  $('link-profile-cta')?.setAttribute('href', `${BASE_PATH}/diploia/profile.html`);
+  $('link-diploia')?.setAttribute('href', `${BASE_PATH}/mapai/`);
+  $('link-profile')?.setAttribute('href', `${BASE_PATH}/mapai/profile.html`);
+  $('link-profile-cta')?.setAttribute('href', `${BASE_PATH}/mapai/profile.html`);
 
   $('btn-cta-explore')?.addEventListener('click', () => {
     $('explore')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -365,9 +359,9 @@ function initHero() {
   $('btn-cta-create')?.addEventListener('click', () => {
     const loggedIn = !!authToken && !!authUser;
     if (loggedIn) {
-      window.location.href = `${BASE_PATH}/diploia/admin.html`;
+      window.location.href = `${BASE_PATH}/mapai/admin.html`;
     } else {
-      pendingRedirect = `${BASE_PATH}/diploia/admin.html`;
+      pendingRedirect = `${BASE_PATH}/mapai/admin.html`;
       openAuthModal();
       $('tab-register')?.click();
     }
@@ -375,9 +369,9 @@ function initHero() {
   $('btn-go-admin')?.addEventListener('click', () => {
     const loggedIn = !!authToken && !!authUser;
     if (loggedIn) {
-      window.location.href = `${BASE_PATH}/diploia/admin.html`;
+      window.location.href = `${BASE_PATH}/mapai/admin.html`;
     } else {
-      pendingRedirect = `${BASE_PATH}/diploia/admin.html`;
+      pendingRedirect = `${BASE_PATH}/mapai/admin.html`;
       openAuthModal();
       $('tab-login')?.click();
     }
@@ -386,6 +380,7 @@ function initHero() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
+  persistTokenFromUrl();
   initModal();
   initTabs();
   initAuthForms();

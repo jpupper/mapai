@@ -54,11 +54,9 @@ async function uploadToFtp() {
 
         const rawRemoteDir = process.env.FTP_REMOTE_DIR || '/mapai';
         const remoteDir = rawRemoteDir.startsWith('/') ? rawRemoteDir : `/${rawRemoteDir}`;
-        const rawDiploiaDir = process.env.FTP_DIPLOIA_DIR || '/diploia';
-        const diploiaDir = rawDiploiaDir.startsWith('/') ? rawDiploiaDir : `/${rawDiploiaDir}`;
         const localMapaiFolder = path.join(__dirname, '../public_front');
         const localSharedFolder = path.join(__dirname, '../public');
-        const localDiploiaFolder = path.join(__dirname, '../public');
+        const localAppFolder = path.join(__dirname, '../public');
 
         console.log('Sincronizando /public_front (MapAI)...');
         await syncLocalToRemote(client, localMapaiFolder, remoteDir);
@@ -66,11 +64,8 @@ async function uploadToFtp() {
         console.log('Sincronizando /public (shared assets)...');
         await syncLocalToRemote(client, localSharedFolder, remoteDir + '/shared');
 
-        console.log('Sincronizando /public (DiploIA)...');
-        await syncLocalToRemote(client, localDiploiaFolder, remoteDir + '/diploia');
-
-        console.log('Sincronizando /public (DiploIA root)...');
-        await syncLocalToRemote(client, localDiploiaFolder, diploiaDir);
+        console.log('Sincronizando /public (app MapAI)...');
+        await syncLocalToRemote(client, localAppFolder, remoteDir + '/mapai');
 
         console.log('==========================================');
         console.log('Sincronizacion FTP completada con exito!');

@@ -16,7 +16,7 @@ function resolveApiOrigin() {
   const configured = window.__DIPLOIA_API_ORIGIN__;
   if (configured) return String(configured).replace(/\/+$/, '');
   const host = String(window.location.hostname || '').toLowerCase();
-  if (host === 'fullscreencode.com' || host.endsWith('.fullscreencode.com')) {
+  if (host === 'fullscreencode.com' || host.endsWith('.fullscreencode.com') || host === 'fullscreen.com' || host.endsWith('.fullscreen.com')) {
     return 'https://vps-4455523-x.dattaweb.com';
   }
   return window.location.origin;
@@ -24,13 +24,13 @@ function resolveApiOrigin() {
 
 function resolveApiBasePath() {
   const host = String(window.location.hostname || '').toLowerCase();
-  if (host === 'fullscreencode.com' || host.endsWith('.fullscreencode.com')) {
+  if (host === 'fullscreencode.com' || host.endsWith('.fullscreencode.com') || host === 'fullscreen.com' || host.endsWith('.fullscreen.com')) {
     const parts = window.location.pathname.split('/').filter(Boolean);
     const reserved = new Set(['api', 'nube_data', 'js', 'css', 'img', 'favicon.ico']);
     const app = parts[0];
     if (app === 'mapai') {
       const tenant = parts[1] && !reserved.has(parts[1]) && !parts[1].includes('.') ? parts[1] : null;
-      const base = '/diploia';
+      const base = '/mapai';
       return tenant ? `${base}/${tenant}` : base;
     }
     if (app === 'diploia') return '/diploia/diploia';

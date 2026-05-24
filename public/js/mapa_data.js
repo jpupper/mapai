@@ -84,9 +84,9 @@ function getApiBasePath() {
                 const base = `/${app}`;
                 const basePath = tenant ? `${base}/${tenant}` : base;
                 const host = String(window.location.hostname || '').toLowerCase();
-                if (host === 'fullscreencode.com' || host.endsWith('.fullscreencode.com')) {
+                if (host === 'fullscreencode.com' || host.endsWith('.fullscreencode.com') || host === 'fullscreen.com' || host.endsWith('.fullscreen.com')) {
                         const apiOrigin = (window.__DIPLOIA_API_ORIGIN__ ? String(window.__DIPLOIA_API_ORIGIN__) : 'https://vps-4455523-x.dattaweb.com').replace(/\/+$/, '');
-                        const remoteBase = app === 'mapai' ? '/diploia' : '/diploia/diploia';
+                        const remoteBase = app === 'mapai' ? '/mapai' : '/diploia/diploia';
                         const remotePath = tenant && app === 'mapai' ? `${remoteBase}/${tenant}` : remoteBase;
                         return apiOrigin + remotePath;
                 }
