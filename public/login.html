@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - MAPAI</title>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>MAPAI</h1>
+            <p>Redirigiendo al sistema de autenticación...</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="card" style="text-align: center; padding: 4rem 2rem;">
+            <div style="font-size: 3rem; margin-bottom: 1.5rem;">🔐</div>
+            <h2 style="margin-top: 0;">Iniciar Sesión</h2>
+            <p>Redirigiendo al sistema centralizado de autenticación...</p>
+            <div style="margin-top: 2rem;">
+                <div class="spinner" style="width: 40px; height: 40px; border: 4px solid rgba(255,105,180,0.2); border-top-color: var(--primary-color); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto;"></div>
+            </div>
+            <p style="margin-top: 2rem; font-size: 0.85rem; color: #888;">
+                <a href="javascript:void(0)" onclick="showLogin()" style="color: var(--primary-color);">Redirigir manualmente</a>
+            </p>
+        </div>
+    </main>
+
+    <style>
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</body>
+</html>

@@ -22,11 +22,11 @@ echo [1/2] DESPLEGANDO EN EL VPS (!VPS_HOST!) POR SSH...
 echo Primero actualizamos desde Github y luego corremos el script en el VPS.
 echo.
 :: Construir la URL completa para forzarla en el VPS
-if "!GITHUB_REPO!"=="" set "GITHUB_REPO=jpupper/diploia"
+if "!GITHUB_REPO!"=="" set "GITHUB_REPO=jpupper/mapai"
 set "REPO_URL=https://!GITHUB_TOKEN!@github.com/!GITHUB_REPO!"
 echo USARE REPO_URL: !REPO_URL!
 
-ssh -p !VPS_PORT! !VPS_USER!@!VPS_HOST! "mkdir -p mapai && cd mapai && (test -d .git || (git init && git remote add origin !REPO_URL!)) && git remote set-url origin !REPO_URL! && echo 'Bajando cambios al VPS...' && git fetch origin main && git checkout -B main origin/main && git reset --hard origin/main && echo 'Corriendo el deploy de backend...' && bash deployscripts/server_update.sh"
+ssh -p !VPS_PORT! !VPS_USER!@!VPS_HOST! "mkdir -p mapai && cd mapai && (test -d .git || (git init && git remote add origin !REPO_URL!)) && git remote set-url origin !REPO_URL! && echo 'Bajando cambios al VPS...' && (git fetch origin main || git fetch origin master) && (git checkout -B main origin/main || git checkout -B master origin/master) && git reset --hard origin/main && (grep -q '^GITHUB_REPO=' .env 2>/dev/null && sed -i 's|^GITHUB_REPO=.*|GITHUB_REPO=jpupper/mapai|' .env || echo 'GITHUB_REPO=jpupper/mapai' >> .env) && echo 'Corriendo el deploy de backend...' && bash deployscripts/server_update.sh"
 
 echo.
 echo [2/2] SUBIENDO ARCHIVOS DE FRONTEND AL FTP (!FTP_HOST!)...

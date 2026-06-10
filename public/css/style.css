@@ -712,7 +712,93 @@ edge.hover,
     transform: scale(1.05) !important;
 }
 
+/* ============================================================
+   AUTH UI - Botones de autenticación en el nav
+   ============================================================ */
+.nav-auth {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.nav-username {
+    color: var(--primary-color);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.3rem 0.6rem;
+    background: rgba(255, 105, 180, 0.1);
+    border: 1px solid rgba(255, 105, 180, 0.3);
+    border-radius: 4px;
+    white-space: nowrap;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.auth-link {
+    font-size: 0.75rem !important;
+    padding: 0.3rem 0.6rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.3rem !important;
+    white-space: nowrap !important;
+}
+
+.auth-link svg {
+    flex-shrink: 0;
+}
+
+.auth-register {
+    background: rgba(138, 43, 226, 0.2) !important;
+    border-color: var(--button-bg) !important;
+}
+
+.auth-register:hover {
+    background: rgba(138, 43, 226, 0.4) !important;
+    border-color: var(--primary-color) !important;
+}
+
+/* Compact header adjustments */
+.compact-header .nav-auth {
+    margin-left: 1rem;
+}
+
+.compact-header .nav-username {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+}
+
+.compact-header .auth-link {
+    font-size: 0.7rem !important;
+    padding: 0.2rem 0.4rem !important;
+}
+
 @media (max-width: 768px) {
+    .nav-auth {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+        padding: 0.5rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 0.5rem;
+    }
+
+    .nav-username {
+        max-width: 80px;
+        font-size: 0.7rem;
+    }
+
+    .auth-link {
+        font-size: 0.7rem !important;
+    }
+
+    .compact-header .nav-auth {
+        margin-left: 0;
+        width: 100%;
+    }
+
     .tool-category {
         padding: 1rem;
     }
