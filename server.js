@@ -488,9 +488,6 @@ apiRouter.post('/auth/login', async (req, res) => {
 
 // Fallback local login for development when fscauth is not running
 async function localLoginFallback(req, res, loginId, password) {
-    const ADMIN_USERNAME = 'ADMIN';
-    const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || process.env.ADMIN_PASS || 'rty456fgh';
-    const JWT_SECRET = process.env.JWT_SECRET || 'dev-secret-change-me';
     const username = loginId.toUpperCase();
 
     if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {

@@ -7,6 +7,13 @@
     <script src="js/config.js"></script>
     <script src="js/auth.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof showLogin === 'function') {
+                setTimeout(showLogin, 500);
+            }
+        });
+    </script>
 </head>
 <body>
     <header>
