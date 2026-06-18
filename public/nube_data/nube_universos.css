@@ -103,6 +103,26 @@ header.nube-header .nav-link.active {
     color: #6cb4ff;
 }
 
+header.nube-header .profile-link {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.78rem;
+    font-family: 'Outfit', sans-serif;
+    border-radius: 4px;
+    background-color: rgba(120, 180, 255, 0.12);
+    border: 1px solid rgba(120, 180, 255, 0.3);
+    color: #6cb4ff;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    margin-right: 0.4rem;
+}
+header.nube-header .profile-link:hover {
+    transform: translateY(-1px);
+    background-color: rgba(120, 180, 255, 0.25);
+    border-color: rgba(120, 180, 255, 0.6);
+    color: #8fcbff;
+}
+
 header.nube-header .menu-toggle {
     display: none;
     background: rgba(255, 255, 255, 0.06);

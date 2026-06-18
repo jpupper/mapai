@@ -18,14 +18,14 @@ export class Ranking {
         const basePath = (() => {
             const reserved = new Set(['api', 'nube_data', 'js', 'css', 'img', 'favicon.ico']);
             const app = parts[0];
-            if (app === 'mapai' || app === 'diploia') {
+            if (app === 'mapai') {
                 const tenant = parts[1] && !reserved.has(parts[1]) && !parts[1].includes('.') ? parts[1] : null;
                 const base = `/${app}`;
                 const bp = tenant ? `${base}/${tenant}` : base;
                 const host = String(window.location.hostname || '').toLowerCase();
                 if (host === 'fullscreencode.com' || host.endsWith('.fullscreencode.com') || host === 'fullscreen.com' || host.endsWith('.fullscreen.com')) {
                     const apiOrigin = (window.__DIPLOIA_API_ORIGIN__ ? String(window.__DIPLOIA_API_ORIGIN__) : 'https://vps-4455523-x.dattaweb.com').replace(/\/+$/, '');
-                    const remoteBase = app === 'mapai' ? '/mapai' : '/diploia/diploia';
+                    const remoteBase = '/mapai';
                     const remotePath = tenant && app === 'mapai' ? `${remoteBase}/${tenant}` : remoteBase;
                     return apiOrigin + remotePath;
                 }

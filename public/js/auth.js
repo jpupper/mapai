@@ -8,10 +8,12 @@ function getToken() {
 
 function setToken(token) {
     localStorage.setItem('mapai_token', token);
+    localStorage.setItem('community_auth_token', token);
 }
 
 function removeToken() {
     localStorage.removeItem('mapai_token');
+    localStorage.removeItem('community_auth_token');
 }
 
 function getUser() {
@@ -21,10 +23,12 @@ function getUser() {
 
 function setUser(user) {
     localStorage.setItem('mapai_user', JSON.stringify(user));
+    localStorage.setItem('community_auth_user', JSON.stringify(user));
 }
 
 function removeUser() {
     localStorage.removeItem('mapai_user');
+    localStorage.removeItem('community_auth_user');
 }
 
 function isLoggedIn() {
@@ -46,38 +50,40 @@ function getUserUsername() {
     return user ? user.username : null;
 }
 
+const REDIRECT_URL = (() => {
+    // Use current page URL if not login/register, otherwise default to base
+    const path = window.location.pathname;
+    if (path.includes('/login.html') || path.includes('/register.html')) {
+        const base = path.startsWith('/mapai') ? '/mapai/' : '/';
+        return window.location.origin + base;
+    }
+    return window.location.href.split('?')[0]; // strip params, keep current page
+})();
+
 // Logout: limpia localStorage y redirige al logout centralizado
 function logout() {
     removeToken();
     removeUser();
-    const redirect = encodeURIComponent(window.location.origin + CONFIG.BASE + '/');
-    window.location.href = CONFIG.FSCAUTH_URL + '/api/auth/logout?redirect=' + redirect;
+    const redirect = encodeURIComponent(REDIRECT_URL);
+    window.location.href = window.CONFIG.FSCAUTH_URL + '/api/auth/logout?redirect=' + redirect;
 }
 
 // Redirige al login centralizado de fscauth
 function showLogin() {
     if (isLoggedIn()) {
-        window.location.href = CONFIG.BASE + '/';
+        window.location.href = window.CONFIG.BASE + '/';
         return;
     }
-    const currentUrl = new URL(window.location.href);
-    currentUrl.searchParams.delete('token');
-    currentUrl.searchParams.delete('username');
-    currentUrl.searchParams.delete('userId');
-    window.location.href = CONFIG.FSCAUTH_URL + '/login.html?redirect=' + encodeURIComponent(currentUrl.toString()) + '&origin=' + CONFIG.APP_NAME;
+    window.location.href = window.CONFIG.FSCAUTH_URL + '/login.html?redirect=' + encodeURIComponent(REDIRECT_URL) + '&origin=' + window.CONFIG.APP_NAME;
 }
 
 // Redirige al registro centralizado de fscauth
 function showRegister() {
     if (isLoggedIn()) {
-        window.location.href = CONFIG.BASE + '/';
+        window.location.href = window.CONFIG.BASE + '/';
         return;
     }
-    const currentUrl = new URL(window.location.href);
-    currentUrl.searchParams.delete('token');
-    currentUrl.searchParams.delete('username');
-    currentUrl.searchParams.delete('userId');
-    window.location.href = CONFIG.FSCAUTH_URL + '/register.html?redirect=' + encodeURIComponent(currentUrl.toString()) + '&origin=' + CONFIG.APP_NAME;
+    window.location.href = window.CONFIG.FSCAUTH_URL + '/register.html?redirect=' + encodeURIComponent(REDIRECT_URL) + '&origin=' + window.CONFIG.APP_NAME;
 }
 
 /**
@@ -89,8 +95,7 @@ async function checkSSO() {
     if (sessionStorage.getItem('mapai_sso_checked')) return;
     sessionStorage.setItem('mapai_sso_checked', 'true');
 
-    const currentUrl = window.location.href;
-    window.location.href = CONFIG.FSCAUTH_URL + '/api/auth/sso-check?redirect=' + encodeURIComponent(currentUrl);
+    window.location.href = window.CONFIG.FSCAUTH_URL + '/api/auth/sso-check?redirect=' + encodeURIComponent(REDIRECT_URL);
 }
 
 /**
@@ -103,7 +108,7 @@ async function syncSession() {
         const headers = { 'Accept': 'application/json' };
         if (localToken) headers['Authorization'] = 'Bearer ' + localToken;
 
-        const res = await fetch(CONFIG.FSCAUTH_URL + '/api/auth/verify', {
+        const res = await fetch(window.CONFIG.FSCAUTH_URL + '/api/auth/verify', {
             credentials: 'include',
             headers: headers
         });
@@ -157,7 +162,7 @@ async function apiRequest(endpoint, options = {}) {
 
     if (token) headers['Authorization'] = 'Bearer ' + token;
 
-    const res = await fetch(CONFIG.API_URL + endpoint, { ...options, headers });
+    const res = await fetch(window.CONFIG.API_URL + endpoint, { ...options, headers });
     if (res.status === 401) {
         logout();
         return null;
@@ -200,7 +205,7 @@ async function apiRequest(endpoint, options = {}) {
         // Si estamos en login/register, redirigir a home
         const path = window.location.pathname;
         if (path.includes('login') || path.includes('register')) {
-            window.location.href = CONFIG.BASE + '/';
+            window.location.href = window.CONFIG.BASE + '/';
         }
     } else {
         // Sin token en URL, verificar sesión existente

@@ -81,8 +81,15 @@ export class PlanetVisitorManager {
     }
 
     getAllToolNodes() {
-        const nodes = this.universe.DATA.nodes;
-        return Object.values(nodes).filter(n => n.type === 'tool');
+        const nodes = this.universe.DATA && this.universe.DATA.nodes;
+        if (!nodes) return [];
+        const tools = Object.values(nodes).filter(n => n.type === 'tool');
+        if (tools.length === 0) {
+            // Fallback: if no 'tool' type nodes exist (e.g. Chinese tones map),
+            // use all non-root nodes so the visitor doesn't crash
+            return Object.values(nodes).filter(n => n.id !== 'root');
+        }
+        return tools;
     }
 
     startGame() {
@@ -151,23 +158,33 @@ export class PlanetVisitorManager {
 
     _pickRandomStartAndWarp() {
         const allTools = this.getAllToolNodes();
-        const startNode = allTools[Math.floor(Math.random() * allTools.length)];
-        const planet = this.universe.getPlanetById(startNode.id);
-        if (planet) {
-            this.universe.setActivePlanet(planet);
-            this.universe.setViewMode('camera');
-            const targetPos = planet.getWorldPosition();
-            const G = CONFIG.game || {};
-            const stopDist = G.pvStopDistance || 120;
-            const arrivalDelay = (G.pvArrivalDelay !== undefined ? G.pvArrivalDelay : 1000);
-            this.universe.cam.startWarp(targetPos, stopDist, () => {
-                this.universe.cam.initFollowFrom(planet.getWorldPosition());
-                this._registerVisit(planet);
-                setTimeout(() => {
-                    this._startPlanetObservation(planet.node);
-                }, arrivalDelay);
-            }, planet);
+        if (allTools.length === 0) {
+            console.warn('[PlanetVisitor] No nodes available to visit');
+            return;
         }
+        const startNode = allTools[Math.floor(Math.random() * allTools.length)];
+        if (!startNode || !startNode.id) {
+            console.warn('[PlanetVisitor] Invalid start node');
+            return;
+        }
+        const planet = this.universe.getPlanetById(startNode.id);
+        if (!planet) {
+            console.warn('[PlanetVisitor] Could not find planet for node:', startNode.id);
+            return;
+        }
+        this.universe.setActivePlanet(planet);
+        this.universe.setViewMode('camera');
+        const targetPos = planet.getWorldPosition();
+        const G = CONFIG.game || {};
+        const stopDist = G.pvStopDistance || 120;
+        const arrivalDelay = (G.pvArrivalDelay !== undefined ? G.pvArrivalDelay : 1000);
+        this.universe.cam.startWarp(targetPos, stopDist, () => {
+            this.universe.cam.initFollowFrom(planet.getWorldPosition());
+            this._registerVisit(planet);
+            setTimeout(() => {
+                this._startPlanetObservation(planet.node);
+            }, arrivalDelay);
+        }, planet);
     }
 
     _registerVisit(planet) {

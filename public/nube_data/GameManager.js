@@ -288,6 +288,22 @@ export class GameManager {
 
     pickRandomStartAndWarp() {
         const allToolNodes = this.getAllToolNodes();
+        if (allToolNodes.length === 0) {
+            const nodes = this.universe.DATA.nodes;
+            const fallback = Object.values(nodes).filter(n => n.id !== 'root');
+            if (fallback.length === 0) return;
+            const startNode = fallback[Math.floor(Math.random() * fallback.length)];
+            const planet = this.universe.getPlanetById(startNode.id);
+            if (planet) {
+                const targetPos = planet.getWorldPosition();
+                this.showGameInfoPanel(planet.node);
+                this.universe.cam.startWarp(targetPos, 60, () => {
+                    this.registerVisit(planet);
+                    this.pickNextWaypoint();
+                });
+            }
+            return;
+        }
         const startNode = allToolNodes[Math.floor(Math.random() * allToolNodes.length)];
         const planet = this.universe.getPlanetById(startNode.id);
         if (planet) {

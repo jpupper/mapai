@@ -1039,7 +1039,8 @@ apiRouter.get('/projects/public', async (req, res) => {
                 description: p.description,
                 ownerUsername: p.ownerUsername,
                 createdAt: p.createdAt,
-                updatedAt: p.updatedAt
+                updatedAt: p.updatedAt,
+                thumbnail: p.thumbnail
             }))
         });
     } catch (error) {
@@ -1181,6 +1182,38 @@ apiRouter.post('/projects/import', requireAuth, async (req, res) => {
     } catch (error) {
         console.error('Project import error:', error);
         res.status(500).json({ error: 'Error al importar proyecto' });
+    }
+});
+
+apiRouter.put('/projects/:id/thumbnail', requireAuth, async (req, res) => {
+    try {
+        const projectId = req.params.id;
+        const { thumbnail } = req.body;
+        if (!thumbnail) return res.status(400).json({ error: 'Thumbnail requerido' });
+        const project = await Project.findOne({ id: projectId });
+        if (!project) return res.status(404).json({ error: 'Proyecto no encontrado' });
+        const owner = String(project.ownerUsername || '').trim().toUpperCase();
+        if (req.user.role !== 'admin' && owner !== req.user.username) {
+            return res.status(403).json({ error: 'Forbidden' });
+        }
+        await Project.updateOne({ id: projectId }, { $set: { thumbnail } });
+        res.json({ success: true });
+    } catch (error) {
+        res.status(500).json({ error: 'Error al guardar thumbnail' });
+    }
+});
+
+apiRouter.get('/projects/:id/thumbnail', async (req, res) => {
+    try {
+        const project = await Project.findOne({ id: req.params.id }).lean();
+        if (!project) return res.status(404).json({ error: 'Proyecto no encontrado' });
+        if (project.thumbnail) {
+            res.json({ thumbnail: project.thumbnail });
+        } else {
+            res.status(404).json({ error: 'Sin thumbnail' });
+        }
+    } catch (error) {
+        res.status(500).json({ error: 'Error al obtener thumbnail' });
     }
 });
 

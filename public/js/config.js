@@ -51,5 +51,3 @@
         }
     };
 })();
-
-const CONFIG = window.CONFIG;

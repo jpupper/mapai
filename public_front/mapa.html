@@ -13,11 +13,41 @@
     <div class="container">
       <div class="header-content">
         <h1>COMUNIDAD</h1>
-        <a href="./" style="color: inherit; text-decoration: none; opacity: 0.85;">Volver</a>
+        <div style="display:flex; gap:8px; align-items:center;">
+          <a id="profile-link-front" href="mapai/profile.html" style="color:#6cb4ff; text-decoration:none; opacity:0.85; font-size:0.85rem;">Perfil</a>
+          <a href="./" style="color: inherit; text-decoration: none; opacity: 0.85;">Volver</a>
+        </div>
       </div>
     </div>
   </header>
+  <script>
+    // Ocultar header cuando esta dentro de un iframe (el wrapper ya tiene navbar)
+    if (window.self !== window.top) {
+      var h = document.querySelector('header');
+      if (h) h.style.display = 'none';
+    }
+  </script>
   <script src="js/menu.js"></script>
+  <script>
+    (function() {
+      var btn = document.getElementById('profile-link-front');
+      if (btn) {
+        var user = typeof getUser === 'function' ? getUser() : null;
+        var loggedIn = typeof isLoggedIn === 'function' && isLoggedIn();
+        if (loggedIn && user && user.username) {
+          btn.textContent = '\u{1F464} ' + user.username;
+          btn.href = 'mapai/profile.html';
+        } else {
+          btn.textContent = 'Ingresar';
+          btn.href = '#';
+          btn.onclick = function(e) {
+            e.preventDefault();
+            if (typeof showLogin === 'function') showLogin();
+          };
+        }
+      }
+    })();
+  </script>
 
   <main>
     <div class="map-container">

@@ -6,7 +6,6 @@ function getCurrentProject() {
 function resolveBasePath() {
   const parts = window.location.pathname.split('/').filter(Boolean);
   if (parts[0] === 'mapai') return '/mapai';
-  if (parts[0] === 'diploia') return '/diploia';
   return '';
 }
 
@@ -15,9 +14,8 @@ const BASE_PATH = resolveBasePath();
 function createMenu() {
   const project = encodeURIComponent(getCurrentProject());
   const menuItems = [
-    { text: 'Inicio', url: `${BASE_PATH}/` },
-    { text: 'Mapa', url: `${BASE_PATH}/mapa.html?project=${project}` },
-    { text: 'Nube', url: `${BASE_PATH}/shared/nube_data/nube_universos.html?project=${project}` },
+    { text: 'MAPA', url: `${BASE_PATH}/mapa.html?project=${project}` },
+    { text: 'Nube de Universos', url: `${BASE_PATH}/shared/nube_data/nube_universos.html?project=${project}` },
     { text: 'Presentación', url: `${BASE_PATH}/presentacion.html?project=${project}` },
   ];
 

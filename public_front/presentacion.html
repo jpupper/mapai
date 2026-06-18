@@ -15,8 +15,29 @@
   <header class="pres-header">
     <a href="./" class="back-btn">← VOLVER</a>
     <div class="pres-title">MODO PRESENTACIÓN</div>
+    <a id="profile-link-front" href="mapai/profile.html" class="back-btn" style="opacity:0.7;">Perfil</a>
   </header>
   <script src="js/menu.js"></script>
+  <script>
+    (function() {
+      var btn = document.getElementById('profile-link-front');
+      if (btn) {
+        var user = typeof getUser === 'function' ? getUser() : null;
+        var loggedIn = typeof isLoggedIn === 'function' && isLoggedIn();
+        if (loggedIn && user && user.username) {
+          btn.textContent = '\u{1F464} ' + user.username;
+          btn.href = 'mapai/profile.html';
+        } else {
+          btn.textContent = 'Ingresar';
+          btn.href = '#';
+          btn.onclick = function(e) {
+            e.preventDefault();
+            if (typeof showLogin === 'function') showLogin();
+          };
+        }
+      }
+    })();
+  </script>
 
   <div id="presentation-container">
     <div class="slide-content" id="slide-content">

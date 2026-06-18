@@ -1,0 +1,932 @@
+{
+  "id": "mapa-de-herramientas-conceptual-para-aprender-ch",
+  "name": "Tonos del Chino Mandarín",
+  "description": "Mapa conceptual de los 5 tonos del chino mandarín (汉语声调): tono plano, ascendente, baja-sube, descendente y neutro. Basado en el libro de tonos.",
+  "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+  "isPublic": true,
+  "nodes": {
+    "root": {
+      "id": "root",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Tonos del Chino Mandarín",
+      "type": "root",
+      "info": "Los 5 tonos del chino mandarín (汉语声调). Cada sílaba tiene un tono que determina su significado.",
+      "infoHTML": "<h3>Tonos del Chino Mandarín 🀄</h3>\n<p>El chino mandarín tiene <strong>5 tonos</strong> (4 más 1 neutro) que cambian completamente el significado de una sílaba.</p>\n<p>La misma sílaba \"ma\" puede significar <em>mamá, cáñamo, caballo, insultar</em> o ser una <em>partícula interrogativa</em> dependiendo del tono.</p>\n<p><em>Hacé clic en cada tono para ver sus propiedades.</em></p>",
+      "connections": {
+        "parent": [],
+        "children": [
+          {
+            "id": "tono-1",
+            "type": "primary"
+          },
+          {
+            "id": "tono-2",
+            "type": "primary"
+          },
+          {
+            "id": "tono-3",
+            "type": "primary"
+          },
+          {
+            "id": "tono-4",
+            "type": "primary"
+          },
+          {
+            "id": "tono-neutro",
+            "type": "primary"
+          },
+          {
+            "id": "reglas",
+            "type": "primary"
+          }
+        ],
+        "secondary": []
+      }
+    },
+    "tono-1": {
+      "id": "tono-1",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "1° Tono",
+      "type": "category",
+      "info": "Alto y plano, como cantar una nota sostenida. Ej: māma (妈妈) = mamá",
+      "connections": {
+        "parent": [
+          {
+            "id": "root",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>1° Tono — Tono Plano 🟢</h3>\n<table style=\"width:100%;border-collapse:collapse;font-size:14px;\">\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">N°</td><td style=\"padding:4px 8px;border:1px solid #555;\">1</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Marca</td><td style=\"padding:4px 8px;border:1px solid #555;font-size:24px;\">ā</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Descripción</td><td style=\"padding:4px 8px;border:1px solid #555;\">Alto y plano, como cantar una nota sostenida</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Ejemplo</td><td style=\"padding:4px 8px;border:1px solid #555;font-size:20px;\">Mā</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Pronunciación</td><td style=\"padding:4px 8px;border:1px solid #555;\">Ma (plano, largo)</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Español</td><td style=\"padding:4px 8px;border:1px solid #555;\">Mamá</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Frase</td><td style=\"padding:4px 8px;border:1px solid #555;\">māma (妈妈) = mamá</td></tr>\n</table>\n<p style=\"margin-top:10px;color:#aaa;\">🔊 Imaginá una nota de canto sostenida y pareja.</p>"
+    },
+    "tono-2": {
+      "id": "tono-2",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "2° Tono",
+      "type": "category",
+      "info": "Sube, como cuando preguntás '¿Ah?'. Ej: má (麻) = cáñamo",
+      "connections": {
+        "parent": [
+          {
+            "id": "root",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>2° Tono — Tono Ascendente 🟡</h3>\n<table style=\"width:100%;border-collapse:collapse;font-size:14px;\">\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">N°</td><td style=\"padding:4px 8px;border:1px solid #555;\">2</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Marca</td><td style=\"padding:4px 8px;border:1px solid #555;font-size:24px;\">á</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Descripción</td><td style=\"padding:4px 8px;border:1px solid #555;\">Sube, como cuando preguntás \"¿Ah?\"</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Ejemplo</td><td style=\"padding:4px 8px;border:1px solid #555;font-size:20px;\">Má</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Pronunciación</td><td style=\"padding:4px 8px;border:1px solid #555;\">Ma (subiendo)</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Español</td><td style=\"padding:4px 8px;border:1px solid #555;\">Cáñamo</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Frase</td><td style=\"padding:4px 8px;border:1px solid #555;\">—</td></tr>\n</table>\n<p style=\"margin-top:10px;color:#aaa;\">🔊 Sube el tono como si preguntaras algo con sorpresa.</p>"
+    },
+    "tono-3": {
+      "id": "tono-3",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "3° Tono",
+      "type": "category",
+      "info": "Baja primero y luego sube (forma de U). Ej: mǎ (马) = caballo / Nǐ hǎo",
+      "connections": {
+        "parent": [
+          {
+            "id": "root",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>3° Tono — Tono Baja-Sube 🟠</h3>\n<table style=\"width:100%;border-collapse:collapse;font-size:14px;\">\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">N°</td><td style=\"padding:4px 8px;border:1px solid #555;\">3</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Marca</td><td style=\"padding:4px 8px;border:1px solid #555;font-size:24px;\">ǎ</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Descripción</td><td style=\"padding:4px 8px;border:1px solid #555;\">Baja primero y luego sube (forma de U)</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Ejemplo</td><td style=\"padding:4px 8px;border:1px solid #555;font-size:20px;\">Mǎ</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Pronunciación</td><td style=\"padding:4px 8px;border:1px solid #555;\">Ma (baja-sube)</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Español</td><td style=\"padding:4px 8px;border:1px solid #555;\">Caballo</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Frase</td><td style=\"padding:4px 8px;border:1px solid #555;\">Nǐ hǎo (你好) = ¡Hola!</td></tr>\n</table>\n<p style=\"margin-top:10px;color:#ff9edb;\">⚠️ REGLA: 3° + 3° Tono → el primero se vuelve 2° tono. \"Nǐ hǎo\" → \"Ní hǎo\"</p>"
+    },
+    "tono-4": {
+      "id": "tono-4",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "4° Tono",
+      "type": "category",
+      "info": "Cae fuerte, como dando una orden. Ej: mà (骂) = insultar / zàijiàn (再见) = adiós",
+      "connections": {
+        "parent": [
+          {
+            "id": "root",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>4° Tono — Tono Descendente 🔴</h3>\n<table style=\"width:100%;border-collapse:collapse;font-size:14px;\">\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">N°</td><td style=\"padding:4px 8px;border:1px solid #555;\">4</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Marca</td><td style=\"padding:4px 8px;border:1px solid #555;font-size:24px;\">à</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Descripción</td><td style=\"padding:4px 8px;border:1px solid #555;\">Cae fuerte, como dando una orden</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Ejemplo</td><td style=\"padding:4px 8px;border:1px solid #555;font-size:20px;\">Mà</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Pronunciación</td><td style=\"padding:4px 8px;border:1px solid #555;\">Ma (bajando fuerte)</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Español</td><td style=\"padding:4px 8px;border:1px solid #555;\">Insultar / Regañar</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Frase</td><td style=\"padding:4px 8px;border:1px solid #555;\">Zàijiàn (再见) = Adiós</td></tr>\n</table>\n<p style=\"margin-top:10px;color:#aaa;\">🔊 Cortante y enfático, como una exclamación.</p>"
+    },
+    "tono-neutro": {
+      "id": "tono-neutro",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Tono Neutro",
+      "type": "category",
+      "info": "Corto y suave, sin acento ni énfasis. Ej: ma (吗) = partícula interrogativa",
+      "connections": {
+        "parent": [
+          {
+            "id": "root",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Tono Neutro ⚪</h3>\n<table style=\"width:100%;border-collapse:collapse;font-size:14px;\">\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">N°</td><td style=\"padding:4px 8px;border:1px solid #555;\">0</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Marca</td><td style=\"padding:4px 8px;border:1px solid #555;font-size:24px;\">a</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Descripción</td><td style=\"padding:4px 8px;border:1px solid #555;\">Corto y suave, sin acento ni énfasis</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Ejemplo</td><td style=\"padding:4px 8px;border:1px solid #555;font-size:20px;\">ma</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Pronunciación</td><td style=\"padding:4px 8px;border:1px solid #555;\">ma (rápido, débil)</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Español</td><td style=\"padding:4px 8px;border:1px solid #555;\">Partícula interrogativa</td></tr>\n<tr><td style=\"padding:4px 8px;border:1px solid #555;font-weight:bold;\">Frase</td><td style=\"padding:4px 8px;border:1px solid #555;\">Nǐ hǎo ma? (你好吗?) = ¿Cómo estás?</td></tr>\n</table>\n<p style=\"margin-top:10px;color:#aaa;\">🔊 No tiene marca diacrítica. Se pronuncia ligero y sin énfasis.</p>"
+    },
+    "reglas": {
+      "id": "reglas",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Reglas de Tonos",
+      "type": "category",
+      "info": "Reglas fonéticas del chino mandarín. Ej: regla del 3°+3° tono",
+      "connections": {
+        "parent": [
+          {
+            "id": "root",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Reglas de Pronunciación</h3>\n<p>Reglas importantes sobre cómo los tonos cambian en la conversación real.</p>"
+    },
+    "tono-1-numero": {
+      "id": "tono-1-numero",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "N°: 1",
+      "type": "child",
+      "info": "El 1° tono es el número 1 en la numeración estándar de los tonos del chino mandarín.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-1",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>N°: 1</h3><p>El <strong>1° tono</strong> es el primero de los 4 tonos del chino mandarín.</p>",
+      "parentCategory": "tono-1"
+    },
+    "tono-1-marca": {
+      "id": "tono-1-marca",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Marca: ā",
+      "type": "child",
+      "info": "Marca diacrítica: ā — línea horizontal sobre la vocal (macron). Indica tono alto y plano.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-1",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Marca: ā</h3><p>La marca del 1° tono es una <strong>línea horizontal</strong> (¯) sobre la vocal: <span style='font-size:32px;'>ā</span></p><p>Se llama <em>macron</em> en tipografía.</p>",
+      "parentCategory": "tono-1"
+    },
+    "tono-1-descripcion": {
+      "id": "tono-1-descripcion",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Alto y Plano",
+      "type": "child",
+      "info": "Se pronuncia alto y plano, como si estuvieras cantando una nota sostenida. La voz no sube ni baja.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-1",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Descripción 🟢</h3><p>El tono es <strong>alto y plano</strong>, como cantar una nota musical sostenida.</p><p>La frecuencia de la voz permanece constante durante toda la sílaba.</p>",
+      "parentCategory": "tono-1"
+    },
+    "tono-1-ejemplo": {
+      "id": "tono-1-ejemplo",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Ej: Mā",
+      "type": "child",
+      "info": "Ejemplo con la sílaba 'mā'. Es la sílaba 'ma' en 1° tono.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-1",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Ejemplo: Mā</h3><p style='font-size:28px;'><strong>Mā</strong></p><p>La sílaba 'ma' pronunciada con tono alto y plano.</p>",
+      "parentCategory": "tono-1"
+    },
+    "tono-1-pronunciacion": {
+      "id": "tono-1-pronunciacion",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Pron: Ma (plano)",
+      "type": "child",
+      "info": "Se pronuncia 'ma' con la voz plana y alargada, como sosteniendo una nota musical.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-1",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Pronunciación</h3><p><strong>Ma (plano, largo)</strong></p><p>Imaginá que estás cantando una nota y la mantenés sin variación.</p>",
+      "parentCategory": "tono-1"
+    },
+    "tono-1-espanol": {
+      "id": "tono-1-espanol",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Significado: Mamá",
+      "type": "child",
+      "info": "ā (妈/mā) con 1° tono significa 'mamá'. Es una de las palabras más básicas en chino.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-1",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Significado: Mamá 🏠</h3><p>妈 (mā) = <strong>mamá</strong></p><p>Uno de los primeros caracteres que aprenden los niños.</p>",
+      "parentCategory": "tono-1"
+    },
+    "tono-1-frase": {
+      "id": "tono-1-frase",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Frase: māma",
+      "type": "child",
+      "info": "Frase conocida: māma (妈妈) = mamá. La doble sílaba 'māma' refuerza el 1° tono.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-1",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Frase: māma (妈妈)</h3><p><span style='font-size:24px;'>māma (妈妈)</span> = <strong>mamá</strong></p><p>Ambas sílabas están en 1° tono: mā-mā.</p>",
+      "parentCategory": "tono-1"
+    },
+    "tono-2-numero": {
+      "id": "tono-2-numero",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "N°: 2",
+      "type": "child",
+      "info": "El 2° tono es el número 2. También llamado 'tono ascendente'.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-2",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>N°: 2</h3><p>El <strong>2° tono</strong> es el segundo de los 4 tonos.</p>",
+      "parentCategory": "tono-2"
+    },
+    "tono-2-marca": {
+      "id": "tono-2-marca",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Marca: á",
+      "type": "child",
+      "info": "Marca diacrítica: á — acento agudo sobre la vocal. Indica tono ascendente.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-2",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Marca: á</h3><p>La marca del 2° tono es un <strong>acento agudo</strong> (´) sobre la vocal: <span style='font-size:32px;'>á</span></p>",
+      "parentCategory": "tono-2"
+    },
+    "tono-2-descripcion": {
+      "id": "tono-2-descripcion",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Ascendente",
+      "type": "child",
+      "info": "El tono sube gradualmente, como cuando preguntás algo con sorpresa: '¿Ah?'.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-2",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Descripción 🟡</h3><p>El tono <strong>sube</strong> desde un nivel medio hasta uno alto.</p><p>Es similar a cuando decís <em>'¿Ah?'</em> con sorpresa en español.</p>",
+      "parentCategory": "tono-2"
+    },
+    "tono-2-ejemplo": {
+      "id": "tono-2-ejemplo",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Ej: Má",
+      "type": "child",
+      "info": "Ejemplo con la sílaba 'má' en 2° tono.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-2",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Ejemplo: Má</h3><p style='font-size:28px;'><strong>Má</strong></p><p>La sílaba 'ma' pronunciada con tono ascendente.</p>",
+      "parentCategory": "tono-2"
+    },
+    "tono-2-pronunciacion": {
+      "id": "tono-2-pronunciacion",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Pron: Ma (subiendo)",
+      "type": "child",
+      "info": "Se pronuncia 'ma' con la voz subiendo de tono gradualmente.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-2",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Pronunciación</h3><p><strong>Ma (subiendo)</strong></p>",
+      "parentCategory": "tono-2"
+    },
+    "tono-2-espanol": {
+      "id": "tono-2-espanol",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Significado: Cáñamo",
+      "type": "child",
+      "info": "麻 (má) con 2° tono significa 'cáñamo' o 'sésamo'.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-2",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Significado: Cáñamo 🌿</h3><p>麻 (má) = <strong>cáñamo</strong></p>",
+      "parentCategory": "tono-2"
+    },
+    "tono-2-frase": {
+      "id": "tono-2-frase",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Frase: —",
+      "type": "child",
+      "info": "No hay una frase famosa específica para este tono.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-2",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Frase</h3><p>No hay una frase estándar para este tono.</p>",
+      "parentCategory": "tono-2"
+    },
+    "tono-3-numero": {
+      "id": "tono-3-numero",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "N°: 3",
+      "type": "child",
+      "info": "El 3° tono es el número 3. Es el más complejo de los tonos.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-3",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>N°: 3</h3><p>El <strong>3° tono</strong> es el tercer tono.</p>",
+      "parentCategory": "tono-3"
+    },
+    "tono-3-marca": {
+      "id": "tono-3-marca",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Marca: ǎ",
+      "type": "child",
+      "info": "Marca diacrítica: ǎ — carón (ˇ) sobre la vocal. Indica subida y bajada.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-3",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Marca: ǎ</h3><p>La marca del 3° tono es un <strong>carón</strong> (ˇ) sobre la vocal: <span style='font-size:32px;'>ǎ</span></p><p>Parece una 'v' al revés.</p>",
+      "parentCategory": "tono-3"
+    },
+    "tono-3-descripcion": {
+      "id": "tono-3-descripcion",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Baja-Sube (U)",
+      "type": "child",
+      "info": "El tono baja primero y luego sube, formando una curva en forma de U.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-3",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Descripción 🟠</h3><p>El tono <strong>baja primero y luego sube</strong> (forma de U).</p><p>Es el tono más complejo y expresivo.</p>",
+      "parentCategory": "tono-3"
+    },
+    "tono-3-ejemplo": {
+      "id": "tono-3-ejemplo",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Ej: Mǎ",
+      "type": "child",
+      "info": "Ejemplo con la sílaba 'mǎ' en 3° tono.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-3",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Ejemplo: Mǎ</h3><p style='font-size:28px;'><strong>Mǎ</strong></p>",
+      "parentCategory": "tono-3"
+    },
+    "tono-3-pronunciacion": {
+      "id": "tono-3-pronunciacion",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Pron: Ma (baja-sube)",
+      "type": "child",
+      "info": "Se pronuncia 'ma' con la voz bajando y luego subiendo.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-3",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Pronunciación</h3><p><strong>Ma (baja-sube)</strong></p>",
+      "parentCategory": "tono-3"
+    },
+    "tono-3-espanol": {
+      "id": "tono-3-espanol",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Significado: Caballo",
+      "type": "child",
+      "info": "马 (mǎ) con 3° tono significa 'caballo'.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-3",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Significado: Caballo 🐴</h3><p>马 (mǎ) = <strong>caballo</strong></p>",
+      "parentCategory": "tono-3"
+    },
+    "tono-3-frase": {
+      "id": "tono-3-frase",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Frase: Nǐ hǎo",
+      "type": "child",
+      "info": "Frase famosa: Nǐ hǎo (你好) = ¡Hola! — contiene la regla de 3°+3° tono.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-3",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Frase: Nǐ hǎo (你好)</h3><p><span style='font-size:24px;'>Nǐ hǎo (你好)</span> = <strong>¡Hola!</strong></p><p>⚠️ Se dice <em>Ní hǎo</em> por la regla 3°+3°.</p>",
+      "parentCategory": "tono-3"
+    },
+    "tono-4-numero": {
+      "id": "tono-4-numero",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "N°: 4",
+      "type": "child",
+      "info": "El 4° tono es el número 4. También llamado 'tono descendente'.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-4",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>N°: 4</h3><p>El <strong>4° tono</strong> es el cuarto tono.</p>",
+      "parentCategory": "tono-4"
+    },
+    "tono-4-marca": {
+      "id": "tono-4-marca",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Marca: à",
+      "type": "child",
+      "info": "Marca diacrítica: à — acento grave sobre la vocal. Indica tono descendente.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-4",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Marca: à</h3><p>La marca del 4° tono es un <strong>acento grave</strong> (`) sobre la vocal: <span style='font-size:32px;'>à</span></p>",
+      "parentCategory": "tono-4"
+    },
+    "tono-4-descripcion": {
+      "id": "tono-4-descripcion",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Descendente Fuerte",
+      "type": "child",
+      "info": "El tono cae fuerte de agudo a grave, como dando una orden.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-4",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Descripción 🔴</h3><p>El tono <strong>cae fuerte</strong> desde agudo a grave.</p><p>Como cuando das una orden o exclamás algo enérgicamente.</p>",
+      "parentCategory": "tono-4"
+    },
+    "tono-4-ejemplo": {
+      "id": "tono-4-ejemplo",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Ej: Mà",
+      "type": "child",
+      "info": "Ejemplo con la sílaba 'mà' en 4° tono.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-4",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Ejemplo: Mà</h3><p style='font-size:28px;'><strong>Mà</strong></p>",
+      "parentCategory": "tono-4"
+    },
+    "tono-4-pronunciacion": {
+      "id": "tono-4-pronunciacion",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Pron: Ma (bajando)",
+      "type": "child",
+      "info": "Se pronuncia 'ma' con la voz cayendo abruptamente.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-4",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Pronunciación</h3><p><strong>Ma (bajando fuerte)</strong></p>",
+      "parentCategory": "tono-4"
+    },
+    "tono-4-espanol": {
+      "id": "tono-4-espanol",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Significado: Insultar",
+      "type": "child",
+      "info": "骂 (mà) con 4° tono significa 'insultar' o 'regañar'.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-4",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Significado: Insultar 😠</h3><p>骂 (mà) = <strong>insultar / regañar</strong></p>",
+      "parentCategory": "tono-4"
+    },
+    "tono-4-frase": {
+      "id": "tono-4-frase",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Frase: Zàijiàn",
+      "type": "child",
+      "info": "Frase famosa: Zàijiàn (再见) = Adiós. La sílaba 'zài' está en 4° tono.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-4",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Frase: Zàijiàn (再见)</h3><p><span style='font-size:24px;'>Zàijiàn (再见)</span> = <strong>Adiós</strong></p>",
+      "parentCategory": "tono-4"
+    },
+    "tono-neutro-numero": {
+      "id": "tono-neutro-numero",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "N°: 0",
+      "type": "child",
+      "info": "El tono neutro es el número 0. No tiene marca diacrítica.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-neutro",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>N°: 0</h3><p>El <strong>tono neutro</strong> (轻声) es especial: no tiene numeración del 1 al 4.</p>",
+      "parentCategory": "tono-neutro"
+    },
+    "tono-neutro-marca": {
+      "id": "tono-neutro-marca",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Marca: a (sin marca)",
+      "type": "child",
+      "info": "El tono neutro no tiene marca diacrítica. Se escribe la vocal sin acento.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-neutro",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Marca: a</h3><p>El tono neutro <strong>no tiene marca</strong>: <span style='font-size:32px;'>a</span></p><p>Se escribe la vocal sin ningún acento.</p>",
+      "parentCategory": "tono-neutro"
+    },
+    "tono-neutro-descripcion": {
+      "id": "tono-neutro-descripcion",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Corto y Suave",
+      "type": "child",
+      "info": "Se pronuncia corto, rápido y suave, sin acento ni énfasis.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-neutro",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Descripción ⚪</h3><p>El tono es <strong>corto y suave</strong>, sin acento ni énfasis.</p><p>Es como una sílaba átona en español.</p>",
+      "parentCategory": "tono-neutro"
+    },
+    "tono-neutro-ejemplo": {
+      "id": "tono-neutro-ejemplo",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Ej: ma",
+      "type": "child",
+      "info": "Ejemplo con la sílaba 'ma' en tono neutro.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-neutro",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Ejemplo: ma</h3><p style='font-size:28px;'><strong>ma</strong></p>",
+      "parentCategory": "tono-neutro"
+    },
+    "tono-neutro-pronunciacion": {
+      "id": "tono-neutro-pronunciacion",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Pron: ma (rápido)",
+      "type": "child",
+      "info": "Se pronuncia 'ma' rápido y débil, casi susurrado.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-neutro",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Pronunciación</h3><p><strong>ma (rápido, débil)</strong></p>",
+      "parentCategory": "tono-neutro"
+    },
+    "tono-neutro-espanol": {
+      "id": "tono-neutro-espanol",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Partícula interrogativa",
+      "type": "child",
+      "info": "吗 (ma) en tono neutro es la partícula interrogativa que convierte oraciones en preguntas sí/no.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-neutro",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Significado: Partícula ❓</h3><p>吗 (ma) = <strong>partícula interrogativa</strong></p><p>Se coloca al final de una oración para formar preguntas de sí/no.</p>",
+      "parentCategory": "tono-neutro"
+    },
+    "tono-neutro-frase": {
+      "id": "tono-neutro-frase",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Frase: Nǐ hǎo ma?",
+      "type": "child",
+      "info": "Frase famosa: Nǐ hǎo ma? (你好吗?) = ¿Cómo estás? El 'ma' está en tono neutro.",
+      "connections": {
+        "parent": [
+          {
+            "id": "tono-neutro",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "infoHTML": "<h3>Frase: Nǐ hǎo ma? (你好吗?)</h3><p><span style='font-size:24px;'>Nǐ hǎo ma? (你好吗?)</span> = <strong>¿Cómo estás?</strong></p>",
+      "parentCategory": "tono-neutro"
+    },
+    "regla-3-3": {
+      "id": "regla-3-3",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Regla 3°+3° Tono",
+      "type": "child",
+      "info": "Cuando dos 3° tonos van seguidos, el primero se pronuncia como 2° tono. Ej: Nǐ hǎo → se dice 'Ní hǎo'.",
+      "infoHTML": "<h3>⚠️ Regla 3° + 3° Tono</h3>\n<p><strong>Regla fundamental:</strong> Cuando dos sílabas en <strong>3° tono</strong> van seguidas, la <strong>primera</strong> se pronuncia como <strong>2° tono</strong> (ascendente).</p>\n<div style=\"background:rgba(255,165,0,0.1);border:1px solid rgba(255,165,0,0.4);border-radius:8px;padding:15px;margin:10px 0;\">\n<p style=\"font-size:22px;margin:0;\">Nǐ hǎo → <strong>Ní hǎo</strong></p>\n<p style=\"margin:5px 0 0 0;color:#aaa;\">(你好) ¡Hola!</p>\n</div>\n<p>El 3° tono original se escribe igual (nǐ) pero se pronuncia como 2° tono (ní).</p>\n<p>Esto pasa naturalmente porque es más fácil de pronunciar.</p>",
+      "parentCategory": "reglas",
+      "connections": {
+        "parent": [
+          {
+            "id": "reglas",
+            "type": "primary"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "tono-3"
+        ]
+      }
+    }
+  },
+  "categories": [
+    "tono-1",
+    "tono-2",
+    "tono-3",
+    "tono-4",
+    "tono-neutro",
+    "reglas"
+  ],
+  "categoryChildren": {
+    "tono-1": [
+      "tono-1-numero",
+      "tono-1-marca",
+      "tono-1-descripcion",
+      "tono-1-ejemplo",
+      "tono-1-pronunciacion",
+      "tono-1-espanol",
+      "tono-1-frase"
+    ],
+    "tono-2": [
+      "tono-2-numero",
+      "tono-2-marca",
+      "tono-2-descripcion",
+      "tono-2-ejemplo",
+      "tono-2-pronunciacion",
+      "tono-2-espanol",
+      "tono-2-frase"
+    ],
+    "tono-3": [
+      "tono-3-numero",
+      "tono-3-marca",
+      "tono-3-descripcion",
+      "tono-3-ejemplo",
+      "tono-3-pronunciacion",
+      "tono-3-espanol",
+      "tono-3-frase"
+    ],
+    "tono-4": [
+      "tono-4-numero",
+      "tono-4-marca",
+      "tono-4-descripcion",
+      "tono-4-ejemplo",
+      "tono-4-pronunciacion",
+      "tono-4-espanol",
+      "tono-4-frase"
+    ],
+    "tono-neutro": [
+      "tono-neutro-numero",
+      "tono-neutro-marca",
+      "tono-neutro-descripcion",
+      "tono-neutro-ejemplo",
+      "tono-neutro-pronunciacion",
+      "tono-neutro-espanol",
+      "tono-neutro-frase"
+    ],
+    "reglas": [
+      "regla-3-3"
+    ]
+  },
+  "config": {
+    "rootNodeSize": 180,
+    "primaryNodeSize": 100,
+    "secondaryNodeSize": 75,
+    "nodeFontSize": 12,
+    "categoryFontSize": 15,
+    "rootFontSize": 18,
+    "popupTitleFontSize": 28,
+    "popupSubtitleFontSize": 22,
+    "popupTextFontSize": 18,
+    "secondaryNodeDist": 100,
+    "primaryDistance": 250,
+    "categoryDistancesMain": {
+      "tono-1": 500,
+      "tono-2": 500,
+      "tono-3": 500,
+      "tono-4": 500,
+      "tono-neutro": 500,
+      "reglas": 500
+    },
+    "categoryDistances": {
+      "tono-1": 200,
+      "tono-2": 200,
+      "tono-3": 200,
+      "tono-4": 200,
+      "tono-neutro": 200,
+      "reglas": 180
+    },
+    "animCategoryDelay": 3000,
+    "animNodeDelay": 2000,
+    "animTransitionSpeed": 800,
+    "animNodeExpansionSpeed": 400
+  }
+}

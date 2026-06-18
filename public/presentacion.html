@@ -7,6 +7,8 @@
     <title>Modo Presentación — Nube de Universos</title>
     <link rel="stylesheet" href="css/presentacion.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
 </head>
 
 <body>
@@ -17,6 +19,7 @@
     <header class="pres-header">
         <a href="index.html" class="back-btn">← VOLVER</a>
         <div class="pres-title">MODO PRESENTACIÓN</div>
+        <a id="profile-link" class="back-btn profile-link" href="profile.html" style="opacity:0.7;">Perfil</a>
     </header>
 
     <div id="presentation-container">
@@ -66,6 +69,28 @@
         "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
       }
     }
+    </script>
+
+    <script>
+      // Universal profile/auth button
+      (function() {
+        const profileLink = document.getElementById('profile-link');
+        if (profileLink) {
+          const user = typeof getUser === 'function' ? getUser() : null;
+          const loggedIn = typeof isLoggedIn === 'function' && isLoggedIn();
+          if (loggedIn && user && user.username) {
+            profileLink.textContent = '👤 ' + user.username;
+            profileLink.href = 'profile.html';
+          } else {
+            profileLink.textContent = 'Ingresar';
+            profileLink.href = '#';
+            profileLink.onclick = function(e) {
+              e.preventDefault();
+              if (typeof showLogin === 'function') showLogin();
+            };
+          }
+        }
+      })();
     </script>
 
     <script type="module" src="js/presentacion.js"></script>

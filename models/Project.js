@@ -7,7 +7,8 @@ const projectSchema = new mongoose.Schema({
     ownerUsername: { type: String, required: true, index: true, default: 'ADMIN' },
     isPublic: { type: Boolean, default: true, index: true },
     // Config related to the project
-    config: { type: Map, of: mongoose.Schema.Types.Mixed, default: {} }
+    config: { type: Map, of: mongoose.Schema.Types.Mixed, default: {} },
+    thumbnail: { type: String } // Base64 PNG thumbnail
 }, {
     timestamps: true
 });

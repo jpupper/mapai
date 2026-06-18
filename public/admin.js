@@ -1,5 +1,5 @@
 // ===============================================================
-//  DIPLOIA ADMIN - JavaScript Client
+//  MapAI ADMIN - JavaScript Client v2.0
 // ===============================================================
 
 // Centralized API Configuration
@@ -7,7 +7,7 @@ function resolveBasePath() {
     const parts = window.location.pathname.split('/').filter(Boolean);
     const reserved = new Set(['api', 'nube_data', 'js', 'css', 'img', 'favicon.ico']);
     const app = parts[0];
-    if (app === 'mapai' || app === 'diploia') {
+    if (app === 'mapai') {
         const tenant = parts[1] && !reserved.has(parts[1]) && !parts[1].includes('.') ? parts[1] : null;
         const base = `/${app}`;
         return tenant ? `${base}/${tenant}` : base;
@@ -18,8 +18,6 @@ function resolveBasePath() {
 const BASE_PATH = resolveBasePath();
 
 function resolveApiOrigin() {
-    const configured = window.__DIPLOIA_API_ORIGIN__;
-    if (configured) return String(configured).replace(/\/+$/, '');
     const host = String(window.location.hostname || '').toLowerCase();
     if (host === 'fullscreencode.com' || host.endsWith('.fullscreencode.com') || host === 'fullscreen.com' || host.endsWith('.fullscreen.com')) {
         return 'https://vps-4455523-x.dattaweb.com';
@@ -38,15 +36,14 @@ function resolveApiBasePath() {
             const base = '/mapai';
             return tenant ? `${base}/${tenant}` : base;
         }
-        if (app === 'diploia') return '/diploia/diploia';
     }
     return BASE_PATH;
 }
 
 const API = resolveApiOrigin() + resolveApiBasePath() + '/api';
 
-const AUTH_TOKEN_KEY = 'diploia_auth_token';
-const AUTH_USER_KEY = 'diploia_auth_user';
+const AUTH_TOKEN_KEY = 'mapai_token';
+const AUTH_USER_KEY = 'mapai_user';
 let authToken = localStorage.getItem(AUTH_TOKEN_KEY) || null;
 let authUser = (() => {
     try {
@@ -72,23 +69,26 @@ function persistSsoParams() {
     const userId = url.searchParams.get('userId') || '';
     localStorage.setItem(AUTH_TOKEN_KEY, token);
     localStorage.setItem('community_auth_token', token);
-    localStorage.setItem('community_auth_user', JSON.stringify({ username: String(username || userId || 'USER').trim().toUpperCase(), role: 'user', id: userId || undefined }));
     if (username || userId) {
-        localStorage.setItem(AUTH_USER_KEY, JSON.stringify({ username: String(username || userId || 'USER').trim().toUpperCase(), role: 'user', id: userId || undefined }));
+        const userData = JSON.stringify({ username: String(username || userId || 'USER').trim().toUpperCase(), role: 'user', id: userId || undefined });
+        localStorage.setItem(AUTH_USER_KEY, userData);
+        localStorage.setItem('community_auth_user', userData);
     }
     authToken = token;
     window.history.replaceState({}, '', cleanUrl());
     return true;
 }
 
+const FSCAUTH_ORIGIN = 'https://vps-4455523-x.dattaweb.com';
+const PROD_REDIRECT = window.location.href.split('?')[0]; // redirect back to current page after SSO
+
 persistSsoParams();
 if (!authToken) {
-    const apiOrigin = resolveApiOrigin();
     const url = new URL(window.location.href);
     if (url.searchParams.get('nosession') === 'true') {
-        window.location.href = `${apiOrigin}/fscauth/login.html?redirect=${encodeURIComponent(cleanUrl())}`;
+        window.location.href = `${FSCAUTH_ORIGIN}/fscauth/login.html?redirect=${encodeURIComponent(PROD_REDIRECT)}`;
     } else {
-        window.location.href = `${apiOrigin}/fscauth/api/auth/sso-check?redirect=${encodeURIComponent(cleanUrl())}`;
+        window.location.href = `${FSCAUTH_ORIGIN}/fscauth/api/auth/sso-check?redirect=${encodeURIComponent(PROD_REDIRECT)}`;
     }
 }
 
@@ -238,6 +238,8 @@ function setAuthState({ token, user }) {
     if (authToken && authUser) {
         localStorage.setItem(AUTH_TOKEN_KEY, authToken);
         localStorage.setItem(AUTH_USER_KEY, JSON.stringify(authUser));
+        localStorage.setItem('community_auth_token', authToken);
+        localStorage.setItem('community_auth_user', JSON.stringify(authUser));
     }
 }
 
@@ -247,6 +249,8 @@ function clearAuthState() {
     isAuthenticated = false;
     localStorage.removeItem(AUTH_TOKEN_KEY);
     localStorage.removeItem(AUTH_USER_KEY);
+    localStorage.removeItem('community_auth_token');
+    localStorage.removeItem('community_auth_user');
 }
 
 function setAuthMode(mode) {
@@ -1068,6 +1072,9 @@ function initButtons() {
 
     // Export
     document.getElementById('btn-export').addEventListener('click', exportData);
+
+    // Regenerate thumbnails
+    document.getElementById('btn-regenerate-thumbnails')?.addEventListener('click', regenerateThumbnails);
 
     // Import JSON (paste) -> create project
     document.getElementById('btn-import-json-create')?.addEventListener('click', importJsonCreateProject);
@@ -2053,6 +2060,62 @@ async function exportData() {
     }
 }
 
+async function regenerateThumbnails() {
+    const statusEl = document.getElementById('thumb-status');
+    if (!statusEl) return;
+    
+    try {
+        // Get all my projects
+        const res = await fetch(API + '/projects');
+        const data = await res.json();
+        const projects = data.projects || [];
+        const projectsWithThumb = projects.filter(p => p.id && p.id !== 'diplomatura');
+        
+        if (projectsWithThumb.length === 0) {
+            statusEl.textContent = 'No hay proyectos para regenerar';
+            statusEl.style.color = '#fbbf24';
+            return;
+        }
+
+        statusEl.textContent = `Regenerando thumbnails para ${projectsWithThumb.length} proyectos...`;
+        statusEl.style.color = 'var(--muted)';
+        
+        let done = 0;
+        let errors = 0;
+        
+        for (const p of projectsWithThumb) {
+            const basePath = resolveApiBasePath();
+            const mapaUrl = `${window.location.origin}${basePath}/mapadeherramientas.html?project=${encodeURIComponent(p.id)}&capture=1`;
+            
+            // Open the map in a tiny window to capture the thumbnail
+            // The mapadeherramientas.html will auto-capture via the thumbnail hook
+            // We can just open and immediately close since the server-side capture is automatic
+            const thumbWindow = window.open(mapaUrl, '_blank', 'width=600,height=400');
+            
+            if (thumbWindow) {
+                setTimeout(() => {
+                    try { thumbWindow.close(); } catch(e) {}
+                }, 5000);
+            }
+            
+            done++;
+            statusEl.textContent = `Regenerando: ${done}/${projectsWithThumb.length} (${errors} errores)`;
+            statusEl.style.color = '#22c55e';
+            
+            // Wait a bit between projects to not overwhelm
+            await new Promise(r => setTimeout(r, 3000));
+        }
+        
+        statusEl.textContent = `✅ Thumbnails regenerados: ${done} proyectos (${errors} errores)`;
+        statusEl.style.color = '#22c55e';
+        showToast(`Thumbnails regenerados para ${done} proyectos`, 'success');
+    } catch (err) {
+        statusEl.textContent = 'Error: ' + err.message;
+        statusEl.style.color = '#ef4444';
+        showToast('Error al regenerar thumbnails', 'error');
+    }
+}
+
 // ═══════════════════════════════════════════════════════════════
 //  SYNC LOCAL <-> VPS
 // ═══════════════════════════════════════════════════════════════
@@ -2076,7 +2139,7 @@ async function syncToVps() {
 
     try {
         showToast('Obteniendo datos locales...', 'info');
-        const VPS_BASE_URL = 'https://vps-4455523-x.dattaweb.com/diploia';
+        const VPS_BASE_URL = 'https://vps-4455523-x.dattaweb.com/mapai';
         const vpsToken = await getVpsAdminToken(VPS_BASE_URL);
         
         // 1. Get local export
@@ -2131,7 +2194,7 @@ async function syncFromVps() {
 
     try {
         showToast('Descargando datos del VPS...', 'info');
-        const VPS_BASE_URL = 'https://vps-4455523-x.dattaweb.com/diploia';
+        const VPS_BASE_URL = 'https://vps-4455523-x.dattaweb.com/mapai';
         const vpsToken = await getVpsAdminToken(VPS_BASE_URL);
         
         // 1. Get VPS export

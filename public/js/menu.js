@@ -45,14 +45,11 @@ function renderAuthControls() {
 }
 
 function updateAuthUI(loggedIn) {
+    // Auth controls are now handled by the profile button in page headers
+    // Remove any lingering nav-auth elements
     const existingAuth = document.querySelector('.nav-auth');
     if (existingAuth) {
-        existingAuth.replaceWith(renderAuthControls());
-    } else {
-        const nav = document.querySelector('.main-nav');
-        if (nav) {
-            nav.appendChild(renderAuthControls());
-        }
+        existingAuth.remove();
     }
 }
 
@@ -60,27 +57,12 @@ function updateAuthUI(loggedIn) {
 function createMenu() {
     const urlParams = new URLSearchParams(window.location.search);
     const project = encodeURIComponent(urlParams.get('project') || 'diplomatura');
-    const isDiploiaTenant = window.location.pathname.startsWith('/diploia') || window.location.pathname.startsWith('/mapai/diploia');
 
-    const menuItems = isDiploiaTenant
-        ? [
-            { text: 'Clases', url: 'index.html' },
-            { text: 'Trabajo Práctico', url: 'trabajopractico.html' },
-            { text: 'MAPA', url: 'mapa.html?project=' + project },
-            { text: 'Tutoriales', url: 'tutoriales.html' },
-            { text: 'Prompting', url: 'prompting.html' },
-            { text: 'Protocolo de Revisión', url: 'protocolo-revision.html' }
-        ]
-        : [
-            { text: 'Clases', url: 'index.html' },
-            { text: 'Trabajo Práctico', url: 'trabajopractico.html' },
-            { text: 'Mapa de Herramientas', url: 'mapadeherramientas.html' },
-            { text: 'Nube de Universos', url: 'nube_data/nube_universos.html?project=' + project },
-            { text: 'Presentación', url: 'presentacion.html' },
-            { text: 'Tutoriales', url: 'tutoriales.html' },
-            { text: 'Prompting', url: 'prompting.html' },
-            { text: 'Protocolo de Revisión', url: 'protocolo-revision.html' }
-        ];
+    const menuItems = [
+        { text: 'MAPA', url: 'mapadeherramientas.html' },
+        { text: 'Nube de Universos', url: 'nube_data/nube_universos.html?project=' + project },
+        { text: 'Presentación', url: 'presentacion.html' }
+    ];
 
     const nav = document.createElement('nav');
     nav.className = 'main-nav';
@@ -105,10 +87,7 @@ function createMenu() {
         nav.appendChild(link);
     });
 
-    // Add auth controls at the right side
-    const authControls = renderAuthControls();
-    nav.appendChild(authControls);
-
+    // No auth controls - profile button in the page header handles it
     return nav;
 }
 

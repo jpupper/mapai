@@ -33,21 +33,21 @@ let CONFIG = {
                 'glosario': 1700
         },
         categoryDistances: {         // Distancias personalizadas para cada categoría a sus herramientas
-                'engines': 250,
-                'frameworks': 250,
-                'ia': 180,
-                'shaders': 220,
-                'db': 220,
-                'ides': 220,
-                'languages': 350,
-                'llm': 220,
-                'frontend': 220,
-                'os': 220,
-                'soportes': 280,
-                'protocolos': 220,
-                'software-multimedia': 220,
-                'entornos': 220,
-                'glosario': 380
+                'engines': 350,
+                'frameworks': 350,
+                'ia': 300,
+                'shaders': 320,
+                'db': 320,
+                'ides': 350,
+                'languages': 400,
+                'llm': 320,
+                'frontend': 300,
+                'os': 320,
+                'soportes': 380,
+                'protocolos': 320,
+                'software-multimedia': 320,
+                'entornos': 320,
+                'glosario': 400
         },
         // Configuración de tiempos para el modo Play (en milisegundos)
         animCategoryDelay: 3000,
@@ -79,14 +79,14 @@ function getApiBasePath() {
         const parts = window.location.pathname.split('/').filter(Boolean);
         const reserved = new Set(['api', 'nube_data', 'js', 'css', 'img', 'favicon.ico']);
         const app = parts[0];
-        if (app === 'mapai' || app === 'diploia') {
+        if (app === 'mapai') {
                 const tenant = parts[1] && !reserved.has(parts[1]) && !parts[1].includes('.') ? parts[1] : null;
                 const base = `/${app}`;
                 const basePath = tenant ? `${base}/${tenant}` : base;
                 const host = String(window.location.hostname || '').toLowerCase();
                 if (host === 'fullscreencode.com' || host.endsWith('.fullscreencode.com') || host === 'fullscreen.com' || host.endsWith('.fullscreen.com')) {
                         const apiOrigin = (window.__DIPLOIA_API_ORIGIN__ ? String(window.__DIPLOIA_API_ORIGIN__) : 'https://vps-4455523-x.dattaweb.com').replace(/\/+$/, '');
-                        const remoteBase = app === 'mapai' ? '/mapai' : '/diploia/diploia';
+                        const remoteBase = '/mapai';
                         const remotePath = tenant && app === 'mapai' ? `${remoteBase}/${tenant}` : remoteBase;
                         return apiOrigin + remotePath;
                 }
@@ -239,3 +239,4 @@ function getMapConnections() {
 
         return connections;
 }
+ 

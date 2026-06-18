@@ -49,7 +49,8 @@ async function uploadToFtp() {
             host: ftpHost,
             user: ftpUser,
             password: ftpPassword,
-            secure: "encrypt"
+            secure: true,
+            secureOptions: { rejectUnauthorized: false }
         });
 
         const rawRemoteDir = process.env.FTP_REMOTE_DIR || '/mapai';

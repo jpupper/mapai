@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DiploIA - Admin Panel</title>
+    <title>MapAI - Admin Panel</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
@@ -202,7 +202,7 @@
             <div class="sidebar-header">
                 <div class="logo">
                     <span class="logo-icon">◆</span>
-                    <span class="logo-text">DiploIA</span>
+                    <span class="logo-text">MapAI</span>
                 </div>
                 <span class="logo-sub">Admin Panel</span>
             </div>
@@ -783,6 +783,12 @@
                             <h4>📤 Exportar Datos</h4>
                             <p>Descarga toda la base de datos de nodos como archivo JSON.</p>
                             <button class="btn btn-primary" id="btn-export">Descargar JSON</button>
+                        </div>
+                        <div class="card">
+                            <h4>🖼️ Regenerar Thumbnails</h4>
+                            <p>Genera miniaturas desde el mapa visual de cada proyecto (abre cada mapa en una ventana, captura y guarda).</p>
+                            <button class="btn btn-accent" id="btn-regenerate-thumbnails">Regenerar todos</button>
+                            <div id="thumb-status" class="status-message"></div>
                         </div>
                         <div class="card" id="card-sync-vps" style="border: 2px solid #5a57f2;">
                             <h4>☁️ Sincronización Nube (VPS)</h4>

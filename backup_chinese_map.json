@@ -1,0 +1,583 @@
+{
+  "exportDate": "2026-05-14T14:52:05.225Z",
+  "totalNodes": 24,
+  "categories": [
+    "aplicaciones-moviles",
+    "diccionarios-y-traduccion",
+    "escritura-y-trazo",
+    "pronunciacion-y-tonos",
+    "gramatica-y-ejercicios",
+    "contenido-cultural"
+  ],
+  "categoryChildren": {
+    "aplicaciones-moviles": [
+      "duolingo",
+      "hellochinese",
+      "ninchanese"
+    ],
+    "diccionarios-y-traduccion": [
+      "pleco",
+      "youdao-dict",
+      "line-dict",
+      "dokodemo-dict",
+      "zhongwen-extension"
+    ],
+    "escritura-y-trazo": [
+      "skritter",
+      "trainchinese"
+    ],
+    "pronunciacion-y-tonos": [
+      "yoyochinese",
+      "pinyin-trainer",
+      "chinesepod"
+    ],
+    "gramatica-y-ejercicios": [
+      "hsk-online",
+      "chinese-grammar-wiki"
+    ],
+    "contenido-cultural": [
+      "the-chairmans-bao"
+    ]
+  },
+  "config": {
+    "animCategoryDelay": 3000,
+    "animNodeDelay": 2500,
+    "animNodeExpansionSpeed": 400,
+    "animTransitionSpeed": 800,
+    "categoryDistances": {
+      "aplicaciones-moviles": 500,
+      "diccionarios-y-traduccion": 250,
+      "escritura-y-trazo": 250,
+      "pronunciacion-y-tonos": 250,
+      "gramatica-y-ejercicios": 250,
+      "contenido-cultural": 250
+    },
+    "categoryDistancesMain": {
+      "aplicaciones-moviles": 3500,
+      "diccionarios-y-traduccion": 1000,
+      "escritura-y-trazo": 1000,
+      "pronunciacion-y-tonos": 1000,
+      "gramatica-y-ejercicios": 1000,
+      "contenido-cultural": 1000
+    },
+    "categoryFontSize": 18,
+    "nodeFontSize": 14,
+    "popupSubtitleFontSize": 30,
+    "popupTextFontSize": 28,
+    "popupTitleFontSize": 35,
+    "primaryDistance": 250,
+    "primaryNodeSize": 100,
+    "rootFontSize": 20,
+    "rootNodeSize": 200,
+    "secondaryNodeDist": 120,
+    "secondaryNodeSize": 90
+  },
+  "nodes": {
+    "root": {
+      "_id": "6a05e1957696ccb16d748582",
+      "id": "root",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Herramientas para aprender chino",
+      "type": "root",
+      "connections": {
+        "parent": [],
+        "children": [],
+        "secondary": []
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "aplicaciones-moviles": {
+      "_id": "6a05e1957696ccb16d748583",
+      "id": "aplicaciones-moviles",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Aplicaciones móviles",
+      "type": "category",
+      "connections": {
+        "parent": [],
+        "children": [],
+        "secondary": []
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "diccionarios-y-traduccion": {
+      "_id": "6a05e1957696ccb16d748584",
+      "id": "diccionarios-y-traduccion",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Diccionarios y traducción",
+      "type": "category",
+      "connections": {
+        "parent": [],
+        "children": [],
+        "secondary": []
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "escritura-y-trazo": {
+      "_id": "6a05e1957696ccb16d748585",
+      "id": "escritura-y-trazo",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Escritura y trazo",
+      "type": "category",
+      "connections": {
+        "parent": [],
+        "children": [],
+        "secondary": []
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "pronunciacion-y-tonos": {
+      "_id": "6a05e1957696ccb16d748586",
+      "id": "pronunciacion-y-tonos",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Pronunciación y tonos",
+      "type": "category",
+      "connections": {
+        "parent": [],
+        "children": [],
+        "secondary": []
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "gramatica-y-ejercicios": {
+      "_id": "6a05e1957696ccb16d748587",
+      "id": "gramatica-y-ejercicios",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Gramática y ejercicios",
+      "type": "category",
+      "connections": {
+        "parent": [],
+        "children": [],
+        "secondary": []
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "contenido-cultural": {
+      "_id": "6a05e1957696ccb16d748588",
+      "id": "contenido-cultural",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Contenido cultural y lectura",
+      "type": "category",
+      "connections": {
+        "parent": [],
+        "children": [],
+        "secondary": []
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "duolingo": {
+      "_id": "6a05e1957696ccb16d748589",
+      "id": "duolingo",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Duolingo",
+      "type": "tool",
+      "url": "https://www.duolingo.com/",
+      "info": "Curso gamificado de chino para principiantes.",
+      "connections": {
+        "parent": [
+          {
+            "id": "aplicaciones-moviles",
+            "type": "category",
+            "_id": "6a05e1957696ccb16d74858a"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "hellochinese": {
+      "_id": "6a05e1957696ccb16d74858b",
+      "id": "hellochinese",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "HelloChinese",
+      "type": "tool",
+      "url": "https://www.hellochinese.cc/",
+      "info": "App especializada en chino mandarín para nivel inicial.",
+      "connections": {
+        "parent": [
+          {
+            "id": "aplicaciones-moviles",
+            "type": "category",
+            "_id": "6a05e1957696ccb16d74858c"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "pleco": {
+      "_id": "6a05e1957696ccb16d74858d",
+      "id": "pleco",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Pleco",
+      "type": "tool",
+      "url": "https://www.pleco.com/",
+      "info": "Diccionario de chino con reconocimiento de caracteres por cámara y ejemplos.",
+      "connections": {
+        "parent": [
+          {
+            "id": "diccionarios-y-traduccion",
+            "type": "category",
+            "_id": "6a05e1957696ccb16d74858e"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "escritura-y-trazo"
+        ]
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "youdao-dict": {
+      "_id": "6a05e1957696ccb16d74858f",
+      "id": "youdao-dict",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Youdao Dict",
+      "type": "tool",
+      "url": "https://dict.youdao.com/",
+      "info": "Diccionario chino-español con ejemplos y pronunciación.",
+      "connections": {
+        "parent": [
+          {
+            "id": "diccionarios-y-traduccion",
+            "type": "category",
+            "_id": "6a05e1957696ccb16d748590"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "line-dict": {
+      "_id": "6a05e1957696ccb16d748591",
+      "id": "line-dict",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "LINE Dict",
+      "type": "tool",
+      "url": "https://dict.naver.com/",
+      "info": "Diccionario chino-coreano (útil para búsqueda de caracteres).",
+      "connections": {
+        "parent": [
+          {
+            "id": "diccionarios-y-traduccion",
+            "type": "category",
+            "_id": "6a05e1957696ccb16d748592"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "skritter": {
+      "_id": "6a05e1957696ccb16d748593",
+      "id": "skritter",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Skritter",
+      "type": "tool",
+      "url": "https://skritter.com/",
+      "info": "Practica escritura de caracteres con reconocimiento de trazo.",
+      "connections": {
+        "parent": [
+          {
+            "id": "escritura-y-trazo",
+            "type": "category",
+            "_id": "6a05e1957696ccb16d748594"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "trainchinese": {
+      "_id": "6a05e1957696ccb16d748595",
+      "id": "trainchinese",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "TrainChinese",
+      "type": "tool",
+      "url": "https://www.trainchinese.com/",
+      "info": "Diccionario y herramienta para aprender trazos y orden de escritura.",
+      "connections": {
+        "parent": [
+          {
+            "id": "escritura-y-trazo",
+            "type": "category",
+            "_id": "6a05e1957696ccb16d748596"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "diccionarios-y-traduccion"
+        ]
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "yoyochinese": {
+      "_id": "6a05e1957696ccb16d748597",
+      "id": "yoyochinese",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "YoyoChinese",
+      "type": "tool",
+      "url": "https://yoyochinese.com/",
+      "info": "Enfoque en pronunciación y tonos con videos explicativos.",
+      "connections": {
+        "parent": [
+          {
+            "id": "pronunciacion-y-tonos",
+            "type": "category",
+            "_id": "6a05e1957696ccb16d748598"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "pinyin-trainer": {
+      "_id": "6a05e1957696ccb16d748599",
+      "id": "pinyin-trainer",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Pinyin Trainer",
+      "type": "tool",
+      "url": "https://www.pinyintrainer.com/",
+      "info": "Ejercicios auditivos para identificar tonos y sílabas en pinyin.",
+      "connections": {
+        "parent": [
+          {
+            "id": "pronunciacion-y-tonos",
+            "type": "category",
+            "_id": "6a05e1957696ccb16d74859a"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "chinesepod": {
+      "_id": "6a05e1957696ccb16d74859b",
+      "id": "chinesepod",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "ChinesePod",
+      "type": "tool",
+      "url": "https://chinesepod.com/",
+      "info": "Podcasts y lecciones con foco en diálogos y pronunciación.",
+      "connections": {
+        "parent": [
+          {
+            "id": "pronunciacion-y-tonos",
+            "type": "category",
+            "_id": "6a05e1957696ccb16d74859c"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "contenido-cultural"
+        ]
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "hsk-online": {
+      "_id": "6a05e1957696ccb16d74859d",
+      "id": "hsk-online",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "HSK Online",
+      "type": "tool",
+      "url": "https://www.hskonline.com/",
+      "info": "Ejercicios y simulacros para preparar el examen oficial HSK.",
+      "connections": {
+        "parent": [
+          {
+            "id": "gramatica-y-ejercicios",
+            "type": "category",
+            "_id": "6a05e1957696ccb16d74859e"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "chinese-grammar-wiki": {
+      "_id": "6a05e1957696ccb16d74859f",
+      "id": "chinese-grammar-wiki",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Chinese Grammar Wiki",
+      "type": "tool",
+      "url": "https://resources.allsetlearning.com/chinese/grammar/",
+      "info": "Wiki de gramática china por niveles (A1 a C1).",
+      "connections": {
+        "parent": [
+          {
+            "id": "gramatica-y-ejercicios",
+            "type": "category",
+            "_id": "6a05e1957696ccb16d7485a0"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "the-chairmans-bao": {
+      "_id": "6a05e1957696ccb16d7485a1",
+      "id": "the-chairmans-bao",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "The Chairman's Bao",
+      "type": "tool",
+      "url": "https://www.thechairmansbao.com/",
+      "info": "Artículos de noticias clasificados por nivel HSK con ejercicios.",
+      "connections": {
+        "parent": [
+          {
+            "id": "contenido-cultural",
+            "type": "category",
+            "_id": "6a05e1957696ccb16d7485a2"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "gramatica-y-ejercicios"
+        ]
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "dokodemo-dict": {
+      "_id": "6a05e1957696ccb16d7485a3",
+      "id": "dokodemo-dict",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Dokodemo Dict",
+      "type": "tool",
+      "url": "https://dokodemo.dict.naver.com/",
+      "info": "Extensión para leer chino en sitios web con traducción emergente.",
+      "connections": {
+        "parent": [
+          {
+            "id": "diccionarios-y-traduccion",
+            "type": "category",
+            "_id": "6a05e1957696ccb16d7485a4"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "contenido-cultural"
+        ]
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "zhongwen-extension": {
+      "_id": "6a05e1957696ccb16d7485a5",
+      "id": "zhongwen-extension",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Zhongwen Extension",
+      "type": "tool",
+      "url": "https://chrome.google.com/webstore/detail/zhongwen-chinese-english/kkmlkkjojmombglmlpbpapjhdmonpbhg",
+      "info": "Extensión de Chrome para traducir caracteres chinos al pasar el mouse.",
+      "connections": {
+        "parent": [
+          {
+            "id": "diccionarios-y-traduccion",
+            "type": "category",
+            "_id": "6a05e1957696ccb16d7485a6"
+          }
+        ],
+        "children": [],
+        "secondary": []
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "anki": {
+      "_id": "6a05e1957696ccb16d7485a7",
+      "id": "anki",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Anki (SRS)",
+      "type": "tool",
+      "url": "https://apps.ankiweb.net/",
+      "info": "Sistema de repetición espaciada para memorizar vocabulario y caracteres.",
+      "connections": {
+        "parent": [],
+        "children": [],
+        "secondary": [
+          "aplicaciones-moviles",
+          "escritura-y-trazo"
+        ]
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    },
+    "ninchanese": {
+      "_id": "6a05e1957696ccb16d7485a8",
+      "id": "ninchanese",
+      "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch",
+      "label": "Ninchanese",
+      "type": "tool",
+      "url": "https://www.ninchanese.com/",
+      "info": "Plataforma gamificada para chino con énfasis en vocabulario y gramática.",
+      "connections": {
+        "parent": [
+          {
+            "id": "aplicaciones-moviles",
+            "type": "category",
+            "_id": "6a05e1957696ccb16d7485a9"
+          }
+        ],
+        "children": [],
+        "secondary": [
+          "gramatica-y-ejercicios"
+        ]
+      },
+      "__v": 0,
+      "createdAt": "2026-05-14T14:52:05.222Z",
+      "updatedAt": "2026-05-14T14:52:05.222Z"
+    }
+  },
+  "projectId": "mapa-de-herramientas-conceptual-para-aprender-ch"
+}

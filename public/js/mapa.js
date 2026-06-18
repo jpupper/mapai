@@ -237,6 +237,37 @@ document.addEventListener('DOMContentLoaded', async function () {
     infoBox.style.top = '50%';
     infoBox.style.transform = 'translateY(-50%)';
 
+    // Botón de cerrar (visible siempre, funcional en click/tap)
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'info-close-btn';
+    closeBtn.innerHTML = '✕';
+    closeBtn.setAttribute('aria-label', 'Cerrar');
+    closeBtn.style.display = 'none';
+    closeBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeInfoBox();
+    });
+    closeBtn.addEventListener('touchend', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeInfoBox();
+    });
+    infoBox.appendChild(closeBtn);
+
+    function closeInfoBox() {
+        selectedNode = null;
+        cy.elements().removeClass('highlighted faded');
+        cy.$('.dash-animated').style('line-dash-offset', 0);
+        infoBox.style.opacity = 0;
+        infoBox.style.pointerEvents = 'none';
+        closeBtn.style.display = 'none';
+        setTimeout(function () {
+            if (infoBox.style.opacity === '0') {
+                infoBox.style.display = 'none';
+            }
+        }, 300);
+    }
+
     // Estilos para los elementos internos del infoBox
     const style = document.createElement('style');
     style.textContent = `
@@ -357,6 +388,170 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Inicializar el buffer después de un pequeño delay para asegurar que el layout preset se aplicó
     setTimeout(updateStaticBuffer, 500);
 
+    // ============================================================
+    // COLLISION DETECTION & REPULSION
+    // ============================================================
+    // Resuelve superposición entre nodos hermanos (misma categoría)
+    // Los empuja suavemente hasta que no se tocan.
+    //
+    // Cada categoría tiene sus hijos en un círculo alrededor suyo.
+    // Si hay muchos hijos, se apiñan. Este algoritmo detecta
+    // pares solapados y los separa iterativamente.
+
+    function getNodeRadius(node) {
+        const w = node.outerWidth() || node.width() || CONFIG.secondaryNodeSize || 90;
+        const h = node.outerHeight() || node.height() || CONFIG.secondaryNodeSize || 90;
+        return Math.max(w, h) / 2;
+    }
+
+    function collideAndRelax(iterations = 60) {
+        // Obtener todos los nodos del mapa (incluyendo categorías, excluyendo root)
+        const allNonRootNodes = cy.nodes().filter(n => n.id() !== 'root');
+
+        // Fase 1: Separar hermanos entre sí (misma categoría)
+        const categoryMap = {};
+        if (_apiData.categoryChildren) {
+            for (const [catId, children] of Object.entries(_apiData.categoryChildren)) {
+                categoryMap[catId] = children.filter(id => cy.getElementById(id).length > 0);
+            }
+        }
+
+        // Fase 2: Separar TODOS los nodos (categorías + hijos, global)
+        for (let iter = 0; iter < iterations; iter++) {
+            let moved = false;
+            const damp = 1 - (iter / iterations) * 0.4;
+
+            // Separar hermanos (misma categoría)
+            for (const [catId, siblings] of Object.entries(categoryMap)) {
+                for (let i = 0; i < siblings.length; i++) {
+                    const nodeA = cy.getElementById(siblings[i]);
+                    if (!nodeA || nodeA.length === 0) continue;
+                    for (let j = i + 1; j < siblings.length; j++) {
+                        const nodeB = cy.getElementById(siblings[j]);
+                        if (!nodeB || nodeB.length === 0) continue;
+
+                        const posA = nodeA.position();
+                        const posB = nodeB.position();
+                        const dx = posB.x - posA.x;
+                        const dy = posB.y - posA.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        const rA = getNodeRadius(nodeA);
+                        const rB = getNodeRadius(nodeB);
+                        const minDist = (rA + rB) * 1.35;
+
+                        if (dist < minDist && dist > 0.01) {
+                            const overlap = (minDist - dist) / 2;
+                            const nx = dx / dist;
+                            const ny = dy / dist;
+                            const push = overlap * damp;
+                            nodeA.position({ x: posA.x - nx * push, y: posA.y - ny * push });
+                            nodeB.position({ x: posB.x + nx * push, y: posB.y + ny * push });
+                            moved = true;
+                        }
+                    }
+                }
+            }
+
+            // Separar TODOS los nodos entre sí (categorías + hijos, cualquier combinación)
+            for (let i = 0; i < allNonRootNodes.length; i++) {
+                const nodeA = allNonRootNodes[i];
+                const isCatA = nodeA.data('type') === 'category';
+                const posA = nodeA.position();
+                for (let j = i + 1; j < allNonRootNodes.length; j++) {
+                    const nodeB = allNonRootNodes[j];
+                    const isCatB = nodeB.data('type') === 'category';
+                    const posB = nodeB.position();
+                    const dx = posB.x - posA.x;
+                    const dy = posB.y - posA.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    const rA = getNodeRadius(nodeA);
+                    const rB = getNodeRadius(nodeB);
+                    // Márgenes: categoría vs categoría usa 1.5x, categoría vs hijo usa 1.4x, hijo vs hijo usa 1.35x
+                    let margin = 1.35;
+                    if (isCatA && isCatB) margin = 1.5;
+                    else if (isCatA || isCatB) margin = 1.4;
+                    const minDist = (rA + rB) * margin;
+
+                    if (dist < minDist && dist > 0.01) {
+                        const overlap = (minDist - dist) / 2;
+                        const nx = dx / dist;
+                        const ny = dy / dist;
+                        const push = overlap * damp;
+                        // Las categorías tienen más inercia: se mueven la mitad
+                        if (isCatA && !isCatB) {
+                            nodeB.position({ x: posB.x + nx * push * 1.2, y: posB.y + ny * push * 1.2 });
+                        } else if (isCatB && !isCatA) {
+                            nodeA.position({ x: posA.x - nx * push * 1.2, y: posA.y - ny * push * 1.2 });
+                        } else {
+                            nodeA.position({ x: posA.x - nx * push, y: posA.y - ny * push });
+                            nodeB.position({ x: posB.x + nx * push, y: posB.y + ny * push });
+                        }
+                        moved = true;
+                    }
+                }
+            }
+
+            if (!moved) break;
+        }
+
+        // Fase 3: Expansión radial suave (solo nodos hijos, no categorías)
+        const childNodesForExpansion = cy.nodes().filter(n => {
+            const id = n.id();
+            return id !== 'root' && n.data('type') !== 'category';
+        });
+        for (let iter = 0; iter < 15; iter++) {
+            let moved = false;
+            for (const n of childNodesForExpansion) {
+                const pos = n.position();
+                const dist = Math.sqrt(pos.x * pos.x + pos.y * pos.y);
+                if (dist < 20) continue;
+                const nx = pos.x / dist;
+                const ny = pos.y / dist;
+                const pushOut = 2.5 * (1 - iter / 15);
+                n.position({ x: pos.x + nx * pushOut, y: pos.y + ny * pushOut });
+                moved = true;
+            }
+            if (!moved) break;
+        }
+
+        cy.fit(undefined, 80);
+    }
+
+    // Ejecutar colisiones después del layout inicial
+    cy.on('layoutstop', () => {
+        // Esperar a que termine la animación del layout
+        setTimeout(() => {
+            collideAndRelax(60);
+            updateStaticBuffer();
+        }, 100);
+    });
+
+    // ── Thumbnail capture ──
+    // Auto-capture the map as a thumbnail PNG after layout completes
+    setTimeout(async () => {
+        try {
+            const pngBase64 = cy.png({ output: 'base64', full: true, scale: 1 });
+            const projectId = getCurrentProject();
+            const basePath = getApiBasePath();
+            const token = localStorage.getItem('mapai_token') || localStorage.getItem('community_auth_token');
+            if (token && projectId && pngBase64 && pngBase64.length > 100) {
+                const thumbRes = await fetch(`${basePath}/api/projects/${encodeURIComponent(projectId)}/thumbnail`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ thumbnail: `data:image/png;base64,${pngBase64}` })
+                });
+                if (thumbRes.ok) {
+                    console.log(`[Thumbnail] Captured for project: ${projectId}`);
+                }
+            }
+        } catch (e) {
+            console.warn('[Thumbnail] Error capturing:', e);
+        }
+    }, 2000);
+
     // Variables para la animación de líneas discontinuas
     let dashOffset = 0;
     let animationActive = true;
@@ -475,6 +670,8 @@ document.addEventListener('DOMContentLoaded', async function () {
         var infoHTML = buildInfoHTML(nodeId);
         if (infoHTML) {
             infoBox.innerHTML = infoHTML;
+            infoBox.appendChild(closeBtn);
+            closeBtn.style.display = '';
             infoBox.style.pointerEvents = 'auto';
             infoBox.style.display = 'block';
             infoBox.style.opacity = 0;
@@ -494,6 +691,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             // Ocultar infoBox
             infoBox.style.opacity = 0;
             infoBox.style.pointerEvents = 'none';
+            closeBtn.style.display = 'none';
             setTimeout(function () {
                 if (infoBox.style.opacity === '0') {
                     infoBox.style.display = 'none';
@@ -533,6 +731,8 @@ document.addEventListener('DOMContentLoaded', async function () {
         if (nodeInfo) { // Mostrar info para todos los nodos
             var infoHTML = buildInfoHTML(nodeId);
             infoBox.innerHTML = infoHTML;
+            infoBox.appendChild(closeBtn);
+            closeBtn.style.display = '';
             infoBox.style.pointerEvents = 'auto';
             infoBox.style.display = 'block';
             infoBox.style.opacity = 0;
@@ -563,6 +763,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         if (!selectedNode) {
             infoBox.style.opacity = 0;
             infoBox.style.pointerEvents = 'none';
+            closeBtn.style.display = 'none';
             setTimeout(function () {
                 if (infoBox.style.opacity === '0') {
                     infoBox.style.display = 'none';
@@ -574,6 +775,8 @@ document.addEventListener('DOMContentLoaded', async function () {
             var selHTML = buildInfoHTML(selId);
             if (selHTML) {
                 infoBox.innerHTML = selHTML;
+                infoBox.appendChild(closeBtn);
+                closeBtn.style.display = '';
                 infoBox.style.pointerEvents = 'auto';
             }
         }
@@ -1266,6 +1469,8 @@ document.addEventListener('DOMContentLoaded', async function () {
         var nodeInfo = NODE_INFO[nodeId];
         if (nodeInfo) {
             infoBox.innerHTML = nodeInfo;
+            infoBox.appendChild(closeBtn);
+            closeBtn.style.display = '';
             infoBox.style.display = 'block';
             setTimeout(function () {
                 infoBox.style.opacity = 1;
@@ -1361,3 +1566,6 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     // Ya no es necesario ocultarlos manualmente, está en el stylesheet
 });
+ 
+ 
+ 
