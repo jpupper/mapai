@@ -17,14 +17,12 @@
       <a href="./" class="nav-brand">
         <span class="nav-logo">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="url(#pin-grad)" stroke="none"/>
-            <circle cx="12" cy="9" r="3" fill="#0a0e1a" stroke="none"/>
-            <defs>
-              <linearGradient id="pin-grad" x1="5" y1="2" x2="19" y2="22">
-                <stop stop-color="#f59e0b"/>
-                <stop offset="1" stop-color="#ef4444"/>
-              </linearGradient>
-            </defs>
+            <circle cx="12" cy="4" r="2.5" stroke="#6cb4ff" stroke-width="1.2" fill="rgba(108,180,255,0.15)"/>
+            <circle cx="5" cy="19" r="2.5" stroke="#6cb4ff" stroke-width="1.2" fill="rgba(108,180,255,0.15)"/>
+            <circle cx="19" cy="19" r="2.5" stroke="#6cb4ff" stroke-width="1.2" fill="rgba(108,180,255,0.15)"/>
+            <line x1="12" y1="6" x2="5" y2="17" stroke="#6cb4ff" stroke-width="1" opacity="0.5"/>
+            <line x1="12" y1="6" x2="19" y2="17" stroke="#6cb4ff" stroke-width="1" opacity="0.5"/>
+            <line x1="7.5" y1="19" x2="16.5" y2="19" stroke="#6cb4ff" stroke-width="1" opacity="0.4"/>
           </svg>
         </span>
         <span class="nav-name">MapAI</span>
@@ -110,185 +108,6 @@
     <div class="coord-se">MAP·AI v2.0</div>
   </section>
 
-  <!-- ═══ DIVIDER ═══ -->
-  <div class="sec-divider">
-    <div class="sec-divider-ring">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1"/>
-        <circle cx="8" cy="5" r="1.5" fill="currentColor"/>
-        <circle cx="5.5" cy="11" r="1.2" fill="currentColor" opacity="0.7"/>
-        <circle cx="10.5" cy="11" r="1.2" fill="currentColor" opacity="0.7"/>
-        <path d="M7.2 6.5l-1 3M8.8 6.5l1 3M6 11h4" stroke="currentColor" stroke-width="0.8"/>
-      </svg>
-    </div>
-  </div>
-
-  <!-- ═══ NETWORK OVERVIEW (replaces old pillars) ═══ -->
-  <section class="section" id="network">
-    <div class="sec-inner">
-      <div class="sec-label">Topología de la red</div>
-      <h2 class="sec-title">
-        La red de mapas<br/>
-        <span class="gradient-text">crece con vos</span>
-      </h2>
-      <p class="sec-desc">
-        Cada mapa que creás se convierte en un nodo dentro de una red interconectada. 
-        Visualizá conexiones, descubrí patrones y navegá el conocimiento compartido.
-      </p>
-
-      <div class="topology-grid">
-        <div class="topo-card topo-map">
-          <div class="topo-vis" id="topo-map-preview">
-            <canvas id="topo-canvas"></canvas>
-          </div>
-          <div class="topo-info">
-            <span class="topo-tag">2D Network</span>
-            <h4>Mapa de nodos interactivo</h4>
-            <p>Arrastrá, hacé zoom, conectá herramientas. Visualizá relaciones entre tecnologías con Cytoscape.js.</p>
-          </div>
-        </div>
-        <div class="topo-card topo-orbit">
-          <div class="topo-vis">
-            <div class="orbital-ring r1"><div class="o-dot"></div></div>
-            <div class="orbital-ring r2"><div class="o-dot"></div></div>
-            <div class="orbital-ring r3"><div class="o-dot"></div></div>
-            <div class="orbital-core"></div>
-          </div>
-          <div class="topo-info">
-            <span class="topo-tag topo-tag-purple">Universo 3D</span>
-            <h4>Exploración orbital</h4>
-            <p>Cada nodo flota como un planeta en el espacio. Mové la cámara, interactuá con esferas y descubrí conexiones.</p>
-          </div>
-        </div>
-        <div class="topo-card topo-game">
-          <div class="topo-vis game-vis">
-            <div class="game-preview-inline">
-              <div class="g-row pulse-g"><span class="g-rank">1</span><span class="g-name">Git Basics</span><span class="g-pts">850pts</span></div>
-              <div class="g-row"><span class="g-rank">2</span><span class="g-name">WebGL Shaders</span><span class="g-pts">620pts</span></div>
-              <div class="g-row"><span class="g-rank">3</span><span class="g-name">Node.js API</span><span class="g-pts">490pts</span></div>
-            </div>
-          </div>
-          <div class="topo-info">
-            <span class="topo-tag topo-tag-green">Trivias</span>
-            <h4>Jugá mientras aprendés</h4>
-            <p>Creá preguntas, asigná puntajes y activá el modo juego. Respondé trivias mientras explorás el mapa.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ FEATURES ═══ -->
-  <section class="section" id="features">
-    <div class="sec-inner">
-      <div class="sec-label">Capacidades</div>
-      <h2 class="sec-title">
-        Todo lo que podés hacer<br/>
-        <span class="gradient-text">en MapAI</span>
-      </h2>
-      <div class="features-grid">
-        <div class="feature-card fc-nodes">
-          <div class="fc-icon fc-icon-gold"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" fill="currentColor"/><circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.5"/><circle cx="19" cy="5" r="2" fill="currentColor" opacity="0.5"/><circle cx="5" cy="19" r="2" fill="currentColor" opacity="0.5"/><circle cx="19" cy="19" r="2" fill="currentColor" opacity="0.5"/><path d="M7 7l3 3M17 7l-3 3M7 17l3-3M17 17l-3-3" stroke="currentColor" stroke-width="1.2" opacity="0.3"/></svg></div>
-          <h4>Editor de nodos</h4>
-          <p>Agregá herramientas, categorizalas y conectalas. Cada nodo tiene nombre, ícono, descripción y categoría.</p>
-        </div>
-        <div class="feature-card fc-twod">
-          <div class="fc-icon fc-icon-cyan"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" fill="currentColor"/><path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></div>
-          <h4>Visualización 2D</h4>
-          <p>Mapa interactivo con Cytoscape.js: zoom, arrastre, búsqueda, resaltado de conexiones y modo pantalla completa.</p>
-        </div>
-        <div class="feature-card fc-threed">
-          <div class="fc-icon fc-icon-purple"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="9" r="2" fill="currentColor"/><circle cx="16" cy="9" r="2" fill="currentColor"/><circle cx="12" cy="17" r="2" fill="currentColor"/><path d="M9 11l2 4M15 11l-2 4M10 13h4" stroke="currentColor" stroke-width="1.5"/></svg></div>
-          <h4>Universo 3D</h4>
-          <p>Explorá tu mapa en una nube espacial tridimensional. Cada nodo es un planeta con su propia órbita y atmósfera.</p>
-        </div>
-        <div class="feature-card fc-trivia">
-          <div class="fc-icon fc-icon-green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z" fill="currentColor"/></svg></div>
-          <h4>Trivias y juegos</h4>
-          <p>Creá preguntas, asigná puntajes y activá el modo juego. Los usuarios responden trivias mientras navegan el mapa.</p>
-        </div>
-        <div class="feature-card fc-share">
-          <div class="fc-icon fc-icon-orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg></div>
-          <h4>Compartí y colaborá</h4>
-          <p>Publicá tu mapa, compartí un link y cualquiera puede explorarlo sin registro. Ideal para equipos y comunidades.</p>
-        </div>
-        <div class="feature-card fc-db">
-          <div class="fc-icon fc-icon-pink"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          <h4>Base de datos viva</h4>
-          <p>Cada mapa es una base de datos MongoDB con nodos, conexiones, categorías y configuraciones. Exportable e importable.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ HOW IT WORKS ═══ -->
-  <section class="section sec-steps">
-    <div class="sec-inner">
-      <div class="sec-label">Flujo de trabajo</div>
-      <h2 class="sec-title">
-        De la idea al mapa<br/>
-        <span class="gradient-text">en 3 pasos</span>
-      </h2>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">PASO 01</div>
-          <div class="step-vis">
-            <div class="sv-pin">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="rgba(245,158,11,0.15)" stroke="#f59e0b" stroke-width="1.2"/>
-                <circle cx="12" cy="9" r="2.5" fill="#f59e0b"/>
-              </svg>
-            </div>
-          </div>
-          <h4>Marcá tus herramientas</h4>
-          <p>Agregá nodos con nombre, descripción e imagen. Como poner pins en un mapa.</p>
-        </div>
-        <div class="step-arrow">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="step">
-          <div class="step-num">PASO 02</div>
-          <div class="step-vis">
-            <div class="sv-nodes">
-              <span class="sv-n sv-n1"></span>
-              <span class="sv-n sv-n2"></span>
-              <span class="sv-n sv-n3"></span>
-            </div>
-            <div class="sv-conn-lines">
-              <span class="sv-cl"></span>
-              <span class="sv-cl"></span>
-              <span class="sv-cl"></span>
-            </div>
-          </div>
-          <h4>Conectá los puntos</h4>
-          <p>Relacioná herramientas entre sí. Cada conexión es un camino de aprendizaje.</p>
-        </div>
-        <div class="step-arrow">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="step">
-          <div class="step-num">PASO 03</div>
-          <div class="step-vis">
-            <div class="sv-share">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <circle cx="18" cy="5" r="3" stroke="#22d3ee" stroke-width="1.5"/>
-                <circle cx="6" cy="12" r="3" stroke="#6c8cff" stroke-width="1.5"/>
-                <circle cx="18" cy="19" r="3" stroke="#a855f7" stroke-width="1.5"/>
-                <path d="M15 7L9 10M9 14l6 3" stroke="currentColor" stroke-width="1.2" opacity="0.4"/>
-              </svg>
-            </div>
-          </div>
-          <h4>Compartí la red</h4>
-          <p>Publicá tu mapa y compartí el enlace. La comunidad entera puede explorarlo.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ═══ COMMUNITY MAPS (EXPLORE) ═══ -->
   <section class="section" id="explore">
     <div class="sec-inner">
@@ -310,33 +129,6 @@
       </div>
       <div id="public-projects" class="projects-grid"></div>
 
-      <div id="create-card" class="cta-inline" style="display:none;">
-        <div class="cta-inline-content">
-          <h3>Ya tenés cuenta</h3>
-          <p>Creado tu propio mapa desde el panel de administración.</p>
-          <div class="cta-inline-actions">
-            <button id="btn-go-admin" class="btn-primary btn-glow" type="button">Ir al admin</button>
-            <a id="link-profile-cta" class="btn-secondary" href="#">Ver mi perfil</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ FINAL CTA ═══ -->
-  <section class="section cta-final">
-    <div class="sec-inner">
-      <div class="cta-card">
-        <div class="cta-glow"></div>
-        <h2 class="cta-title">Empezá tu propio<br/><span class="gradient-text">mapa de herramientas</span></h2>
-        <p class="cta-desc">Registrate gratis y creá tu mapa en segundos. Sin costo, sin límites.</p>
-        <button id="btn-cta-bottom" class="btn-primary btn-glow btn-lg" type="button">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-          </svg>
-          Crear mi mapa ahora
-        </button>
-      </div>
     </div>
   </section>
 
@@ -404,5 +196,7 @@
 
   <script src="js/front.js"></script>
   <script src="js/animations.js"></script>
+  <script src="js/games.js"></script>
+  <script src="https://vps-4455523-x.dattaweb.com/fscauth/js/fsc-button.js"></script>
 </body>
 </html>

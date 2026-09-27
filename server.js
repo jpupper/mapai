@@ -546,6 +546,64 @@ apiRouter.get('/health', (req, res) => {
     });
 });
 
+// ============================================================
+// 🗂️ FSC — índice universal de assets (lo llama el perfil de fscauth)
+// GET /mapai/api/fsc/assets?username=X
+// Los mapas SIGUEN viviendo acá (modelos Project, arquitectura bicompartida):
+// fscauth solo los INDEXA para el pasaporte universal de usuario.
+// ============================================================
+async function fscAssetsAuthorized(req, username) {
+    const internal = process.env.FSC_INTERNAL_KEY || process.env.JWT_SECRET || '';
+    const key = req.headers['x-fsc-internal'];
+    if (internal && key && key === internal) return true;
+    const token = String(req.headers.authorization || '').replace(/^Bearer\s+/i, '');
+    if (!token) return false;
+    try {
+        const url = (process.env.FSCAUTH_URL || 'https://vps-4455523-x.dattaweb.com/fscauth') + '/api/auth/verify';
+        const r = await fetch(url, { headers: { Authorization: 'Bearer ' + token } });
+        const d = await r.json();
+        if (!d || d.loggedIn !== true || !d.user) return false;
+        if (String(d.user.username || '').toLowerCase() === String(username || '').toLowerCase()) return true;
+        return d.user.role === 'ADMIN' || d.user.role === 'SYSTEM';
+    } catch (err) {
+        console.error('[FSC-ASSETS] no se pudo validar contra fscauth:', err.message);
+        return false;
+    }
+}
+
+apiRouter.get('/fsc/assets', async (req, res) => {
+    const username = String(req.query.username || '').trim();
+    if (!username) return res.status(400).json({ ok: false, error: 'username requerido' });
+    if (!(await fscAssetsAuthorized(req, username))) return res.status(401).json({ ok: false, error: 'No autorizado' });
+    try {
+        const safe = username.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const projects = await Project.find({ ownerUsername: { $regex: new RegExp('^' + safe + '$', 'i') } })
+            .select('id name description isPublic createdAt')
+            .sort({ createdAt: -1 })
+            .limit(200)
+            .lean();
+
+        const groups = [];
+        if (projects.length) {
+            groups.push({
+                type: 'mapa',
+                label: 'Mapas',
+                count: projects.length,
+                items: projects.map((p) => ({
+                    id: p.id,
+                    title: p.name || p.id,
+                    url: `/${APP_PATH}/mapa.html?project=${encodeURIComponent(p.id)}`,
+                    meta: { descripcion: p.description || '', publico: p.isPublic !== false }
+                }))
+            });
+        }
+        res.json({ ok: true, app: 'mapai', username, total: groups.reduce((n, g) => n + g.count, 0), groups });
+    } catch (err) {
+        console.error('[FSC-ASSETS] error:', err.message);
+        res.status(500).json({ ok: false, error: 'No se pudo indexar los assets' });
+    }
+});
+
 // ═══════════════════════════════════════════════════════════════
 //  API ROUTES - NODES
 // ═══════════════════════════════════════════════════════════════
