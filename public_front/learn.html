@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn — MapAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/front.css" />
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <style>
+    body {
+      padding-top: 60px !important;
+      background: #090b14;
+      min-height: 100vh;
+    }
+    .learn-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+    .learn-page .sec-head-center {
+      margin-bottom: 36px;
+    }
+    .learn-page .sec-head-center h2 {
+      font-size: clamp(1.4rem,3vw,2rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .learn-page .sec-head-center .sec-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(245,158,11,.6);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .learn-page .sec-head-center .sec-label::before {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: rgba(245,158,11,.3);
+    }
+  </style>
+</head>
+<body>
+
+  <main class="learn-page">
+    <div class="sec-head-center">
+      <div class="sec-label">Aprender</div>
+      <h2>Juegos para<br/><span class="gradient-text">memorizar nodos</span></h2>
+      <p class="sec-desc-center">
+        Cada juego se genera autom&aacute;ticamente a partir de los datos de tu mapa.
+        Respond&eacute;, conect&aacute;, clasific&aacute; y descubr&iacute; relaciones entre herramientas.
+      </p>
+    </div>
+
+    <div class="learn-grid" id="learn-grid">
+      <!-- Trivias -->
+      <div class="learn-card c-trivia" data-game="trivia">
+        <div class="lc-head">
+          <div class="lc-icon lc-icon-green">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M12 8v5M12 15.5v.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="lc-tag lc-tag-green">Trivias</span>
+        </div>
+        <h4 class="lc-title">Preguntas y respuestas</h4>
+        <p class="lc-desc">Respond&eacute; preguntas de opci&oacute;n m&uacute;ltiple sobre herramientas, categor&iacute;as y conexiones. Cada ronda elige nodos al azar del mapa.</p>
+        <div class="lc-footer">
+          <span class="lc-stat"><span class="lc-dot" style="background:#34d399"></span>10 preguntas por ronda</span>
+          <button class="lc-play" data-game="trivia">Jugar</button>
+        </div>
+      </div>
+
+      <!-- Unir con flechas -->
+      <div class="learn-card c-match" data-game="match">
+        <div class="lc-head">
+          <div class="lc-icon lc-icon-amber">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M5 17l4-8 4 6 6-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="lc-tag lc-tag-amber">Unir con flechas</span>
+        </div>
+        <h4 class="lc-title">Conect&aacute; conceptos</h4>
+        <p class="lc-desc">Arrastr&aacute; l&iacute;neas entre herramientas y sus descripciones. Cada acierto suma puntos y descubr&iacute;s datos &uacute;tiles de cada nodo.</p>
+        <div class="lc-footer">
+          <span class="lc-stat"><span class="lc-dot" style="background:#f59e0b"></span>6 pares por ronda</span>
+          <button class="lc-play" data-game="match">Jugar</button>
+        </div>
+      </div>
+
+      <!-- Flashcards -->
+      <div class="learn-card c-flash" data-game="flashcard">
+        <div class="lc-head">
+          <div class="lc-icon lc-icon-purple">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <rect x="5" y="3" width="14" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M9 11l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="lc-tag lc-tag-purple">Flashcards</span>
+        </div>
+        <h4 class="lc-title">Memoriz&aacute; r&aacute;pido</h4>
+        <p class="lc-desc">Tarjetas virtuales: ves el nombre del nodo e intent&aacute;s recordar su descripci&oacute;n y categor&iacute;a. Volte&aacute; para verificar.</p>
+        <div class="lc-footer">
+          <span class="lc-stat"><span class="lc-dot" style="background:#a855f7"></span>Modo estudio + quiz</span>
+          <button class="lc-play" data-game="flashcard">Jugar</button>
+        </div>
+      </div>
+
+      <!-- Clasificador -->
+      <div class="learn-card c-sort" data-game="sort">
+        <div class="lc-head">
+          <div class="lc-icon lc-icon-cyan">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <span class="lc-tag lc-tag-cyan">Clasificador</span>
+        </div>
+        <h4 class="lc-title">Orden&aacute; por categor&iacute;a</h4>
+        <p class="lc-desc">Arrastr&aacute; cada herramienta al bucket de su categor&iacute;a correcta. Aprend&eacute;s la estructura del mapa mientras clasific&aacute;s.</p>
+        <div class="lc-footer">
+          <span class="lc-stat"><span class="lc-dot" style="background:#22d3ee"></span>8 &iacute;tems por nivel</span>
+          <button class="lc-play" data-game="sort">Jugar</button>
+        </div>
+      </div>
+
+      <!-- Conexiones -->
+      <div class="learn-card c-connect" data-game="connect">
+        <div class="lc-head">
+          <div class="lc-icon lc-icon-pink">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="18" cy="6" r="3" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M8.5 15.5l7-7" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 2"/>
+            </svg>
+          </div>
+          <span class="lc-tag lc-tag-pink">Conexiones</span>
+        </div>
+        <h4 class="lc-title">Descubr&iacute; relaciones</h4>
+        <p class="lc-desc">Dado un nodo, seleccion&aacute; con qu&eacute; otras herramientas est&aacute; conectado. Revel&aacute; la red de relaciones del mapa.</p>
+        <div class="lc-footer">
+          <span class="lc-stat"><span class="lc-dot" style="background:#ec4899"></span>5 rondas progresivas</span>
+          <button class="lc-play" data-game="connect">Jugar</button>
+        </div>
+      </div>
+
+      <!-- Adivina el nodo -->
+      <div class="learn-card c-guess" data-game="guess">
+        <div class="lc-head">
+          <div class="lc-icon lc-icon-gold">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M4 20c1.7-3.5 4.7-5.2 8-5.2s6.3 1.7 8 5.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="lc-tag lc-tag-gold">&iquest;Qu&eacute; nodo soy?</span>
+        </div>
+        <h4 class="lc-title">Adivin&aacute; la herramienta</h4>
+        <p class="lc-desc">Le&eacute;s la descripci&oacute;n y ten&eacute;s que escribir el nombre exacto del nodo. &iquest;Conoc&eacute;s todas las herramientas del mapa?</p>
+        <div class="lc-footer">
+          <span class="lc-stat"><span class="lc-dot" style="background:#fbbf24"></span>Nivel: f&aacute;cil a experto</span>
+          <button class="lc-play" data-game="guess">Jugar</button>
+        </div>
+      </div>
+
+      <!-- Velocidad -->
+      <div class="learn-card c-speed" data-game="speed">
+        <div class="lc-head">
+          <div class="lc-icon lc-icon-cyan">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="lc-tag lc-tag-cyan">Velocidad</span>
+        </div>
+        <h4 class="lc-title">Modo contrarreloj</h4>
+        <p class="lc-desc">30 segundos para clasificar la mayor cantidad de herramientas por categor&iacute;a. Cada acierto suma tiempo extra. &iquest;Cu&aacute;l es tu r&eacute;cord?</p>
+        <div class="lc-footer">
+          <span class="lc-stat"><span class="lc-dot" style="background:#22d3ee"></span>+3s por acierto</span>
+          <button class="lc-play" data-game="speed">Jugar</button>
+        </div>
+      </div>
+
+      <!-- Crucigrama -->
+      <div class="learn-card c-crossword" data-game="crossword">
+        <div class="lc-head">
+          <div class="lc-icon lc-icon-purple">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M4 10h16M10 4v16" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2"/>
+            </svg>
+          </div>
+          <span class="lc-tag lc-tag-purple">Crucigrama</span>
+        </div>
+        <h4 class="lc-title">Complet&aacute; la grilla</h4>
+        <p class="lc-desc">Las pistas son las descripciones de las herramientas. Escrib&iacute; el nombre del nodo correcto para llenar cada fila del crucigrama.</p>
+        <div class="lc-footer">
+          <span class="lc-stat"><span class="lc-dot" style="background:#a855f7"></span>6 palabras por ronda</span>
+          <button class="lc-play" data-game="crossword">Jugar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/games.js"></script>
+  <script src="js/navbar.js"></script>
+  <!-- botón FSC: solo el isotipo, abajo a la izquierda -->
+  <script src="https://vps-4455523-x.dattaweb.com/fscauth/js/fsc-button.js?v=5"></script>
+</body>
+</html>

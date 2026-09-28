@@ -6,38 +6,17 @@
   <title>Modo Presentación — MapAI</title>
   <link rel="stylesheet" href="shared/css/presentacion.css">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <style>body{padding-top:48px!important;}</style>
 </head>
 <body>
   <div id="shader-bg"></div>
   <div class="scanline"></div>
   <div class="vignette"></div>
 
-  <header class="pres-header">
-    <a href="./" class="back-btn">← VOLVER</a>
-    <div class="pres-title">MODO PRESENTACIÓN</div>
-    <a id="profile-link-front" href="mapai/profile.html" class="back-btn" style="opacity:0.7;">Perfil</a>
-  </header>
-  <script src="js/menu.js"></script>
-  <script>
-    (function() {
-      var btn = document.getElementById('profile-link-front');
-      if (btn) {
-        var user = typeof getUser === 'function' ? getUser() : null;
-        var loggedIn = typeof isLoggedIn === 'function' && isLoggedIn();
-        if (loggedIn && user && user.username) {
-          btn.textContent = '\u{1F464} ' + user.username;
-          btn.href = 'mapai/profile.html';
-        } else {
-          btn.textContent = 'Ingresar';
-          btn.href = '#';
-          btn.onclick = function(e) {
-            e.preventDefault();
-            if (typeof showLogin === 'function') showLogin();
-          };
-        }
-      }
-    })();
-  </script>
+
+
 
   <div id="presentation-container">
     <div class="slide-content" id="slide-content">
@@ -83,5 +62,8 @@
   </script>
 
   <script type="module" src="shared/js/presentacion.js"></script>
+  <script src="js/navbar.js"></script>
+  <!-- botón FSC: solo el isotipo, abajo a la izquierda -->
+  <script src="https://vps-4455523-x.dattaweb.com/fscauth/js/fsc-button.js?v=5"></script>
 </body>
 </html>

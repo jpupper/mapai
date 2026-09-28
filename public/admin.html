@@ -191,6 +191,7 @@
             40%, 80% { transform: translateX(10px); }
         }
     </style>
+    <style>body{padding-top:48px!important;}</style>
 </head>
 
 <body>
@@ -253,23 +254,6 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <!-- Top Bar -->
-            <header class="topbar">
-                <button class="menu-toggle" id="menu-toggle">☰</button>
-                <h2 class="topbar-title" id="topbar-title">Dashboard</h2>
-                <div class="topbar-actions">
-                    <div class="project-selector-wrapper" style="display: flex; align-items: center; gap: 8px;">
-                        <label for="global-project-selector" style="font-size: 11px; color: var(--text-muted);">Proyecto:</label>
-                        <select id="global-project-selector" class="select-input" style="height: 32px; padding: 0 8px; font-size: 13px; min-width: 150px;"></select>
-                        <button class="btn btn-primary" id="btn-quick-add-project" style="height: 32px; width: 32px; display: flex; align-items: center; justify-content: center; padding: 0; font-size: 18px;" title="Añadir Nuevo Proyecto">+</button>
-                    </div>
-                    <button class="btn btn-primary btn-save-header" id="btn-save-current-section"
-                        style="display: none;">💾 Guardar</button>
-                    <span class="status-badge" id="status-badge">● Conectado</span>
-                    <span class="status-badge" id="user-badge" style="display:none;">●</span>
-                    <button class="btn btn-ghost" id="btn-logout" style="display:none;">Salir</button>
-                </div>
-            </header>
 
             <!-- Content Area -->
             <div class="content-area">
@@ -1031,6 +1015,9 @@
     </div>
 
     <script src="admin.js"></script>
+    <script src="js/navbar.js"></script>
+  <!-- botón FSC: solo el isotipo, abajo a la izquierda -->
+  <script src="https://vps-4455523-x.dattaweb.com/fscauth/js/fsc-button.js?v=5"></script>
 </body>
 
 </html>
