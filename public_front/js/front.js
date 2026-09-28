@@ -42,7 +42,9 @@ const API_BASE_PATH = resolveApiBasePath();
 const AUTH_ORIGIN = API_ORIGIN;
 
 function resolveFscAuthOrigin() {
-  return 'https://vps-4455523-x.dattaweb.com';
+  // El ingreso vive en el dominio público (fullscreencode.com/fscauth):
+  // así el usuario nunca sale del dominio y la sesión es la misma en todas las apps.
+  return 'https://fullscreencode.com';
 }
 const FSCAUTH_ORIGIN = resolveFscAuthOrigin();
 

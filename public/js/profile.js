@@ -159,7 +159,7 @@ function openAuthModal() {
     window.location.href = '/mapai/mapai/profile.html';
   } else {
     const redirect = encodeURIComponent(window.location.href);
-    window.location.href = 'https://vps-4455523-x.dattaweb.com/fscauth/login.html?redirect=' + redirect;
+    window.location.href = 'https://fullscreencode.com/fscauth/login.html?redirect=' + redirect;
   }
 }
 
