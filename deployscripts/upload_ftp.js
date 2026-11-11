@@ -53,7 +53,7 @@ async function uploadToFtp() {
             secureOptions: { rejectUnauthorized: false }
         });
 
-        const rawRemoteDir = process.env.FTP_REMOTE_DIR || '/mapai';
+        const rawRemoteDir = process.env.FTP_REMOTE_DIR || '/public_html/mapai';
         const remoteDir = rawRemoteDir.startsWith('/') ? rawRemoteDir : `/${rawRemoteDir}`;
         const localMapaiFolder = path.join(__dirname, '../public_front');
         const localSharedFolder = path.join(__dirname, '../public');

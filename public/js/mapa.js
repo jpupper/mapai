@@ -748,16 +748,23 @@ document.addEventListener('DOMContentLoaded', async function () {
         if (animRunning) return;
         var node = evt.target;
 
-        // Restaurar estilos originales
-        node.removeStyle('border-width border-color background-color z-index');
+        // Restaurar estilos originales del nodo hovereado (salvo que sea el seleccionado)
+        var isSelected = selectedNode && selectedNode.length && selectedNode.id() === node.id();
+        if (!isSelected) {
+            node.removeStyle('border-width border-color background-color z-index');
+        }
 
-        // Quitar la clase highlighted para ocultar de nuevo en Cytoscape y detener animación
+        // Las conexiones del nodo seleccionado quedan prendidas al salir del hover.
         var connectedEdges = node.connectedEdges();
-        connectedEdges.removeClass('highlighted');
+        var keepEdges = selectedNode && selectedNode.length ? selectedNode.connectedEdges() : cy.collection();
+        connectedEdges.difference(keepEdges).removeClass('highlighted');
 
-        // Restaurar estilos de nodos conectados
+        // Restaurar estilos de nodos conectados sin tocar al seleccionado ni a su vecindario
         var connectedNodes = node.neighborhood('node');
-        connectedNodes.removeStyle('border-color border-width z-index');
+        var keepNodes = selectedNode && selectedNode.length
+            ? selectedNode.union(selectedNode.neighborhood('node'))
+            : cy.collection();
+        connectedNodes.difference(keepNodes).removeStyle('border-color border-width z-index');
 
         // Ocultar infoBox con animación SOLO si no hay nodo seleccionado
         if (!selectedNode) {
