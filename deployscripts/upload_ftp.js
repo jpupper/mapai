@@ -59,6 +59,12 @@ async function uploadToFtp() {
         const localSharedFolder = path.join(__dirname, '../public');
         const localAppFolder = path.join(__dirname, '../public');
 
+        // Guard: la raíz remota debe ser el front MapAI, nunca el index de DiploIA.
+        const mapaiIndex = fs.readFileSync(path.join(localMapaiFolder, 'index.html'), 'utf8');
+        if (!/MapAI/i.test(mapaiIndex) || /MODULO C[oó]digo/i.test(mapaiIndex)) {
+            throw new Error('public_front/index.html no parece el front de MapAI; deploy abortado');
+        }
+
         console.log('Sincronizando /public_front (MapAI)...');
         await syncLocalToRemote(client, localMapaiFolder, remoteDir);
 
